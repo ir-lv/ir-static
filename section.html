@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+{{>head}}
+
+<body>
+  <div id="app">
+    {{>header}}
+    <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0 pb-4">
+      <div class="article-header flex w-full flex-col gap-y-4 lg:gap-y-8">
+        <h1 class="title pt-4 lg:text-center leading-tight">Kultūra</h1>
+      </div>
+      <div class="items-start gap-8 lg:flex">
+        <div class="hero w-full border-t border-t-slate-100 shadow-md lg:px-0">
+          <figure class="lg:flex gap-4 bg-white text-ir-gray-80 lg:gap-8">
+            <img src="./src/assets/img/temp/ir/home/Rectangle_85.jpg" alt=""
+              class="aspect-square h-full w-auto object-cover" />
+            <div class="flex flex-col justify-center gap-y-8 px-4 lg:col-span-5 lg:px-0 lg:pr-8">
+              <h3 class="w-full pt-8 text-4xl leading-tight lg:pt-10">
+                Dziedātāja Zanda Švēde iekaro Sanfrancisko
+              </h3>
+              <p class="flex-grow text-[0.938rem]">
+                Uzņēmīgā Zanda Švēde mūziku sāka mācīties tikai 25 gadu
+                vecumā, nokļuva Uzņēmīgā Zanda Švēde mūziku sāka mācīties
+                tikai 25 gadu vecumā, nokļuva Sanfrancisko operā un nu jau
+                otro sezonu ir Frankfurtes operas soliste. Kad vien apstākļi
+                ļauj, viņa uzstājas Rīgā.
+              </p>
+              <div class="flex w-full items-center justify-between py-4 uppercase">
+                <span class="hero__author pr-4 uppercase text-gray-500">Laura Dumbere</span>
+                {{>bookmark}}
+              </div>
+            </div>
+          </figure>
+        </div>
+
+        <aside class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:w-4/12">
+          <div class="articles-widget bg-slate-100">
+            <h2 class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span>
+                  <span class="category flex items-center gap-3 whitespace-nowrap">Viedoklis</span>
+                  <span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">Mortens
+                    Hansens</span>
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span><span
+                    class="category flex items-center gap-3 whitespace-nowrap">Speciāli IR</span><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">guntis
+                    keisels</span>
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="cards-w-banner">
+      <div class="container px-4 lg:flex lg:px-0 lg:pb-8 lg:pr-8 pb-4">
+        <div class="flex flex-col lg:flex-row lg:w-9/12 gap-4 lg:gap-8">
+          {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro
+            Sanfrancisko" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba
+            grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.
+            Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+            author="Laura Dumbere"}} {{>card tag="Komentārs" excerpt="Šonedēļ
+            starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+            Latvija apkaro naudas atmazgāšanu.." title="Galvenā naudas atmazg
+            lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}}
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="container items-start gap-4 px-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8">
+        <div class="related-articles flex w-full flex-col gap-y-6 lg:w-9/12 lg:px-0">
+          {{>card-horizontal tag="Komentārs" title="Dace Rēķe, instagramā māca
+            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?" author="Laura Dumbere"}} {{>card-horizontal
+            tag="Komentārs" title="Dace Rēķe, instagramā māca latviešu valodu"
+            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+            vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+            lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
+            Dumbere"}} {{>card-horizontal tag="Komentārs" title="Dace Rēķe,
+            instagramā māca latviešu valodu" excerpt="Šonedēļ starptautiskā
+            Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
+            apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
+            valstu pelēkajā sarakstā?" author="Laura Dumbere"}}
+          {{>card-horizontal tag="Komentārs" title="Dace Rēķe, instagramā māca
+            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?" author="Laura Dumbere"}}
+        </div>
+        <div class="ad-widget hiddne bg-slate-100 p-6 my-4 lg:visible">
+          <h2 class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+            Reklāma
+          </h2>
+          <ul class="relative flex flex-col gap-y-8">
+            <li class="border-b border-gray-300 pb-6">
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">Koncerts</span>
+              </div>
+              <h4 class="font-serif"><b>Grupa Jumprava.</b> XO Arēnā Rīga</h4>
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">28. novembris</span>
+              </div>
+            </li>
+            <li class="border-b border-gray-300 pb-6">
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">Koncerts</span>
+              </div>
+              <h4 class="font-serif">
+                <b>Rīgas Gredzens VEF </b>Kultūras pilī
+              </h4>
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">28. novembris</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="container items-start gap-4 px-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8">
+        <div class="related-articles flex w-full flex-col gap-y-6 lg:w-9/12 lg:px-0">
+          {{>card-horizontal tag="Komentārs" title="Dace Rēķe, instagramā māca
+            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?" author="Laura Dumbere"}} {{>card-horizontal
+            tag="Komentārs" title="Dace Rēķe, instagramā māca latviešu valodu"
+            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+            vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+            lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
+            Dumbere"}} {{>card-horizontal tag="Komentārs" title="Dace Rēķe,
+            instagramā māca latviešu valodu" excerpt="Šonedēļ starptautiskā
+            Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
+            apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
+            valstu pelēkajā sarakstā?" author="Laura Dumbere"}}
+          {{>card-horizontal tag="Komentārs" title="Dace Rēķe, instagramā māca
+            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?" author="Laura Dumbere"}}
+        </div>
+      </div>
+    </section>
+  </div>
+  {{>footer}}
+</body>
+
+</html>

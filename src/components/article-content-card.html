@@ -1,0 +1,20 @@
+<figure class="bg-white shadow-md outline outline-1 outline-slate-200">
+  {{#if pic}}
+  <img src="{{pic}}" alt="" class="aspect-video w-full object-cover" />
+  {{/if}}
+  <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
+    <div
+      class="flex items-center gap-x-3 uppercase before:bottom-0 before:top-0 before:-ml-4 before:-mt-1 before:h-5 before:w-[2px] before:bg-ir-red">
+      <span class="flex items-center gap-3 whitespace-nowrap">{{ tag }}</span>
+      <span
+        class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+        >{{ author }}</span
+      >
+    </div>
+    <div class="flex items-center uppercase">{{>bookmark}}</div>
+    <h1 class="w-full text-[22px] leading-7">{{ title }}</h1>
+    <p class="font-sans text-card-lead leading-relaxed text-gray-800">
+      {{ excerpt}}
+    </p>
+  </div>
+</figure>

@@ -1,0 +1,16 @@
+<div
+  role="dialog"
+  aria-modal="true"
+  x-data="{ saved: false }"
+  @click="saved = ! saved"
+  x-show="!saved"
+  class="cookies-modal lg:p4 fixed bottom-0 z-50 m-1 flex flex-col items-center justify-center gap-4 bg-slate-200 p-8 font-serif lg:w-full lg:flex-row lg:gap-2">
+  <p class="lg:pr-20">
+    Informējam, ka šajā tīmekļa vietnē tiek izmantotas sīkdatnes (angļu val.
+    "cookies").
+  </p>
+  <div class="flex w-full flex-col gap-x-3 gap-y-4 lg:w-auto lg:flex-row">
+    {{>btn-cta-black class="lg:w-96" link="#" label="Piekrītu"}}
+    {{>btn-cta-black-secondary link="#" class="lg:w-40" label="Uzzināt vairāk"}}
+  </div>
+</div>

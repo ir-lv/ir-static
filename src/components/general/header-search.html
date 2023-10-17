@@ -1,0 +1,109 @@
+<div
+  :class="$store.header.showSearch ? 'block' : '' "
+  @click.away="$store.header.showSearch=false"
+  x-cloak
+  x-show="$store.header.showSearch"
+  x-transition.opacity
+  class="container relative flex flex-col lg:flex-row w-full justify-center bg-slate-100 p-4 gap-4 {{{class}}}">
+  <div class="line-item relative flex">
+    <input
+      type="text"
+      class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[570px]"
+      placeholder="Meklēt"
+      class="font-serif" />
+    <a
+      title="Meklēt"
+      href="search.html"
+      class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+        <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
+      </svg>
+    </a>
+  </div>
+  <div class="line-item relative flex">
+    <input
+      type="text"
+      class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+      placeholder="Datums no"
+      value="08.2001"
+      class="font-serif" />
+    <a
+      title="Meklēt"
+      href="search.html"
+      class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+        <path
+          d="M16 3V7"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+        <path
+          d="M8 3V7"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+        <path
+          d="M4 10H20"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+      </svg>
+    </a>
+  </div>
+  <div class="line-item relative flex">
+    <input
+      type="text"
+      class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+      placeholder="Datums līdz"
+      value="10.2002"
+      class="font-serif" />
+    <a
+      title="Meklēt"
+      href="search.html"
+      class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+        <path
+          d="M16 3V7"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+        <path
+          d="M8 3V7"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+        <path
+          d="M4 10H20"
+          stroke="#3A3C41"
+          stroke-linecap="square"
+          stroke-linejoin="round" />
+      </svg>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BreuerCondensed-Regular";
+  src: url("./src/assets/fonts/BreuerCondensed-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BreuerCondensed-Bold";
+  src: url("./src/assets/fonts/BreuerCondensed-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Merriweather-Bold";
+  src: url("./src/assets/fonts/Merriweather-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Merriweather-Light";
+  src: url("./src/assets/fonts/Merriweather-Light.woff") format("woff");
+}
+
+@layer base {
+  html {
+    font-family: Merriweather-Light, system-ui, serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-normal leading-relaxed text-ir-text-gray;
+  }
+  #app {
+    @apply flex min-h-screen flex-col lg:gap-8;
+  }
+  p {
+    @apply leading-relaxed;
+  }
+  b {
+    @apply font-serif-bold font-normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif-bold;
+  }
+  h1 {
+    @apply text-[2.8rem] lg:text-5xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+}
+
+@layer components {
+  span {
+    @apply font-serif;
+  }
+
+  .article-content h2 {
+    @apply pb-1.5 pt-6;
+  }
+
+  .article-content p {
+    @apply py-2.5;
+  }
+
+  /* This won't be included in your compiled CSS unless you actually use it */
+  header nav > ul > li.active {
+    @apply bg-white;
+  }
+}
+
+[x-cloak] {
+  display: none !important;
+}

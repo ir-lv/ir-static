@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+{{>head}}
+
+<body>
+  <div id="app">
+    {{>header}}
+    <div class="container items-start gap-8 lg:flex">
+      <div class="flex flex-1 flex-col gap-4 lg:gap-8">
+        <section class="px-4 lg:px-0">
+          <div class="hero w-full border-t border-t-slate-100 shadow-md lg:px-0">
+            <figure class="grid grid-flow-row gap-4 bg-white lg:grid-cols-2 lg:gap-8">
+              <img src="./src/assets/img/temp/ir/home/Rectangle_84.jpg" alt="" class="h-full object-cover" />
+              <div class="flex flex-col justify-center gap-y-8 px-4 lg:px-0 lg:pr-8">
+                <h3 class="w-full pt-8 text-4xl leading-7 lg:pt-20">
+                  Ar četrām prioritātēm
+                </h3>
+                <p class="flex-grow">
+                  Uzņēmīgā Zanda Švēde mūziku sāka mācīties tikai 25 gadu
+                  vecumā, nokļuva Sanfrancisko operā un nu jau otro sezonu ir
+                  Frankfurtes operas soliste. Kad vien apstākļi ļauj, viņa
+                  uzstājas Rīgā.
+                </p>
+                <div class="flex w-full items-center justify-between py-4 uppercase">
+                  <span class="hero__author pr-4 uppercase text-gray-500">Laura Dumbere</span>
+                  {{>bookmark}}
+                </div>
+              </div>
+            </figure>
+          </div>
+        </section>
+        <section id="cards-1/4" class="grid grid-flow-row gap-4 px-4 lg:grid-cols-2 lg:gap-8 lg:px-0">
+          {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro
+            Sanfrancisko un Frankfurti" excerpt="Šonedēļ starptautiskā Finanšu
+            darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?" author="Laura Dumbere"}} {{>card tag="Komentārs"
+            title="Satriecošais spriedums Maximas lietā - reportāža no tiesas
+            zāles" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa
+            (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.."
+            author="Indra Sprance"}}
+        </section>
+      </div>
+      <aside id="sidebar" class="mx-4 flex flex-col justify-center lg:mx-0 lg:w-[275px]">
+        {{>weekly-mag-btn}}
+        <div class="sidebar-item flex flex-col gap-4 rounded-md pt-4">
+          <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
+            <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">Imantas "iedzimtie"
+              cīnās par pēdējo neprivatizēto muižu</a>
+            <a href="" class="font-serif uppercase text-ir-light-gray">Pauls Rudeps</a>
+            {{>bookmark}}
+          </div>
+        </div>
+        <div class="sidebar-item py-t flex flex-col gap-4 rounded-md">
+          <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
+            <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">Galvenā naudas
+              atmazgāšanas apkarotāja optimistiska par
+              Latvijas paveikto muižu</a>
+            <a href="" class="font-serif uppercase text-ir-light-gray">Aivars Ozoliņš</a>
+            {{>bookmark}}
+          </div>
+        </div>
+        <div class="spotlight-block mt-4 bg-slate-100">
+          <div class="spotlight-header flex items-center gap-x-16 rounded-tl-md rounded-tr-md bg-ir-red p-4 lg:gap-x-8">
+            <div class="logo">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_3154_8544)">
+                  <path
+                    d="M17 0C7.57917 0 0 7.57917 0 17C0 26.4208 7.57917 34 17 34C26.4208 34 34 26.4208 34 17C34 7.57917 26.4208 0 17 0Z"
+                    fill="#ED2926" />
+                  <path
+                    d="M11.6172 5.87891C12.7505 5.87891 13.7422 6.87057 13.7422 8.00391C13.7422 9.20807 12.8214 10.1997 11.6172 10.1997C10.4839 10.1997 9.49219 9.20807 9.49219 8.00391C9.49219 6.87057 10.413 5.87891 11.6172 5.87891Z"
+                    fill="white" />
+                  <path
+                    d="M26.4227 17.6372C25.0768 17.6372 24.2977 16.5039 24.4393 15.5122C24.5102 15.0164 24.7227 14.4497 24.5102 13.8831C24.2268 13.2456 23.5185 13.3164 22.7393 13.6706C21.6768 14.1664 20.8268 15.5831 20.8268 17.2122V22.0289V22.7372C20.8977 24.2247 21.6768 25.0039 23.0227 25.0039V25.5706H15.3727H7.72266V25.0039C8.99766 25.0039 9.77682 24.1539 9.91849 22.7372L9.98932 21.8164V16.9289C9.98932 16.2206 9.77682 15.5831 9.35182 15.2289C8.92682 14.8747 8.43099 14.6622 7.79349 14.7331V14.1664C7.79349 14.1664 13.106 12.3247 13.106 12.2539C13.1768 12.2539 13.1768 12.2539 13.1768 12.3247V22.0289V22.7372C13.2477 24.2247 14.0268 25.0039 15.3727 25.0039C16.6477 25.0039 17.4268 24.2247 17.5685 22.7372L17.6393 21.8164V16.9289C17.6393 16.2206 17.4268 15.5831 17.0018 15.2289C16.5768 14.8747 16.081 14.6622 15.4435 14.7331V14.1664L19.906 12.6081L19.9768 12.6789C20.1185 12.8914 20.6143 13.5997 20.8268 14.5206C21.3227 14.0247 21.9602 13.4581 22.6685 13.0331C23.306 12.6789 24.0143 12.3956 24.7935 12.3956C25.856 12.3956 26.8477 12.8206 27.556 13.4581C28.1227 13.9539 28.4768 14.8039 28.4768 15.5122C28.4768 16.5039 27.7685 17.6372 26.4227 17.6372Z"
+                    fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_3154_8544">
+                    <rect width="34" height="34" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="title pt-1 font-serif uppercase leading-none text-white">
+              Svarīgākais
+            </h2>
+          </div>
+          <div class="spotlight-body px-5 py-8">
+            <h3 class="pb-14">
+              Sadarbosies ieroču ražotāji Ukrainai; <br />Slovākijā vēlēšanās
+              uzvarējuši kremlini; <br />Divi pasaules rekordi Rīgā
+            </h3>
+            <p class="border-t border-slate-300 py-4 font-serif text-lg">
+              <b>Īsi par svarīgāko ik rītu — </b>pieraksties jaunumu vēstulei
+              Ir Svarīgākais!
+            </p>
+            <div class="temp-wrap w-1/2">
+              {{>btn-cta-black class="py-[0.5rem]" label="Pierakstīties"}}
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <section id="banner" class="container my-4 flex flex-col items-center justify-center px-4 lg:px-0">
+      <p class="mb-4 text-right font-serif lg:w-10/12">Reklāma</p>
+      <img src="./src/assets/img/temp/banner.jpg" class="h-40 w-full object-cover lg:h-auto lg:w-10/12" alt="" />
+    </section>
+    <section id="cards-1/5" class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-5 lg:gap-8 lg:px-0">
+      {{>card tag="Komentārs" title="Ugunsgrēki austrāliešiem liek domāt par
+        dzīvesveida maiņu" author="Indra Sprance" title-size="text-lg"}} {{>card
+        tag="Komentārs" title="Manai valstij vajag cilvēkus ar Eiropas
+        zināšanām" author="Indra Sprance" title-size="text-lg"}} {{>card
+        tag="Komentārs" title="Galvenā naudas atmazgāšanas apkarotāja
+        optimistiska par Latvijas paveikto" author="Indra Sprance"
+        title-size="text-lg"}} {{>card tag="Komentārs" title="Ražošana
+        samazinās, bet nākotnes signāli pretrunīgi" author="Indra Sprance"
+        title-size="text-lg"}} {{>card tag="Komentārs" title="Ražošana
+        samazinās" author="Indra Sprance" title-size="text-lg"}}
+    </section>
+    <section id="media" class="flex flex-col items-center bg-slate-100 px-4 lg:px-0">
+      <div class="container my-20 flex-row gap-8 lg:flex">
+        <div id="podcasts" class="bg-slate-100 lg:w-3/5">
+          <h1 class="title container my-8 pl-4 lg:pl-0">Raidieraksti</h1>
+          <div id='buzzsprout-small-player' class="overflow-hidden h-[420px] grid gap-4"></div>
+          <script type='text/javascript' charset='utf-8'
+            src='https://www.buzzsprout.com/686771.js?container_id=buzzsprout-small-player&player=small'></script>
+        </div>
+        <div id="carousel" class="bg-slate-100 lg:w-2/5">
+          <h1 class="title container my-8 pl-4 lg:pl-0">Karikatūra</h1>
+          {{>carousel}}
+        </div>
+      </div>
+    </section>
+    <section id="cards-1/3">
+      <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+        {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro
+          Sanfrancisko" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba
+          grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+          author="Laura Dumbere"}} {{>card tag="Komentārs" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." title="Galvenā naudas atmazg
+          lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}} {{>card
+          tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro Sanfrancisko"
+          excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+          vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+          lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
+          Dumbere"}}
+      </div>
+    </section>
+    <section id="guest-authors" class="bg-slate-100 py-20">
+      <h1 class="title container my-8 pl-4 lg:pl-0">Viesautori</h1>
+      <div class="container grid grid-flow-row items-stretch gap-4 px-4 lg:grid-cols-4 lg:gap-8 lg:px-0">
+        <figure class="guest-card">
+          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
+            <h1 class="text-[22px] leading-7">
+              Investīciju piesaisti reģionos būtiski ietekmē teritorijas
+              attīstības prioritātes
+            </h1>
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+              relaksētos austrāliešus sākt aktīvi...
+            </p>
+            <div class="flex items-end">
+              <span
+                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
+                Elizabete Vegnere</span>
+            </div>
+            <div class="flex items-end uppercase">{{>bookmark}}</div>
+          </div>
+        </figure>
+        <figure class="guest-card">
+          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
+            <h1 class="text-[22px] leading-7">
+              Manai valstij vajag cilvēkus ar Eiropas zināšanām
+            </h1>
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+              relaksētos austrāliešus sākt aktīvi...
+            </p>
+            <div class="flex items-end">
+              <span
+                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
+                Davits Kortava</span>
+            </div>
+            <div class="flex items-end uppercase">{{>bookmark}}</div>
+          </div>
+        </figure>
+        <figure class="guest-card">
+          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
+            <h1 class="text-[22px] leading-7">
+              Galvenā naudas atmazgāšanas apkarotāja optimistiska par Latvijas
+              paveikto
+            </h1>
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+              relaksētos austrāliešus sākt aktīvi...
+            </p>
+            <div class="flex items-end">
+              <span
+                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
+                Elizabete Vegnere</span>
+            </div>
+            <div class="flex items-end uppercase">{{>bookmark}}</div>
+          </div>
+        </figure>
+        <figure class="guest-card">
+          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
+            <h1 class="text-[22px] leading-7">
+              Ražošana samazinās, bet nākotnes signāli pretrunīgi
+            </h1>
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+              relaksētos austrāliešus sākt aktīvi...
+            </p>
+            <div class="flex items-end">
+              <span
+                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
+                Pēteris Strautiņš</span>
+            </div>
+            <div class="flex items-end uppercase">{{>bookmark}}</div>
+          </div>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        {{>article-content-cta title="<b>Īsi par svarīgāko ik rītu</b> —
+          pieraksties jaunumu vēstulei Ir Svarīgākais!"
+          btn-label="Pierakstīties"}}
+      </div>
+    </section>
+    <section id="cards-w-banner">
+      <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+        {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro
+          Sanfrancisko" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba
+          grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+          author="Laura Dumbere"}} {{>card tag="Komentārs" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." title="Galvenā naudas atmazg
+          lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}}
+        <div class="ad-widget hiddne bg-slate-100 p-6 lg:visible">
+          <h2 class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+            Reklāma
+          </h2>
+          <ul class="relative flex flex-col gap-y-8">
+            <li class="border-b border-gray-300 pb-6">
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">Koncerts</span>
+              </div>
+              <h4 class="font-serif"><b>Grupa Jumprava.</b> XO Arēnā Rīga</h4>
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">28. novembris</span>
+              </div>
+            </li>
+            <li class="border-b border-gray-300 pb-6">
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">Koncerts</span>
+              </div>
+              <h4 class="font-serif">
+                <b>Rīgas Gredzens VEF </b>Kultūras pilī
+              </h4>
+              <div class="meta flex uppercase">
+                <span class="counter"></span><span class="category">28. novembris</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="magazines" class="bg-slate-100 py-20">
+      <h1 class="title container my-8 pl-4 lg:pl-0">Žurnāli</h1>
+      <div class="container grid grid-flow-row items-stretch gap-4 lg:grid-cols-3 lg:gap-8 lg:px-0">
+        <div class="magazine flex flex-col items-center">
+          <figure class="mb-8">
+            <img src="./src/assets/img/temp/ir/home/Rectangle 72.jpg" alt="" />
+          </figure>
+          <ul class="relative flex flex-col">
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
+              </h4>
+              {{>bookmark}}
+            </li>
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Dziedātāja Zanda Švēde iekaro Sanfrancisko un Frankfurti
+              </h4>
+              {{>bookmark}}
+            </li>
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Ko apdraud mežu izciršananu? <br />&nbsp;
+              </h4>
+              {{>bookmark}}
+            </li>
+          </ul>
+        </div>
+        <div class="magazine flex flex-col items-center">
+          <figure class="mb-8">
+            <img src="./src/assets/img/temp/ir/home/Rectangle 73.jpg" alt="" />
+          </figure>
+          <ul class="relative flex flex-col">
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Galvenā naudas atmazgāšanas apkarotāja optimistiska par
+                Latvijas paveikto
+              </h4>
+              {{>bookmark}}
+            </li>
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                VID novēloti vēršas pret Inkēna uzņēmumu<br />&nbsp;
+              </h4>
+              {{>bookmark}}
+            </li>
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Latviešu uzņēmums, kas ražo parketu Kuveitai<br />&nbsp;
+              </h4>
+              {{>bookmark}}
+            </li>
+          </ul>
+        </div>
+        <div class="magazine flex flex-col items-center">
+          <figure class="mb-8">
+            <img src="./src/assets/img/temp/ir/home/Rectangle 74.jpg" alt="" />
+          </figure>
+          <ul class="relative flex flex-col">
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Režisors Znotiņš: Bērni spēj uztvert arī nopietnu un dziļu
+                mākslu
+              </h4>
+              {{>bookmark}}
+            </li>
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Ugunsgrēki austrāliešiem liek domāt par dzīvesveida maiņu
+              </h4>
+              {{>bookmark}}
+            </li>
+            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
+              <h4 class="text-lg leading-tight">
+                Latviešu uzņēmums, kas ražo parketu Kuveitai<br />&nbsp;
+              </h4>
+              {{>bookmark}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cards-1/3">
+      <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+        {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro
+          Sanfrancisko" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba
+          grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+          author="Laura Dumbere"}} {{>card tag="Komentārs" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." title="Galvenā naudas atmazg
+          lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}} {{>card
+          tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro Sanfrancisko"
+          excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+          vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+          lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
+          Dumbere"}}
+      </div>
+    </section>
+
+    <section id="cards-1/4">
+      <div class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
+        {{>card tag="Komentārs" title="Dace Rēķe, instagramā māca latviešu
+          valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa
+          (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+          author="Laura Dumbere"}} {{>card tag="Komentārs" title="Satriecošais
+          spriedums Maximas lietā - reportāža no tiesas zāles" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} {{>card
+          tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} {{>card
+          tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}}
+      </div>
+      <div class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
+        {{>btn-cta-black label="Vairāk rakstu"}}
+      </div>
+      <div class="social-block-botto container my-20 flex max-w-sm flex-col gap-6 py-8">
+        <h4 class="text-center font-serif">
+          <b>Mums ir pa ceļam</b> — lasi jaunāko savā laika joslā!
+        </h4>
+        <div class="social-buttons flex justify-center gap-x-4">
+          <span><a href="">{{>instagram}}</a></span>
+          <span><a href="">{{>facebook}}</a></span>
+          <span><a href="">{{>twitter}}</a></span>
+        </div>
+      </div>
+    </section>
+  </div>
+  {{>footer}} {{>cookies-modal}}
+</body>
+
+</html>

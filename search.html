@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  {{>head }}
+
+  <body>
+    <div id="app">
+      {{>header}}
+
+      <div
+        class="container relative flex flex-col lg:flex-row w-full justify-center bg-slate-100 gap-4 p-4 {{{class}}}">
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="w-full rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[570px]"
+            placeholder="Meklēt"
+            value="Rīgas Zoodārzs"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+              <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
+            </svg>
+          </a>
+        </div>
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="w-full rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+            placeholder="Datums no"
+            value="08.2001"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M16 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M8 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M4 10H20"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="w-full rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+            placeholder="Datums līdz"
+            value="10.2002"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M16 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M8 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M4 10H20"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="container flex flex-col flex-wrap gap-y-4 px-4 py-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
+        <div class="article-header flex w-full flex-col gap-y-4 lg:gap-y-8">
+          <h1 class="title max-w-screen-sm leading-tight">Atrastie raksti</h1>
+          <a href="" class="category-tag font-serif"
+            >Meklētajai frāzei: <b>“Rīgas Zoodārzs”</b></a
+          >
+        </div>
+      </div>
+
+      <section class="container">
+        <div
+          class="container items-start gap-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8">
+          <div
+            class="related-articles flex w-full flex-col gap-y-6 px-4 lg:w-9/12 lg:px-0">
+            {{>card-horizontal tag="Komentārs" title="Dace Rēķe, instagramā māca
+            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?" author="Laura Dumbere"}} {{>card-horizontal
+            tag="Komentārs" title="Dace Rēķe, instagramā māca latviešu valodu"
+            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+            vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+            lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
+            Dumbere"}} {{>card-horizontal tag="Komentārs" title="Dace Rēķe,
+            instagramā māca latviešu valodu" excerpt="Šonedēļ starptautiskā
+            Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
+            apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
+            valstu pelēkajā sarakstā?" author="Laura Dumbere"}}
+            {{>card-horizontal tag="Komentārs" title="Dace Rēķe, instagramā māca
+            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?" author="Laura Dumbere"}}
+          </div>
+          <div class="ad-widget hiddne bg-slate-100 p-6 lg:visible">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Reklāma
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6">
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">Koncerts</span>
+                </div>
+                <h4 class="font-serif"><b>Grupa Jumprava.</b> XO Arēnā Rīga</h4>
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">28. novembris</span>
+                </div>
+              </li>
+              <li class="border-b border-gray-300 pb-6">
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">Koncerts</span>
+                </div>
+                <h4 class="font-serif">
+                  <b>Rīgas Gredzens VEF </b>Kultūras pilī
+                </h4>
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">28. novembris</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    {{>footer}}
+  </body>
+</html>

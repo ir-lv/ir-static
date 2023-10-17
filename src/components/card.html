@@ -1,0 +1,30 @@
+<figure class="flex flex-1 flex-col bg-white shadow-md">
+  <img
+    src="./src/assets/img/temp/hero.jpg"
+    alt=""
+    class="aspect-video w-full cursor-pointer object-cover"
+    x-data
+    @click="window.location='article.html'" />
+  <div
+    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+    <div class="flex w-full justify-between">
+      <span
+        class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+        >{{ tag }}</span
+      >
+      {{>bookmark}}
+    </div>
+    <h1
+      class="text-[26px] leading-tight {{title-size}} w-full h-min flex-grow cursor-pointer"
+      x-data
+      @click="window.location='article.html'">
+      {{ title }}
+    </h1>
+    {{#if excerpt}}
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+      {{ excerpt}}
+    </p>
+    {{/if}}
+    <span class="card__author uppercase text-gray-500"> {{ author }}</span>
+  </div>
+</figure>

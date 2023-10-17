@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>IR žurnāls</title>
+    <script type="module" crossorigin src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      window.document.addEventListener("alpine:init", () => {
+        let state = window.alpine.store("header");
+        state.showMenu = state.isScreenDesktop();
+        console.log(state.showMenu);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="app">
+      {{>header}}
+      <div
+        x-data="article"
+        class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:gap-y-8">
+        <div class="article-header flex w-full flex-col gap-y-8 lg:ml-20">
+          <h1 class="title text-center">Kultūra</h1>
+        </div>
+        <div
+          x-show="!dimToolbar"
+          x-transition.opacity.500ms
+          id="toolbar-container"
+          class="order-first py-4 lg:fixed lg:top-[35vh] lg:w-[64px]">
+          {{>socials-toolbar}}
+        </div>
+        <div
+          class="article-content relative flex flex-col gap-10 pb-20 lg:ml-20 lg:max-w-[650px]">
+          {{>card-horizontal tag="Komentārs" title="Dace Rēķe, instagramā māca
+          latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba
+          grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+          author="Laura Dumbere"}}
+
+          <div
+            x-intersect="dimToolbar = true"
+            x-intersect:leave="dimToolbar = false"
+            class="related-articles mt-10 flex flex-col gap-y-6">
+            <h2>Saistītie raksti</h2>
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+          </div>
+        </div>
+        <aside
+          class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+          <div class="articles-widget bg-slate-100">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-4 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span
+                  ><span class="category">Viedoklis</span
+                  ><span class="author">Mortens Hansens</span>
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-4 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span
+                  ><span class="category">Speciāli IR</span
+                  ><span class="author">guntis keisels</span>
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <section id="cards-1/3">
+          <div
+            class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+            {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro
+            Sanfrancisko" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba
+            grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.
+            Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+            author="Laura Dumbere"}} {{>card tag="Komentārs" excerpt="Šonedēļ
+            starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+            Latvija apkaro naudas atmazgāšanu.." title="Galvenā naudas atmazg
+            lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}} {{>card
+            tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro Sanfrancisko"
+            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+            vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+            lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
+            Dumbere"}}
+          </div>
+        </section>
+      </div>
+    </div>
+    {{>footer}}
+  </body>
+</html>

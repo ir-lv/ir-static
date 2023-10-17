@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  {{>head }}
+
+  <body>
+    <div id="app">
+      {{>header}}
+      <div
+        x-data="article"
+        x-intersect="dimToolbar = false"
+        x-intersect:leave="dimToolbar = true"
+        class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
+        <div
+          class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-8">
+          <a href="" class="category-tag font-serif">Analīze</a>
+          <h1 class="title max-w-screen-sm leading-tight">
+            Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
+          </h1>
+          {{>article-meta}}
+        </div>
+        <div
+          x-show="!dimToolbar"
+          x-transition.opacity.500ms
+          id="toolbar-container"
+          class="order-first py-4 lg:fixed lg:top-[35vh] lg:w-[64px]">
+          {{>socials-toolbar}}
+        </div>
+        <div
+          class="article-content relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
+          <figure>
+            <img src="./src/assets/img/temp/article-featured.jpg" alt="" />
+            <p class="img-meta mt-2 font-serif">
+              Ilustrācija — Reinis Hofmanis
+            </p>
+          </figure>
+          <h3 class="py-6">
+            Pagājušajā pavasarī bijušais dzīvesbiedrs nogrieza Santai* ausi. Tad
+            devās uz policiju, bet pa ceļam ausi izmeta — tā zuda iespēja ausi
+            piešūt atpakaļ. Taču gada laikā Santa ir zaudējusi vēl daudz vairāk:
+            darbu un bērnus. Kāpēc?
+          </h3>
+          <p>
+            Policija bija pārsteigta. «Mēs viņa pirmo versiju neierakstījām, jo
+            neviens negaidīja, ka atnāks kāds un teiks: es nogriezu sievai
+            ausi,» atceras Valsts policijas Ķengaraga iecirkņa priekšniece Inga
+            Meikšāne. Vīrietis nosaucis vairākas vietas, kur ausi esot izmetis.
+            «Ja jūs redzētu, kā policisti meklēja ar grābekļiem un metāla
+            detektoru (pie auss bija palicis auskars) — pa peļķēm, visur.
+            Neatradām.»
+          </p>
+          <p>
+            Vardarbības kulminācijai šajā ģimenē ir astoņu gadu priekšvēsture ar
+            dzeršanu, kaušanos, greizsirdību un postošu pieķeršanos, no kuras
+            nav spēka aiziet. Notikušais uzdod neērtu jautājumu — kādi ir valsts
+            pienākumi pret cilvēku, kas sev palīdzēt nevar vai nevēlas?
+          </p>
+          <p>
+            Var teikt, ka Santu pazudināja pašas raksturs. Bet to veicināja arī
+            valsts iestādes, kuras, darbojoties bez empātijas un dziļāka
+            situācijas novērtējuma, nekā strikti prasa likums, pameta bez
+            atbalsta cilvēku milzīgā stresā. Pēc auss nogriešanas Andreju
+            apcietināja. Pēc diviem mēnešiem izlaida — pretēji policijas domām,
+            Rīgas Latgales priekšpilsētas tiesnese Vivita Freimane uzskatīja, ka
+            viņš ir labojies. Andrejs atsāka Santu psiholoģiski terorizēt.
+            Sieviete salūza un sāka dzert, zaudējot gan darbu, gan bērnus.
+            Varmāka apgalvo — visu darījis mīlot. Sitis, lai viņa beidz dzert.
+          </p>
+          <div class="paywall-fog relative">
+            <div
+              class="fog-overlay absolute bottom-0 h-full w-full bg-gradient-to-t from-white to-transparent"></div>
+            <h2>Prologs. «Man ir bail»</h2>
+            <p>
+              Par Santas situāciju uzzināju, rakstot iepriekšējo Re:Baltica
+              sēriju par vardarbību. E-pastā iekrita vēstule ar tekstu: «Vīrs
+              man nogrieza ausi. Viņu tūlīt izlaidīs no apcietinājuma. Man ir
+              bail.» Sekoja vārds un telefona numurs. Vēlāk izrādījās, ka
+              vēstuli uzrakstījusi kolēģe. Kā daudzas citas reizes, Santa pati
+              nerīkojas, bet paļaujas uz citiem. Vai padodas.
+            </p>
+            <p>
+              Tā pērn maijā iepazināmies. Īsa gaišmate ap 40. Kopš auss
+              nogriešanas bija pagājuši divi mēneši. Vīrietis bija tikko
+              izlaists no apcietinājuma. Santa runāja lēni, bet domas bija
+              skaidras. Viņa lietoja nomierinošas zāles, lai izturētu spriedzi.
+              Abu kopdzīvē vardarbības bijis tik daudz, ka Santa jauc datumus un
+              detaļas. Tādēļ šajā rakstā balstos uz dokumentiem, ko viņa iedeva.
+            </p>
+          </div>
+          <div
+            class="paywall-register-free my-8 flex flex-col items-center justify-center text-center">
+            <h2>Pirms lasi tālāk, iepazīsimies!</h2>
+            <p class="font-serif">
+              Ienāc vai reģistrējies portālā un saņem pieeju bezmaksas rakstiem
+              un IR Svarīgākais vēstkopai
+            </p>
+            <div
+              class="line-item flex w-full max-w-xs flex-col items-center gap-y-3 font-serif">
+              <input
+                type="text"
+                class="w-full rounded-md border-slate-200 px-4 py-3 font-serif"
+                placeholder="E-pasts" />
+              {{>btn-cta-black label="Turpināt"}}
+              <p>vai</p>
+              {{>btn-social-facebook label="Turpināt ar Facebook"}}
+              {{>btn-social-google label="Turpināt ar Google"}}
+            </div>
+          </div>
+
+          <div
+            class="paywall-subscribe my-14 flex flex-col items-center justify-center gap-3 text-center">
+            <h2 class="mb-8">
+              Turpini lasīt, atbalsti kvalitatīvu žurnālistiku!
+            </h2>
+            <div>
+              <svg
+                width="31"
+                height="30"
+                viewBox="0 0 31 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_3340_6049)">
+                  <g clip-path="url(#clip1_3340_6049)">
+                    <path
+                      d="M15.5693 0C7.28956 0 0.569336 6.72023 0.569336 15C0.569336 23.2798 7.28956 30 15.5693 30C23.8491 30 30.5693 23.2798 30.5693 15C30.5693 6.72023 23.8491 0 15.5693 0Z"
+                      fill="#EE2A27" />
+                    <path
+                      d="M10.7772 5.18919C11.7696 5.18919 12.6203 6.06821 12.6203 7.089C12.6203 8.16651 11.798 9.04552 10.7772 9.04552C9.75639 9.04552 8.93408 8.16651 8.93408 7.089C8.93408 6.06821 9.78474 5.18919 10.7772 5.18919Z"
+                      fill="white" />
+                    <path
+                      d="M23.9058 15.5672C22.7433 15.5672 22.0344 14.6031 22.1195 13.6957C22.1762 13.2421 22.403 12.76 22.2045 12.278C21.9777 11.7109 21.2971 11.7676 20.6733 12.0511C19.7092 12.5048 19.0287 13.7525 19.0287 15.1986V19.4235L19.0571 20.0473C19.1138 21.3233 19.7943 22.0606 20.9852 22.0606V22.5426H14.265H7.54478V22.0606C8.679 22.0606 9.38788 21.3517 9.47295 20.0473L9.52966 19.2534V14.915C9.52966 14.2912 9.33117 13.7525 8.96255 13.4122C8.62229 13.0719 8.14025 12.9301 7.60149 12.9585L7.45972 12.4765C7.45972 12.4765 12.11 10.8318 12.1667 10.8035C12.1951 10.7751 12.2518 10.8035 12.2518 10.8602V19.4235L12.2801 20.019C12.3368 21.295 13.0457 22.0322 14.2083 22.0322C15.3425 22.0322 16.0514 21.3233 16.1365 20.019L16.1648 19.1967V14.8583C16.1648 14.2345 15.9663 13.6957 15.5977 13.3555C15.2574 13.0152 14.7754 12.8734 14.2367 12.9018L14.1799 12.4765L18.1497 11.087L18.1781 11.1438C18.3198 11.3139 18.7168 11.9661 18.9153 12.76C19.3406 12.3063 19.9077 11.8243 20.5315 11.4557C20.5315 11.4557 20.5315 11.4557 20.5599 11.4557C21.127 11.1438 21.7792 10.9169 22.4314 10.9169C23.3954 10.8886 24.2461 11.2572 24.8983 11.8243C25.4087 12.2496 25.7206 13.0152 25.7206 13.639C25.7206 14.5748 25.0684 15.5672 23.9058 15.5672Z"
+                      fill="white" />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_3340_6049">
+                    <rect
+                      width="30"
+                      height="30"
+                      fill="white"
+                      transform="translate(0.569336)" />
+                  </clipPath>
+                  <clipPath id="clip1_3340_6049">
+                    <rect
+                      width="30"
+                      height="30"
+                      fill="white"
+                      transform="translate(0.569336)" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <p class="font-serif">
+              Iepazīšanās piedāvājums ir.lv abonēšanai - pirmie trīs mēneši par
+              2,99 eur/mēnesī. Atcel jebkurā brīdī.
+            </p>
+            <div
+              class="line-item flex w-full max-w-md flex-col items-center gap-3 font-serif lg:flex-row">
+              {{>btn-cta-red label="Abonēt"}} {{>btn-cta-black-secondary
+              label="Turpināt bez Abonēšanas"}}
+            </div>
+          </div>
+
+          <h2>1. cēliens. Uz riņķi</h2>
+          <p>
+            Santa un Andrejs iepazinās 2011. gadā. Vīrietis strādāja
+            celtniecībā, Santas mātei likās varens ķēriens: zelta rokas, varēs
+            palīdzēt lauku mājās. Sākumā ar cieņu izturējās pret Santu un viņas
+            meitu no iepriekšējām attiecībām. Pēc gada Santa gaidīja bērnu un
+            Andrejs kļuva agresīvs. Sākumā tikai vārdos, bet mēnesi pēc bērna
+            piedzimšanas, 2013. gada pavasarī, vīrietis palaida rokas.
+            Ierosināta administratīvā lieta par maznozīmīgiem miesas bojājumiem,
+            bet Santa iesniegumu beigās atsauca. Parastais vardarbības aplis —
+            viņš nolūdzās, viņa piedeva.
+          </p>
+
+          {{>article-content-cta title="<b>Īsi par svarīgāko ik rītu</b> —
+          pieraksties jaunumu vēstulei Ir Svarīgākais!"
+          btn-label="Pierakstīties"}}
+
+          <span class="anchor relative"></span>
+          <p>
+            Pēc diviem gadiem, 2015. gada oktobrī, policija viņu uz četrām
+            stundām izolēja no dzīvesvietas. Administratīvajā protokolā fiksēta
+            «fiziska un emocionāla vardarbība pret bērnu». Pēc šī gadījuma Santa
+            ar centra Marta palīdzību tiesai lūdza pagaidu aizsardzību pret
+            vardarbību. Tiesa aizliedza Andrejam tuvoties viņai un bērniem. Taču
+            vienlaikus gaidīja, ka Santa rīkosies un mēneša laikā iesniegs tiesā
+            jaunu prasību. Šādi tiesas mudina sievietes, kuras lūdz aizsardzību
+            no varmākām, nokārtot attiecības līdz galam. Par to, ka Andrejs sit
+            Santu, pirmā uzzināja otra bērnudārza vadītāja Anita. «Viņa
+            piezvanīja. Neteica neko par aci. Tikai, ka nelaimes gadījums,
+            pakritusi,» stāsta Anita. Viņai likās aizdomīgi, ka ārstēšanai vajag
+            pusotru mēnesi. Kad atgriezās darbā, Anita tieši noprasīja, kas
+            notiek. Santa pastāstīja, ka viņu sit. Ka «nespēj tikt no Andreja
+            vaļā, ir paniskas bailes».
+          </p>
+
+          <div class="h-[400px] bg-slate-200">
+            <h3>Reklāma</h3>
+          </div>
+
+          <div class="py-8">
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+          </div>
+
+          <p>
+            Pēc diviem gadiem, 2015. gada oktobrī, policija viņu uz četrām
+            stundām izolēja no dzīvesvietas. Administratīvajā protokolā fiksēta
+            «fiziska un emocionāla vardarbība pret bērnu». Pēc šī gadījuma Santa
+            ar centra Marta palīdzību tiesai lūdza pagaidu aizsardzību pret
+            vardarbību. Tiesa aizliedza Andrejam tuvoties viņai un bērniem. Taču
+            vienlaikus gaidīja, ka Santa rīkosies un mēneša laikā iesniegs tiesā
+            jaunu prasību. Šādi tiesas mudina sievietes, kuras lūdz aizsardzību
+            no varmākām, nokārtot attiecības līdz galam. Par to, ka Andrejs sit
+            Santu, pirmā uzzināja otra bērnudārza vadītāja Anita. «Viņa
+            piezvanīja. Neteica neko par aci. Tikai, ka nelaimes gadījums,
+            pakritusi,» stāsta Anita. Viņai likās aizdomīgi, ka ārstēšanai vajag
+            pusotru mēnesi. Kad atgriezās darbā, Anita tieši noprasīja, kas
+            notiek. Santa pastāstīja, ka viņu sit. Ka «nespēj tikt no Andreja
+            vaļā, ir paniskas bailes».
+          </p>
+
+          {{>quote text="Atbrauca ugunsdzēsēji, mēģināja iekāpt pa balkonu.
+          Beigās kāds no ciemiņiem atvēra. Policija Santu ar jaunāko dēlu atrada
+          paslēpušos skapī."}}
+
+          <p>
+            Tāpat vīrietis regulāri zvanīja un sūdzējās izmeklētājai Meikšānei,
+            ka Santa dzer. «Uz to atbildēju — vai jums neliekas, ka viņa dzer
+            vēl vairāk tieši jūsu dēļ? Viņš meta nost klausuli, tad zvanīja
+            atkal,» atceras Meikšāne. Izskatās, viņš zvanīja arī pašvaldības
+            sociālā dienesta darbiniecei Zanei Stieģelei, kas strādāja ar ģimeni
+            (viņa no intervijas atteicās, jo runāt par konkrēto lietu liedzot
+            likums). Andrejs pats vairs dzīvoklim netuvojās, bet Santu
+            uzraudzīja kāpņu telpas kaimiņi. Par novēroto ziņoja viņam. Viņš —
+            Stieģelei. No policijas sniegtās informācijas Re:Baltica izriet, ka
+            Stieģele uz Santas dzīvokli regulāri sūtīja pašvaldības policiju.
+            Nepilna pusgada laikā policija pie Santas dzīvokļa durvīm klauvēja
+            22 reizes. Tik daudz, jo Santa bieži neatvēra, tāpēc policisti nāca
+            atkārtoti. Reizēs, kad pašvaldības policija iekļuva dzīvoklī, nekas
+            aizdomīgs netika konstatēts.
+          </p>
+
+          {{>article-content-tags}}
+
+          <div
+            class="gallery flex h-80 items-center justify-center rounded-md bg-slate-200">
+            <h2>Foto Galerija</h2>
+          </div>
+
+          <div class="related-articles mt-10 flex flex-col gap-y-6">
+            <h1 class="pt-10 text-center lg:text-left">Saistītie raksti</h1>
+
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+          </div>
+        </div>
+        <aside
+          class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+          <div class="articles-widget bg-slate-100">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span>
+                  <span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Viedoklis</span
+                  >
+                  <span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Mortens Hansens</span
+                  >
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span
+                  ><span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Speciāli IR</span
+                  ><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >guntis keisels</span
+                  >
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <section id="cards-1/4">
+        <h1
+          class="title container pl-4 text-center lg:my-8 lg:pl-0 lg:text-left">
+          Jaunākais žurnālā
+        </h1>
+        <div
+          class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
+          {{>card tag="Komentārs" title="Dace Rēķe, instagramā māca latviešu
+          valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa
+          (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+          author="Laura Dumbere"}} {{>card tag="Komentārs" title="Satriecošais
+          spriedums Maximas lietā - reportāža no tiesas zāles" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} {{>card
+          tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} {{>card
+          tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}}
+        </div>
+        <div
+          class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
+          {{>btn-cta-black label="Vairāk rakstu"}}
+        </div>
+        <div
+          class="social-block-botto container my-20 flex max-w-md flex-col gap-6 px-8 py-8 lg:px-0">
+          <h4 class="text-center font-serif">
+            <b>Mums ir pa ceļam</b> — lasi jaunāko savā laika joslā!
+          </h4>
+          <div class="social-buttons flex justify-center gap-x-4">
+            <span><a href="">{{>instagram}}</a></span>
+            <span><a href="">{{>facebook}}</a></span>
+            <span><a href="">{{>twitter}}</a></span>
+          </div>
+        </div>
+      </section>
+    </div>
+    {{>footer}}
+  </body>
+</html>

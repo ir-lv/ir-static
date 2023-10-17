@@ -1,0 +1,96 @@
+<li
+  class="has-children px-4 pt-3"
+  :class="$store.header.showSubmenu ? 'active' : ''"
+  @click.away="$store.header.showSubmenu=false">
+  <a
+    aria-current="page"
+    x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
+    class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all"
+    >Tēmas
+    <svg
+      class="-mt-[0.1rem]"
+      width="6"
+      height="10"
+      viewBox="0 0 6 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      :class="$store.header.showSubmenu ? 'rotate-90' : ''">
+      <path
+        d="M1 1L5 5L1 9"
+        stroke="#212225"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </a>
+  <ul
+    x-cloak
+    class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-md"
+    x-show="$store.header.showSubmenu"
+    x-transition.opacity>
+    <li>
+      <b
+        class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]"
+        >Tēmas</b
+      >
+      <ul>
+        <li><a href="article.html" class="hover:text-ir-red">Politika</a></li>
+        <li><a href="article.html" class="hover:text-ir-red">Personības</a></li>
+        <li><a href="article.html" class="hover:text-ir-red">Nauda</a></li>
+        <li><a href="article.html" class="hover:text-ir-red">Kultūra</a></li>
+      </ul>
+    </li>
+    <li>
+      <b
+        class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+        >Rubrikas</b
+      >
+      <ul>
+        <li><a href="article.html" class="hover:text-ir-red">Pētījumi</a></li>
+        <li><a href="article.html" class="hover:text-ir-red">Intervijas</a></li>
+        <li><a href="article.html" class="hover:text-ir-red">Recenzijas</a></li>
+        <li>
+          <a href="article.html" class="hover:text-ir-red">IR Komentāri</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li><a href="article.html" class="hover:text-ir-red">Viedokļi</a></li>
+        <li>
+          <a href="article.html" class="hover:text-ir-red">Vāka raksti</a>
+        </li>
+        <li>
+          <a href="article.html" class="hover:text-ir-red">1 no 2 miljoniem</a>
+        </li>
+        <li><a href="article.html" class="hover:text-ir-red">Pasaulē</a></li>
+        <li><a href="article.html" class="hover:text-ir-red">Pusdienas</a></li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>
+          <a href="article.html" class="hover:text-ir-red">Apceļo Latviju</a>
+        </li>
+        <li>
+          <a href="article.html" class="hover:text-ir-red">Vēlēšanas 2024</a>
+        </li>
+        <li>
+          <a href="article.html" class="hover:text-ir-red">Ceļā uz 4. maiju</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <b
+        class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+        >Vairāk no IR</b
+      >
+      <ul>
+        <li><a href="article.html" class="hover:text-ir-red">Šķiltava</a></li>
+        <li><a href="article.html" class="hover:text-ir-red">Ārskats</a></li>
+        <li>
+          <a href="article.html" class="hover:text-ir-red">IR Svarīgākais</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
