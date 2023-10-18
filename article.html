@@ -1,0 +1,1605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IR žurnāls</title>
+    
+    
+    <script type="text/javascript">
+      window.document.addEventListener("alpine:init", () => {
+        let state = window.alpine.store("header");
+        state.showMenu = state.isScreenDesktop();
+        console.log(state.showMenu);
+      });
+    </script>
+    <script type="module" crossorigin src="./assets/main-1d6cd10d.js"></script>
+    <link rel="stylesheet" href="./assets/main-70d162c9.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <header
+        class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm"
+        x-data
+        :class="$store.header.showSubmenu ? 'lg:bg-slate-100' : ''">
+        <div class="container flex flex-wrap items-center justify-between">
+          <div class="order-2 flex items-center">
+            <a
+              aria-current="page"
+              href="./"
+              class="router-link-active router-link-exact-active">
+              <img src="./assets/ir-logo-3b1e43b2.svg" alt="" />
+            </a>
+          </div>
+      
+          <nav role="navigation" aria-label="Main Navigation"
+            class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
+            :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu"
+            x-transition.opacity.duration.500ms>
+            <ul class="flex h-full flex-col leading-[2.8rem] lg:flex-row lg:items-end lg:gap-1">
+              <li
+            class="has-children px-4 pt-3"
+            :class="$store.header.showSubmenu ? 'active' : ''"
+            @click.away="$store.header.showSubmenu=false">
+            <a
+              aria-current="page"
+              x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
+              class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all"
+              >Tēmas
+              <svg
+                class="-mt-[0.1rem]"
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                :class="$store.header.showSubmenu ? 'rotate-90' : ''">
+                <path
+                  d="M1 1L5 5L1 9"
+                  stroke="#212225"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <ul
+              x-cloak
+              class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-md"
+              x-show="$store.header.showSubmenu"
+              x-transition.opacity>
+              <li>
+                <b
+                  class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]"
+                  >Tēmas</b
+                >
+                <ul>
+                  <li><a href="article.html" class="hover:text-ir-red">Politika</a></li>
+                  <li><a href="article.html" class="hover:text-ir-red">Personības</a></li>
+                  <li><a href="article.html" class="hover:text-ir-red">Nauda</a></li>
+                  <li><a href="article.html" class="hover:text-ir-red">Kultūra</a></li>
+                </ul>
+              </li>
+              <li>
+                <b
+                  class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+                  >Rubrikas</b
+                >
+                <ul>
+                  <li><a href="article.html" class="hover:text-ir-red">Pētījumi</a></li>
+                  <li><a href="article.html" class="hover:text-ir-red">Intervijas</a></li>
+                  <li><a href="article.html" class="hover:text-ir-red">Recenzijas</a></li>
+                  <li>
+                    <a href="article.html" class="hover:text-ir-red">IR Komentāri</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="article.html" class="hover:text-ir-red">Viedokļi</a></li>
+                  <li>
+                    <a href="article.html" class="hover:text-ir-red">Vāka raksti</a>
+                  </li>
+                  <li>
+                    <a href="article.html" class="hover:text-ir-red">1 no 2 miljoniem</a>
+                  </li>
+                  <li><a href="article.html" class="hover:text-ir-red">Pasaulē</a></li>
+                  <li><a href="article.html" class="hover:text-ir-red">Pusdienas</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li>
+                    <a href="article.html" class="hover:text-ir-red">Apceļo Latviju</a>
+                  </li>
+                  <li>
+                    <a href="article.html" class="hover:text-ir-red">Vēlēšanas 2024</a>
+                  </li>
+                  <li>
+                    <a href="article.html" class="hover:text-ir-red">Ceļā uz 4. maiju</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b
+                  class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+                  >Vairāk no IR</b
+                >
+                <ul>
+                  <li><a href="article.html" class="hover:text-ir-red">Šķiltava</a></li>
+                  <li><a href="article.html" class="hover:text-ir-red">Ārskats</a></li>
+                  <li>
+                    <a href="article.html" class="hover:text-ir-red">IR Svarīgākais</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+           <li class="px-4 pt-3">
+            <a
+              href="article.html"
+              class="flex w-full text-ir-red relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+              >Vēlēšanas 2024</a
+            >
+          </li>
+          
+              <li class="px-4 pt-3">
+            <a
+              href="magazine.html"
+              class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+              >Žurnāli</a
+            >
+          </li>
+           <li class="px-4 pt-3">
+            <a
+              href="article.html"
+              class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+              >Abonēšana</a
+            >
+          </li>
+           <li class="px-4 pt-3">
+            <a
+              href="article.html"
+              class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+              >Noteikumi</a
+            >
+          </li>
+          
+            </ul>
+          </nav>
+          <div class="flex items-center justify-end gap-4 lg:order-last lg:ml-auto">
+            <div x-data class="cursor-pointer">
+        <a
+          x-show="$store.header.isLoggedIn !=true"
+          x-on:click="$store.header.isLoggedIn = true"
+          class="flex items-center pl-4 lg:pl-0"
+          title="Sign In">
+          <img src="./assets/sign_in-5c74b4a3.svg" alt="" /><span class="font-serif"
+            >Ienākt</span
+          >
+        </a>
+        <div
+          x-cloak
+          class="logged-in flex items-center gap-x-4 pl-4"
+          x-show="$store.header.isLoggedIn">
+          <a href="" class="font-serif underline">Annemarija</a>
+          <a x-on:click="$store.header.isLoggedIn = false" class="flex items-center">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M25.3536 16.3536C25.5488 16.1583 25.5488 15.8417 25.3536 15.6464L22.1716 12.4645C21.9763 12.2692 21.6597 12.2692 21.4645 12.4645C21.2692 12.6597 21.2692 12.9763 21.4645 13.1716L24.2929 16L21.4645 18.8284C21.2692 19.0237 21.2692 19.3403 21.4645 19.5355C21.6597 19.7308 21.9763 19.7308 22.1716 19.5355L25.3536 16.3536ZM11 16.5L25 16.5V15.5L11 15.5V16.5Z"
+                fill="#212225" />
+              <path
+                d="M10 12C7.79086 12 6 13.7909 6 16C6 18.2091 7.79086 20 10 20"
+                stroke="#212225" />
+            </svg>
+            <span class="font-serif">Iziet</span>
+          </a>
+        </div>
+      </div>
+       <div
+        @click="$store.header.showSearch = !$store.header.showSearch"
+        class="hidden cursor-pointer lg:block"
+        title="Meklēt"
+        aria-label="Meklēt">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+          <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
+        </svg>
+      </div>
+      
+          </div>
+      
+          <div id="hamburger" class="order-3 lg:hidden">
+            <button
+              @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
+              class="flex justify-between px-2 py-4">
+              <svg
+                x-show="!$store.header.showMenu"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line
+                  x1="5.5"
+                  y1="11.5"
+                  x2="34.5"
+                  y2="11.5"
+                  stroke="#2E2E30"
+                  stroke-linecap="square" />
+                <line
+                  x1="5.5"
+                  y1="19.5"
+                  x2="34.5"
+                  y2="19.5"
+                  stroke="#2E2E30"
+                  stroke-linecap="square" />
+                <line
+                  x1="20.5"
+                  y1="27.5"
+                  x2="34.5"
+                  y2="27.5"
+                  stroke="#2E2E30"
+                  stroke-linecap="square" />
+              </svg>
+          
+              <svg
+                x-show="$store.header.showMenu"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line
+                  x1="10.7071"
+                  y1="9.99982"
+                  x2="30.0002"
+                  y2="29.2929"
+                  stroke="#212225"
+                  stroke-linecap="square" />
+                <line
+                  x1="11"
+                  y1="29.2929"
+                  x2="30.2927"
+                  y2="9.9997"
+                  stroke="#212225"
+                  stroke-linecap="square" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      
+        <div
+          :class="$store.header.showSearch ? 'block' : '' "
+          @click.away="$store.header.showSearch=false"
+          x-cloak
+          x-show="$store.header.showSearch"
+          x-transition.opacity
+          class="container relative flex flex-col lg:flex-row w-full justify-center bg-slate-100 p-4 gap-4 ">
+          <div class="line-item relative flex">
+            <input
+              type="text"
+              class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[570px]"
+              placeholder="Meklēt"
+              class="font-serif" />
+            <a
+              title="Meklēt"
+              href="search.html"
+              class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+                <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
+              </svg>
+            </a>
+          </div>
+          <div class="line-item relative flex">
+            <input
+              type="text"
+              class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+              placeholder="Datums no"
+              value="08.2001"
+              class="font-serif" />
+            <a
+              title="Meklēt"
+              href="search.html"
+              class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+                <path
+                  d="M16 3V7"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+                <path
+                  d="M8 3V7"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+                <path
+                  d="M4 10H20"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <div class="line-item relative flex">
+            <input
+              type="text"
+              class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+              placeholder="Datums līdz"
+              value="10.2002"
+              class="font-serif" />
+            <a
+              title="Meklēt"
+              href="search.html"
+              class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+                <path
+                  d="M16 3V7"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+                <path
+                  d="M8 3V7"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+                <path
+                  d="M4 10H20"
+                  stroke="#3A3C41"
+                  stroke-linecap="square"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!---->
+      </header>
+      <div
+        x-data="article"
+        x-intersect="dimToolbar = false"
+        x-intersect:leave="dimToolbar = true"
+        class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
+        <div
+          class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-8">
+          <a href="" class="category-tag font-serif">Analīze</a>
+          <h1 class="title max-w-screen-sm leading-tight">
+            Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
+          </h1>
+          <div class="article-meta flex items-center gap-x-4 lg:gap-x-4">
+            <div class="profile-thumb h-12 w-12 rounded-full bg-slate-500"></div>
+            <ul
+              class="meta-info flex flex-wrap items-center gap-x-3 font-serif uppercase lg:gap-3">
+              <li
+                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+                Inga Spriņģe, Re:Baltica
+              </li>
+              <li
+                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+                20. novembris, 2019
+              </li>
+              <li
+                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+                ir
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          x-show="!dimToolbar"
+          x-transition.opacity.500ms
+          id="toolbar-container"
+          class="order-first py-4 lg:fixed lg:top-[35vh] lg:w-[64px]">
+          <ul class="flex items-center justify-end gap-4 lg:flex-col lg:items-start">
+            <li>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 12C24 12 25 13.5 25 16C25 18.5 24 20 24 20"
+                  stroke="#212225" />
+                <path
+                  d="M22 13C22 13 23 14.125 23 16C23 17.875 22 19 22 19"
+                  stroke="#212225" />
+                <path
+                  d="M7 17.5964V14.4036C7 13.9476 7.1945 13.5103 7.54073 13.1879C7.88695 12.8655 8.35652 12.6843 8.84615 12.6843H11.5231C11.7036 12.6843 11.8801 12.635 12.0308 12.5425L17.5692 9.1417C17.7084 9.05636 17.8698 9.00768 18.0362 9.00084C18.2027 8.99399 18.368 9.02924 18.5147 9.10283C18.6614 9.17643 18.784 9.28562 18.8694 9.41884C18.9548 9.55206 19 9.70434 19 9.85951V22.1405C19 22.2957 18.9548 22.4479 18.8694 22.5812C18.784 22.7144 18.6614 22.8236 18.5147 22.8972C18.368 22.9708 18.2027 23.006 18.0362 22.9992C17.8698 22.9923 17.7084 22.9436 17.5692 22.8583L12.0308 19.4575C11.8801 19.365 11.7036 19.3157 11.5231 19.3157H8.84615C8.35652 19.3157 7.88695 19.1345 7.54073 18.8121C7.1945 18.4897 7 18.0524 7 17.5964Z"
+                  stroke="#212225" />
+                <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="#DFE3E8" />
+              </svg>
+            </li>
+            <li>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.2947 23H8.56867C8.41785 23 8.27321 22.9378 8.16656 22.8271C8.05991 22.7164 8 22.5663 8 22.4097V12.769C8 12.6124 8.05991 12.4623 8.16656 12.3516C8.27321 12.2409 8.41785 12.1787 8.56867 12.1787H11.1922C11.5195 12.1787 11.8413 12.0907 12.1261 11.9233C12.411 11.7559 12.6492 11.5148 12.8176 11.2235L15.3861 6.77989C15.5798 6.44428 15.885 6.1937 16.2442 6.07528C16.6035 5.95685 16.992 5.97874 17.3368 6.13682C17.6816 6.29491 17.9589 6.57829 18.1164 6.93369C18.274 7.28908 18.3011 7.69199 18.1925 8.06664L17.2239 11.4193C17.1985 11.5073 17.1933 11.6003 17.2086 11.6908C17.224 11.7814 17.2595 11.8669 17.3123 11.9407C17.3652 12.0144 17.4339 12.0743 17.513 12.1157C17.5921 12.157 17.6794 12.1786 17.7679 12.1787H22.104C22.3955 12.1787 22.6831 12.2484 22.9444 12.3824C23.2057 12.5165 23.4337 12.7113 23.6107 12.9517C23.7876 13.1921 23.9088 13.4716 23.9648 13.7686C24.0207 14.0655 24.0099 14.3718 23.9333 14.6637L22.123 21.5499C22.0137 21.9661 21.7756 22.3335 21.4454 22.5955C21.1153 22.8575 20.7103 22.9997 20.2947 23Z"
+                  stroke="#212225"
+                  stroke-linecap="round" />
+                <path
+                  d="M11 23L11 13"
+                  stroke="#212225"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </li>
+            <li>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+              </svg>
+            </li>
+            <li>
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22 12C23.6569 12 25 10.6569 25 9C25 7.34315 23.6569 6 22 6C20.3431 6 19 7.34315 19 9C19 10.6569 20.3431 12 22 12Z"
+                  stroke="#212225"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M10 19C11.6569 19 13 17.6569 13 16C13 14.3431 11.6569 13 10 13C8.34315 13 7 14.3431 7 16C7 17.6569 8.34315 19 10 19Z"
+                  stroke="#212225"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M22 26C23.6569 26 25 24.6569 25 23C25 21.3431 23.6569 20 22 20C20.3431 20 19 21.3431 19 23C19 24.6569 20.3431 26 22 26Z"
+                  stroke="#212225"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M13 18L19 22"
+                  stroke="#212225"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M19 10L13 14"
+                  stroke="#212225"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </li>
+            <li>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 12C24 5.37188 18.6281 0 12 0C5.37188 0 0 5.37188 0 12C0 17.9906 4.3875 22.9547 10.125 23.8547V15.4688H7.07812V12H10.125V9.35625C10.125 6.34922 11.9156 4.6875 14.6578 4.6875C15.9703 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8297C14.3391 7.875 13.875 8.80078 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8547C19.6125 22.9547 24 17.9906 24 12Z"
+                  fill="#212225" />
+                <path
+                  d="M16.6711 15.4688L17.2031 12H13.875V9.75C13.875 8.80078 14.3391 7.875 15.8297 7.875H17.3438V4.92188C17.3438 4.92188 15.9703 4.6875 14.6578 4.6875C11.9156 4.6875 10.125 6.34922 10.125 9.35625V12H7.07812V15.4688H10.125V23.8547C10.7367 23.9508 11.3625 24 12 24C12.6375 24 13.2633 23.9508 13.875 23.8547V15.4688H16.6711Z"
+                  fill="white" />
+              </svg>
+            </li>
+            <li>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                  fill="#212225" />
+                <path
+                  d="M9.80383 18.3301C15.1258 18.3301 18.0358 13.9201 18.0358 10.0981C18.0358 9.97212 18.0358 9.84612 18.0298 9.72612C18.5938 9.31812 19.0858 8.80812 19.4758 8.22612C18.9598 8.45412 18.4018 8.61012 17.8138 8.68212C18.4138 8.32212 18.8698 7.75812 19.0858 7.08012C18.5278 7.41012 17.9098 7.65012 17.2498 7.78212C16.7218 7.21812 15.9718 6.87012 15.1378 6.87012C13.5418 6.87012 12.2458 8.16612 12.2458 9.76212C12.2458 9.99012 12.2698 10.2121 12.3238 10.4221C9.91783 10.3021 7.78783 9.15012 6.35984 7.39812C6.11384 7.82412 5.96984 8.32212 5.96984 8.85012C5.96984 9.85212 6.47984 10.7401 7.25983 11.2561C6.78584 11.2441 6.34184 11.1121 5.95184 10.8961C5.95184 10.9081 5.95184 10.9201 5.95184 10.9321C5.95184 12.3361 6.94783 13.5001 8.27383 13.7701C8.03383 13.8361 7.77583 13.8721 7.51183 13.8721C7.32583 13.8721 7.14583 13.8541 6.96583 13.8181C7.33183 14.9701 8.39983 15.8041 9.66583 15.8281C8.67583 16.6021 7.42783 17.0641 6.07184 17.0641C5.83784 17.0641 5.60984 17.0521 5.38184 17.0221C6.64784 17.8501 8.17183 18.3301 9.80383 18.3301Z"
+                  fill="white" />
+              </svg>
+            </li>
+            <li>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                  fill="#212225" />
+                <path
+                  d="M11.25 12.454C11.4657 12.7535 11.741 13.0013 12.0571 13.1806C12.3732 13.36 12.7227 13.4666 13.0819 13.4933C13.4412 13.5201 13.8018 13.4662 14.1393 13.3355C14.4767 13.2048 14.7832 13.0002 15.0378 12.7357L16.5449 11.1706C17.0025 10.6786 17.2556 10.0197 17.2499 9.33579C17.2442 8.65186 16.98 7.99763 16.5143 7.514C16.0486 7.03037 15.4186 6.75604 14.76 6.7501C14.1014 6.74416 13.4669 7.00707 12.9932 7.48223L12.1291 8.37432"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M12.75 11.546C12.5343 11.2465 12.259 10.9987 11.9429 10.8194C11.6268 10.64 11.2773 10.5334 10.9181 10.5067C10.5588 10.4799 10.1982 10.5338 9.86074 10.6645C9.52327 10.7952 9.21683 10.9998 8.96218 11.2643L7.4551 12.8294C6.99755 13.3214 6.74437 13.9803 6.75009 14.6642C6.75582 15.3481 7.01998 16.0024 7.48569 16.486C7.9514 16.9696 8.5814 17.244 9.23999 17.2499C9.89858 17.2558 10.5331 16.9929 11.0068 16.5178L11.8658 15.6257"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="article-content relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
+          <figure>
+            <img src="./assets/article-featured-524d864a.jpg" alt="" />
+            <p class="img-meta mt-2 font-serif">
+              Ilustrācija — Reinis Hofmanis
+            </p>
+          </figure>
+          <h3 class="py-6">
+            Pagājušajā pavasarī bijušais dzīvesbiedrs nogrieza Santai* ausi. Tad
+            devās uz policiju, bet pa ceļam ausi izmeta — tā zuda iespēja ausi
+            piešūt atpakaļ. Taču gada laikā Santa ir zaudējusi vēl daudz vairāk:
+            darbu un bērnus. Kāpēc?
+          </h3>
+          <p>
+            Policija bija pārsteigta. «Mēs viņa pirmo versiju neierakstījām, jo
+            neviens negaidīja, ka atnāks kāds un teiks: es nogriezu sievai
+            ausi,» atceras Valsts policijas Ķengaraga iecirkņa priekšniece Inga
+            Meikšāne. Vīrietis nosaucis vairākas vietas, kur ausi esot izmetis.
+            «Ja jūs redzētu, kā policisti meklēja ar grābekļiem un metāla
+            detektoru (pie auss bija palicis auskars) — pa peļķēm, visur.
+            Neatradām.»
+          </p>
+          <p>
+            Vardarbības kulminācijai šajā ģimenē ir astoņu gadu priekšvēsture ar
+            dzeršanu, kaušanos, greizsirdību un postošu pieķeršanos, no kuras
+            nav spēka aiziet. Notikušais uzdod neērtu jautājumu — kādi ir valsts
+            pienākumi pret cilvēku, kas sev palīdzēt nevar vai nevēlas?
+          </p>
+          <p>
+            Var teikt, ka Santu pazudināja pašas raksturs. Bet to veicināja arī
+            valsts iestādes, kuras, darbojoties bez empātijas un dziļāka
+            situācijas novērtējuma, nekā strikti prasa likums, pameta bez
+            atbalsta cilvēku milzīgā stresā. Pēc auss nogriešanas Andreju
+            apcietināja. Pēc diviem mēnešiem izlaida — pretēji policijas domām,
+            Rīgas Latgales priekšpilsētas tiesnese Vivita Freimane uzskatīja, ka
+            viņš ir labojies. Andrejs atsāka Santu psiholoģiski terorizēt.
+            Sieviete salūza un sāka dzert, zaudējot gan darbu, gan bērnus.
+            Varmāka apgalvo — visu darījis mīlot. Sitis, lai viņa beidz dzert.
+          </p>
+          <div class="paywall-fog relative">
+            <div
+              class="fog-overlay absolute bottom-0 h-full w-full bg-gradient-to-t from-white to-transparent"></div>
+            <h2>Prologs. «Man ir bail»</h2>
+            <p>
+              Par Santas situāciju uzzināju, rakstot iepriekšējo Re:Baltica
+              sēriju par vardarbību. E-pastā iekrita vēstule ar tekstu: «Vīrs
+              man nogrieza ausi. Viņu tūlīt izlaidīs no apcietinājuma. Man ir
+              bail.» Sekoja vārds un telefona numurs. Vēlāk izrādījās, ka
+              vēstuli uzrakstījusi kolēģe. Kā daudzas citas reizes, Santa pati
+              nerīkojas, bet paļaujas uz citiem. Vai padodas.
+            </p>
+            <p>
+              Tā pērn maijā iepazināmies. Īsa gaišmate ap 40. Kopš auss
+              nogriešanas bija pagājuši divi mēneši. Vīrietis bija tikko
+              izlaists no apcietinājuma. Santa runāja lēni, bet domas bija
+              skaidras. Viņa lietoja nomierinošas zāles, lai izturētu spriedzi.
+              Abu kopdzīvē vardarbības bijis tik daudz, ka Santa jauc datumus un
+              detaļas. Tādēļ šajā rakstā balstos uz dokumentiem, ko viņa iedeva.
+            </p>
+          </div>
+          <div
+            class="paywall-register-free my-8 flex flex-col items-center justify-center text-center">
+            <h2>Pirms lasi tālāk, iepazīsimies!</h2>
+            <p class="font-serif">
+              Ienāc vai reģistrējies portālā un saņem pieeju bezmaksas rakstiem
+              un IR Svarīgākais vēstkopai
+            </p>
+            <div
+              class="line-item flex w-full max-w-xs flex-col items-center gap-y-3 font-serif">
+              <input
+                type="text"
+                class="w-full rounded-md border-slate-200 px-4 py-3 font-serif"
+                placeholder="E-pasts" />
+              <a
+                href=""
+                class="button block w-full cursor-pointer whitespace-nowrap rounded-md bg-ir-dark-gray px-7 py-3 text-center font-serif text-white transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs  ">
+                Turpināt
+              </a>
+              <p>vai</p>
+              <a
+                href=""
+                class="inline-flex items-center w-full cursor-pointer  whitespace-nowrap rounded-md bg-[#3B78EA] text-center font-serif text-white transition-colors hover:bg-[#2465DE] focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs  ">
+                <span
+                  class="rounded-bl-md rounded-tl-md bg-white p-3 outline outline-1 -outline-offset-1 outline-[#3B78EA]">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_810_19129)">
+                      <path
+                        d="M24 12C24 5.37188 18.6281 0 12 0C5.37188 0 0 5.37188 0 12C0 17.9906 4.3875 22.9547 10.125 23.8547V15.4688H7.07812V12H10.125V9.35625C10.125 6.34922 11.9156 4.6875 14.6578 4.6875C15.9703 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8297C14.3391 7.875 13.875 8.80078 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8547C19.6125 22.9547 24 17.9906 24 12Z"
+                        fill="#1877F2" />
+                      <path
+                        d="M16.6711 15.4688L17.2031 12H13.875V9.75C13.875 8.80078 14.3391 7.875 15.8297 7.875H17.3438V4.92188C17.3438 4.92188 15.9703 4.6875 14.6578 4.6875C11.9156 4.6875 10.125 6.34922 10.125 9.35625V12H7.07812V15.4688H10.125V23.8547C10.7367 23.9508 11.3625 24 12 24C12.6375 24 13.2633 23.9508 13.875 23.8547V15.4688H16.6711Z"
+                        fill="white" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_810_19129">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div class="-ml-12 flex-1">Turpināt ar Facebook</div>
+              </a>
+              <a
+                href=""
+                class="inline-flex items-center w-full cursor-pointer  whitespace-nowrap rounded-md bg-[#4285F4] text-center font-serif text-white transition-colors hover:bg-[#3476E3] focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs  ">
+                <span
+                  class="rounded-bl-md rounded-tl-md bg-white p-3 outline outline-1 -outline-offset-1 outline-[#4285F4]">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_810_19109)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M23.52 12.2727C23.52 11.4218 23.4436 10.6036 23.3018 9.81812H12V14.4599H18.4582C18.18 15.9599 17.3345 17.2308 16.0636 18.0817V21.0927H19.9418C22.2109 19.0036 23.52 15.9272 23.52 12.2727Z"
+                        fill="#4285F4" />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 24C15.24 24 17.9564 22.9254 19.9418 21.0927L16.0636 18.0818C14.9891 18.8018 13.6145 19.2272 12 19.2272C8.87455 19.2272 6.22909 17.1163 5.28546 14.28H1.27637V17.3891C3.25091 21.3109 7.30909 24 12 24Z"
+                        fill="#34A853" />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.28545 14.28C5.04545 13.56 4.90909 12.7909 4.90909 12C4.90909 11.2091 5.04545 10.44 5.28545 9.71999V6.6109H1.27636C0.463636 8.2309 0 10.0636 0 12C0 13.9364 0.463636 15.7691 1.27636 17.3891L5.28545 14.28Z"
+                        fill="#FBBC05" />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 4.77273C13.7618 4.77273 15.3436 5.37818 16.5873 6.56727L20.0291 3.12545C17.9509 1.18909 15.2345 0 12 0C7.30909 0 3.25091 2.68909 1.27637 6.61091L5.28546 9.72C6.22909 6.88364 8.87455 4.77273 12 4.77273Z"
+                        fill="#EA4335" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_810_19109">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <div class="-ml-12 flex-1">Turpināt ar Google</div>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="paywall-subscribe my-14 flex flex-col items-center justify-center gap-3 text-center">
+            <h2 class="mb-8">
+              Turpini lasīt, atbalsti kvalitatīvu žurnālistiku!
+            </h2>
+            <div>
+              <svg
+                width="31"
+                height="30"
+                viewBox="0 0 31 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_3340_6049)">
+                  <g clip-path="url(#clip1_3340_6049)">
+                    <path
+                      d="M15.5693 0C7.28956 0 0.569336 6.72023 0.569336 15C0.569336 23.2798 7.28956 30 15.5693 30C23.8491 30 30.5693 23.2798 30.5693 15C30.5693 6.72023 23.8491 0 15.5693 0Z"
+                      fill="#EE2A27" />
+                    <path
+                      d="M10.7772 5.18919C11.7696 5.18919 12.6203 6.06821 12.6203 7.089C12.6203 8.16651 11.798 9.04552 10.7772 9.04552C9.75639 9.04552 8.93408 8.16651 8.93408 7.089C8.93408 6.06821 9.78474 5.18919 10.7772 5.18919Z"
+                      fill="white" />
+                    <path
+                      d="M23.9058 15.5672C22.7433 15.5672 22.0344 14.6031 22.1195 13.6957C22.1762 13.2421 22.403 12.76 22.2045 12.278C21.9777 11.7109 21.2971 11.7676 20.6733 12.0511C19.7092 12.5048 19.0287 13.7525 19.0287 15.1986V19.4235L19.0571 20.0473C19.1138 21.3233 19.7943 22.0606 20.9852 22.0606V22.5426H14.265H7.54478V22.0606C8.679 22.0606 9.38788 21.3517 9.47295 20.0473L9.52966 19.2534V14.915C9.52966 14.2912 9.33117 13.7525 8.96255 13.4122C8.62229 13.0719 8.14025 12.9301 7.60149 12.9585L7.45972 12.4765C7.45972 12.4765 12.11 10.8318 12.1667 10.8035C12.1951 10.7751 12.2518 10.8035 12.2518 10.8602V19.4235L12.2801 20.019C12.3368 21.295 13.0457 22.0322 14.2083 22.0322C15.3425 22.0322 16.0514 21.3233 16.1365 20.019L16.1648 19.1967V14.8583C16.1648 14.2345 15.9663 13.6957 15.5977 13.3555C15.2574 13.0152 14.7754 12.8734 14.2367 12.9018L14.1799 12.4765L18.1497 11.087L18.1781 11.1438C18.3198 11.3139 18.7168 11.9661 18.9153 12.76C19.3406 12.3063 19.9077 11.8243 20.5315 11.4557C20.5315 11.4557 20.5315 11.4557 20.5599 11.4557C21.127 11.1438 21.7792 10.9169 22.4314 10.9169C23.3954 10.8886 24.2461 11.2572 24.8983 11.8243C25.4087 12.2496 25.7206 13.0152 25.7206 13.639C25.7206 14.5748 25.0684 15.5672 23.9058 15.5672Z"
+                      fill="white" />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_3340_6049">
+                    <rect
+                      width="30"
+                      height="30"
+                      fill="white"
+                      transform="translate(0.569336)" />
+                  </clipPath>
+                  <clipPath id="clip1_3340_6049">
+                    <rect
+                      width="30"
+                      height="30"
+                      fill="white"
+                      transform="translate(0.569336)" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <p class="font-serif">
+              Iepazīšanās piedāvājums ir.lv abonēšanai - pirmie trīs mēneši par
+              2,99 eur/mēnesī. Atcel jebkurā brīdī.
+            </p>
+            <div
+              class="line-item flex w-full max-w-md flex-col items-center gap-3 font-serif lg:flex-row">
+              <a
+  href=""
+  class="button block w-full cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+  Abonēt
+</a>
+ <a
+  href=""
+  class="button block w-full cursor-pointer flex-col whitespace-nowrap rounded-md px-7 py-3 text-center font-serif text-ir-dark-gray outline outline-1 -outline-offset-1 outline-ir-dark-gray transition-colors hover:bg-ir-dark-gray hover:text-white focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs ">
+  Turpināt bez Abonēšanas
+</a>
+
+            </div>
+          </div>
+
+          <h2>1. cēliens. Uz riņķi</h2>
+          <p>
+            Santa un Andrejs iepazinās 2011. gadā. Vīrietis strādāja
+            celtniecībā, Santas mātei likās varens ķēriens: zelta rokas, varēs
+            palīdzēt lauku mājās. Sākumā ar cieņu izturējās pret Santu un viņas
+            meitu no iepriekšējām attiecībām. Pēc gada Santa gaidīja bērnu un
+            Andrejs kļuva agresīvs. Sākumā tikai vārdos, bet mēnesi pēc bērna
+            piedzimšanas, 2013. gada pavasarī, vīrietis palaida rokas.
+            Ierosināta administratīvā lieta par maznozīmīgiem miesas bojājumiem,
+            bet Santa iesniegumu beigās atsauca. Parastais vardarbības aplis —
+            viņš nolūdzās, viņa piedeva.
+          </p>
+
+          <div class="content-cta flex flex-col items-center justify-center gap-4 py-10">
+            <svg
+              width="72"
+              height="72"
+              viewBox="0 0 72 72"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <rect width="72" height="72" fill="url(#pattern0)" />
+              <defs>
+                <pattern
+                  id="pattern0"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1">
+                  <use xlink:href="#image0_2905_6271" transform="scale(0.00377358)" />
+                </pattern>
+                <image
+                  id="image0_2905_6271"
+                  width="265"
+                  height="265"
+                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAAEJCAYAAACHaNJkAAAgAElEQVR4Ae2dBbgcRfa3Gw8OCyS4BgsEC+4uHwSHEFyDs8gSNEAgBNsFEiS46wLBIQR3FncPEjxocAvzPW/t/vp/bt2emZ650z09N3We597qKevqU9WnTx2rCUqlUikKEDAQMBAwUAYDE5bJD9kBAwEDAQMOA4FIhIUQMBAwUBEDgUhURE8oDBgIGAhEIqyBgIGAgYoYCESiInpCYcBAwEAgEmENBAwEDFTEQCASFdETCgMGAgYCkQhrIGAgYKAiBgKRqIieUBgwEDAQiERYAwEDAQMVMRCIREX0hMKAgYCBQCTCGggYCBioiIFAJCqiJxQGDAQMBCIR1kDAQMBARQwEIlERPaEwYCBgIBCJsAYCBgIGKmIgEImK6AmFAQMBA4FIhDUQMBAwUBEDgUhURE8oDBgIGAhEIqyBgIGAgYoYCESiInpCYcBAwEAgEmENBAwEDFTEQCASFdETCgMGAgYCkQhrIGAgYKAiBgKRqIieUBgwEDAQiERYAwEDAQMVMRCIREX0hMKAgYCBQCTCGggYCBioiIFAJCqiJxQGDAQMBCIR1kDAQMBARQwEIlERPaEwYCBgIBCJsAYCBgIGKmIgEImK6AmFAQMBA4FIhDUQMBAwUBEDgUhURE8oDBgIGAhEIqyBgIGAgYoYCESiInpCYcBAwEAgEmENBAwEDFTEwMQVS8fDwjfeeCMaPnx4NMMMM0TdunWLunfvHi266KLRBBNMMB5iIzxywEAUTVAqlUqdARGPP/549O6770Y8zqyzzhr17NkzmmWWWWp6tI8++ihaZJFFoh9++KFNOwjGXHPNFa200krRZpttFvXo0SOaaaaZogknDIxYG0SFH50TAxCJVoZffvmltP3220Po2v0tu+yypeOOO6701FNPlX799deqj3n88ce7PiaaaKLS1FNP3a4/e4+uXbuW+vXrV3r33Xer9hsqBAy0MgZanpNYYIEFonfeeSeadtppoy5dukTffPNN9Mcff7Sj6JRvvPHG0XbbbRets846iVzAKqusEj322GPR+uuvH919993R22+/Hb322mvRJ598Ej311FPRiBEjoq+//rpd30sttVTUq1evaM0114w23XRTN452lUJGwECLYqClicSdd94ZbbTRRg719957b7T22mu7l/i5556L+Hv66aejkSNHRj///HOb6ZlyyindCw2BWXDBBaM99tgj+uCDD6J55pnH1bviiiuiHXbYoU0bfvz++++uP+pCmC6//PJo7Nix7erdcccd0YYbbtguP2QEDLQiBlqaSPTt2ze67rrrnAyCF3eSSSZpNwe//vpr9Pzzz0e33nprdNVVV0WffvppuzrIHKaffnon05h44omj999/P5p99tnb1fMzIBBXX3214zJefvnl6KWXXnJVkFsg/AwQMNAZMNCyRAK2f955542+//77aP/994+GDh1adT4QarKdgOt49dVXoyeffDL6/PPP27WDo4AT2H333aPFF1+8XXlSxujRox0n8tdff0UHHXRQdPrppydVC3kBA62HgVYVqPzzn/+MBYuvvfZa3Y/x6quvloYMGVJaY401SpNNNlncp4SU3bt3dwLKu+++u/T777+XvY8dzxNPPFG2XigIGGg1DKAybElYYokl3Avdu3fvho3/hx9+KN12222lnXbaKVG7McUUU7iyJCKwyiqruPGsttpqDRtP6ChgoAgYaEki8dxzz8Vf/MsvvzwTPP7xxx+lG2+8sbT55puXpppqqvh+4jDmmGOO0hlnnFH666+/Sl9//XVp8sknd3XOPffcTMYTOg0YaBYGWlImMXjw4Oioo45yVpEILKeaaqrM93loS2644YYIzcdnn30W32+yySaLZpxxRqcmJRNZBwZZAQIGOgsGWtJkEBUjsMIKK+RCILgXdhAnn3yy045w//XWW8+N4bfffosJBBkDBgxw9hSuMPwLGOgEGGg5TgLT6bnnnjtCi3DeeedFe+65Z9OmAQ3LtddeG6tB7UDgbjDeQk2LkRbGXI2C++67L7rlllui+eabL1p55ZWjJZZYIlH926j7hX7Gcww0a59T730vuuiiWD6AbKIo8OGHH5aOOeaY0pxzzhmPT/KLCSecsNSnTx9nHt7R8V566aXt+p9ppplKe++9d2nkyJGpzM87OobQfvzCQMtxEhgq6SuKQ1cR4cUXX4yuueYaJ8NAZmIBI60NNtjA2WFgHj7FFFPY4orXGIWx7QG6du0ajRs3rp2ZOKbpcDBbbLGF4zJwdgsQMNARDLQUkfjpp5/cVuOrr76K9tprr2jYsGEdefZc2mIaDsHAMpNxW8D9HFPytdZaK8JEnG0JQtBygGEXlp1sXd566y3nyo4V6RNPPBHdfvvt0ccff9yu6ZJLLun8SRZbbLFo2WWXddap7SqFjICBShhoJcbp3nvvjVnt++67r5WGXvrzzz9Ld955pzPMmnfeeePn0JaElG3JkksuWTriiCNKDz/8cJvnGzRoUNzmpptualPGD1SxzzzzTOnYY48t9ejRI65r++e6V69epfPPP9/Vb9dJyAgYSMBAS9lJHHjggW7xzzrrrKXffvst4XFaJ+uVV14pYaW55pprln2hp59+eucGf9ZZZ5W6devm6mG3kQaQkSC/wNhsggkmaHePQw89NE03oU7AQKmlthvYH7z++uvRrrvuGl188cWVGKSWKsO9ne0Drul4tuJb8t133yU+AzKJdddd121Pll56aecvgldrJRgzZozrD1nOYYcd5qr2798/OuWUUyo1C2UBA//FQKsQyueffz7+Gg4fPrxVhl3XONk6sN048sgjSyussEKixae2EVh6rrPOOqULL7ywNHbs2Ir3u+KKK2IcvvTSSxXrhsKAAWGgZTiJU0891X0FcQfH43LmmWceb+g87u4IJ7H6vP/++13qC0GFjBVXXDEiCA6aE4LgyBoVTQhes+Cud+/e0W233aYmIQ0YqIiBliESBJeBFceFWxaXFZ+sExdiSIaL+3vvvRc98sgjTrNB5Cwf0J5gcHXEEUc4zcexxx7rqhDsd6GFFvKrh98BA4kYaAkiwZ6aQLR8UQcNGuT8NhKfZjzOhEMg0A0qV+Jk+PYZQg0BfJHnoHatxUZD7culEC4ifP3555/RwIEDnaq6XN2Q32IY0L6jyOlDDz0U76X/85//FHmohRkbMofTTz/daTeSvFgnnXTS0m677easNL/77rsOj3vAgAHxHCEvWW655Zyc5KOPPupw36GD5mKgJTiJI488MjrppJOiaaaZxu2pG+kH0WI0va7h/vjjjy42JwZX+H34Rld4sq6++upua7Laaqs5WUYloy5/EGhikHd8++23LsAwXIUFDLqwAiXAMGeYSE5i64TrAmOguTQq3d0322wz95Vaeuml0zUItSpi4P333y8dcsghpb/97W9tvv7SmJAutdRSpf79+5cwYKsUkYsbWX+SESNGlB588MHS8ssvX7bv7bbbrkREsACtgYGW4CTmn39+F6T2wAMPjM4444wCk9zWGxrakgcffNAF/33mmWdcFHD/KeAqttxyS+c3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NBmYT5944oll2yUVPPzww3E25tR5A/e/8sor3W152TbbbLOah0Aft99+e9wOTiwPeOedd9x44SIALGUvvvjiaNttt63p9r/88ktcf5JJJomvs7zwLS3tetKHyObp2i8j389j3FqjtlzPo77020+xFm4WtBQnIT8JTQBIs9c+EjEfPuecc/zsir9hc4cNGxbXsV+0ODPjC20NZp111uioo46q6274Vlj466+/7M9Mri+99NJogQUWiEQgNthgA8cN1UogGJy+6myZpp566kzGazv9/fffnWm6zat0nfRS+2vR1vHLbN+2ns3nWmUzzzyzX5Tb75YiEtpjC3EWiTZP2Ovfv3+8RVFetfTggw+OcHQS/PTTT7rMLX377bfdvXjJ6mEz2ffj/wD3kMd+nhcMRzTJchg8fic4tomw14o8bbXYYtbbRy33/Pjjj+N5919o+9te03+533Y9+nVoZ8s1Tuqprl8ueZzq5pm2FJEot+B9hAqBtbLpp556anThhRe65nhsAggQ83YwktBORFHPkyblRR06dKiripOWXlwtvjR91FLnvPPOc4Tsuuuuc82QnXz00UfRLrvsUks37eqK8wEHeWw33nvvvXgM5dZTXKGGCx/v9jf30b1svrpXGb8rbbVVP6u0pYgEXpYWQGwScqkz/fTTO5dnW7/S9b777us8H6mz+eabR6eccoqrDoH4888/KzVteJk8KG+88Ubnrp3mBh988IHTJMDyA2gPBg0aFIng2AWXpr9qdeB2ll566WjvvfeOq0KU2GrMPvvscV69F7ipA8x5PcSy1vs+88wzZZtY3Nnrsg1qLPDXsP+b7ljPzYKWIhJWfZmESNhraUC+/fbb6Pnnn6+KV74gxG0gNgRArIebbropmm222dxvFkUWC6PSwNZZZx1XTBwFYirgms7z+AABI+4CqtJ55pkn1iRssskm0R133OGq62Vr1DNAdPr16+fU0biXA4svvrjDNTEoGgVsYYC8tDIQWR/8NZaEQz/P/+33yW+/36Q6fl49206/j7p/d8TIIu+2lTz02Obhb2HP/sSirxxgBswZmbTTH6bOAk6PJh/z5rwNqsp5vGLtiJcpbuiEw7Om14wVXwhrcPXuu+/G50HssssuerS6U84+wcBH+MK/g0jZWYB8KPLyWSBMnp6L1Boy2fykMtW1uLFtbHlSHb/cr4MjoA7A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" />
+              </defs>
+            </svg>
+            <h4 class="text-center font-serif"><b>Īsi par svarīgāko ik rītu</b> —
+                    pieraksties jaunumu vēstulei Ir Svarīgākais!</h4>
+            <div class="max-w-xs"><a
+            href=""
+            class="button block w-full cursor-pointer flex-col whitespace-nowrap rounded-md px-7 py-3 text-center font-serif text-ir-red outline outline-1 -outline-offset-1 outline-ir-red transition-colors hover:bg-ir-red hover:text-white focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs ">
+            Pierakstīties!
+          </a>
+          </div>
+          </div>
+
+          <span class="anchor relative"></span>
+          <p>
+            Pēc diviem gadiem, 2015. gada oktobrī, policija viņu uz četrām
+            stundām izolēja no dzīvesvietas. Administratīvajā protokolā fiksēta
+            «fiziska un emocionāla vardarbība pret bērnu». Pēc šī gadījuma Santa
+            ar centra Marta palīdzību tiesai lūdza pagaidu aizsardzību pret
+            vardarbību. Tiesa aizliedza Andrejam tuvoties viņai un bērniem. Taču
+            vienlaikus gaidīja, ka Santa rīkosies un mēneša laikā iesniegs tiesā
+            jaunu prasību. Šādi tiesas mudina sievietes, kuras lūdz aizsardzību
+            no varmākām, nokārtot attiecības līdz galam. Par to, ka Andrejs sit
+            Santu, pirmā uzzināja otra bērnudārza vadītāja Anita. «Viņa
+            piezvanīja. Neteica neko par aci. Tikai, ka nelaimes gadījums,
+            pakritusi,» stāsta Anita. Viņai likās aizdomīgi, ka ārstēšanai vajag
+            pusotru mēnesi. Kad atgriezās darbā, Anita tieši noprasīja, kas
+            notiek. Santa pastāstīja, ka viņu sit. Ka «nespēj tikt no Andreja
+            vaļā, ir paniskas bailes».
+          </p>
+
+          <div class="h-[400px] bg-slate-200">
+            <h3>Reklāma</h3>
+          </div>
+
+          <div class="py-8">
+            <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
+              <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
+                <div
+                  class="flex items-center gap-x-3 uppercase before:bottom-0 before:top-0 before:-ml-4 before:-mt-1 before:h-5 before:w-[2px] before:bg-ir-red">
+                  <span class="flex items-center gap-3 whitespace-nowrap">Pasaulē</span>
+                  <span
+                    class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Jānis Saliņš</span
+                  >
+                </div>
+                <div class="flex items-center uppercase"><a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
+            </div>
+                <h1 class="w-full text-[22px] leading-7">Ko apdraud mežu izciršana?</h1>
+                <p class="font-sans text-card-lead leading-relaxed text-gray-800">
+                  Vai atļaut cirst
+                        tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+                        aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? 
+                </p>
+              </div>
+            </figure>
+          </div>
+
+          <p>
+            Pēc diviem gadiem, 2015. gada oktobrī, policija viņu uz četrām
+            stundām izolēja no dzīvesvietas. Administratīvajā protokolā fiksēta
+            «fiziska un emocionāla vardarbība pret bērnu». Pēc šī gadījuma Santa
+            ar centra Marta palīdzību tiesai lūdza pagaidu aizsardzību pret
+            vardarbību. Tiesa aizliedza Andrejam tuvoties viņai un bērniem. Taču
+            vienlaikus gaidīja, ka Santa rīkosies un mēneša laikā iesniegs tiesā
+            jaunu prasību. Šādi tiesas mudina sievietes, kuras lūdz aizsardzību
+            no varmākām, nokārtot attiecības līdz galam. Par to, ka Andrejs sit
+            Santu, pirmā uzzināja otra bērnudārza vadītāja Anita. «Viņa
+            piezvanīja. Neteica neko par aci. Tikai, ka nelaimes gadījums,
+            pakritusi,» stāsta Anita. Viņai likās aizdomīgi, ka ārstēšanai vajag
+            pusotru mēnesi. Kad atgriezās darbā, Anita tieši noprasīja, kas
+            notiek. Santa pastāstīja, ka viņu sit. Ka «nespēj tikt no Andreja
+            vaļā, ir paniskas bailes».
+          </p>
+
+          <h3
+            class="relative my-10 py-14 text-center before:absolute before:left-0 before:right-0 before:top-0 before:text-sm before:text-ir-red before:content-['⏺'] after:absolute after:bottom-0 after:left-0 after:right-0 after:text-sm after:text-ir-red after:content-['⏺'] lg:px-20">
+            <q> Atbrauca ugunsdzēsēji, mēģināja iekāpt pa balkonu.
+                    Beigās kāds no ciemiņiem atvēra. Policija Santu ar jaunāko dēlu atrada
+                    paslēpušos skapī. </q>
+          </h3>
+
+          <p>
+            Tāpat vīrietis regulāri zvanīja un sūdzējās izmeklētājai Meikšānei,
+            ka Santa dzer. «Uz to atbildēju — vai jums neliekas, ka viņa dzer
+            vēl vairāk tieši jūsu dēļ? Viņš meta nost klausuli, tad zvanīja
+            atkal,» atceras Meikšāne. Izskatās, viņš zvanīja arī pašvaldības
+            sociālā dienesta darbiniecei Zanei Stieģelei, kas strādāja ar ģimeni
+            (viņa no intervijas atteicās, jo runāt par konkrēto lietu liedzot
+            likums). Andrejs pats vairs dzīvoklim netuvojās, bet Santu
+            uzraudzīja kāpņu telpas kaimiņi. Par novēroto ziņoja viņam. Viņš —
+            Stieģelei. No policijas sniegtās informācijas Re:Baltica izriet, ka
+            Stieģele uz Santas dzīvokli regulāri sūtīja pašvaldības policiju.
+            Nepilna pusgada laikā policija pie Santas dzīvokļa durvīm klauvēja
+            22 reizes. Tik daudz, jo Santa bieži neatvēra, tāpēc policisti nāca
+            atkārtoti. Reizēs, kad pašvaldības policija iekļuva dzīvoklī, nekas
+            aizdomīgs netika konstatēts.
+          </p>
+
+          <ul class="flex flex-wrap gap-4 py-10">
+            <li>
+              <a href="" class="rounded-md bg-ir-red px-4 py-2 font-serif text-white"
+                >Mihails Barišņikovs</a
+              >
+            </li>
+            <li>
+              <a href="" class="rounded-md bg-ir-red px-4 py-2 font-serif text-white"
+                >Pāvests Benedikts</a
+              >
+            </li>
+            <li>
+              <a href="" class="rounded-md bg-ir-red px-4 py-2 font-serif text-white"
+                >Brodskis</a
+              >
+            </li>
+            <li>
+              <a href="" class="rounded-md bg-ir-red px-4 py-2 font-serif text-white"
+                >Alvis Hermanis</a
+              >
+            </li>
+            <li>
+              <a href="" class="rounded-md bg-ir-red px-4 py-2 font-serif text-white"
+                >Jaunais Rīgas teātris</a
+              >
+            </li>
+            <li>
+              <a href="" class="rounded-md bg-ir-red px-4 py-2 font-serif text-white"
+                >Alvis Hermanis</a
+              >
+            </li>
+            <li>
+              <a href="" class="rounded-md bg-ir-red px-4 py-2 font-serif text-white"
+                >IR</a
+              >
+            </li>
+          </ul>
+
+          <div
+            class="gallery flex h-80 items-center justify-center rounded-md bg-slate-200">
+            <h2>Foto Galerija</h2>
+          </div>
+
+          <div class="related-articles mt-10 flex flex-col gap-y-6">
+            <h1 class="pt-10 text-center lg:text-left">Saistītie raksti</h1>
+
+            <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
+              <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
+                <div
+                  class="flex items-center gap-x-3 uppercase before:bottom-0 before:top-0 before:-ml-4 before:-mt-1 before:h-5 before:w-[2px] before:bg-ir-red">
+                  <span class="flex items-center gap-3 whitespace-nowrap">Pasaulē</span>
+                  <span
+                    class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Jānis Saliņš</span
+                  >
+                </div>
+                <div class="flex items-center uppercase"><a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
+            </div>
+                <h1 class="w-full text-[22px] leading-7">Ko apdraud mežu izciršana?</h1>
+                <p class="font-sans text-card-lead leading-relaxed text-gray-800">
+                  Vai atļaut cirst
+                        tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+                        aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? 
+                </p>
+              </div>
+            </figure>
+            <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
+              <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
+                <div
+                  class="flex items-center gap-x-3 uppercase before:bottom-0 before:top-0 before:-ml-4 before:-mt-1 before:h-5 before:w-[2px] before:bg-ir-red">
+                  <span class="flex items-center gap-3 whitespace-nowrap">Pasaulē</span>
+                  <span
+                    class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Jānis Saliņš</span
+                  >
+                </div>
+                <div class="flex items-center uppercase"><a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
+            </div>
+                <h1 class="w-full text-[22px] leading-7">Ko apdraud mežu izciršana?</h1>
+                <p class="font-sans text-card-lead leading-relaxed text-gray-800">
+                  Vai atļaut cirst
+                        tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+                        aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? 
+                </p>
+              </div>
+            </figure>
+            <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
+              <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
+                <div
+                  class="flex items-center gap-x-3 uppercase before:bottom-0 before:top-0 before:-ml-4 before:-mt-1 before:h-5 before:w-[2px] before:bg-ir-red">
+                  <span class="flex items-center gap-3 whitespace-nowrap">Pasaulē</span>
+                  <span
+                    class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Jānis Saliņš</span
+                  >
+                </div>
+                <div class="flex items-center uppercase"><a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
+            </div>
+                <h1 class="w-full text-[22px] leading-7">Ko apdraud mežu izciršana?</h1>
+                <p class="font-sans text-card-lead leading-relaxed text-gray-800">
+                  Vai atļaut cirst
+                        tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+                        aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? 
+                </p>
+              </div>
+            </figure>
+            <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
+              <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
+                <div
+                  class="flex items-center gap-x-3 uppercase before:bottom-0 before:top-0 before:-ml-4 before:-mt-1 before:h-5 before:w-[2px] before:bg-ir-red">
+                  <span class="flex items-center gap-3 whitespace-nowrap">Pasaulē</span>
+                  <span
+                    class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Jānis Saliņš</span
+                  >
+                </div>
+                <div class="flex items-center uppercase"><a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
+            </div>
+                <h1 class="w-full text-[22px] leading-7">Ko apdraud mežu izciršana?</h1>
+                <p class="font-sans text-card-lead leading-relaxed text-gray-800">
+                  Vai atļaut cirst
+                        tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+                        aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? 
+                </p>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <aside
+          class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+          <div class="articles-widget bg-slate-100">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span>
+                  <span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Viedoklis</span
+                  >
+                  <span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Mortens Hansens</span
+                  >
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span
+                  ><span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Speciāli IR</span
+                  ><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >guntis keisels</span
+                  >
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <section id="cards-1/4">
+        <h1
+          class="title container pl-4 text-center lg:my-8 lg:pl-0 lg:text-left">
+          Jaunākais žurnālā
+        </h1>
+        <div
+          class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
+          <figure class="flex flex-1 flex-col bg-white shadow-md">
+  <img
+    src="./assets/hero-cfd2d752.jpg"
+    alt=""
+    class="aspect-video w-full cursor-pointer object-cover"
+    x-data
+    @click="window.location='article.html'" />
+  <div
+    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+    <div class="flex w-full justify-between">
+      <a href="category.html"
+        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+        >Komentārs</a
+      >
+      <a
+        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+        x-data="{ saved: false }"
+        @click="saved = ! saved">
+        <svg
+          x-show="!saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+            stroke="#73757A"
+            stroke-linejoin="round" />
+        </svg>
+      
+        <svg
+          x-show="saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+            fill="white"
+            stroke="#212225"
+            stroke-linejoin="round" />
+          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+        </svg>
+      </a>
+    </div>
+    <h1
+      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      x-data
+      @click="window.location='article.html'">
+      Dace Rēķe, instagramā māca latviešu
+          valodu
+    </h1>
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+      Šonedēļ starptautiskā Finanšu darījumu darba grupa
+          (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
+    </p>
+    <span class="card__author uppercase text-gray-500"> Laura Dumbere</span>
+  </div>
+</figure>
+ <figure class="flex flex-1 flex-col bg-white shadow-md">
+  <img
+    src="./assets/hero-cfd2d752.jpg"
+    alt=""
+    class="aspect-video w-full cursor-pointer object-cover"
+    x-data
+    @click="window.location='article.html'" />
+  <div
+    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+    <div class="flex w-full justify-between">
+      <a href="category.html"
+        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+        >Komentārs</a
+      >
+      <a
+        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+        x-data="{ saved: false }"
+        @click="saved = ! saved">
+        <svg
+          x-show="!saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+            stroke="#73757A"
+            stroke-linejoin="round" />
+        </svg>
+      
+        <svg
+          x-show="saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+            fill="white"
+            stroke="#212225"
+            stroke-linejoin="round" />
+          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+        </svg>
+      </a>
+    </div>
+    <h1
+      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      x-data
+      @click="window.location='article.html'">
+      Satriecošais
+          spriedums Maximas lietā - reportāža no tiesas zāles
+    </h1>
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+      Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu..
+    </p>
+    <span class="card__author uppercase text-gray-500"> Indra Sprance</span>
+  </div>
+</figure>
+ <figure class="flex flex-1 flex-col bg-white shadow-md">
+  <img
+    src="./assets/hero-cfd2d752.jpg"
+    alt=""
+    class="aspect-video w-full cursor-pointer object-cover"
+    x-data
+    @click="window.location='article.html'" />
+  <div
+    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+    <div class="flex w-full justify-between">
+      <a href="category.html"
+        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+        >Komentārs</a
+      >
+      <a
+        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+        x-data="{ saved: false }"
+        @click="saved = ! saved">
+        <svg
+          x-show="!saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+            stroke="#73757A"
+            stroke-linejoin="round" />
+        </svg>
+      
+        <svg
+          x-show="saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+            fill="white"
+            stroke="#212225"
+            stroke-linejoin="round" />
+          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+        </svg>
+      </a>
+    </div>
+    <h1
+      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      x-data
+      @click="window.location='article.html'">
+      Galvenā naudas atmazgāsānas
+    </h1>
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+      Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu..
+    </p>
+    <span class="card__author uppercase text-gray-500"> Indra Sprance</span>
+  </div>
+</figure>
+ <figure class="flex flex-1 flex-col bg-white shadow-md">
+  <img
+    src="./assets/hero-cfd2d752.jpg"
+    alt=""
+    class="aspect-video w-full cursor-pointer object-cover"
+    x-data
+    @click="window.location='article.html'" />
+  <div
+    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+    <div class="flex w-full justify-between">
+      <a href="category.html"
+        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+        >Komentārs</a
+      >
+      <a
+        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+        x-data="{ saved: false }"
+        @click="saved = ! saved">
+        <svg
+          x-show="!saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+            stroke="#73757A"
+            stroke-linejoin="round" />
+        </svg>
+      
+        <svg
+          x-show="saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+            fill="white"
+            stroke="#212225"
+            stroke-linejoin="round" />
+          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+        </svg>
+      </a>
+    </div>
+    <h1
+      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      x-data
+      @click="window.location='article.html'">
+      Galvenā naudas atmazgāsānas
+    </h1>
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+      Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu..
+    </p>
+    <span class="card__author uppercase text-gray-500"> Indra Sprance</span>
+  </div>
+</figure>
+
+        </div>
+        <div
+          class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
+          <a
+            href=""
+            class="button block w-full cursor-pointer whitespace-nowrap rounded-md bg-ir-dark-gray px-7 py-3 text-center font-serif text-white transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs  ">
+            Vairāk rakstu
+          </a>
+        </div>
+        <div
+          class="social-block-botto container my-20 flex max-w-md flex-col gap-6 px-8 py-8 lg:px-0">
+          <h4 class="text-center font-serif">
+            <b>Mums ir pa ceļam</b> — lasi jaunāko savā laika joslā!
+          </h4>
+          <div class="social-buttons flex justify-center gap-x-4">
+            <span><a href=""><svg
+  width="32"
+  height="32"
+  viewBox="0 0 32 32"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="16" r="16" fill="#0F0F10" />
+  <path
+    d="M15.9996 7.47509C18.7767 7.47509 19.1053 7.48583 20.2022 7.53578C21.2161 7.58202 21.7668 7.75128 22.1334 7.8937C22.5857 8.06023 22.9948 8.32616 23.3306 8.67189C23.6763 9.00769 23.9423 9.41681 24.1088 9.86909C24.2512 10.2357 24.4205 10.7864 24.4667 11.8003C24.5167 12.8972 24.5274 13.2258 24.5274 16.0029C24.5274 18.78 24.5167 19.1086 24.4667 20.2055C24.4205 21.2194 24.2512 21.7701 24.1088 22.1367C23.9356 22.5851 23.6705 22.9924 23.3306 23.3323C22.9907 23.6722 22.5835 23.9373 22.1351 24.1105C21.7685 24.2529 21.2178 24.4222 20.2039 24.4684C19.1074 24.5183 18.7784 24.5291 16.0013 24.5291C13.2242 24.5291 12.8951 24.5183 11.7987 24.4684C10.7847 24.4222 10.234 24.2529 9.86744 24.1105C9.41516 23.9439 9.00604 23.678 8.67023 23.3323C8.32451 22.9965 8.05858 22.5874 7.89205 22.1351C7.74962 21.7685 7.58036 21.2178 7.53413 20.2039C7.48417 19.107 7.47344 18.7784 7.47344 16.0013C7.47344 13.2242 7.48417 12.8955 7.53413 11.7987C7.58036 10.7847 7.74962 10.234 7.89205 9.86744C8.05858 9.41516 8.32451 9.00604 8.67023 8.67023C9.00604 8.32451 9.41516 8.05858 9.86744 7.89205C10.234 7.74962 10.7847 7.58036 11.7987 7.53413C12.8955 7.48418 13.2242 7.47344 16.0013 7.47344L15.9996 7.47509ZM16.0013 5.59961C13.1767 5.59961 12.8225 5.61158 11.7132 5.66236C10.6039 5.71314 9.84845 5.89024 9.18792 6.14702C8.49379 6.40832 7.86492 6.81771 7.34505 7.3467C6.81606 7.86657 6.40667 8.49544 6.14537 9.18957C5.88859 9.8501 5.71272 10.6072 5.66236 11.714C5.61199 12.8208 5.59961 13.1767 5.59961 16.0013C5.59961 18.8258 5.61158 19.18 5.66236 20.2893C5.71314 21.3986 5.88859 22.1524 6.14537 22.8129C6.40677 23.5068 6.81616 24.1354 7.34505 24.655C7.86474 25.1843 8.49365 25.5939 9.18792 25.8551C9.84845 26.1123 10.6056 26.2881 11.7124 26.3385C12.8192 26.3889 13.1759 26.4013 16.0004 26.4013C18.825 26.4013 19.1792 26.3893 20.2885 26.3385C21.3978 26.2877 22.1508 26.1123 22.8113 25.8551C23.5024 25.5881 24.13 25.1795 24.6539 24.6556C25.1778 24.1317 25.5864 23.5041 25.8534 22.8129C26.1106 22.1524 26.2865 21.3953 26.3368 20.2885C26.3872 19.1817 26.3996 18.825 26.3996 16.0004C26.3996 13.1759 26.3876 12.8216 26.3368 11.7124C26.2861 10.6031 26.1106 9.8501 25.8534 9.18957C25.5923 8.49568 25.1831 7.86706 24.6542 7.34753C24.1344 6.81823 23.5055 6.40856 22.8113 6.14702C22.1508 5.89024 21.3936 5.71438 20.2868 5.66401C19.18 5.61365 18.8242 5.60126 15.9996 5.60126L16.0013 5.59961Z"
+    fill="white" />
+  <path
+    d="M16.0005 10.6621C14.9443 10.6621 13.9118 10.9753 13.0336 11.5621C12.1554 12.1489 11.4709 12.983 11.0667 13.9588C10.6625 14.9346 10.5567 16.0084 10.7628 17.0443C10.9688 18.0803 11.4775 19.0318 12.2243 19.7787C12.9712 20.5255 13.9227 21.0342 14.9587 21.2402C15.9946 21.4463 17.0684 21.3405 18.0442 20.9363C19.02 20.5321 19.8541 19.8476 20.4409 18.9694C21.0277 18.0912 21.3409 17.0587 21.3409 16.0025C21.3409 15.3011 21.2028 14.6067 20.9345 13.9587C20.6661 13.3108 20.2728 12.7221 19.7768 12.2261C19.2809 11.7302 18.6922 11.3369 18.0443 11.0685C17.3963 10.8002 16.7018 10.6621 16.0005 10.6621ZM16.0005 19.4702C15.3147 19.4702 14.6442 19.2669 14.0739 18.8858C13.5037 18.5048 13.0592 17.9632 12.7967 17.3295C12.5343 16.6959 12.4656 15.9986 12.5994 15.3259C12.7332 14.6533 13.0635 14.0354 13.5484 13.5504C14.0334 13.0654 14.6513 12.7351 15.324 12.6013C15.9967 12.4675 16.6939 12.5362 17.3276 12.7987C17.9612 13.0611 18.5028 13.5056 18.8839 14.0759C19.2649 14.6462 19.4683 15.3166 19.4683 16.0025C19.4683 16.9222 19.1029 17.8042 18.4526 18.4546C17.8023 19.1049 16.9202 19.4702 16.0005 19.4702Z"
+    fill="white" />
+  <path
+    d="M21.5527 11.6991C22.2419 11.6991 22.8007 11.1403 22.8007 10.4511C22.8007 9.76187 22.2419 9.20312 21.5527 9.20312C20.8634 9.20312 20.3047 9.76187 20.3047 10.4511C20.3047 11.1403 20.8634 11.6991 21.5527 11.6991Z"
+    fill="white" />
+</svg>
+</a></span>
+            <span><a href=""><svg
+  width="32"
+  height="32"
+  viewBox="0 0 32 32"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_2926_10130)">
+    <path
+      d="M32 16C32 7.1625 24.8375 0 16 0C7.1625 0 0 7.1625 0 16C0 23.9875 5.85 30.6062 13.5 31.8062V20.625H9.4375V16H13.5V12.475C13.5 8.46563 15.8875 6.25 19.5438 6.25C21.2938 6.25 23.125 6.5625 23.125 6.5625V10.5H21.1063C19.1188 10.5 18.5 11.7344 18.5 13V16H22.9375L22.2281 20.625H18.5V31.8062C26.15 30.6062 32 23.9875 32 16Z"
+      fill="#0F0F10" />
+    <path
+      d="M22.2281 20.625L22.9375 16H18.5V13C18.5 11.7344 19.1188 10.5 21.1063 10.5H23.125V6.5625C23.125 6.5625 21.2938 6.25 19.5438 6.25C15.8875 6.25 13.5 8.46563 13.5 12.475V16H9.4375V20.625H13.5V31.8062C14.3156 31.9344 15.15 32 16 32C16.85 32 17.6844 31.9344 18.5 31.8062V20.625H22.2281Z"
+      fill="white" />
+  </g>
+  <defs>
+    <clipPath id="clip0_2926_10130">
+      <rect width="32" height="32" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a></span>
+            <span><a href=""><svg
+  width="32"
+  height="32"
+  viewBox="0 0 32 32"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_2926_10125)">
+    <path
+      d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
+      fill="#0F0F10" />
+    <g clip-path="url(#clip1_2926_10125)">
+      <path
+        d="M17.7752 14.8491L24.7243 6.66699H23.0776L17.0437 13.7714L12.2245 6.66699H6.66602L13.9537 17.4102L6.66602 25.9904H8.31282L14.6848 18.4879L19.7742 25.9904H25.3327L17.7748 14.8491H17.7752ZM15.5197 17.5048L14.7813 16.435L8.90619 7.9227H11.4356L16.1769 14.7924L16.9153 15.8622L23.0784 24.7918H20.549L15.5197 17.5052V17.5048Z"
+        fill="white" />
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0_2926_10125">
+      <rect width="32" height="32" fill="white" />
+    </clipPath>
+    <clipPath id="clip1_2926_10125">
+      <rect
+        width="18.6667"
+        height="19.3333"
+        fill="white"
+        transform="translate(6.66602 6.66699)" />
+    </clipPath>
+  </defs>
+</svg>
+</a></span>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer aria-label="footer" class="bg-ir-dark-gray">
+      <div class="container flex-row items-center p-10 lg:flex">
+        <img
+          src="./assets/ir-logo-footer-61039508.svg"
+          alt="Footer Logo"
+          class="pr-10" />
+        <ul
+          role="navigation"
+          aria-roledescription="Footer navigation"
+          class="block w-full gap-10 font-serif leading-[5rem] text-ir-light-gray lg:flex lg:py-20 lg:leading-normal">
+          <li><a href="">Komanda</a></li>
+          <li><a href="">Manifests</a></li>
+          <li><a href="">Ētikas kodekss</a></li>
+          <li><a href="">Kontakti</a></li>
+          <li><a href="">Reklāma</a></li>
+          <li><a href="">Abonēšanas un iepirkšanās noteikumi</a></li>
+          <li><a href="">Privātuma politika</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
