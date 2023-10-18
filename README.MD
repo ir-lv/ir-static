@@ -34,8 +34,8 @@ npm install
 - Deploy to github static page repo - ```npm run deploy```
 
 - Creating new page:
-- Create in root directory new html page
-- add new page in vite.config.js file:
+- Create in root directory new .html page
+- add new page in [vite.config.js](vite.config.js) file:
 
 ```
 rollupOptions: {
