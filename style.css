@@ -40,6 +40,10 @@
     @apply font-serif-bold font-normal;
   }
 
+  p > a {
+    @apply text-ir-red underline underline-offset-2 
+  }
+
   h1,
   h2,
   h3,

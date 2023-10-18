@@ -25,6 +25,7 @@ export default defineConfig({
         search: resolve(__dirname, "search.html"),
         magazine: resolve(__dirname, "magazine.html"),
         section: resolve(__dirname, "section.html"),
+        author: resolve(__dirname, "auhor.html"),
       },
     },
   },
