@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  {{>head}}
+
+  <body>
+    <div id="app">
+      {{>header}}
+      <div x-data="{ books: [] }"
+      x-init=""
+      class="container">
+
+
+      <div x-text="JSON.stringify(books)"></div>
+
+
+           <ul>
+            <template x-for="book in books">
+              <li x-text="book.title"></li>
+            </template>
+          </ul>
+
+      </div>
+      
+    </div>
+    {{>footer}}
+  </body>
+</html>
