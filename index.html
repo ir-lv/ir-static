@@ -14,8 +14,8 @@
       console.log(state.showMenu);
     });
   </script>
-  <script type="module" crossorigin src="./assets/main-1d6cd10d.js"></script>
-  <link rel="stylesheet" href="./assets/main-70d162c9.css">
+  <script type="module" crossorigin src="./assets/main-998e9ab2.js"></script>
+  <link rel="stylesheet" href="./assets/main-2ca1f566.css">
 </head>
 
 <body>
@@ -1035,24 +1035,28 @@
         </div>
         <div id="carousel" class="bg-slate-100 lg:w-2/5">
           <h1 class="title container my-8 pl-4 lg:pl-0">Karikatūra</h1>
-          <div class="flex flex-col items-center justify-center bg-teal-100">
+          <div class="flex flex-col items-center justify-center  bg-white shadow-md">
             <div
-              class="relative mx-auto w-full"
-              x-data="{slides: [1, 2, 3, 4, 5], activeSlide: 1 }">
+              class="relative mx-auto w-full h-full"
+              x-data="{slides: [
+                { 'id': 1, 'title': 'Corona Kandinsky vienā vai divās rindās', 'author': 'Ernests Kļaviņš', pic: './src/assets/img/temp/caricature.jpg' },
+                { 'id': 2, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: './src/assets/img/temp/article-featured.jpg' }
+                ], activeSlide: 1 }">
               <!-- Slides -->
-              <template x-for="slide in slides">
+              <template x-for="slide in slides" :key="slide.id">
                 <div
-                  x-show="activeSlide === slide"
-                  class="flex h-80 w-full items-center justify-center bg-slate-500 p-24 text-5xl font-bold text-white">
-                  <span class="w-12 text-center" x-text="slide"></span>
-                  <span class="text-slate-300">/</span>
-                  <span class="w-12 text-center" x-text="slides.length"></span>
+                  x-show="activeSlide === slide.id"
+                  class="w-full h-[350px] flex flex-col items-center justify-center">
+                  <img :src="slide.pic" alt="" class="flex-grow">
+                  <p class="w-full pt-4 px-4 text-2xl font-serif-bold text-left" x-text="slide.title"></p>
+                  <p class="w-full px-4 uppercase text-lg font-serif text-left" x-text="slide.author"></p>
+          
                 </div>
               </template>
           
               <!-- Buttons -->
               <div
-                class="absolute flex w-full items-center justify-center gap-2 px-4 py-4">
+                class="bottom-0 flex w-full items-center justify-center gap-2 pt-6 pb-2 px-2">
                 <div class="flex w-1/2 items-center justify-start">
                   <button
                     class=""
@@ -1073,14 +1077,14 @@
                 </div>
           
                 <!-- Indicators -->
-                <template x-for="slide in slides" :key="slide">
+                <template x-for="slide in slides" :key="slide.id">
                   <button
                     class="h-1 w-1 overflow-hidden rounded-full transition-colors duration-200 ease-out hover:bg-teal-600 hover:shadow-lg"
                     :class="{ 
-                          'bg-ir-red': activeSlide === slide,
-                          'bg-slate-400': activeSlide !== slide 
+                          'bg-ir-red': activeSlide === slide.id,
+                          'bg-slate-400': activeSlide !== slide.id 
                       }"
-                    x-on:click="activeSlide = slide"></button>
+                    x-on:click="activeSlide = slide.id"></button>
                 </template>
           
                 <div class="flex w-1/2 items-center justify-end">
@@ -1299,206 +1303,326 @@
       </div>
     </section>
     <section id="guest-authors" class="bg-slate-100 py-20">
-      <h1 class="title container my-8 pl-4 lg:pl-0">Viesautori</h1>
-      <div class="container grid grid-flow-row items-stretch gap-4 px-4 lg:grid-cols-4 lg:gap-8 lg:px-0">
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Investīciju piesaisti reģionos būtiski ietekmē teritorijas
-              attīstības prioritātes
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Elizabete Vegnere</span>
-            </div>
-            <div class="flex items-end uppercase"><a
-  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-  x-data="{ saved: false }"
-  @click="saved = ! saved">
-  <svg
-    x-show="!saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-      stroke="#73757A"
-      stroke-linejoin="round" />
-  </svg>
-
-  <svg
-    x-show="saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-      fill="white"
-      stroke="#212225"
-      stroke-linejoin="round" />
-    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-  </svg>
-</a>
-</div>
+      <h1 class="title container mb-8 pl-4 lg:pl-0">Viesautori</h1>
+      <div class="container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <figure class="guest-card swiper-slide">
+              <div
+                class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
+                <h1 class="text-[22px] leading-7">Investīciju piesaisti reģionos būtiski ietekmē teritorijas
+                        attīstības prioritātes</h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                  Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+                        relaksētos austrāliešus sākt aktīvi...
+                </p>
+                <div class="flex items-end">
+                  <a href="category.html"
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
+                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0">Elizabete Vegnere</span></a
+                  >
+                </div>
+                <div class="flex items-end uppercase">
+                  <a
+                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                    x-data="{ saved: false }"
+                    @click="saved = ! saved">
+                    <svg
+                      x-show="!saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                        stroke="#73757A"
+                        stroke-linejoin="round" />
+                    </svg>
+                  
+                    <svg
+                      x-show="saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                        fill="white"
+                        stroke="#212225"
+                        stroke-linejoin="round" />
+                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </figure>
+    
+            <figure class="guest-card swiper-slide">
+              <div
+                class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
+                <h1 class="text-[22px] leading-7">Manai valstij vajag cilvēkus ar Eiropas zināšanām</h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                  Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+                        relaksētos austrāliešus sākt aktīvi...
+                </p>
+                <div class="flex items-end">
+                  <a href="category.html"
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
+                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0">Elizabete Vegnere</span></a
+                  >
+                </div>
+                <div class="flex items-end uppercase">
+                  <a
+                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                    x-data="{ saved: false }"
+                    @click="saved = ! saved">
+                    <svg
+                      x-show="!saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                        stroke="#73757A"
+                        stroke-linejoin="round" />
+                    </svg>
+                  
+                    <svg
+                      x-show="saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                        fill="white"
+                        stroke="#212225"
+                        stroke-linejoin="round" />
+                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </figure>
+    
+            <figure class="guest-card swiper-slide">
+              <div
+                class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
+                <h1 class="text-[22px] leading-7">Galvenā naudas atmazgāšanas apkarotāja optimistiska par Latvijas paveikto</h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                  Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+                        relaksētos austrāliešus sākt aktīvi...
+                </p>
+                <div class="flex items-end">
+                  <a href="category.html"
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
+                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0">Elizabete Vegnere</span></a
+                  >
+                </div>
+                <div class="flex items-end uppercase">
+                  <a
+                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                    x-data="{ saved: false }"
+                    @click="saved = ! saved">
+                    <svg
+                      x-show="!saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                        stroke="#73757A"
+                        stroke-linejoin="round" />
+                    </svg>
+                  
+                    <svg
+                      x-show="saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                        fill="white"
+                        stroke="#212225"
+                        stroke-linejoin="round" />
+                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </figure>
+    
+            <figure class="guest-card swiper-slide">
+              <div
+                class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
+                <h1 class="text-[22px] leading-7">Ražošana samazinās, bet nākotnes signāli pretrunīgi</h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                  Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+                        relaksētos austrāliešus sākt aktīvi...
+                </p>
+                <div class="flex items-end">
+                  <a href="category.html"
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
+                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0">Elizabete Vegnere</span></a
+                  >
+                </div>
+                <div class="flex items-end uppercase">
+                  <a
+                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                    x-data="{ saved: false }"
+                    @click="saved = ! saved">
+                    <svg
+                      x-show="!saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                        stroke="#73757A"
+                        stroke-linejoin="round" />
+                    </svg>
+                  
+                    <svg
+                      x-show="saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                        fill="white"
+                        stroke="#212225"
+                        stroke-linejoin="round" />
+                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </figure>
+    
+            <figure class="guest-card swiper-slide">
+              <div
+                class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
+                <h1 class="text-[22px] leading-7">Investīciju piesaisti reģionos būtiski ietekmē teritorijas
+                        attīstības prioritātes</h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                  Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+                        relaksētos austrāliešus sākt aktīvi...
+                </p>
+                <div class="flex items-end">
+                  <a href="category.html"
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
+                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0">Elizabete Vegnere</span></a
+                  >
+                </div>
+                <div class="flex items-end uppercase">
+                  <a
+                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                    x-data="{ saved: false }"
+                    @click="saved = ! saved">
+                    <svg
+                      x-show="!saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                        stroke="#73757A"
+                        stroke-linejoin="round" />
+                    </svg>
+                  
+                    <svg
+                      x-show="saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                        fill="white"
+                        stroke="#212225"
+                        stroke-linejoin="round" />
+                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </figure>
+    
+            <figure class="guest-card swiper-slide">
+              <div
+                class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
+                <h1 class="text-[22px] leading-7">Investīciju piesaisti reģionos būtiski ietekmē teritorijas
+                        attīstības prioritātes</h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                  Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+                        relaksētos austrāliešus sākt aktīvi...
+                </p>
+                <div class="flex items-end">
+                  <a href="category.html"
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
+                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0">Elizabete Vegnere</span></a
+                  >
+                </div>
+                <div class="flex items-end uppercase">
+                  <a
+                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                    x-data="{ saved: false }"
+                    @click="saved = ! saved">
+                    <svg
+                      x-show="!saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                        stroke="#73757A"
+                        stroke-linejoin="round" />
+                    </svg>
+                  
+                    <svg
+                      x-show="saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                        fill="white"
+                        stroke="#212225"
+                        stroke-linejoin="round" />
+                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </figure>
           </div>
-        </figure>
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Manai valstij vajag cilvēkus ar Eiropas zināšanām
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Davits Kortava</span>
-            </div>
-            <div class="flex items-end uppercase"><a
-  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-  x-data="{ saved: false }"
-  @click="saved = ! saved">
-  <svg
-    x-show="!saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-      stroke="#73757A"
-      stroke-linejoin="round" />
-  </svg>
-
-  <svg
-    x-show="saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-      fill="white"
-      stroke="#212225"
-      stroke-linejoin="round" />
-    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-  </svg>
-</a>
-</div>
-          </div>
-        </figure>
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Galvenā naudas atmazgāšanas apkarotāja optimistiska par Latvijas
-              paveikto
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Elizabete Vegnere</span>
-            </div>
-            <div class="flex items-end uppercase"><a
-  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-  x-data="{ saved: false }"
-  @click="saved = ! saved">
-  <svg
-    x-show="!saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-      stroke="#73757A"
-      stroke-linejoin="round" />
-  </svg>
-
-  <svg
-    x-show="saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-      fill="white"
-      stroke="#212225"
-      stroke-linejoin="round" />
-    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-  </svg>
-</a>
-</div>
-          </div>
-        </figure>
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Ražošana samazinās, bet nākotnes signāli pretrunīgi
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Pēteris Strautiņš</span>
-            </div>
-            <div class="flex items-end uppercase"><a
-  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-  x-data="{ saved: false }"
-  @click="saved = ! saved">
-  <svg
-    x-show="!saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-      stroke="#73757A"
-      stroke-linejoin="round" />
-  </svg>
-
-  <svg
-    x-show="saved"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-      fill="white"
-      stroke="#212225"
-      stroke-linejoin="round" />
-    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-  </svg>
-</a>
-</div>
-          </div>
-        </figure>
+          <div class="swiper-pagination mt-6"></div>
+          
+        </div>
+        <div class="relative w-full bg-slate-700">
+          <div class="swiper-button-next  after:scale-[0.3]"></div>
+          <div class="swiper-button-prev  after:scale-[0.3]"></div>
+        </div>
       </div>
     </section>
     <section>
