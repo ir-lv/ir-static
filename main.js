@@ -35,7 +35,7 @@ Alpine.store("content", {
 
 Alpine.start();
 
-var username = 'JanisSalins';
+/* var username = 'JanisSalins';
 var application_password = 'rrJf 6Y9s 0meK Tq7A htqZ ajyu';
     
 const res = await fetch("https://ir.lv/wp-json/wp/v2/posts", {
@@ -53,4 +53,4 @@ const res = await fetch("https://ir.lv/wp-json/wp/v2/posts", {
 .then(response => response.json())
 .then(data => {
     console.log(data);
-});
+}); */
