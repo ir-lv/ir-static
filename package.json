@@ -20,6 +20,7 @@
     "@alpinejs/intersect": "^3.13.0",
     "alpinejs": "^3.13.0",
     "gh-pages": "^6.0.0",
+    "swiper": "^10.3.1",
     "vite-plugin-handlebars": "^1.6.0"
   }
 }

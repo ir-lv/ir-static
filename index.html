@@ -150,78 +150,38 @@
       </div>
     </section>
     <section id="guest-authors" class="bg-slate-100 py-20">
-      <h1 class="title container my-8 pl-4 lg:pl-0">Viesautori</h1>
-      <div class="container grid grid-flow-row items-stretch gap-4 px-4 lg:grid-cols-4 lg:gap-8 lg:px-0">
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Investīciju piesaisti reģionos būtiski ietekmē teritorijas
-              attīstības prioritātes
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Elizabete Vegnere</span>
-            </div>
-            <div class="flex items-end uppercase">{{>bookmark}}</div>
+      <h1 class="title container mb-8 pl-4 lg:pl-0">Viesautori</h1>
+      <div class="container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            {{>card-guest title="Investīciju piesaisti reģionos būtiski ietekmē teritorijas
+            attīstības prioritātes" excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+            relaksētos austrāliešus sākt aktīvi..." author="Elizabete Vegnere"}}
+    
+            {{>card-guest title="Manai valstij vajag cilvēkus ar Eiropas zināšanām" excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+            relaksētos austrāliešus sākt aktīvi..." author="Elizabete Vegnere"}}
+    
+            {{>card-guest title="Galvenā naudas atmazgāšanas apkarotāja optimistiska par Latvijas paveikto" excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+            relaksētos austrāliešus sākt aktīvi..." author="Elizabete Vegnere"}}
+    
+            {{>card-guest title="Ražošana samazinās, bet nākotnes signāli pretrunīgi" excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+            relaksētos austrāliešus sākt aktīvi..." author="Elizabete Vegnere"}}
+    
+            {{>card-guest title="Investīciju piesaisti reģionos būtiski ietekmē teritorijas
+            attīstības prioritātes" excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+            relaksētos austrāliešus sākt aktīvi..." author="Elizabete Vegnere"}}
+    
+            {{>card-guest title="Investīciju piesaisti reģionos būtiski ietekmē teritorijas
+            attīstības prioritātes" excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
+            relaksētos austrāliešus sākt aktīvi..." author="Elizabete Vegnere"}}
           </div>
-        </figure>
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Manai valstij vajag cilvēkus ar Eiropas zināšanām
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Davits Kortava</span>
-            </div>
-            <div class="flex items-end uppercase">{{>bookmark}}</div>
-          </div>
-        </figure>
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Galvenā naudas atmazgāšanas apkarotāja optimistiska par Latvijas
-              paveikto
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Elizabete Vegnere</span>
-            </div>
-            <div class="flex items-end uppercase">{{>bookmark}}</div>
-          </div>
-        </figure>
-        <figure class="guest-card">
-          <div class="flex h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 py-4 pb-0">
-            <h1 class="text-[22px] leading-7">
-              Ražošana samazinās, bet nākotnes signāli pretrunīgi
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien
-              relaksētos austrāliešus sākt aktīvi...
-            </p>
-            <div class="flex items-end">
-              <span
-                class="card__author relative font-serif-bold uppercase before:absolute before:-left-4 before:h-7 before:w-[4px] before:bg-ir-red">
-                Pēteris Strautiņš</span>
-            </div>
-            <div class="flex items-end uppercase">{{>bookmark}}</div>
-          </div>
-        </figure>
+          <div class="swiper-pagination mt-6"></div>
+          
+        </div>
+        <div class="relative w-full bg-slate-700">
+          <div class="swiper-button-next  after:scale-[0.3]"></div>
+          <div class="swiper-button-prev  after:scale-[0.3]"></div>
+        </div>
       </div>
     </section>
     <section>

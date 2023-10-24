@@ -64,6 +64,15 @@
   h4 {
     @apply text-xl;
   }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-pagination {
+    position: relative!important;
+  }
 }
 
 @layer components {
@@ -87,4 +96,20 @@
 
 [x-cloak] {
   display: none !important;
+}
+
+:root {
+  --swiper-navigation-color: #212225;
+  --swiper-navigation-size: 22px;
+
+  --swiper-pagination-color: #ED2926;
+  --swiper-pagination-bullet-size: 4px;
+  --swiper-pagination-bullet-width: 4px;
+  --swiper-pagination-bullet-height: 4px;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+
 }

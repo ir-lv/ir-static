@@ -2,6 +2,30 @@ import "./style.css";
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
 
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
+
+// init Swiper:
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  breakpoints: {
+    // when window width is >= 320px
+    480: {
+      slidesPerView: 4,
+    }
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 Alpine.plugin(intersect);
 
 window.alpine = Alpine;
