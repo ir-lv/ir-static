@@ -1,12 +1,12 @@
 <nav role="navigation" aria-label="Main Navigation"
   class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
-  :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu"
-  x-transition.opacity.duration.500ms>
+  :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-transition.opacity.duration.500ms>
   <ul class="flex h-full flex-col leading-[2.8rem] lg:flex-row lg:items-end lg:gap-1">
-    {{>main-nav-item-sub label="Tēmas" link="#"}} {{>main-nav-item
-    label="Vēlēšanas 2024" link="article.html" highlighted="text-ir-red" }}
-    {{>main-nav-item label="Žurnāli" link="magazine.html"}} {{>main-nav-item
-    label="Abonēšana" link="article.html"}} {{>main-nav-item label="Noteikumi"
-    link="article.html"}}
+    <!-- prettier-ignore -->
+    {{>main-nav-item-sub label="Tēmas" link="#"}}
+    {{>main-nav-item label="Vēlēšanas 2024" link="article.html" highlighted="text-ir-red"}}
+    {{>main-nav-item label="Žurnāli" link="magazines.html"}}
+    {{>main-nav-item label="Abonēšana" link="article.html"}}
+    {{>main-nav-item label="Noteikumi" link="article.html"}}
   </ul>
 </nav>

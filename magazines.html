@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+{{>head}}
+
+<body>
+  <div id="app">
+    {{>header}}
+    <div class="container mb-8 flex w-full flex-col items-center gap-10 px-4 lg:px-0">
+      <h1 class="mt-8 text-center">Žurnāls Ir</h1>
+      <div id="archive-calendar" class="relative w-full lg:max-w-screen-lg">
+        <ul class="relative flex w-auto overflow-x-scroll overscroll-none whitespace-nowrap border-l-2 border-ir-red py-2 font-serif-bold text-xl">
+          <li class="my-1 px-4 pt-1"><a href="">2023</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2022</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2021</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2020</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2019</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2018</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2017</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2016</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2015</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2014</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2013</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2012</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2011</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2010</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2009</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2008</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2007</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2006</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2007</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2006</a></li>
+        </ul>
+        <div class="gradient pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white to-transparent"></div>
+      </div>
+      <section id="archive" class="mb-20 grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-8">
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR697_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR698_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR699_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR700_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR701_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR700_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR699_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR701_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR698_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+        {{>magazine-cover pic="./src/assets/img/temp/ir/IR697_vaks.jpg" issue="Nr. 701" date="12. oktobris"}}
+      </section>
+    </div>
+  </div>
+  {{>footer}}
+</body>
+
+</html>

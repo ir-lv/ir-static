@@ -24,6 +24,7 @@ export default defineConfig({
         article: resolve(__dirname, "article.html"),
         search: resolve(__dirname, "search.html"),
         magazine: resolve(__dirname, "magazine.html"),
+        magazines: resolve(__dirname, "magazines.html"),
         section: resolve(__dirname, "section.html"),
         author: resolve(__dirname, "author.html"),
         posts: resolve(__dirname, "posts.html"),
