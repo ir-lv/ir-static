@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IR žurnāls</title>
+  
+  
+  <script type="text/javascript">
+    window.document.addEventListener("alpine:init", () => {
+      let state = window.alpine.store("header");
+      state.showMenu = state.isScreenDesktop();
+      console.log(state.showMenu);
+    });
+  </script>
+  <script type="module" crossorigin src="./assets/main-a63098c0.js"></script>
+  <link rel="stylesheet" href="./assets/main-1b0853b8.css">
+</head>
+
+<body>
+  <div id="app">
+    <header
+      class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm"
+      x-data
+      :class="$store.header.showSubmenu ? 'lg:bg-slate-100' : ''">
+      <div class="container flex flex-wrap items-center justify-between">
+        <div class="order-2 flex items-center">
+          <a
+            aria-current="page"
+            href="./"
+            class="router-link-active router-link-exact-active">
+            <img src="./assets/ir-logo-3b1e43b2.svg" alt="" />
+          </a>
+        </div>
+    
+        <nav role="navigation" aria-label="Main Navigation"
+          class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
+          :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-transition.opacity.duration.500ms>
+          <ul class="flex h-full flex-col leading-[2.8rem] lg:flex-row lg:items-end lg:gap-1">
+            <!-- prettier-ignore -->
+            <li
+              class="has-children px-4 pt-3"
+              :class="$store.header.showSubmenu ? 'active' : ''"
+              @click.away="$store.header.showSubmenu=false">
+              <a
+                aria-current="page"
+                x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
+                class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all"
+                >Tēmas
+                <svg
+                  class="-mt-[0.1rem]"
+                  width="6"
+                  height="10"
+                  viewBox="0 0 6 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="$store.header.showSubmenu ? 'rotate-90' : ''">
+                  <path
+                    d="M1 1L5 5L1 9"
+                    stroke="#212225"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+              <ul
+                x-cloak
+                class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-md"
+                x-show="$store.header.showSubmenu"
+                x-transition.opacity>
+                <li>
+                  <b
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]"
+                    >Tēmas</b
+                  >
+                  <ul>
+                    <li><a href="article.html" class="hover:text-ir-red">Politika</a></li>
+                    <li><a href="article.html" class="hover:text-ir-red">Personības</a></li>
+                    <li><a href="article.html" class="hover:text-ir-red">Nauda</a></li>
+                    <li><a href="article.html" class="hover:text-ir-red">Kultūra</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <b
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+                    >Rubrikas</b
+                  >
+                  <ul>
+                    <li><a href="article.html" class="hover:text-ir-red">Pētījumi</a></li>
+                    <li><a href="article.html" class="hover:text-ir-red">Intervijas</a></li>
+                    <li><a href="article.html" class="hover:text-ir-red">Recenzijas</a></li>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">IR Komentāri</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="article.html" class="hover:text-ir-red">Viedokļi</a></li>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">Vāka raksti</a>
+                    </li>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">1 no 2 miljoniem</a>
+                    </li>
+                    <li><a href="article.html" class="hover:text-ir-red">Pasaulē</a></li>
+                    <li><a href="article.html" class="hover:text-ir-red">Pusdienas</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">Apceļo Latviju</a>
+                    </li>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">Vēlēšanas 2024</a>
+                    </li>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">Ceļā uz 4. maiju</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+                    >Vairāk no IR</b
+                  >
+                  <ul>
+                    <li><a href="article.html" class="hover:text-ir-red">Šķiltava</a></li>
+                    <li><a href="article.html" class="hover:text-ir-red">Ārskats</a></li>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">IR Svarīgākais</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="article.html"
+                class="flex w-full text-ir-red relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Vēlēšanas 2024</a
+              >
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="magazines.html"
+                class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Žurnāli</a
+              >
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="article.html"
+                class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Abonēšana</a
+              >
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="article.html"
+                class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Noteikumi</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="flex items-center justify-end gap-4 lg:order-last lg:ml-auto">
+          <div x-data class="cursor-pointer">
+      <a
+        x-show="$store.header.isLoggedIn !=true"
+        x-on:click="$store.header.isLoggedIn = true"
+        class="flex items-center pl-4 lg:pl-0"
+        title="Sign In">
+        <img src="./assets/sign_in-5c74b4a3.svg" alt="" /><span class="font-serif"
+          >Ienākt</span
+        >
+      </a>
+      <div
+        x-cloak
+        class="logged-in flex items-center gap-x-4 pl-4"
+        x-show="$store.header.isLoggedIn">
+        <a href="" class="font-serif underline">Annemarija</a>
+        <a x-on:click="$store.header.isLoggedIn = false" class="flex items-center">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M25.3536 16.3536C25.5488 16.1583 25.5488 15.8417 25.3536 15.6464L22.1716 12.4645C21.9763 12.2692 21.6597 12.2692 21.4645 12.4645C21.2692 12.6597 21.2692 12.9763 21.4645 13.1716L24.2929 16L21.4645 18.8284C21.2692 19.0237 21.2692 19.3403 21.4645 19.5355C21.6597 19.7308 21.9763 19.7308 22.1716 19.5355L25.3536 16.3536ZM11 16.5L25 16.5V15.5L11 15.5V16.5Z"
+              fill="#212225" />
+            <path
+              d="M10 12C7.79086 12 6 13.7909 6 16C6 18.2091 7.79086 20 10 20"
+              stroke="#212225" />
+          </svg>
+          <span class="font-serif">Iziet</span>
+        </a>
+      </div>
+    </div>
+     <div
+      @click="$store.header.showSearch = !$store.header.showSearch"
+      class="hidden cursor-pointer lg:block"
+      title="Meklēt"
+      aria-label="Meklēt">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+        <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
+      </svg>
+    </div>
+    
+        </div>
+    
+        <div id="hamburger" class="order-3 lg:hidden">
+          <button
+            @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
+            class="flex justify-between px-2 py-4">
+            <svg
+              x-show="!$store.header.showMenu"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line
+                x1="5.5"
+                y1="11.5"
+                x2="34.5"
+                y2="11.5"
+                stroke="#2E2E30"
+                stroke-linecap="square" />
+              <line
+                x1="5.5"
+                y1="19.5"
+                x2="34.5"
+                y2="19.5"
+                stroke="#2E2E30"
+                stroke-linecap="square" />
+              <line
+                x1="20.5"
+                y1="27.5"
+                x2="34.5"
+                y2="27.5"
+                stroke="#2E2E30"
+                stroke-linecap="square" />
+            </svg>
+        
+            <svg
+              x-show="$store.header.showMenu"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line
+                x1="10.7071"
+                y1="9.99982"
+                x2="30.0002"
+                y2="29.2929"
+                stroke="#212225"
+                stroke-linecap="square" />
+              <line
+                x1="11"
+                y1="29.2929"
+                x2="30.2927"
+                y2="9.9997"
+                stroke="#212225"
+                stroke-linecap="square" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    
+      <div
+        :class="$store.header.showSearch ? 'block' : '' "
+        @click.away="$store.header.showSearch=false"
+        x-cloak
+        x-show="$store.header.showSearch"
+        x-transition.opacity
+        class="container relative flex flex-col lg:flex-row w-full justify-center bg-slate-100 p-4 gap-4 ">
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[570px]"
+            placeholder="Meklēt"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+              <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
+            </svg>
+          </a>
+        </div>
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+            placeholder="Datums no"
+            value="08.2001"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M16 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M8 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M4 10H20"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+            placeholder="Datums līdz"
+            value="10.2002"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M16 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M8 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M4 10H20"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!---->
+    </header>
+    <div class="container mb-8 flex w-full flex-col items-center gap-10 px-4 lg:px-0">
+      <h1 class="mt-8 text-center">Žurnāls Ir</h1>
+      <div id="archive-calendar" class="relative w-full lg:max-w-screen-lg">
+        <ul class="relative flex w-auto overflow-x-scroll overscroll-none whitespace-nowrap border-l-2 border-ir-red py-2 font-serif-bold text-xl">
+          <li class="my-1 px-4 pt-1"><a href="">2023</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2022</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2021</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2020</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2019</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2018</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2017</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2016</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2015</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2014</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2013</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2012</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2011</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2010</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2009</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2008</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2007</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2006</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2007</a></li>
+          <li class="my-1 px-4 pt-1"><a href="">2006</a></li>
+        </ul>
+        <div class="gradient pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white to-transparent"></div>
+      </div>
+      <section id="archive" class="mb-20 grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-8">
+        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR697_vaks-de379048.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR698_vaks-21f4489f.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR699_vaks-c0ff03c7.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR700_vaks-419f52e8.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR701_vaks-10dab5fc.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR700_vaks-419f52e8.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR699_vaks-c0ff03c7.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR701_vaks-10dab5fc.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR698_vaks-21f4489f.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>        <figure class="relative shadow-md group/mag">
+          <img src="./assets/IR697_vaks-de379048.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="">
+          <div class="flex justify-between p-3">
+            <span class="font-serif-bold">Nr. 701</span>
+            <span class="font-serif-bold">12. oktobris</span>
+          </div>
+          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="magazine.html"
+              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+              Lasīt
+            </a>
+          </div>
+        </figure>      </section>
+    </div>
+  </div>
+  <footer aria-label="footer" class="bg-ir-dark-gray">
+    <div class="container flex-row items-center p-10 lg:flex">
+      <img
+        src="./assets/ir-logo-footer-61039508.svg"
+        alt="Footer Logo"
+        class="pr-10" />
+      <ul
+        role="navigation"
+        aria-roledescription="Footer navigation"
+        class="block w-full gap-10 font-serif leading-[5rem] text-ir-light-gray lg:flex lg:py-20 lg:leading-normal">
+        <li><a href="">Komanda</a></li>
+        <li><a href="">Manifests</a></li>
+        <li><a href="">Ētikas kodekss</a></li>
+        <li><a href="">Kontakti</a></li>
+        <li><a href="">Reklāma</a></li>
+        <li><a href="">Abonēšanas un iepirkšanās noteikumi</a></li>
+        <li><a href="">Privātuma politika</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>
