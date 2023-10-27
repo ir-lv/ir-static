@@ -242,86 +242,40 @@
         <div class="text-center">{{>sidebar-link label="Uz darbnīcu kalendāru"}}</div>
       </div>
     </section>
-    <section id="magazines" class="bg-slate-100 py-20">
-      <h1 class="title container my-8 pl-4 lg:pl-0">Žurnāli</h1>
-      <div class="container grid grid-flow-row items-stretch gap-4 lg:grid-cols-3 lg:gap-8 lg:px-0">
-        <div class="magazine flex flex-col items-center">
-          <figure class="mb-8">
-            <img src="./src/assets/img/temp/ir/home/Rectangle 72.jpg" alt="" />
-          </figure>
-          <ul class="relative flex flex-col">
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
-              </h4>
-              {{>bookmark}}
-            </li>
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Dziedātāja Zanda Švēde iekaro Sanfrancisko un Frankfurti
-              </h4>
-              {{>bookmark}}
-            </li>
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Ko apdraud mežu izciršananu? <br />&nbsp;
-              </h4>
-              {{>bookmark}}
-            </li>
+    <section id="magazines" class="bg-slate-100 py-20 mb-8 px-4  lg:px-0">
+      <div class="container">
+
+        <figure class="magazine lg:flex items-stretch gap-20">
+          <img src="./src/assets/img/temp/ir/home/Rectangle_107.jpg" class="h-[348px] shadow-md mx-auto mb-10 lg:mb-0" alt="" />
+        <div class="flex flex-col flex-grow justify-between items-center lg:items-start">
+          <ul class="lg:grid grid-cols-2 w-full gap-x-8 gap-y-6 mb-6 lg:mb-0">
+            {{>magazine-article-list-item title="Ideju metropole" author="Laura Dumbere"}}
+            {{>magazine-article-list-item title="Riskē un laimē" author="Jānis vēvers"}}
+            {{>magazine-article-list-item title="Tilts starp personāla nodaļu un darbiniekiem" author="Jānis vēvers"}}
+            {{>magazine-article-list-item title="Lielsaimnieki" author="Laura Dumbere"}}
           </ul>
+          {{>btn-cta-black-secondary label="Lasi portālā" class="lg:ml-4"}}
         </div>
-        <div class="magazine flex flex-col items-center">
-          <figure class="mb-8">
-            <img src="./src/assets/img/temp/ir/home/Rectangle 73.jpg" alt="" />
-          </figure>
-          <ul class="relative flex flex-col">
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Galvenā naudas atmazgāšanas apkarotāja optimistiska par
-                Latvijas paveikto
-              </h4>
-              {{>bookmark}}
-            </li>
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                VID novēloti vēršas pret Inkēna uzņēmumu<br />&nbsp;
-              </h4>
-              {{>bookmark}}
-            </li>
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Latviešu uzņēmums, kas ražo parketu Kuveitai<br />&nbsp;
-              </h4>
-              {{>bookmark}}
-            </li>
-          </ul>
-        </div>
-        <div class="magazine flex flex-col items-center">
-          <figure class="mb-8">
-            <img src="./src/assets/img/temp/ir/home/Rectangle 74.jpg" alt="" />
-          </figure>
-          <ul class="relative flex flex-col">
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Režisors Znotiņš: Bērni spēj uztvert arī nopietnu un dziļu
-                mākslu
-              </h4>
-              {{>bookmark}}
-            </li>
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Ugunsgrēki austrāliešiem liek domāt par dzīvesveida maiņu
-              </h4>
-              {{>bookmark}}
-            </li>
-            <li class="flex justify-between border-t border-gray-300 px-4 py-4">
-              <h4 class="text-lg leading-tight">
-                Latviešu uzņēmums, kas ražo parketu Kuveitai<br />&nbsp;
-              </h4>
-              {{>bookmark}}
-            </li>
-          </ul>
-        </div>
+      </figure>
+
+
+      <hr class="my-14">
+
+
+      <figure class="magazine lg:flex items-stretch gap-20">
+        <img src="./src/assets/img/temp/ir/home/Rectangle_108.jpg" class="h-[348px] shadow-md mx-auto mb-10 lg:mb-0" alt="" />
+      <div class="flex flex-col flex-grow justify-between items-center lg:items-start">
+        <ul class="lg:grid grid-cols-2 w-full gap-x-8 gap-y-6 mb-6 lg:mb-0">
+          {{>magazine-article-list-item title="Dzimtas koka impresijas" author="Laura Dumbere"}}
+          {{>magazine-article-list-item title="Latviešu valodas lielais gadsimts" author="Jānis vēvers"}}
+          {{>magazine-article-list-item title="Visus dialogus izrunāju balsī" author="Jānis vēvers"}}
+          {{>magazine-article-list-item title="Aizmirstā deportācija" author="Laura Dumbere"}}
+        </ul>
+        {{>btn-cta-black-secondary label="Lasi portālā" class="lg:ml-4"}}
+      </div>
+    </figure>
+
+
       </div>
     </section>
     <section id="cards-1/3">
