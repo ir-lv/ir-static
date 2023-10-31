@@ -28,6 +28,7 @@ export default defineConfig({
         section: resolve(__dirname, "section.html"),
         author: resolve(__dirname, "author.html"),
         posts: resolve(__dirname, "posts.html"),
+        terms: resolve(__dirname, "terms.html"),
 
       },
     },
