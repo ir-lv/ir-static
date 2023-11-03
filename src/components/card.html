@@ -1,4 +1,4 @@
-<figure class="flex flex-1 flex-col bg-white shadow-md">
+<figure class="flex flex-1 flex-grow flex-col bg-white shadow-md {{class}} [&>h1]:text-blue-500">
   
   {{#if image}}
 
@@ -30,7 +30,7 @@
       {{>bookmark}}
     </div>
     <h1
-      class="text-[26px] leading-tight {{title-size}} w-full h-min flex-grow cursor-pointer"
+      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer {{title-size}}"
       x-data
       @click="window.location='article.html'">
       {{ title }}

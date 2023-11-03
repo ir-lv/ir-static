@@ -7,24 +7,41 @@ import 'swiper/css/bundle';
 
 
 // init Swiper:
-var swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper('.swiper-1', {
+  loop: true,
   slidesPerView: 1,
   spaceBetween: 10,
-  breakpoints: {
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 4,
-    }
-  },
   pagination: {
     el: ".swiper-pagination",
-    clickable: true,
+    type: "progressbar",
   },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-});
+  breakpoints: {
+    640: {
+      slidesPerView: 4,
+    }
+  }
+})
+
+const swiper1 = new Swiper('.swiper-2', {
+  loop: true,
+  slidesPerView: 1,     //add
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+
+  breakpoints: {
+    640: {
+      slidesPerView: 4,
+    }
+  }
+})
+
 
 Alpine.plugin(intersect);
 

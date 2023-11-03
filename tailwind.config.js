@@ -25,6 +25,7 @@ export default {
         "ir-text-gray": "#212225",
         "ir-light-gray": "#73757A",
         "ir-dark-gray": "#252525",
+        "ir-black": "#171717"
       },
       fontFamily: {
         "serif-bold": ["BreuerCondensed-Bold"],
@@ -33,6 +34,7 @@ export default {
   },
   plugins: [
     require("@tailwindcss/forms"),
+    require('@tailwindcss/typography'),
     // ...
   ],
 };
