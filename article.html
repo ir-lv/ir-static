@@ -11,11 +11,11 @@
       window.document.addEventListener("alpine:init", () => {
         let state = window.alpine.store("header");
         state.showMenu = state.isScreenDesktop();
-        console.log(state.showMenu);
       });
+      window.document.addEventListener("swiper")
     </script>
-    <script type="module" crossorigin src="./assets/main-cd957eaf.js"></script>
-    <link rel="stylesheet" href="./assets/main-370c2a73.css">
+    <script type="module" crossorigin src="./assets/main-45fae4df.js"></script>
+    <link rel="stylesheet" href="./assets/main-8dbd1a7c.css">
   </head>
 
   <body>
@@ -1244,7 +1244,7 @@
         </h1>
         <div
           class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
-          <figure class="flex flex-1 flex-col bg-white shadow-md">
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
   
 
   <img
@@ -1296,7 +1296,7 @@
       </a>
     </div>
     <h1
-      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
       x-data
       @click="window.location='article.html'">
       Dace Rēķe, instagramā māca latviešu
@@ -1310,7 +1310,7 @@
     <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
   </div>
 </figure>
- <figure class="flex flex-1 flex-col bg-white shadow-md">
+ <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
   
 
   <img
@@ -1362,7 +1362,7 @@
       </a>
     </div>
     <h1
-      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
       x-data
       @click="window.location='article.html'">
       Satriecošais
@@ -1376,7 +1376,7 @@
     <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
   </div>
 </figure>
- <figure class="flex flex-1 flex-col bg-white shadow-md">
+ <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
   
 
   <img
@@ -1428,7 +1428,7 @@
       </a>
     </div>
     <h1
-      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
       x-data
       @click="window.location='article.html'">
       Galvenā naudas atmazgāsānas
@@ -1441,7 +1441,7 @@
     <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
   </div>
 </figure>
- <figure class="flex flex-1 flex-col bg-white shadow-md">
+ <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
   
 
   <img
@@ -1493,7 +1493,7 @@
       </a>
     </div>
     <h1
-      class="text-[26px] leading-tight  w-full h-min flex-grow cursor-pointer"
+      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
       x-data
       @click="window.location='article.html'">
       Galvenā naudas atmazgāsānas
