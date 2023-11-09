@@ -1,10 +1,8 @@
-<div class="flex flex-col items-center justify-center  bg-white shadow-md">
+
+<div class="flex flex-col items-center justify-center  bg-white shadow-md" x-data="caricatures" :someval="images">
   <div
     class="relative mx-auto w-full h-full"
-    x-data="{slides: [
-      { 'id': 1, 'title': 'Corona Kandinsky vienā vai divās rindās', 'author': 'Ernests Kļaviņš', pic: './src/assets/img/temp/caricature.jpg' },
-      { 'id': 2, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: './src/assets/img/temp/article-featured.jpg' }
-      ], activeSlide: 1 }">
+    x-data="caricatures">
     <!-- Slides -->
     <template x-for="slide in slides" :key="slide.id">
       <div
