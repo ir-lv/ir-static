@@ -9,9 +9,8 @@
 - ⚡️  [Alpine JS](http://alpinejs.dev) - UI interactivity, UI state, etc.
 - ⚡️  [Handlebars](https://handlebarsjs.com) - HTML file templating {{}}
 - ⚡️  [Prettier](https://prettier.io) - code formatter / linter
-
+- ⚡️  [Vite image optimizer](https://github.com/FatehAK/vite-plugin-image-optimizer) - image optimizer
 - ⚡️  [Prettier For Tailwind CSS](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) - class formatter for Tailwind CSS
-
 - ⚡️  [GitHub Pages](https://www.npmjs.com/package/gh-pages) - Deploy static pages to Github Pages
 
 

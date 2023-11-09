@@ -2,6 +2,8 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import handlebars from "vite-plugin-handlebars";
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+
 
 export default defineConfig({
   plugins: [
@@ -15,6 +17,21 @@ export default defineConfig({
         resolve(__dirname, "src/elements/icons/"),
         resolve(__dirname, "src/elements/buttons/"),
       ],
+    }),
+    ViteImageOptimizer({
+      /* pass your config */
+      png: {
+        // https://sharp.pixelplumbing.com/api-output#png
+        quality: 70,
+      },
+      jpeg: {
+        // https://sharp.pixelplumbing.com/api-output#jpeg
+        quality: 70,
+      },
+      jpg: {
+        // https://sharp.pixelplumbing.com/api-output#jpeg
+        quality: 70,
+      },
     }),
   ],
   base: "./",
