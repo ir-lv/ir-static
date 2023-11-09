@@ -24,7 +24,7 @@
 
 @layer base {
   html {
-    font-family: Merriweather-Light, system-ui, serif;
+    font-family: Merriweather-Light, sans-serif, system-ui;
     scroll-behavior: smooth;
   }
   body {
