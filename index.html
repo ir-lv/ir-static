@@ -13,8 +13,8 @@
         state.showMenu = state.isScreenDesktop();
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-c682c3c8.js"></script>
-    <link rel="stylesheet" href="./assets/main-16da8bbd.css">
+    <script type="module" crossorigin src="./assets/main-01cce716.js"></script>
+    <link rel="stylesheet" href="./assets/main-93321eb1.css">
   </head>
 
   <body>
@@ -1285,13 +1285,11 @@
             <div class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">
               <h1 class="title">Karikatūra</h1>
             </div>
-            <div class="flex flex-col items-center justify-center  bg-white shadow-md">
+            
+            <div class="flex flex-col items-center justify-center  bg-white shadow-md" x-data="caricatures">
               <div
                 class="relative mx-auto w-full h-full"
-                x-data="{slides: [
-                  { 'id': 1, 'title': 'Corona Kandinsky vienā vai divās rindās', 'author': 'Ernests Kļaviņš', pic: './src/assets/img/temp/caricature.jpg' },
-                  { 'id': 2, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: './src/assets/img/temp/article-featured.jpg' }
-                  ], activeSlide: 1 }">
+                x-data="caricatures">
                 <!-- Slides -->
                 <template x-for="slide in slides" :key="slide.id">
                   <div

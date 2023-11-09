@@ -13,12 +13,13 @@
         state.showMenu = state.isScreenDesktop();
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-c682c3c8.js"></script>
-    <link rel="stylesheet" href="./assets/main-16da8bbd.css">
+    <script type="module" crossorigin src="./assets/main-01cce716.js"></script>
+    <link rel="stylesheet" href="./assets/main-93321eb1.css">
   </head>
 
   <body>
     <div id="app">
+
       <header
         class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm"
         x-data
@@ -381,11 +382,19 @@
         </div>
         <!---->
       </header>
-      <div
+      <article id="article"
         x-data="article"
+        x-init="scrollPos = $scrollAmount"
+        x-on:scroll.window="scrollPos = $scrollAmount"
         x-intersect="dimToolbar = false"
         x-intersect:leave="dimToolbar = true"
         class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
+        
+        <span
+          class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-50" :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
+          :style="{ width: `${scrollPos.scrollPercent}%` }">
+        </span>
+        
         <div
           class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-8">
           <a href="" class="category-tag font-serif">Analīze</a>
@@ -761,7 +770,7 @@
               class="line-item flex w-full max-w-md flex-col items-center gap-3 font-serif lg:flex-row">
               <a
   href=""
-  class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
+  class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray w-full">
   Abonēt
 </a>
  <a
@@ -979,9 +988,53 @@
             class="gallery flex h-80 items-center justify-center rounded-md bg-slate-200">
             <h2>Foto Galerija</h2>
           </div>
+        </div>
+        <aside
+          class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+          <div class="articles-widget bg-slate-100">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span>
+                  <span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Viedoklis</span
+                  >
+                  <span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Mortens Hansens</span
+                  >
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span
+                  ><span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Speciāli IR</span
+                  ><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >guntis keisels</span
+                  >
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </article>
+      <section id="related-articles">
+        <div class="container mt-10">
 
-          <div class="related-articles mt-10 flex flex-col gap-y-6">
-            <h1 class="pt-10 text-center lg:text-left">Saistītie raksti</h1>
+          <div class="lg:max-w-[650px] lg:ml-20 flex flex-col gap-y-6">
+            <h1 class="text-center lg:text-left">Saistītie raksti</h1>
 
             <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
               <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
@@ -1034,6 +1087,7 @@
                 </p>
               </div>
             </figure>
+  
             <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
               <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
                 <div
@@ -1085,6 +1139,7 @@
                 </p>
               </div>
             </figure>
+  
             <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
               <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
                 <div
@@ -1136,6 +1191,7 @@
                 </p>
               </div>
             </figure>
+  
             <figure class="bg-white shadow-md outline outline-1 outline-slate-200">
               <div class="flex flex-row flex-wrap justify-between gap-3 px-4 py-4">
                 <div
@@ -1189,321 +1245,284 @@
             </figure>
           </div>
         </div>
-        <aside
-          class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
-          <div class="articles-widget bg-slate-100">
-            <h2
-              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
-              Lasītākie raksti
-            </h2>
-            <ul class="relative flex flex-col gap-y-8">
-              <li class="border-b border-gray-300 pb-6 last:border-none">
-                <div class="meta flex gap-3 uppercase">
-                  <span class="counter"><b class="text-xl">1.</b></span>
-                  <span
-                    class="category flex items-center gap-3 whitespace-nowrap"
-                    >Viedoklis</span
-                  >
-                  <span
-                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
-                    >Mortens Hansens</span
-                  >
-                </div>
-                <h4 class="leading-7">
-                  Par bankām, lielveikaliem un tirgus ekonomiku
-                </h4>
-              </li>
-              <li class="border-b border-gray-300 pb-6 last:border-none">
-                <div class="meta flex gap-3 uppercase">
-                  <span class="counter"><b class="text-xl">2.</b></span
-                  ><span
-                    class="category flex items-center gap-3 whitespace-nowrap"
-                    >Speciāli IR</span
-                  ><span
-                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
-                    >guntis keisels</span
-                  >
-                </div>
-                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
-              </li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-      <section id="cards-1/4">
+      </section>
+      <section id="cards-1/4" class="bg-slate-100 mt-8">
         <h1
-          class="title container pl-4 text-center lg:my-8 lg:pl-0 lg:text-left">
-          Jaunākais žurnālā
+          class="title container pl-4 text-center lg:mt-16 lg:pl-0 lg:text-left">
+          Jaunākajā žurnālā
         </h1>
         <div
           class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
+          
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-  
-
-  <img
-    src="./assets/hero-cfd2d752.jpg"
-    alt=""
-    class="aspect-video w-full cursor-pointer object-cover"
-    x-data
-    @click="window.location='article.html'" />
-
-  
-  <div
-    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
-    <div class="flex w-full justify-between">
-      <a href="category.html"
-        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-        >Komentārs</a
-      >
-      <a
-        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-        x-data="{ saved: false }"
-        @click="saved = ! saved">
-        <svg
-          x-show="!saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-            stroke="#73757A"
-            stroke-linejoin="round" />
-        </svg>
-      
-        <svg
-          x-show="saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-            fill="white"
-            stroke="#212225"
-            stroke-linejoin="round" />
-          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-        </svg>
-      </a>
-    </div>
-    <h1
-      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-      role="link"
-      x-data
-      @click="window.location='article.html'">
-      Dace Rēķe, instagramā māca latviešu
-          valodu
-    </h1>
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-      Šonedēļ starptautiskā Finanšu darījumu darba grupa
-          (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
-          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-    </p>
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
-  </div>
-</figure>
- <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-  
-
-  <img
-    src="./assets/hero-cfd2d752.jpg"
-    alt=""
-    class="aspect-video w-full cursor-pointer object-cover"
-    x-data
-    @click="window.location='article.html'" />
-
-  
-  <div
-    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
-    <div class="flex w-full justify-between">
-      <a href="category.html"
-        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-        >Komentārs</a
-      >
-      <a
-        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-        x-data="{ saved: false }"
-        @click="saved = ! saved">
-        <svg
-          x-show="!saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-            stroke="#73757A"
-            stroke-linejoin="round" />
-        </svg>
-      
-        <svg
-          x-show="saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-            fill="white"
-            stroke="#212225"
-            stroke-linejoin="round" />
-          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-        </svg>
-      </a>
-    </div>
-    <h1
-      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-      role="link"
-      x-data
-      @click="window.location='article.html'">
-      Satriecošais
-          spriedums Maximas lietā - reportāža no tiesas zāles
-    </h1>
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-      Šonedēļ
-          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
-          Latvija apkaro naudas atmazgāšanu..
-    </p>
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
-  </div>
-</figure>
- <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-  
-
-  <img
-    src="./assets/hero-cfd2d752.jpg"
-    alt=""
-    class="aspect-video w-full cursor-pointer object-cover"
-    x-data
-    @click="window.location='article.html'" />
-
-  
-  <div
-    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
-    <div class="flex w-full justify-between">
-      <a href="category.html"
-        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-        >Komentārs</a
-      >
-      <a
-        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-        x-data="{ saved: false }"
-        @click="saved = ! saved">
-        <svg
-          x-show="!saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-            stroke="#73757A"
-            stroke-linejoin="round" />
-        </svg>
-      
-        <svg
-          x-show="saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-            fill="white"
-            stroke="#212225"
-            stroke-linejoin="round" />
-          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-        </svg>
-      </a>
-    </div>
-    <h1
-      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-      role="link"
-      x-data
-      @click="window.location='article.html'">
-      Galvenā naudas atmazgāsānas
-    </h1>
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-      Šonedēļ
-          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
-          Latvija apkaro naudas atmazgāšanu..
-    </p>
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
-  </div>
-</figure>
- <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-  
-
-  <img
-    src="./assets/hero-cfd2d752.jpg"
-    alt=""
-    class="aspect-video w-full cursor-pointer object-cover"
-    x-data
-    @click="window.location='article.html'" />
-
-  
-  <div
-    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
-    <div class="flex w-full justify-between">
-      <a href="category.html"
-        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-        >Komentārs</a
-      >
-      <a
-        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-        x-data="{ saved: false }"
-        @click="saved = ! saved">
-        <svg
-          x-show="!saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-            stroke="#73757A"
-            stroke-linejoin="round" />
-        </svg>
-      
-        <svg
-          x-show="saved"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-            fill="white"
-            stroke="#212225"
-            stroke-linejoin="round" />
-          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-        </svg>
-      </a>
-    </div>
-    <h1
-      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-      role="link"
-      x-data
-      @click="window.location='article.html'">
-      Galvenā naudas atmazgāsānas
-    </h1>
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-      Šonedēļ
-          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
-          Latvija apkaro naudas atmazgāšanu..
-    </p>
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
-  </div>
-</figure>
-
+            
+          
+            <img
+              src="./assets/hero-cfd2d752.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+              <div class="flex w-full justify-between">
+                <a href="category.html"
+                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  >Komentārs</a
+                >
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Dace Rēķe, instagramā māca latviešu
+                    valodu
+              </h1>
+              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                Šonedēļ starptautiskā Finanšu darījumu darba grupa
+                    (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+                    paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
+              </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
+            </div>
+          </figure>
+          
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+            
+          
+            <img
+              src="./assets/hero-cfd2d752.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+              <div class="flex w-full justify-between">
+                <a href="category.html"
+                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  >Komentārs</a
+                >
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Satriecošais
+                    spriedums Maximas lietā - reportāža no tiesas zāles
+              </h1>
+              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                Šonedēļ
+                    starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+                    Latvija apkaro naudas atmazgāšanu..
+              </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
+            </div>
+          </figure>
+          
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+            
+          
+            <img
+              src="./assets/hero-cfd2d752.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+              <div class="flex w-full justify-between">
+                <a href="category.html"
+                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  >Komentārs</a
+                >
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Galvenā naudas atmazgāsānas
+              </h1>
+              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                Šonedēļ
+                    starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+                    Latvija apkaro naudas atmazgāšanu..
+              </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
+            </div>
+          </figure>
+          
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+            
+          
+            <img
+              src="./assets/hero-cfd2d752.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+              <div class="flex w-full justify-between">
+                <a href="category.html"
+                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  >Komentārs</a
+                >
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Galvenā naudas atmazgāsānas
+              </h1>
+              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                Šonedēļ
+                    starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+                    Latvija apkaro naudas atmazgāšanu..
+              </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
+            </div>
+          </figure>
         </div>
         <div
           class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
