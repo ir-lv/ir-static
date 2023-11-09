@@ -76,14 +76,19 @@ Alpine.store("content", {
 
 Alpine.start();
 
-/* var username = 'JanisSalins';
+console.log("????");
+
+
+var username = 'JanisSalins';
 var application_password = 'rrJf 6Y9s 0meK Tq7A htqZ ajyu';
     
-const res = await fetch("https://ir.lv/wp-json/wp/v2/posts", {
+/* const res = await fetch("https://irdev.devio.lv/wp-json/wp/v2/posts", {
     method: "POST",
     headers: {
-        "Authorization": "Basic " + btoa(username + ':' + application_password),
-        "Content-Type": "application/json",
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": "Basic " + btoa(username + ':' + application_password),
+      "Origin": "http://localhost:5173"
     },
     body: JSON.stringify({
         "title": "Post using REST API",
@@ -93,5 +98,5 @@ const res = await fetch("https://ir.lv/wp-json/wp/v2/posts", {
 })
 .then(response => response.json())
 .then(data => {
-    console.log(data);
+    console.log("!!!!!", data);
 }); */
