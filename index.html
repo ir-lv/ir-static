@@ -389,52 +389,57 @@
       </header>
 
       <section class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8">
-          <figure class="grid grid-flow-row gap-4 bg-white shadow-md lg:grid-cols-2 lg:gap-8">
-            <img src="./assets/Rectangle_84-7dab090a.jpg" alt="" class="h-full object-cover" />
-            <div class="flex flex-col justify-center gap-y-8 px-4 lg:px-0 lg:pr-8">
-              <h3 class="w-full pt-8 text-4xl leading-7 lg:pt-20">Ar četrām prioritātēm</h3>
-              <p class="flex-grow">
-                Uzņēmīgā Zanda Švēde mūziku sāka mācīties tikai 25 gadu vecumā, nokļuva Sanfrancisko operā un nu jau
-                otro sezonu ir Frankfurtes operas soliste. Kad vien apstākļi ļauj, viņa uzstājas Rīgā.
-              </p>
-              <div class="flex w-full items-center justify-between py-4 uppercase">
-                <a href="author.html" class="hero__author pr-4 font-serif uppercase text-gray-500">Laura Dumbere</a>
-                <a
-                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-                  x-data="{ saved: false }"
-                  @click="saved = ! saved">
-                  <svg
-                    x-show="!saved"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                      stroke="#73757A"
-                      stroke-linejoin="round" />
-                  </svg>
-                
-                  <svg
-                    x-show="saved"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                      fill="white"
-                      stroke="#212225"
-                      stroke-linejoin="round" />
-                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                  </svg>
-                </a>
-              </div>
+        <!-- prettier-ignore -->
+        <figure class="grid grid-flow-row gap-4 bg-white shadow-md lg:grid-cols-2 lg:gap-8">
+          <img src="./assets/JaunieKaraviri_Salmane_29-ac685bf9.png" alt="" class="h-full object-cover" />
+          <div class="flex flex-col justify-center gap-y-8 px-4 lg:px-0 lg:pr-8">
+            <h1 class="w-full pt-8 text-4xl leading-7 lg:pt-20 cursor-pointer " 
+              role="link"
+              x-data
+              @click="window.location='article.html'">Mūslaiku Lāčplēši</h1>
+            <p class="flex-grow cursor-pointer" 
+              role="link"
+              x-data
+              @click="window.location='article.html'">
+              Mārtiņš Lejiņš, Kristers Edgars Rauska un Bruno Bulders ir trīs karavīri no tiem 252 jauniešiem, kas šogad brīvprātīgi sāka dienēt valsts aizsardzības dienestā
+            </p>
+            <div class="flex w-full items-center justify-between py-4 uppercase">
+              <a href="author.html" class="hero__author pr-4 font-serif uppercase text-gray-500">Agnese Meiere</a>
+              <a
+                class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                x-data="{ saved: false }"
+                @click="saved = ! saved">
+                <svg
+                  x-show="!saved"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                    stroke="#73757A"
+                    stroke-linejoin="round" />
+                </svg>
+              
+                <svg
+                  x-show="saved"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                    fill="white"
+                    stroke="#212225"
+                    stroke-linejoin="round" />
+                  <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                </svg>
+              </a>
             </div>
-          </figure>
-
+          </div>
+        </figure>
         <aside class="flex flex-col justify-center">
           <div
             class="mt-4 flex items-center gap-x-4 whitespace-nowrap rounded-md bg-slate-100 p-3 text-lg lg:mt-0">
@@ -473,7 +478,7 @@
           <div class="sidebar-item flex flex-col gap-4 rounded-md pt-4">
             <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
               <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">
-                Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
+                Brīvības sala
               </a>
               <a href="" class="font-serif uppercase text-ir-light-gray">Pauls Rudeps</a>
               <a
@@ -513,7 +518,7 @@
           <div class="sidebar-item py-t flex flex-col gap-4 rounded-md">
             <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
               <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">
-                Galvenā naudas atmazgāšanas apkarotāja optimistiska par Latvijas paveikto muižu
+                Referendumu sezona
               </a>
               <a href="" class="font-serif uppercase text-ir-light-gray">Aivars Ozoliņš</a>
               <a
@@ -554,11 +559,12 @@
       </section>
 
       <section class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8 items-stretch">
+        <!-- prettier-ignore -->
         <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md flex-grow [&>h1]:text-blue-500">
           
         
           <img
-            src="./assets/Rectangle_15-7aa0cfbc.jpg"
+            src="./assets/haizivis-a47bae29.png"
             alt=""
             class="aspect-video w-full cursor-pointer object-cover"
             x-data
@@ -570,7 +576,7 @@
             <div class="flex w-full justify-between">
               <a href="category.html"
                 class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                >Komentārs</a
+                >Aktuāli</a
               >
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
@@ -606,24 +612,25 @@
               </a>
             </div>
             <h1
-              class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+              role="link"
               x-data
               @click="window.location='article.html'">
-              Dziedātāja Zanda Švēde iekaro Sanfrancisko un Frankfurti
+              Žurnāls: Vai valsts stutēja nodokļu krāpniekus?
             </h1>
             <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
-                  paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
+              Valsts dalījusi lielus Covid-19 grantus uzņēmumiem, kas iepriekš krāpušies ar PVN shēmām un aplokšņu algām. Tagad parādnieki nodokļos nav samaksājuši miljonus, atklāj žurnāla Ir pētījums.
             </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500"> </a>
           </div>
         </figure>
 
+        <!-- prettier-ignore -->
         <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md flex-grow [&>h1]:text-blue-500">
           
         
           <img
-            src="./assets/hero-cfd2d752.jpg"
+            src="./assets/UzvarasParks_Salmane_9-f9e6fe63.png"
             alt=""
             class="aspect-video w-full cursor-pointer object-cover"
             x-data
@@ -635,7 +642,7 @@
             <div class="flex w-full justify-between">
               <a href="category.html"
                 class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                >Komentārs</a
+                >Analīze</a
               >
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
@@ -671,15 +678,16 @@
               </a>
             </div>
             <h1
-              class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+              role="link"
               x-data
               @click="window.location='article.html'">
-              Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles
+              «Liekam jaunu bildi iekšā»
             </h1>
             <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
+              Lāčplēša dienā Rīgas dome sola sabiedrībai atvērt rekonstruēto Uzvaras parku. Darbu pirmā kārta izmaksājusi 8,5 miljonus eiro — gandrīz miljonu vairāk, nekā plānots.
             </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Baiba Litvina</a>
           </div>
         </figure>
 
@@ -740,7 +748,7 @@
             
           
             <img
-              src="./assets/Rectangle_16-4e09bb5a.jpg"
+              src="./assets/Elksnins1-009f1d72.png"
               alt=""
               class="aspect-video w-full cursor-pointer object-cover"
               x-data
@@ -752,7 +760,7 @@
               <div class="flex w-full justify-between">
                 <a href="category.html"
                   class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                  >Komentārs</a
+                  >Analīze</a
                 >
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
@@ -788,14 +796,14 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
-                Dziedātāja Zanda Švēde iekaro Sanfrancisko
+                Modīgais cars
               </h1>
               <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-                Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai
-                      neiekļūtu neuzticamo valstu pelēkajā sarakstā?
+                Daugavpils mērs acīmredzami dzīvo pāri saviem līdzekļiem, bet pilsētā bez opozīcijas un ar vājiem medijiem jūs to neuzzināsit.
               </p>
               <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
             </div>
@@ -805,7 +813,7 @@
             
           
             <img
-              src="./assets/hero-cfd2d752.jpg"
+              src="./assets/202770894_4392887460722460_7029474697220546039_n-62e5d214.png"
               alt=""
               class="aspect-video w-full cursor-pointer object-cover"
               x-data
@@ -817,7 +825,7 @@
               <div class="flex w-full justify-between">
                 <a href="category.html"
                   class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                  >Komentārs</a
+                  >Ārpolitika</a
                 >
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
@@ -853,15 +861,16 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
-                Ugunsgrēki austrāliešiem liek domāt par dzīvesveida maiņu
+                Ticot uzvarai.* Paliec ar Ukrainu
               </h1>
               <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-                Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
+                Kā kara apstākļos tiek reformēta izglītība.
               </p>
-              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Anastasija Ringis, speciāli Ir</a>
             </div>
           </figure>
 
@@ -869,7 +878,7 @@
             
           
             <img
-              src="./assets/Rectangle_15-7aa0cfbc.jpg"
+              src="./assets/Marta-Herca_17.10.2023_Reinis-Inkens_-5-00d23507.png"
               alt=""
               class="aspect-video w-full cursor-pointer object-cover"
               x-data
@@ -881,7 +890,7 @@
               <div class="flex w-full justify-between">
                 <a href="category.html"
                   class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                  >Komentārs</a
+                  >Personība</a
                 >
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
@@ -917,15 +926,16 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
-                Dziedātāja Zanda Švēde iekaro Sanfrancisko
+                Nesapucēti stāsti
               </h1>
               <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-                Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
+                Laikmetā, kas mudina aizrautīgi sevi prezentēt un spodrināt spalvu, Martas Hercas raidieraksti Miers ar tevi, Normāla ģimene, Muša un citi izceļas ar atklātību un vienkāršību.
               </p>
-              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Marija Leskavniece</a>
             </div>
           </figure>
         </div>
@@ -1433,7 +1443,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[23px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Dace Rēķe, instagramā māca latviešu valodu
@@ -1497,7 +1508,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[23px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles
@@ -1561,7 +1573,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[23px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Galvenā naudas atmazgāsānas
@@ -1625,7 +1638,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[23px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Galvenā naudas atmazgāsānas
@@ -1715,7 +1729,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Dziedātāja Zanda Švēde iekaro Sanfrancisko
@@ -1779,7 +1794,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh
@@ -1843,7 +1859,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Dziedātāja Zanda Švēde iekaro Sanfrancisko
@@ -1933,7 +1950,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[18px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[18px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Ugunsgrēki austrāliešiem liek domāt par dzīvesveida maiņu
@@ -1994,7 +2012,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[18px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[18px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles
@@ -2055,7 +2074,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[18px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[18px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Galvenā naudas atmazgāsānas
@@ -2116,7 +2136,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[18px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[18px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Galvenā naudas atmazgāsānas
@@ -2177,7 +2198,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer text-[18px]"
+                class="text-[26px] leading-tight w-full h-min cursor-pointer text-[18px]" 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Galvenā naudas atmazgāsānas
@@ -2249,7 +2271,8 @@
                       </a>
                     </div>
                     <h1
-                      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                      role="link"
                       x-data
                       @click="window.location='article.html'">
                       Dace Rēķe, instagramā māca latviešu valodu
@@ -2314,7 +2337,8 @@
                       </a>
                     </div>
                     <h1
-                      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                      role="link"
                       x-data
                       @click="window.location='article.html'">
                       Satriecošais spriedums Maximas lietā
@@ -2379,7 +2403,8 @@
                       </a>
                     </div>
                     <h1
-                      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                      role="link"
                       x-data
                       @click="window.location='article.html'">
                       Galvenā naudas atmazgāsānas
@@ -2444,7 +2469,8 @@
                       </a>
                     </div>
                     <h1
-                      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                      role="link"
                       x-data
                       @click="window.location='article.html'">
                       Galvenā naudas atmazgāsānas
@@ -2509,7 +2535,8 @@
                       </a>
                     </div>
                     <h1
-                      class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                      class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                      role="link"
                       x-data
                       @click="window.location='article.html'">
                       Galvenā naudas atmazgāsānas
@@ -2621,7 +2648,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Dziedātāja Zanda Švēde iekaro Sanfrancisko
@@ -2687,7 +2715,8 @@
               </a>
             </div>
             <h1
-              class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+              role="link"
               x-data
               @click="window.location='article.html'">
               Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh
@@ -3229,7 +3258,8 @@
                 </a>
               </div>
               <h1
-                class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
                 x-data
                 @click="window.location='article.html'">
                 Dziedātāja Zanda Švēde iekaro Sanfrancisko
@@ -3295,7 +3325,8 @@
               </a>
             </div>
             <h1
-              class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+              role="link"
               x-data
               @click="window.location='article.html'">
               Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh
@@ -3360,7 +3391,8 @@
               </a>
             </div>
             <h1
-              class="text-[26px] leading-tight w-full h-min flex-grow cursor-pointer "
+              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+              role="link"
               x-data
               @click="window.location='article.html'">
               Dziedātāja Zanda Švēde iekaro Sanfrancisko
