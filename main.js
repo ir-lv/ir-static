@@ -1,10 +1,12 @@
 import "./style.css";
+
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
 
+Alpine.plugin(intersect);
+
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-
 
 import slide1 from './src/assets/img/temp/caricature.jpg';
 import slide2 from './src/assets/img/temp/article-featured.jpg';
@@ -47,12 +49,23 @@ const swiper1 = new Swiper('.swiper-2', {
 })
 
 
-Alpine.plugin(intersect);
-
 window.alpine = Alpine;
+
+Alpine.magic('scrollAmount', () => {
+  const scrollPercent = 
+    (window.scrollY / (document.getElementById("article").offsetHeight + 500 - window.innerHeight)) * 100
+
+  return {
+    scrollPx: window.scrollY,
+    scrollPercent: scrollPercent,
+    atStart: scrollPercent == 0,
+    atEnd: scrollPercent == 100,
+  }
+})
 
 Alpine.data("article", () => ({
   dimToolbar: false,
+  scrollPos: {}
 }));
 
 Alpine.data("caricatures", () =>({
@@ -87,8 +100,6 @@ Alpine.store("content", {
 });
 
 Alpine.start();
-
-console.log("????");
 
 
 var username = 'JanisSalins';

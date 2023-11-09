@@ -4,12 +4,21 @@
 
   <body>
     <div id="app">
+
       {{>header}}
-      <div
+      <article id="article"
         x-data="article"
+        x-init="scrollPos = $scrollAmount"
+        x-on:scroll.window="scrollPos = $scrollAmount"
         x-intersect="dimToolbar = false"
         x-intersect:leave="dimToolbar = true"
         class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
+        
+        <span
+          class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-50" :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
+          :style="{ width: `${scrollPos.scrollPercent}%` }">
+        </span>
+        
         <div
           class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-8">
           <a href="" class="category-tag font-serif">Analīze</a>
@@ -155,7 +164,7 @@
             </p>
             <div
               class="line-item flex w-full max-w-md flex-col items-center gap-3 font-serif lg:flex-row">
-              {{>btn-cta-red label="Abonēt"}} {{>btn-cta-black-secondary
+              {{>btn-cta-red label="Abonēt" class="w-full"}} {{>btn-cta-black-secondary
               label="Turpināt bez Abonēšanas"}}
             </div>
           </div>
@@ -250,27 +259,6 @@
             class="gallery flex h-80 items-center justify-center rounded-md bg-slate-200">
             <h2>Foto Galerija</h2>
           </div>
-
-          <div class="related-articles mt-10 flex flex-col gap-y-6">
-            <h1 class="pt-10 text-center lg:text-left">Saistītie raksti</h1>
-
-            {{>article-content-card title="Ko apdraud mežu izciršana?"
-            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
-            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
-            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
-            {{>article-content-card title="Ko apdraud mežu izciršana?"
-            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
-            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
-            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
-            {{>article-content-card title="Ko apdraud mežu izciršana?"
-            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
-            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
-            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
-            {{>article-content-card title="Ko apdraud mežu izciršana?"
-            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
-            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
-            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
-          </div>
         </div>
         <aside
           class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
@@ -312,25 +300,60 @@
             </ul>
           </div>
         </aside>
-      </div>
-      <section id="cards-1/4">
+      </article>
+      <section id="related-articles">
+        <div class="container mt-10">
+
+          <div class="lg:max-w-[650px] lg:ml-20 flex flex-col gap-y-6">
+            <h1 class="text-center lg:text-left">Saistītie raksti</h1>
+
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+  
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+  
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+  
+            {{>article-content-card title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+          </div>
+        </div>
+      </section>
+      <section id="cards-1/4" class="bg-slate-100 mt-8">
         <h1
-          class="title container pl-4 text-center lg:my-8 lg:pl-0 lg:text-left">
-          Jaunākais žurnālā
+          class="title container pl-4 text-center lg:mt-16 lg:pl-0 lg:text-left">
+          Jaunākajā žurnālā
         </h1>
         <div
           class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
+          
           {{>card tag="Komentārs" title="Dace Rēķe, instagramā māca latviešu
           valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa
           (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
           paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
-          author="Laura Dumbere"}} {{>card tag="Komentārs" title="Satriecošais
+          author="Laura Dumbere"}} 
+          
+          {{>card tag="Komentārs" title="Satriecošais
           spriedums Maximas lietā - reportāža no tiesas zāles" excerpt="Šonedēļ
           starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
-          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} {{>card
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} 
+          
+          {{>card
           tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
           starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
-          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} {{>card
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} 
+          
+          {{>card
           tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
           starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
           Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}}
