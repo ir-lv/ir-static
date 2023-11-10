@@ -47,7 +47,8 @@ export default defineConfig({
         author: resolve(__dirname, "author.html"),
         posts: resolve(__dirname, "posts.html"),
         terms: resolve(__dirname, "terms.html"),
-
+        category: resolve(__dirname, "category.html"),
+        podcasts: resolve(__dirname, "podcasts.html"),
       },
     },
   },

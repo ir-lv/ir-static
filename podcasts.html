@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  {{>head}}
+
+  <body>
+    <div id="app">
+      {{>header}}
+      <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0">
+        <div class="w-full lg:gap-0 py-4 lg:py-0">
+          <h1 class="text-center">Raidieraksti</h1>
+        </div>
+
+        <div class="flex gap-8 w-full">
+          <div class="hero w-full lg:px-0">
+            
+            <article class="prose lg:max-w-[650px]">
+              <h1>Šķiltava</h1>
+              <p>Katru piektdienu Ir žurnālisti izskaidro, apspriež, reizēm arī iesmej par nedēļas politiskajiem un sabiedriskajiem notikumiem. Atklāj gan notikumu, gan pašu darba aizkulises, kurām neatrodas vieta tradicionālajā drukātā žurnāla rāmjos. Raidījuma pastāvīgie dalībnieki ir žurnāla komentētāji Aivars Ozoliņš un Pauls Raudseps, kam katru nedēļu pievienojas viens komandas žurnālists, kurš padziļināti pētījis kādu no aktuālajiem tematiem.</p>
+              <div class="authors flex gap-10">
+                {{>user-avatar name="Pauls Raudseps" pic="./src/assets/img/temp/user-avatar-pic.png"}}
+                {{>user-avatar name="Aivars Ozoliņš" pic="./src/assets/img/temp/user-avatar-pic.png"}}
+              </div>
+            </article>
+
+            <hr>
+
+            <div id="buzzsprout-small-player" class="grid h-[200px] mt-8 gap-4 overflow-hidden"></div>
+            <script
+              type="text/javascript"
+              charset="utf-8"
+              src="https://www.buzzsprout.com/686771.js?container_id=buzzsprout-small-player&player=small">
+            </script>
+          </div>
+          <aside
+            class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+            <div class="articles-widget bg-slate-100">
+              <h2
+                class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+                Lasītākie raksti
+              </h2>
+              <ul class="relative flex flex-col gap-y-8">
+                <li class="border-b border-gray-300 pb-6 last:border-none">
+                  <div class="meta flex gap-3 uppercase">
+                    <span class="counter"><b class="text-xl">1.</b></span>
+                    <span
+                      class="category flex items-center gap-3 whitespace-nowrap"
+                      >Viedoklis</span
+                    >
+                    <span
+                      class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                      >Mortens Hansens</span
+                    >
+                  </div>
+                  <h4 class="leading-7">
+                    Par bankām, lielveikaliem un tirgus ekonomiku
+                  </h4>
+                </li>
+                <li class="border-b border-gray-300 pb-6 last:border-none">
+                  <div class="meta flex gap-3 uppercase">
+                    <span class="counter"><b class="text-xl">2.</b></span
+                    ><span
+                      class="category flex items-center gap-3 whitespace-nowrap"
+                      >Speciāli IR</span
+                    ><span
+                      class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                      >guntis keisels</span
+                    >
+                  </div>
+                  <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <section>
+        <div class="container items-start gap-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8">
+          <div class="related-articles flex w-full flex-col gap-y-6">
+            <div class="podcasts-list w-full h-[640px] overflow-hidden relative">
+              <iframe src="https://ir.buzzsprout.com/" id="iframe-id" scrolling="no" class="w-full absolute top-[-587px] -left-4 h-[200%]"></iframe>
+            </div>          </div>
+          <div class="ad-widget bg-slate-100 p-5 min-w-[270px]">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Reklāma
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6">
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">Koncerts</span>
+                </div>
+                <h4 class="font-serif"><b>Grupa Jumprava.</b> XO Arēnā Rīga</h4>
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">28. novembris</span>
+                </div>
+              </li>
+              <li class="border-b border-gray-300 pb-6">
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">Koncerts</span>
+                </div>
+                <h4 class="font-serif">
+                  <b>Rīgas Gredzens VEF </b>Kultūras pilī
+                </h4>
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">28. novembris</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="container items-start gap-8 px-4 mt-10 lg:flex lg:flex-wrap lg:px-0">
+
+        <div class="flex gap-8 w-full">
+          <div class="hero w-full lg:px-0">
+            
+            <article class="prose lg:max-w-[650px]">
+              <h1>Ārskats</h1>
+              <p>Katram no viņiem bija atšķirīgs ceļš uz ārpolitiku. Tomass auga diplomāta ģimenē. Aivaram patika Rolling Stones un Led Zepellin un tāpēc viņš klausījās «aizjūras balsis». Pauls dzīvoja ASV, bet gribēja saprast, kas notiek Latvijā. Taču visus trīs vieno interese par pasaulē notiekošo un pārliecība, ka mums visiem ir jāsaprot globālie procesi, kas mūs ietekmē. Tagad Tomass, Aivars un Pauls ar savām dažādām pieredzēm un skata punktiem tiekas vienā raidījumā, lai diskutētu un dalītos ar iespaidiem un zināšanām. Raidieraksts tapis pateicoties mediju atbalsta fonda ieguldījumam no Latvijas valsts budžeta līdzekļiem. #SIF_MAF2022</p>
+              <div class="authors flex gap-10">
+                {{>user-avatar name="Pauls Raudseps" pic="./src/assets/img/temp/user-avatar-pic.png"}}
+                {{>user-avatar name="Aivars Ozoliņš" pic="./src/assets/img/temp/user-avatar-pic.png"}}
+                {{>user-avatar name="Tomass Pildegovičs" pic="./src/assets/img/temp/user-avatar-pic.png"}}
+              </div>
+            </article>
+
+            <hr>
+
+            <div id="buzzsprout-small-player" class="grid h-[200px] mt-8 gap-4 overflow-hidden"></div>
+            <script
+              type="text/javascript"
+              charset="utf-8"
+              src="https://www.buzzsprout.com/686771.js?container_id=buzzsprout-small-player&player=small">
+            </script>
+          </div>
+          <aside
+            class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+            <div class="articles-widget bg-slate-100">
+              <h2
+                class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+                Lasītākie raksti
+              </h2>
+              <ul class="relative flex flex-col gap-y-8">
+                <li class="border-b border-gray-300 pb-6 last:border-none">
+                  <div class="meta flex gap-3 uppercase">
+                    <span class="counter"><b class="text-xl">1.</b></span>
+                    <span
+                      class="category flex items-center gap-3 whitespace-nowrap"
+                      >Viedoklis</span
+                    >
+                    <span
+                      class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                      >Mortens Hansens</span
+                    >
+                  </div>
+                  <h4 class="leading-7">
+                    Par bankām, lielveikaliem un tirgus ekonomiku
+                  </h4>
+                </li>
+                <li class="border-b border-gray-300 pb-6 last:border-none">
+                  <div class="meta flex gap-3 uppercase">
+                    <span class="counter"><b class="text-xl">2.</b></span
+                    ><span
+                      class="category flex items-center gap-3 whitespace-nowrap"
+                      >Speciāli IR</span
+                    ><span
+                      class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                      >guntis keisels</span
+                    >
+                  </div>
+                  <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <section>
+        <div class="container items-start gap-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8">
+          <div class="related-articles flex w-full flex-col gap-y-6">
+            <div class="podcasts-list w-full h-[1000px] overflow-hidden relative">
+              <iframe src="https://ir.buzzsprout.com/" id="iframe-id" scrolling="no" class="w-full absolute top-[-587px] -left-4 h-[200%]"></iframe>
+            </div>          </div>
+          <div class="ad-widget bg-slate-100 p-5 min-w-[270px] invisible">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Reklāma
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6">
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">Koncerts</span>
+                </div>
+                <h4 class="font-serif"><b>Grupa Jumprava.</b> XO Arēnā Rīga</h4>
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">28. novembris</span>
+                </div>
+              </li>
+              <li class="border-b border-gray-300 pb-6">
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">Koncerts</span>
+                </div>
+                <h4 class="font-serif">
+                  <b>Rīgas Gredzens VEF </b>Kultūras pilī
+                </h4>
+                <div class="meta flex uppercase">
+                  <span class="counter"></span
+                  ><span class="category">28. novembris</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      
+    </div>
+    {{>footer}}
+  </body>
+</html>
