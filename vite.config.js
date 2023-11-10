@@ -49,6 +49,8 @@ export default defineConfig({
         terms: resolve(__dirname, "terms.html"),
         category: resolve(__dirname, "category.html"),
         podcasts: resolve(__dirname, "podcasts.html"),
+        topic: resolve(__dirname, "section-topic.html"),
+
       },
     },
   },
