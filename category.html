@@ -6,9 +6,9 @@
     <div id="app">
       {{>header}}
       <div
-        class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0">
+        class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0" x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
         <div class="w-full lg:gap-0 py-4 lg:py-0">
-          <h1 class="text-center">Pasaulē</h1>
+          <h1 class="text-center" x-text="params">Pasaulē</h1>
         </div>
       </div>
 
