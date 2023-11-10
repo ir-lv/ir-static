@@ -9,19 +9,45 @@
       >
       {{>bookmark}}
     </div>
-    <h1 class="text-[22px] leading-tight {{title-size}} w-full h-min flex-grow">
+    <h1 class="text-[22px] leading-tight {{title-size}} w-full h-min flex-grow cursor-pointer"
+    role="link"
+    x-data
+    @click="window.location='article.html'">
       {{ title }}
     </h1>
     {{#if excerpt}}
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
+    role="link"
+    x-data
+    @click="window.location='article.html'">
       {{ excerpt}}
     </p>
     {{/if}}
     <a href="author.html" class="font-serif card__author uppercase text-gray-500"> {{ author }}</a>
   </div>
-  <img
-    src="./src/assets/img/temp/hero.jpg"
-    alt=""
-    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px]"
-    width="300" />
+  
+  {{#if image}}
+
+    <img
+      src="{{image}}"
+      alt=""
+      class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
+      role="link"
+      x-data
+      @click="window.location='article.html'"
+      width="300" />
+
+  {{else}}
+
+    <img
+        src="./src/assets/img/temp/hero.jpg"
+        alt=""
+        class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
+        role="link"
+        x-data
+        @click="window.location='article.html'"
+        width="300" />
+
+  {{/if}}
+
 </figure>
