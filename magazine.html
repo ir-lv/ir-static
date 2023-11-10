@@ -420,13 +420,22 @@
               <img
                 src="./assets/Rectangle_80-6e52075f.jpg"
                 alt=""
-                class="lg:w-auto w-full max-h-[370px] object-cover lg:col-span-3" />
+                class="lg:w-auto w-full max-h-[370px] object-cover lg:col-span-3 cursor-pointer" 
+                role="link"
+                x-data
+                @click="window.location='article.html'"/>
               <div
                 class="flex flex-col justify-center gap-y-8 px-4 lg:col-span-5 lg:px-0 lg:pr-8">
-                <h3 class="w-full pt-8 text-4xl leading-tight lg:pt-10">
+                <h3 class="w-full pt-8 text-4xl leading-tight lg:pt-10 cursor-pointer"
+                  role="link"
+                  x-data
+                  @click="window.location='article.html'">
                   Ar četrām prioritātēm vai garāks virsraksts
                 </h3>
-                <p class="flex-grow">
+                <p class="flex-grow cursor-pointer"
+                  role="link"
+                  x-data
+                  @click="window.location='article.html'">
                   Uzņēmīgā Zanda Švēde mūziku sāka mācīties tikai 25 gadu
                   vecumā, nokļuva Sanfrancisko operā un nu jau otro sezonu ir
                   Frankfurtes operas soliste. Kad vien apstākļi ļauj, viņa
