@@ -11,10 +11,11 @@
     window.document.addEventListener("alpine:init", () => {
       let state = window.alpine.store("header");
       state.showMenu = state.isScreenDesktop();
+
     });
   </script>
-  <script type="module" crossorigin src="./assets/main-b26a032f.js"></script>
-  <link rel="stylesheet" href="./assets/main-73f582a2.css">
+  <script type="module" crossorigin src="./assets/main-0e027e3d.js"></script>
+  <link rel="stylesheet" href="./assets/main-64c9c798.css">
 </head>
 
 <body>
@@ -387,11 +388,18 @@
       </div>
       <div class="items-start gap-8 lg:flex">
         <div class="hero w-full border-t border-t-slate-100 shadow-md lg:px-0">
-          <figure class="lg:flex gap-4 bg-white text-ir-gray-80 lg:gap-8">
+          <figure class="lg:flex gap-4 bg-white text-ir-gray-80 lg:gap-8 cursor-pointer"
+            role="link"
+            x-data
+            @click="window.location='article.html'">
             <img src="./assets/Rectangle_85-b10c51f8.jpg" alt=""
               class="aspect-square h-full w-auto object-cover" />
             <div class="flex flex-col justify-center gap-y-8 px-4 lg:col-span-5 lg:px-0 lg:pr-8">
-              <h3 class="w-full pt-8 text-4xl leading-tight lg:pt-10">
+              <h3 
+              class="w-full pt-8 text-4xl leading-tight lg:pt-10 cursor-pointer"
+              role="link"
+              x-data
+              @click="window.location='article.html'" >
                 Dziedātāja Zanda Švēde iekaro Sanfrancisko
               </h3>
               <p class="flex-grow text-[0.938rem]">
@@ -1522,6 +1530,7 @@
         <li><a href="">Privātuma politika</a></li>
       </ul>
     </div>
+  
   </footer>
 </body>
 
