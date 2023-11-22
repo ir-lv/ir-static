@@ -50,7 +50,7 @@ export default defineConfig({
         category: resolve(__dirname, "category.html"),
         podcasts: resolve(__dirname, "podcasts.html"),
         topic: resolve(__dirname, "section-topic.html"),
-
+        caricatures: resolve(__dirname, "caricatures.html"),
       },
     },
   },

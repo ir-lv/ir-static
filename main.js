@@ -105,21 +105,61 @@ Alpine.start();
 var username = 'JanisSalins';
 var application_password = 'rrJf 6Y9s 0meK Tq7A htqZ ajyu';
     
-/* const res = await fetch("https://irdev.devio.lv/wp-json/wp/v2/posts", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-      "Authorization": "Basic " + btoa(username + ':' + application_password),
-      "Origin": "http://localhost:5173"
-    },
-    body: JSON.stringify({
-        "title": "Post using REST API",
-        "content": "Post content using REST API",
-        "status": "publish"
-    }),
-})
-.then(response => response.json())
-.then(data => {
-    console.log("!!!!!", data);
-}); */
+
+let fetchHomePosts = async () =>
+{
+    return await new Promise((resolve, reject) =>
+    {
+      fetch("https://ir-wp.test/graphql", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `query getHomePosts {
+            posts {
+              nodes {
+                content
+                author {
+                  node {
+                    id
+                    email
+                    lastName
+                    firstName
+                  }
+                }
+                title
+              }
+            }
+          }`
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+    console.log("promise?", data);
+  }); 
+});
+}
+
+function getPosts(json)
+{    
+    let faqList = [];
+    let detail, summary;
+
+    json.table.rows.forEach((row, i) =>
+    {
+        if (i == 0) return; // The first row is the header        
+
+        try { detail = row.c[0].f ? row.c[0].f : row.c[0].v }
+        catch(e){ detail = '' }
+
+        try { summary = row.c[1].f ? row.c[1].f : row.c[1].v }
+        catch(e){ summary = '' }
+
+        faqList.push([detail, summary]);
+    });
+
+    return faqList;
+}
+
+fetchHomePosts();

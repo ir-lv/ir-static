@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+{{>head}}
+
+<body>
+  <div id="app">
+    {{>header}}
+    <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0 pb-4" x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
+      <div class="article-header flex w-full flex-col gap-y-4 lg:gap-y-8">
+        <h1 class="title pt-4 lg:text-center leading-tight" x-text="params">Karikatūras</h1>
+      </div>
+      <div class="items-start gap-8 lg:flex">
+        <div class="hero w-full">
+          {{>card-caricature-hero class="w-full" image="./src/assets/img/temp/caricature1.jpg" title="Iesitīsim ar likumu pa likmi" author="Ernests Kļaviņš"}}
+        </div>
+
+        <aside class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:w-4/12">
+          <div class="articles-widget bg-slate-100">
+            <h2 class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span>
+                  <span class="category flex items-center gap-3 whitespace-nowrap">Viedoklis</span>
+                  <span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">Mortens
+                    Hansens</span>
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span><span
+                    class="category flex items-center gap-3 whitespace-nowrap">Speciāli IR</span><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">guntis
+                    keisels</span>
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">3.</b></span><span
+                    class="category flex items-center gap-3 whitespace-nowrap">Speciāli IR</span><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">guntis
+                    keisels</span>
+                </div>
+                <h4 class="leading-7">«Jūs te piekaus»</h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">4.</b></span><span
+                    class="category flex items-center gap-3 whitespace-nowrap">Intervija</span><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">Māra Miķelsone</span>
+                </div>
+                <h4 class="leading-7">Nav jābaidās, bet jābūt gataviem</h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="cards-w-banner">
+      <div class="container gap-8 px-4 lg:flex lg:px-0 lg:pb-8 pb-4 items-start">
+        <div class="grid w-full grid-cols-2 gap-6">
+          {{>card-caricature title="Corona Kandinsky nosukums vienā vai divās rindās" image="./src/assets/img/temp/caricature.jpg" author="Ernests Kļaviņš"}}
+          {{>card-caricature title="Iesitīsim ar likumu pa likmi" image="./src/assets/img/temp/caricature1.jpg" author="Ernests Kļaviņš"}}
+          {{>card-caricature title="Iesitīsim ar likumu pa likmi" image="./src/assets/img/temp/caricature1.jpg" author="Ernests Kļaviņš"}}
+          {{>card-caricature title="Iesitīsim ar likumu pa likmi" image="./src/assets/img/temp/caricature1.jpg" author="Ernests Kļaviņš"}}
+          {{>card-caricature title="Iesitīsim ar likumu pa likmi" image="./src/assets/img/temp/caricature1.jpg" author="Ernests Kļaviņš"}}
+
+        </div>
+            <aside class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:w-4/12 h-80">
+
+            </aside>
+      </div>
+    </section>
+  </div>
+  {{>footer}}
+</body>
+
+</html>

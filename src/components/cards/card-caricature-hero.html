@@ -1,0 +1,34 @@
+<figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 {{class}}">
+  
+  {{#if image}}
+
+  <img
+    src="{{image}}"
+    alt=""
+    class="aspect-video w-full cursor-pointer object-cover"
+    x-data
+    @click="window.location='article.html'" />
+
+  {{else}}
+
+  <img
+    src="./src/assets/img/temp/hero.jpg"
+    alt=""
+    class="aspect-video w-full cursor-pointer object-cover"
+    x-data
+    @click="window.location='article.html'" />
+
+  {{/if}}
+  
+  <div
+    class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+    <h1
+      class="leading-tight text-4xl w-full h-min cursor-pointer {{title-size}}" 
+      role="link"
+      x-data
+      @click="window.location='article.html'">
+      {{ title }}
+    </h1>
+    {{>user-avatar name="Ernests Kļaviņš" pic="./src/assets/img/temp/user-avatar-pic.png"}}
+  </div>
+</figure>

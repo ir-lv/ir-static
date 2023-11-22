@@ -1,4 +1,8 @@
-<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-4 cursor-pointer" 
+     role="link"
+     x-data
+     @click="window.location='author.html'" >
+
   <img class="w-10 h-10 rounded-full" src="{{pic}}" alt="">
   <div class="font-serif-bold">
       <div>{{name}}</div>
