@@ -12,6 +12,14 @@ import slide1 from './src/assets/img/temp/caricature.jpg';
 import slide2 from './src/assets/img/temp/article-featured.jpg';
 
 
+import gal1 from './src/assets/img/temp/gallery/269-768x432.jpg';
+import gal2 from './src/assets/img/temp/gallery/402-768x432.jpg';
+import gal3 from './src/assets/img/temp/gallery/756-768x432.jpg';
+import gal4 from './src/assets/img/temp/gallery/767-768x432.jpg';
+
+
+
+
 // init Swiper:
 const swiper = new Swiper('.swiper-1', {
   loop: true,
@@ -76,6 +84,26 @@ Alpine.data("caricatures", () =>({
   activeSlide: 1
 }))
 
+Alpine.data("gallery", () =>({
+  slides: [
+    { 'id': 1, 'title': 'Corona Kandinsky vienā vai divās rindās', 'author': 'Ernests Kļaviņš', pic: gal1 },
+    { 'id': 2, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: gal2 },
+    { 'id': 3, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: gal3 },
+    { 'id': 4, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: gal4 },
+    ],
+  activeSlide: 1  ,
+  lightbox: false, 
+  imgModalSrc : '', 
+  imgModalAlt : '', 
+  imgModalDesc : '',
+  gotoPrev(){
+    this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1;
+  },
+  gotoNext() {
+    this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1
+  }
+}))
+
 Alpine.store("header", {
   isScreenDesktop() {
     let width = window.innerWidth > 0 ? window.innerWidth : screen.width;
@@ -94,9 +122,11 @@ Alpine.store("content", {
     return width > 640;
   },
 
+  showLightBox: false,
   showMenu: false,
   showSubmenu: false,
   isLoggedIn: false,
+
 });
 
 Alpine.start();

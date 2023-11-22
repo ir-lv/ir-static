@@ -15,7 +15,7 @@
         class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
         
         <span
-          class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-50" :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
+          class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-[40]" :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
           :style="{ width: `${scrollPos.scrollPercent}%` }">
         </span>
         
@@ -255,10 +255,15 @@
 
           {{>article-content-tags}}
 
-          <div
-            class="gallery flex h-80 items-center justify-center rounded-md bg-slate-200">
-            <h2>Foto Galerija</h2>
+          {{>gallery}}
+
+          <div x-show="$store.content.showLightBox">
+            <div class="fixed inset-0 z-40 flex items-center justify-center w-full p-2 overflow-hidden bg-black bg-opacity-75 h-100">
+              <div class="bg-white" x-text="$store.content.showLightBox">
+              </div>
+            </div>
           </div>
+
         </div>
         <aside
           class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
