@@ -381,166 +381,210 @@
       </div>
       <!---->
     </header>
-    <div class="container mb-8 flex w-full flex-col items-center gap-10 px-4 lg:px-0">
-      <h1 class="mt-8 text-center">Žurnāls Ir</h1>
-      <div id="archive-calendar" class="relative w-full lg:max-w-screen-lg">
-        <ul class="relative flex w-auto overflow-x-scroll overscroll-none whitespace-nowrap border-l-2 border-ir-red py-2 font-serif-bold text-xl">
-          <li class="my-1 px-4 pt-1"><a href="">2023</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2022</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2021</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2020</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2019</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2018</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2017</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2016</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2015</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2014</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2013</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2012</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2011</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2010</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2009</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2008</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2007</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2006</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2007</a></li>
-          <li class="my-1 px-4 pt-1"><a href="">2006</a></li>
-        </ul>
-        <div class="gradient pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white to-transparent"></div>
+    <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0 pb-4" x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
+      <div class="article-header flex w-full flex-col gap-y-4 lg:gap-y-8">
+        <h1 class="title pt-4 lg:text-center leading-tight" x-text="params">Karikatūras</h1>
       </div>
-      <section id="archive" class="mb-20 grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-8">
-        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR697_vaks-de379048.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
+      <div class="items-start gap-8 lg:flex">
+        <div class="hero w-full">
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 w-full">
+            
+          
+            <img
+              src="./assets/caricature1-9873611a.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+              <h1
+                class="leading-tight text-4xl w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Iesitīsim ar likumu pa likmi
+              </h1>
+              <div class="flex items-center space-x-4 cursor-pointer" 
+                   role="link"
+                   x-data
+                   @click="window.location='author.html'" >
+              
+                <img class="w-10 h-10 rounded-full" src="./assets/user-avatar-pic-45de6250.png" alt="">
+                <div class="font-serif-bold">
+                    <div>Ernests Kļaviņš</div>
+                </div>
+              </div>  </div>
+          </figure>
+        </div>
+
+        <aside class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:w-4/12">
+          <div class="articles-widget bg-slate-100">
+            <h2 class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span>
+                  <span class="category flex items-center gap-3 whitespace-nowrap">Viedoklis</span>
+                  <span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">Mortens
+                    Hansens</span>
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span><span
+                    class="category flex items-center gap-3 whitespace-nowrap">Speciāli IR</span><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">guntis
+                    keisels</span>
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">3.</b></span><span
+                    class="category flex items-center gap-3 whitespace-nowrap">Speciāli IR</span><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">guntis
+                    keisels</span>
+                </div>
+                <h4 class="leading-7">«Jūs te piekaus»</h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">4.</b></span><span
+                    class="category flex items-center gap-3 whitespace-nowrap">Intervija</span><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red">Māra Miķelsone</span>
+                </div>
+                <h4 class="leading-7">Nav jābaidās, bet jābūt gataviem</h4>
+              </li>
+            </ul>
           </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR698_vaks-21f4489f.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR699_vaks-c0ff03c7.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR700_vaks-419f52e8.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR701_vaks-10dab5fc.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR700_vaks-419f52e8.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR699_vaks-c0ff03c7.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR701_vaks-10dab5fc.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR698_vaks-21f4489f.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>        <figure class="relative shadow-md group/mag">
-          <img src="./assets/IR697_vaks-de379048.jpg" class="group-hover/mag:opacity-50 hover:transition-opacity" alt="" loading="lazy">
-          <div class="flex justify-between p-3">
-            <span class="font-serif-bold">Nr. 701</span>
-            <span class="font-serif-bold">12. oktobris</span>
-          </div>
-          <div class="hidden lg:block opacity-0 group-hover/mag:opacity-100 transition-opacity btn-wrapper w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a
-              href="magazine.html"
-              class="button block cursor-pointer flex-col whitespace-nowrap rounded-md bg-ir-red px-7 py-3 text-center font-serif text-white outline-ir-red transition-colors hover:bg-ir-red-dark hover:text-white hover:outline-none focus:outline-none focus:ring-2 focus:ring-ir-dark-gray ">
-              Lasīt
-            </a>
-          </div>
-        </figure>      </section>
+        </aside>
+      </div>
     </div>
+
+    <section id="cards-w-banner">
+      <div class="container gap-8 px-4 lg:flex lg:px-0 lg:pb-8 pb-4 items-start">
+        <div class="grid w-full grid-cols-2 gap-6">
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 ">
+            
+          
+            <img
+              src="./assets/caricature-0da30566.jpg"
+              alt=""
+              class="aspect-auto w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+              <h1
+                class="leading-tight text-2xl w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Corona Kandinsky nosukums vienā vai divās rindās
+              </h1>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Ernests Kļaviņš</a>  </div>
+          </figure>
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 ">
+            
+          
+            <img
+              src="./assets/caricature1-9873611a.jpg"
+              alt=""
+              class="aspect-auto w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+              <h1
+                class="leading-tight text-2xl w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Iesitīsim ar likumu pa likmi
+              </h1>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Ernests Kļaviņš</a>  </div>
+          </figure>
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 ">
+            
+          
+            <img
+              src="./assets/caricature1-9873611a.jpg"
+              alt=""
+              class="aspect-auto w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+              <h1
+                class="leading-tight text-2xl w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Iesitīsim ar likumu pa likmi
+              </h1>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Ernests Kļaviņš</a>  </div>
+          </figure>
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 ">
+            
+          
+            <img
+              src="./assets/caricature1-9873611a.jpg"
+              alt=""
+              class="aspect-auto w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+              <h1
+                class="leading-tight text-2xl w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Iesitīsim ar likumu pa likmi
+              </h1>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Ernests Kļaviņš</a>  </div>
+          </figure>
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 ">
+            
+          
+            <img
+              src="./assets/caricature1-9873611a.jpg"
+              alt=""
+              class="aspect-auto w-full cursor-pointer object-cover"
+              x-data
+              @click="window.location='article.html'" />
+          
+            
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+              <h1
+                class="leading-tight text-2xl w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Iesitīsim ar likumu pa likmi
+              </h1>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Ernests Kļaviņš</a>  </div>
+          </figure>
+
+        </div>
+            <aside class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:w-4/12 h-80">
+
+            </aside>
+      </div>
+    </section>
   </div>
   <footer aria-label="footer" class="bg-ir-dark-gray">
     <div class="container flex-row items-center p-10 lg:flex">
