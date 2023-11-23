@@ -5,28 +5,26 @@
   <img
     src="{{image}}"
     alt=""
-    class="aspect-auto w-full cursor-pointer object-cover"
+    class="aspect-auto w-full  h-[60%] cursor-pointer object-cover"
     x-data
-    @click="window.location='article.html'" />
+    @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
 
   {{else}}
 
   <img
     src="./src/assets/img/temp/hero.jpg"
     alt=""
-    class="aspect-video w-full cursor-pointer object-cover"
+    class="aspect-video w-full h-[60%] cursor-pointer object-cover"
     x-data
-    @click="window.location='article.html'" />
+    @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
 
   {{/if}}
   
-  <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+  <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 p-4 lg:p-8">
     <h1
-      class="leading-tight text-2xl w-full h-min cursor-pointer {{title-size}}" 
-      role="link"
-      x-data
-      @click="window.location='article.html'">
+      class="leading-tight text-sm lg:text-2xl w-full h-min cursor-pointer {{title-size}}" 
+      role="link">
       {{ title }}
     </h1>
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500"> {{ author }}</a>  </div>
+    <a href="author.html" class="font-serif text-xs lg:text-base card__author uppercase text-gray-500"> {{ author }}</a>  </div>
 </figure>

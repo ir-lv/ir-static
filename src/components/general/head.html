@@ -9,7 +9,7 @@
     window.document.addEventListener("alpine:init", () => {
       let state = window.alpine.store("header");
       state.showMenu = state.isScreenDesktop();
-
+      console.log("A ",window.alpine.store("content").showLightBox);
     });
   </script>
 </head>

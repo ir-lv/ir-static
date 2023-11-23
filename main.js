@@ -2,8 +2,12 @@ import "./style.css";
 
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
+import focus from '@alpinejs/focus'
 
 Alpine.plugin(intersect);
+Alpine.plugin(focus);
+window.alpine = Alpine;
+
 
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
@@ -57,8 +61,6 @@ const swiper1 = new Swiper('.swiper-2', {
 })
 
 
-window.alpine = Alpine;
-
 Alpine.magic('scrollAmount', () => {
   const scrollPercent = 
     (window.scrollY / (document.getElementById("article").offsetHeight + 500 - window.innerHeight)) * 100
@@ -102,6 +104,15 @@ Alpine.data("gallery", () =>({
   gotoNext() {
     this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1
   }
+}))
+
+Alpine.data("caricatures", () =>({
+
+  lightbox: false, 
+  imgModalSrc : '', 
+  imgModalAlt : '', 
+  imgModalDesc : '',
+
 }))
 
 Alpine.store("header", {

@@ -2,9 +2,9 @@
 <html lang="en">
   {{>head }}
 
-  <body>
+  <body x-data @keyup.escape="$store.content.showLightBox = false" :class="$store.content.showLightBox ? 'overflow-hidden' : '' ">
+    
     <div id="app">
-
       {{>header}}
       <article id="article"
         x-data="article"
@@ -259,7 +259,7 @@
 
           <div x-show="$store.content.showLightBox">
             <div class="fixed inset-0 z-40 flex items-center justify-center w-full p-2 overflow-hidden bg-black bg-opacity-75 h-100">
-              <div class="bg-white" x-text="$store.content.showLightBox">
+              <div class="bg-white">
               </div>
             </div>
           </div>

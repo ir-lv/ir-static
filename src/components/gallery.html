@@ -3,19 +3,30 @@
   :class="$store.content.showLightBox ? 'fixed z-50 w-full lg:max-w-screen-md left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' : '' "
   x-data="gallery"
   @click.away="$store.content.showLightBox = ''"
-  @keyup.left="gotoPrev()" @keyup.right="gotoNext()">
+  @keyup.left="gotoPrev()" 
+  @keyup.right="gotoNext()">
   <div class="relative mx-auto">
     <!-- Slides -->
     <div class="grid p-2">
       <template x-for="slide in slides" :key="slide.id">
-        <img
+        <!-- <img
           x-cloak
           x-show="activeSlide === slide.id" 
           x-transition.opacity.duration.700ms
           :src="slide.pic" alt="" 
           class="w-full object-cover cursor-pointer" style="grid-column: 1; grid-row: 1;"
           role="dialog"
-          @click="$dispatch('lightbox',  {  imgModalSrc: slide.pic, imgModalAlt: 'Author', imgModalDesc: 'Random Image One Description' })">
+          @click="$dispatch('lightbox',  {  imgModalSrc: slide.pic, imgModalAlt: 'Author', imgModalDesc: 'Random Image One Description' })"> -->
+
+          <img
+          x-cloak
+          x-show="activeSlide === slide.id"
+          x-transition.opacity.duration.700ms
+          :src="slide.pic" alt="" 
+          class="w-full object-cover cursor-pointer" style="grid-column: 1; grid-row: 1;"
+          role="dialog"
+          @click="$store.content.showLightBox = !$store.content.showLightBox">
+
       </template>
     </div>
 
@@ -99,7 +110,6 @@
           <path d="M24 8L18 14" stroke="#212225" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M14 18L8 24" stroke="#212225" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-
     </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 {{>head}}
 
-<body>
+<body x-data="caricatures" :class="lightbox ? 'overflow-hidden' : ''">
   <div id="app">
     {{>header}}
     <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0 pb-4" x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
@@ -66,7 +66,7 @@
 
     <section id="cards-w-banner">
       <div class="container gap-8 px-4 lg:flex lg:px-0 lg:pb-8 pb-4 items-start">
-        <div class="grid w-full grid-cols-2 gap-6">
+        <div class="grid w-full grid-cols-2 gap-3 lg:gap-6">
           {{>card-caricature title="Corona Kandinsky nosukums vienā vai divās rindās" image="./src/assets/img/temp/caricature.jpg" author="Ernests Kļaviņš"}}
           {{>card-caricature title="Iesitīsim ar likumu pa likmi" image="./src/assets/img/temp/caricature1.jpg" author="Ernests Kļaviņš"}}
           {{>card-caricature title="Iesitīsim ar likumu pa likmi" image="./src/assets/img/temp/caricature1.jpg" author="Ernests Kļaviņš"}}
@@ -79,6 +79,23 @@
             </aside>
       </div>
     </section>
+    <div x-show="lightbox" @lightbox.window="lightbox = true; imgModalSrc = $event.detail.imgModalSrc; imgModalDesc = $event.detail.imgModalDesc;">
+      <div class="fixed inset-0 z-50 flex items-center justify-center w-full p-2 overflow-hidden bg-black bg-opacity-75 h-100">
+        <div @click.away="lightbox = ''" class="bg-white relative">
+          <img class="lg:w-[80vh] w-auto" :src="imgModalSrc" :alt="imgModalAlt">
+          <div class="mt-6 p-6 flex flex-col gap-4">
+            <h1 x-text="imgModalDesc" class="text-2xl lg:text-4xl"></h1>
+            {{>user-avatar name="Pauls Raudseps" pic="./src/assets/img/temp/user-avatar-pic.png"}}
+          </div>
+          <a href="" class="absolute -top-2 -right-16">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="14.7071" y1="14" x2="42.0002" y2="41.2931" stroke="white" stroke-linecap="square"/>
+              <line x1="15.3984" y1="41.2929" x2="42.6911" y2="13.9996" stroke="white" stroke-linecap="square"/>
+              </svg>              
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
   {{>footer}}
 </body>

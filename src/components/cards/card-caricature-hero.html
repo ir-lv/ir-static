@@ -8,7 +8,7 @@
     class="aspect-video w-full cursor-pointer object-cover"
     role="link"
     x-data
-    @click="window.location='article.html'" />
+    @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
 
   {{else}}
 
@@ -18,17 +18,14 @@
     class="aspect-video w-full cursor-pointer object-cover"
     role="link"
     x-data
-    @click="window.location='article.html'" />
+    @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
 
   {{/if}}
   
   <div
-    class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-8 py-8">
+    class="flex flex-1 flex-col flex-wrap items-start gap-y-3 p-4 lg:p-8">
     <h1
-      class="leading-tight text-4xl w-full h-min cursor-pointer {{title-size}}" 
-      role="link"
-      x-data
-      @click="window.location='article.html'">
+      class="leading-tight text-2xl lg:text-4xl w-full h-min cursor-pointer {{title-size}}">
       {{ title }}
     </h1>
     {{>user-avatar name="Ernests Kļaviņš" pic="./src/assets/img/temp/user-avatar-pic.png"}}
