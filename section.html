@@ -11,11 +11,11 @@
     window.document.addEventListener("alpine:init", () => {
       let state = window.alpine.store("header");
       state.showMenu = state.isScreenDesktop();
-
+      console.log("A ",window.alpine.store("content").showLightBox);
     });
   </script>
-  <script type="module" crossorigin src="./assets/main-0e027e3d.js"></script>
-  <link rel="stylesheet" href="./assets/main-64c9c798.css">
+  <script type="module" crossorigin src="./assets/main-9bd4dc0d.js"></script>
+  <link rel="stylesheet" href="./assets/main-ba7e1c42.css">
 </head>
 
 <body>
@@ -1530,7 +1530,6 @@
         <li><a href="">Privātuma politika</a></li>
       </ul>
     </div>
-  
   </footer>
 </body>
 
