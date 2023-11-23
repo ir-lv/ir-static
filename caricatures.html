@@ -2,7 +2,7 @@
 <html lang="en">
 {{>head}}
 
-<body x-data="caricatures" :class="lightbox ? 'overflow-hidden' : ''">
+<body x-data="caricatures_page" :class="lightbox ? 'overflow-hidden' : ''">
   <div id="app">
     {{>header}}
     <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0 pb-4" x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">

@@ -86,6 +86,15 @@ Alpine.data("caricatures", () =>({
   activeSlide: 1
 }))
 
+Alpine.data("caricatures_page", () =>({
+
+  lightbox: false, 
+  imgModalSrc : '', 
+  imgModalAlt : '', 
+  imgModalDesc : '',
+
+}))
+
 Alpine.data("gallery", () =>({
   slides: [
     { 'id': 1, 'title': 'Corona Kandinsky vienā vai divās rindās', 'author': 'Ernests Kļaviņš', pic: gal1 },
@@ -106,14 +115,7 @@ Alpine.data("gallery", () =>({
   }
 }))
 
-Alpine.data("caricatures", () =>({
 
-  lightbox: false, 
-  imgModalSrc : '', 
-  imgModalAlt : '', 
-  imgModalDesc : '',
-
-}))
 
 Alpine.store("header", {
   isScreenDesktop() {
