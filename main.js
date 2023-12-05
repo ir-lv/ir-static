@@ -205,4 +205,4 @@ function getPosts(json)
     return faqList;
 }
 
-fetchHomePosts();
+//fetchHomePosts();
