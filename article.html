@@ -15,6 +15,7 @@
         class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
         
         <span
+          id="progress-bar"
           class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-[40]" :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
           :style="{ width: `${scrollPos.scrollPercent}%` }">
         </span>
@@ -63,6 +64,8 @@
             nav spēka aiziet. Notikušais uzdod neērtu jautājumu — kādi ir valsts
             pienākumi pret cilvēku, kas sev palīdzēt nevar vai nevēlas?
           </p>
+          <anchor id="anchor-1234" class="bg-red-200">% anchor %</anchor>
+          <div id="ad-1234" class="w-[200px] h-[350px] bg-green-300 flex justify-center items-center absolute right-0">ad</div>
           <p>
             Var teikt, ka Santu pazudināja pašas raksturs. Bet to veicināja arī
             valsts iestādes, kuras, darbojoties bez empātijas un dziļāka
