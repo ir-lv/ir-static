@@ -14,8 +14,8 @@
         console.log("A ",window.alpine.store("content").showLightBox);
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-18673946.js"></script>
-    <link rel="stylesheet" href="./assets/main-ba7e1c42.css">
+    <script type="module" crossorigin src="./assets/main-629e6bd4.js"></script>
+    <link rel="stylesheet" href="./assets/main-ab08f0d9.css">
   </head>
 
   <body>
@@ -207,6 +207,86 @@
           <circle cx="14.5" cy="14" r="6" stroke="#212225" />
           <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
         </svg>
+      </div>
+        <div
+        x-data="{enabled: false, toggle(){
+          this.enabled = !this.enabled;
+          if(this.enabled){
+            document.body.style.fontSize = 'x-large';
+          }
+          else{
+            document.body.style.fontSize = 'initial';
+          }
+        }}"
+        class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+        @click="toggle()"
+        class="hidden cursor-pointer lg:block"
+        title="Teksta lielums"
+        aria-label="Teksta lielums">
+      
+        <svg
+          x-show="!enabled" 
+          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.40498 22C9.33898 22 9.29498 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.614 9.00898 20.592 8.98698 20.592H7.19398C7.17198 20.592 7.13898 20.614 7.13898 20.636L6.90798 21.901C6.89698 21.967 6.85298 22 6.78698 22H5.95098C5.87398 22 5.84098 21.945 5.85198 21.879L7.49098 14.399C7.50198 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.65698 14.3 8.70098 14.333 8.71198 14.399L10.362 21.879C10.373 21.945 10.34 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.734 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.734 8.85498 19.712L8.10698 15.807C8.09598 15.774 8.07398 15.774 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
+          <path d="M16.1063 22C16.0223 22 15.9663 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.236 15.6023 20.208 15.5743 20.208H13.2923C13.2643 20.208 13.2223 20.236 13.2223 20.264L12.9283 21.874C12.9143 21.958 12.8583 22 12.7743 22H11.7103C11.6123 22 11.5703 21.93 11.5843 21.846L13.6703 12.326C13.6843 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1543 12.2 15.2103 12.242 15.2243 12.326L17.3243 21.846C17.3383 21.93 17.2963 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.116 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.116 15.4063 19.088L14.4543 14.118C14.4403 14.076 14.4123 14.076 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
+          <path d="M24.7082 22C24.6002 22 24.5282 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.732 24.0602 19.696 24.0242 19.696H21.0902C21.0542 19.696 21.0002 19.732 21.0002 19.768L20.6222 21.838C20.6042 21.946 20.5322 22 20.4242 22H19.0562C18.9302 22 18.8762 21.91 18.8942 21.802L21.5762 9.562C21.5942 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4842 9.4 23.5562 9.454 23.5742 9.562L26.2742 21.802C26.2922 21.91 26.2382 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.292 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.292 23.8082 18.256L22.5842 11.866C22.5662 11.812 22.5302 11.812 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
+        </svg>
+      
+        <svg
+          x-show="enabled" 
+          x-cloak 
+          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="30" height="30" rx="3" stroke="#171717" stroke-width="2"/>
+          <path d="M9.40498 22C9.33898 22 9.29865 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.6213 9.03465 20.6103 9.01998 20.603C9.01265 20.5957 9.00165 20.592 8.98698 20.592H7.19398C7.17932 20.592 7.16465 20.5957 7.14998 20.603C7.14265 20.6103 7.13898 20.6213 7.13898 20.636L6.90798 21.901C6.90065 21.967 6.86032 22 6.78698 22H5.95098C5.91432 22 5.88498 21.989 5.86298 21.967C5.84832 21.945 5.84465 21.9157 5.85198 21.879L7.49098 14.399C7.50565 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.66432 14.3 8.70465 14.333 8.71198 14.399L10.362 21.879V21.901C10.362 21.967 10.329 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.7413 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.7413 8.85498 19.712L8.10698 15.807C8.09965 15.7923 8.09232 15.785 8.08498 15.785C8.07765 15.785 8.07032 15.7923 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
+          <path d="M16.1063 22C16.0223 22 15.971 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.2453 15.635 20.2313 15.6163 20.222C15.607 20.2127 15.593 20.208 15.5743 20.208H13.2923C13.2737 20.208 13.255 20.2127 13.2363 20.222C13.227 20.2313 13.2223 20.2453 13.2223 20.264L12.9283 21.874C12.919 21.958 12.8677 22 12.7743 22H11.7103C11.6637 22 11.6263 21.986 11.5983 21.958C11.5797 21.93 11.575 21.8927 11.5843 21.846L13.6703 12.326C13.689 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1637 12.2 15.215 12.242 15.2243 12.326L17.3243 21.846V21.874C17.3243 21.958 17.2823 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.1253 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.1253 15.4063 19.088L14.4543 14.118C14.445 14.0993 14.4357 14.09 14.4263 14.09C14.417 14.09 14.4077 14.0993 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
+          <path d="M24.7082 22C24.6002 22 24.5342 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.744 24.1022 19.726 24.0782 19.714C24.0662 19.702 24.0482 19.696 24.0242 19.696H21.0902C21.0662 19.696 21.0422 19.702 21.0182 19.714C21.0062 19.726 21.0002 19.744 21.0002 19.768L20.6222 21.838C20.6102 21.946 20.5442 22 20.4242 22H19.0562C18.9962 22 18.9482 21.982 18.9122 21.946C18.8882 21.91 18.8822 21.862 18.8942 21.802L21.5762 9.562C21.6002 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4962 9.4 23.5622 9.454 23.5742 9.562L26.2742 21.802V21.838C26.2742 21.946 26.2202 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.304 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.304 23.8082 18.256L22.5842 11.866C22.5722 11.842 22.5602 11.83 22.5482 11.83C22.5362 11.83 22.5242 11.842 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
+        </svg>        
+      </div>
+       <div
+        class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+        x-data="{arr : [1, 2, 3], currentIndex:0, next(){
+          this.currentIndex = this.currentIndex < this.arr.length ? this.currentIndex + 1 : 0;
+          return this.currentIndex;
+        }}"
+        @click="next()"
+        class="hidden cursor-pointer lg:block"
+        title="Kontrasts"
+        aria-label="Kontrasts">
+      
+        <svg 
+          x-show="currentIndex == 0"
+          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225"/>
+          <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225"/>
+        </svg>
+      
+        <svg 
+          x-show="currentIndex == 1"
+          x-cloak 
+          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="4" fill="#212225"/>
+          <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8"/>
+          <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8"/>
+        </svg>
+      
+        <svg 
+          x-show="currentIndex == 2"
+          x-cloak 
+          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="4" fill="#212225"/>
+          <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500"/>
+          <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500"/>
+        </svg>
+      
+        <svg 
+          x-show="currentIndex == 3"
+          x-cloak 
+          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="4" fill="#212225"/>
+          <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500"/>
+          <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500"/>
+        </svg>
+          
       </div>
       
           </div>
@@ -705,7 +785,6 @@
                   </clipPath>
                   </defs>
                   </svg>
-                  
               </div>
               <h2 class="title pt-1 font-serif uppercase leading-none text-white">Svarīgākais</h2>
             </div>
@@ -2660,71 +2739,71 @@
             </div>
           </figure>
 
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+            
           
-        
-          <img
-            src="./assets/hero-cfd2d752.jpg"
-            alt=""
-            class="aspect-video w-full cursor-pointer object-cover"
-            x-data
-            @click="window.location='article.html'" />
-        
-          
-          <div
-            class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
-            <div class="flex w-full justify-between">
-              <a href="category.html"
-                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                >Komentārs</a
-              >
-              <a
-                class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-                x-data="{ saved: false }"
-                @click="saved = ! saved">
-                <svg
-                  x-show="!saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                    stroke="#73757A"
-                    stroke-linejoin="round" />
-                </svg>
-              
-                <svg
-                  x-show="saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                    fill="white"
-                    stroke="#212225"
-                    stroke-linejoin="round" />
-                  <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                </svg>
-              </a>
-            </div>
-            <h1
-              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-              role="link"
+            <img
+              src="./assets/hero-cfd2d752.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
               x-data
-              @click="window.location='article.html'">
-              Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-                  atmazgāšanu..
-            </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
-          </div>
-        </figure>
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+              <div class="flex w-full justify-between">
+                <a href="category.html"
+                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  >Komentārs</a
+                >
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh
+              </h1>
+              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+                      atmazgāšanu..
+              </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
+            </div>
+          </figure>
 
           <div class="ad-widget hiddne bg-slate-100 p-6 lg:visible">
             <h2 class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">Reklāma</h2>
@@ -2855,6 +2934,7 @@
               alt="" />
             <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
               <ul class="mb-6 w-full grid-cols-2 gap-x-8 gap-y-6 lg:mb-0 lg:grid">
+                <!-- prettier-ignore -->
                 <li class="border-t border-gray-300 px-4 py-4">
                   <div class="flex justify-between ">
                     <a href="magazine.html" class="font-serif-bold text-2xl leading-tight">
@@ -3031,6 +3111,7 @@
               alt="" />
             <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
               <ul class="mb-6 w-full grid-cols-2 gap-x-8 gap-y-6 lg:mb-0 lg:grid">
+                <!-- prettier-ignore -->
                 <li class="border-t border-gray-300 px-4 py-4">
                   <div class="flex justify-between ">
                     <a href="magazine.html" class="font-serif-bold text-2xl leading-tight">
@@ -3270,138 +3351,138 @@
             </div>
           </figure>
 
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+            
           
-        
-          <img
-            src="./assets/hero-cfd2d752.jpg"
-            alt=""
-            class="aspect-video w-full cursor-pointer object-cover"
-            x-data
-            @click="window.location='article.html'" />
-        
-          
-          <div
-            class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
-            <div class="flex w-full justify-between">
-              <a href="category.html"
-                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                >Komentārs</a
-              >
-              <a
-                class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-                x-data="{ saved: false }"
-                @click="saved = ! saved">
-                <svg
-                  x-show="!saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                    stroke="#73757A"
-                    stroke-linejoin="round" />
-                </svg>
-              
-                <svg
-                  x-show="saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                    fill="white"
-                    stroke="#212225"
-                    stroke-linejoin="round" />
-                  <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                </svg>
-              </a>
-            </div>
-            <h1
-              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-              role="link"
+            <img
+              src="./assets/hero-cfd2d752.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
               x-data
-              @click="window.location='article.html'">
-              Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-                  atmazgāšanu..
-            </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
-          </div>
-        </figure>
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+              <div class="flex w-full justify-between">
+                <a href="category.html"
+                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  >Komentārs</a
+                >
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh
+              </h1>
+              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+                      atmazgāšanu..
+              </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Indra Sprance</a>
+            </div>
+          </figure>
 
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+          <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+            
           
-        
-          <img
-            src="./assets/hero-cfd2d752.jpg"
-            alt=""
-            class="aspect-video w-full cursor-pointer object-cover"
-            x-data
-            @click="window.location='article.html'" />
-        
-          
-          <div
-            class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
-            <div class="flex w-full justify-between">
-              <a href="category.html"
-                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-                >Komentārs</a
-              >
-              <a
-                class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-                x-data="{ saved: false }"
-                @click="saved = ! saved">
-                <svg
-                  x-show="!saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                    stroke="#73757A"
-                    stroke-linejoin="round" />
-                </svg>
-              
-                <svg
-                  x-show="saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                    fill="white"
-                    stroke="#212225"
-                    stroke-linejoin="round" />
-                  <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                </svg>
-              </a>
-            </div>
-            <h1
-              class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-              role="link"
+            <img
+              src="./assets/hero-cfd2d752.jpg"
+              alt=""
+              class="aspect-video w-full cursor-pointer object-cover"
               x-data
-              @click="window.location='article.html'">
-              Dziedātāja Zanda Švēde iekaro Sanfrancisko
-            </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
-              Šonedēļ starptautiskā Finanšu
-                  darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu
-                  neuzticamo valstu pelēkajā sarakstā?
-            </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
-          </div>
-        </figure>
+              @click="window.location='article.html'" />
+          
+            
+            <div
+              class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+              <div class="flex w-full justify-between">
+                <a href="category.html"
+                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  >Komentārs</a
+                >
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1
+                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
+                role="link"
+                x-data
+                @click="window.location='article.html'">
+                Dziedātāja Zanda Švēde iekaro Sanfrancisko
+              </h1>
+              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                Šonedēļ starptautiskā Finanšu
+                      darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu
+                      neuzticamo valstu pelēkajā sarakstā?
+              </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"> Laura Dumbere</a>
+            </div>
+          </figure>
         </div>
         <div>
           <div class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
