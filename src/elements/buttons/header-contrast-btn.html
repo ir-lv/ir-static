@@ -1,0 +1,46 @@
+<div
+  class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+  x-data="{arr : [1, 2, 3], currentIndex:0, next(){
+    this.currentIndex = this.currentIndex < this.arr.length ? this.currentIndex + 1 : 0;
+    return this.currentIndex;
+  }}"
+  @click="next()"
+  class="hidden cursor-pointer lg:block"
+  title="Kontrasts"
+  aria-label="Kontrasts">
+
+  <svg 
+    x-show="currentIndex == 0"
+    width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225"/>
+    <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225"/>
+  </svg>
+
+  <svg 
+    x-show="currentIndex == 1"
+    x-cloak 
+    width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="4" fill="#212225"/>
+    <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8"/>
+    <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8"/>
+  </svg>
+
+  <svg 
+    x-show="currentIndex == 2"
+    x-cloak 
+    width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="4" fill="#212225"/>
+    <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500"/>
+    <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500"/>
+  </svg>
+
+  <svg 
+    x-show="currentIndex == 3"
+    x-cloak 
+    width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="4" fill="#212225"/>
+    <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500"/>
+    <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500"/>
+  </svg>
+    
+</div>
