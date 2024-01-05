@@ -14,8 +14,8 @@
         console.log("A ",window.alpine.store("content").showLightBox);
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-629e6bd4.js"></script>
-    <link rel="stylesheet" href="./assets/main-ab08f0d9.css">
+    <script type="module" crossorigin src="./assets/main-b48e86ca.js"></script>
+    <link rel="stylesheet" href="./assets/main-3c828cd2.css">
   </head>
 
   <body x-data @keyup.escape="$store.content.showLightBox = false" :class="$store.content.showLightBox ? 'overflow-hidden' : '' ">
@@ -465,22 +465,24 @@
       </header>
       <article id="article"
         x-data="article"
-        x-init="scrollPos = $scrollAmount"
         x-on:scroll.window="scrollPos = $scrollAmount"
         x-intersect="dimToolbar = false"
         x-intersect:leave="dimToolbar = true"
         class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
         
-        <span
+        <template x-for="post in wp">
+
+          <div>
+            <span
           id="progress-bar"
           class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-[40]" :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
           :style="{ width: `${scrollPos.scrollPercent}%` }">
         </span>
         
         <div
-          class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-8">
+          class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-8 pb-4">
           <a href="" class="category-tag font-serif">Analīze</a>
-          <h1 class="title max-w-screen-sm leading-tight">
+          <h1 class="title max-w-screen-sm leading-tight" x-text="post.title">
             Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
           </h1>
           <div class="article-meta flex items-center gap-x-4 lg:gap-x-4">
@@ -654,10 +656,9 @@
             </li>
           </ul>
         </div>
-        <div
-          class="article-content relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
+        <div class="article-content relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
           <figure>
-            <img src="./assets/article-featured-524d864a.jpg" alt="" />
+            <img :src="'http://irdev.devio.lv/wp-content/uploads/'+post.featuredImage.node.mediaDetails.file" alt="" />
             <p class="img-meta mt-2 font-serif">
               Ilustrācija — Reinis Hofmanis
             </p>
@@ -683,8 +684,6 @@
             nav spēka aiziet. Notikušais uzdod neērtu jautājumu — kādi ir valsts
             pienākumi pret cilvēku, kas sev palīdzēt nevar vai nevēlas?
           </p>
-          <anchor id="anchor-1234" class="bg-red-200">% anchor %</anchor>
-          <div id="ad-1234" class="w-[200px] h-[350px] bg-green-300 flex justify-center items-center absolute right-0">ad</div>
           <p>
             Var teikt, ka Santu pazudināja pašas raksturs. Bet to veicināja arī
             valsts iestādes, kuras, darbojoties bez empātijas un dziļāka
@@ -1206,52 +1205,53 @@
             </div>
           </div>
 
-          <dialog id="dialog" class="backdrop:bg-ir-gray-80 backdrop:opacity-50 inset-0 flex items-center justify-center w-full p-2 overflow-hidden h-screen">
-            Content here
-            <button class="close">close</button>
-          </dialog>
-
         </div>
-        <aside
-          class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
-          <div class="articles-widget bg-slate-100">
-            <h2
-              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
-              Lasītākie raksti
-            </h2>
-            <ul class="relative flex flex-col gap-y-8">
-              <li class="border-b border-gray-300 pb-6 last:border-none">
-                <div class="meta flex gap-3 uppercase">
-                  <span class="counter"><b class="text-xl">1.</b></span>
-                  <span
-                    class="category flex items-center gap-3 whitespace-nowrap"
-                    >Viedoklis</span
-                  >
-                  <span
-                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
-                    >Mortens Hansens</span
-                  >
-                </div>
-                <h4 class="leading-7">
-                  Par bankām, lielveikaliem un tirgus ekonomiku
-                </h4>
-              </li>
-              <li class="border-b border-gray-300 pb-6 last:border-none">
-                <div class="meta flex gap-3 uppercase">
-                  <span class="counter"><b class="text-xl">2.</b></span
-                  ><span
-                    class="category flex items-center gap-3 whitespace-nowrap"
-                    >Speciāli IR</span
-                  ><span
-                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
-                    >guntis keisels</span
-                  >
-                </div>
-                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
-              </li>
-            </ul>
+
           </div>
-        </aside>
+
+        </template>
+
+        <aside
+        class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+        <div class="articles-widget bg-slate-100">
+          <h2
+            class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+            Lasītākie raksti
+          </h2>
+          <ul class="relative flex flex-col gap-y-8">
+            <li class="border-b border-gray-300 pb-6 last:border-none">
+              <div class="meta flex gap-3 uppercase">
+                <span class="counter"><b class="text-xl">1.</b></span>
+                <span
+                  class="category flex items-center gap-3 whitespace-nowrap"
+                  >Viedoklis</span>
+                <span
+                  class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                  >Mortens Hansens</span
+                >
+              </div>
+              <h4 class="leading-7">
+                Par bankām, lielveikaliem un tirgus ekonomiku
+              </h4>
+            </li>
+            <li class="border-b border-gray-300 pb-6 last:border-none">
+              <div class="meta flex gap-3 uppercase">
+                <span class="counter"><b class="text-xl">2.</b></span
+                ><span
+                  class="category flex items-center gap-3 whitespace-nowrap"
+                  >Speciāli IR</span
+                ><span
+                  class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                  >guntis keisels</span
+                >
+              </div>
+              <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+
       </article>
       <section id="related-articles">
         <div class="container mt-10">
