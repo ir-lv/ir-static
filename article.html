@@ -14,8 +14,8 @@
         console.log("A ",window.alpine.store("content").showLightBox);
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-11e8d0b4.js"></script>
-    <link rel="stylesheet" href="./assets/main-2272539f.css">
+    <script type="module" crossorigin src="./assets/main-b7080136.js"></script>
+    <link rel="stylesheet" href="./assets/main-b2fb3e7e.css">
   </head>
 
   <body x-data @keyup.escape="$store.content.showLightBox = false" :class="$store.content.showLightBox ? 'overflow-hidden' : '' ">
@@ -471,26 +471,36 @@
         class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-start lg:gap-y-8 lg:py-0">
         
         <template x-for="post in wp">
-
           <div>
-            <span
-          id="progress-bar"
-          class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-[40]" :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
-          :style="{ width: `${scrollPos.scrollPercent}%` }">
-        </span>
+            <span 
+            id="progress-bar" 
+            class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-[40]" 
+            :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
+            :style="{ width: `${scrollPos.scrollPercent}%` }">
+          </span>
         
-        <div
-          class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-8 pb-4">
-          <a href="" class="category-tag font-serif">Analīze</a>
-          <h1 class="title max-w-screen-sm leading-tight" x-text="post.title">
+        <div class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-4 pb-8">
+          <a href="" class="category-tag font-serif" x-text="!!post ? post.categories.nodes[0].name : $el.innerHTML ">Analīze</a>
+          <h1 class="title max-w-screen-sm leading-tight" x-text="!!post ? post.title : $el.innerHTML ">
             Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
           </h1>
           <div class="article-meta flex items-center gap-x-4 lg:gap-x-4">
-            <div class="profile-thumb h-12 w-12 rounded-full bg-slate-500"></div>
+            <img 
+              class="profile-thumb w-12 h-12 rounded-full bg-slate-500 cursor-pointer" 
+              :src="!!post ? post.author.node.avatar.url : $el.innerHTML" 
+              alt="Rounded avatar" 
+              role="link"
+              x-data
+              @click="window.location='author.html?id='">
+          
             <ul
               class="meta-info flex flex-wrap items-center gap-x-3 font-serif uppercase lg:gap-3">
               <li
-                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden cursor-pointer" 
+                x-html="!!post ? post.author.node.name : $el.innerHTML " 
+                role="link"
+                x-data
+                @click="window.location='author.html?id='">
                 Inga Spriņģe, Re:Baltica
               </li>
               <li
@@ -656,45 +666,51 @@
             </li>
           </ul>
         </div>
-        <div class="article-content relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
+        <div class="article-container relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
           <figure>
-            <img :src="'http://irdev.devio.lv/wp-content/uploads/'+post.featuredImage.node.mediaDetails.file" alt="" />
-            <p class="img-meta mt-2 font-serif">
+            <img :src="post != null ? 'http://irdev.devio.lv/wp-content/uploads/'+post.featuredImage.node.mediaDetails.file : './src/assets/img/temp/article-featured.jpg' " alt="" />
+            <p class="img-meta mt-3 mb-6 font-serif" x-html="!!post ? post.featuredImage.node.caption : $el.innerHTML ">
               Ilustrācija — Reinis Hofmanis
             </p>
           </figure>
-          <h3 class="py-6">
-            Pagājušajā pavasarī bijušais dzīvesbiedrs nogrieza Santai* ausi. Tad
-            devās uz policiju, bet pa ceļam ausi izmeta — tā zuda iespēja ausi
-            piešūt atpakaļ. Taču gada laikā Santa ir zaudējusi vēl daudz vairāk:
-            darbu un bērnus. Kāpēc?
-          </h3>
-          <p>
-            Policija bija pārsteigta. «Mēs viņa pirmo versiju neierakstījām, jo
-            neviens negaidīja, ka atnāks kāds un teiks: es nogriezu sievai
-            ausi,» atceras Valsts policijas Ķengaraga iecirkņa priekšniece Inga
-            Meikšāne. Vīrietis nosaucis vairākas vietas, kur ausi esot izmetis.
-            «Ja jūs redzētu, kā policisti meklēja ar grābekļiem un metāla
-            detektoru (pie auss bija palicis auskars) — pa peļķēm, visur.
-            Neatradām.»
-          </p>
-          <p>
-            Vardarbības kulminācijai šajā ģimenē ir astoņu gadu priekšvēsture ar
-            dzeršanu, kaušanos, greizsirdību un postošu pieķeršanos, no kuras
-            nav spēka aiziet. Notikušais uzdod neērtu jautājumu — kādi ir valsts
-            pienākumi pret cilvēku, kas sev palīdzēt nevar vai nevēlas?
-          </p>
-          <p>
-            Var teikt, ka Santu pazudināja pašas raksturs. Bet to veicināja arī
-            valsts iestādes, kuras, darbojoties bez empātijas un dziļāka
-            situācijas novērtējuma, nekā strikti prasa likums, pameta bez
-            atbalsta cilvēku milzīgā stresā. Pēc auss nogriešanas Andreju
-            apcietināja. Pēc diviem mēnešiem izlaida — pretēji policijas domām,
-            Rīgas Latgales priekšpilsētas tiesnese Vivita Freimane uzskatīja, ka
-            viņš ir labojies. Andrejs atsāka Santu psiholoģiski terorizēt.
-            Sieviete salūza un sāka dzert, zaudējot gan darbu, gan bērnus.
-            Varmāka apgalvo — visu darījis mīlot. Sitis, lai viņa beidz dzert.
-          </p>
+          
+          <div class="article-content" x-html="!!post ? post.content : $el.innerHTML ">
+
+            <h3 class="py-6">
+              Pagājušajā pavasarī bijušais dzīvesbiedrs nogrieza Santai* ausi. Tad
+              devās uz policiju, bet pa ceļam ausi izmeta — tā zuda iespēja ausi
+              piešūt atpakaļ. Taču gada laikā Santa ir zaudējusi vēl daudz vairāk:
+              darbu un bērnus. Kāpēc?
+            </h3>
+            <p>
+              Policija bija pārsteigta. «Mēs viņa pirmo versiju neierakstījām, jo
+              neviens negaidīja, ka atnāks kāds un teiks: es nogriezu sievai
+              ausi,» atceras Valsts policijas Ķengaraga iecirkņa priekšniece Inga
+              Meikšāne. Vīrietis nosaucis vairākas vietas, kur ausi esot izmetis.
+              «Ja jūs redzētu, kā policisti meklēja ar grābekļiem un metāla
+              detektoru (pie auss bija palicis auskars) — pa peļķēm, visur.
+              Neatradām.»
+            </p>
+            <p>
+              Vardarbības kulminācijai šajā ģimenē ir astoņu gadu priekšvēsture ar
+              dzeršanu, kaušanos, greizsirdību un postošu pieķeršanos, no kuras
+              nav spēka aiziet. Notikušais uzdod neērtu jautājumu — kādi ir valsts
+              pienākumi pret cilvēku, kas sev palīdzēt nevar vai nevēlas?
+            </p>
+            <p>
+              Var teikt, ka Santu pazudināja pašas raksturs. Bet to veicināja arī
+              valsts iestādes, kuras, darbojoties bez empātijas un dziļāka
+              situācijas novērtējuma, nekā strikti prasa likums, pameta bez
+              atbalsta cilvēku milzīgā stresā. Pēc auss nogriešanas Andreju
+              apcietināja. Pēc diviem mēnešiem izlaida — pretēji policijas domām,
+              Rīgas Latgales priekšpilsētas tiesnese Vivita Freimane uzskatīja, ka
+              viņš ir labojies. Andrejs atsāka Santu psiholoģiski terorizēt.
+              Sieviete salūza un sāka dzert, zaudējot gan darbu, gan bērnus.
+              Varmāka apgalvo — visu darījis mīlot. Sitis, lai viņa beidz dzert.
+            </p>
+
+          </div>
+
           <div class="paywall-fog relative">
             <div
               class="fog-overlay absolute bottom-0 h-full w-full bg-gradient-to-t from-white to-transparent"></div>
@@ -716,8 +732,8 @@
               detaļas. Tādēļ šajā rakstā balstos uz dokumentiem, ko viņa iedeva.
             </p>
           </div>
-          <div
-            class="paywall-register-free my-8 flex flex-col items-center justify-center text-center">
+          
+          <div class="paywall-register-free my-8 flex flex-col items-center justify-center text-center">
             <h2>Pirms lasi tālāk, iepazīsimies!</h2>
             <p class="font-serif">
               Ienāc vai reģistrējies portālā un saņem pieeju bezmaksas rakstiem
@@ -808,8 +824,7 @@
             </div>
           </div>
 
-          <div
-            class="paywall-subscribe my-14 flex flex-col items-center justify-center gap-3 text-center">
+          <div class="paywall-subscribe my-14 flex flex-col items-center justify-center gap-3 text-center">
             <h2 class="mb-8">
               Turpini lasīt, atbalsti kvalitatīvu žurnālistiku!
             </h2>
@@ -1208,49 +1223,46 @@
         </div>
 
           </div>
-
         </template>
 
-        <aside
-        class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
-        <div class="articles-widget bg-slate-100">
-          <h2
-            class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
-            Lasītākie raksti
-          </h2>
-          <ul class="relative flex flex-col gap-y-8">
-            <li class="border-b border-gray-300 pb-6 last:border-none">
-              <div class="meta flex gap-3 uppercase">
-                <span class="counter"><b class="text-xl">1.</b></span>
-                <span
-                  class="category flex items-center gap-3 whitespace-nowrap"
-                  >Viedoklis</span>
-                <span
-                  class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
-                  >Mortens Hansens</span
-                >
-              </div>
-              <h4 class="leading-7">
-                Par bankām, lielveikaliem un tirgus ekonomiku
-              </h4>
-            </li>
-            <li class="border-b border-gray-300 pb-6 last:border-none">
-              <div class="meta flex gap-3 uppercase">
-                <span class="counter"><b class="text-xl">2.</b></span
-                ><span
-                  class="category flex items-center gap-3 whitespace-nowrap"
-                  >Speciāli IR</span
-                ><span
-                  class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
-                  >guntis keisels</span
-                >
-              </div>
-              <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
+        <aside class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
+          <div class="articles-widget bg-slate-100">
+            <h2
+              class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
+              Lasītākie raksti
+            </h2>
+            <ul class="relative flex flex-col gap-y-8">
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">1.</b></span>
+                  <span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Viedoklis</span>
+                  <span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >Mortens Hansens</span
+                  >
+                </div>
+                <h4 class="leading-7">
+                  Par bankām, lielveikaliem un tirgus ekonomiku
+                </h4>
+              </li>
+              <li class="border-b border-gray-300 pb-6 last:border-none">
+                <div class="meta flex gap-3 uppercase">
+                  <span class="counter"><b class="text-xl">2.</b></span
+                  ><span
+                    class="category flex items-center gap-3 whitespace-nowrap"
+                    >Speciāli IR</span
+                  ><span
+                    class="author flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red"
+                    >guntis keisels</span
+                  >
+                </div>
+                <h4 class="leading-7">Sapņu komandas sastādītājs</h4>
+              </li>
+            </ul>
+          </div>
+        </aside>
 
       </article>
       <section id="related-articles">
