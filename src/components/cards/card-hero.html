@@ -1,17 +1,17 @@
-<figure class="grid grid-flow-row gap-4 bg-white shadow-md lg:grid-cols-2 lg:gap-8">
+<figure class="grid grid-flow-row gap-4 bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_1px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] lg:grid-cols-2 lg:gap-8 lg:min-h-[370px]" data-uri="{{uri}}">
   <img src="{{image}}" alt="" class="h-full object-cover" />
-  <div class="flex flex-col justify-center gap-y-8 px-4 lg:px-0 lg:pr-8">
-    <h1 class="w-full pt-8 text-4xl leading-7 lg:pt-20 cursor-pointer {{title-size}}" 
+  <div class="flex flex-col justify-center px-4 lg:px-0 lg:pt-8 lg:pr-8">
+    <h1 class="w-full leading-10 lg:leading-none text-[2.25rem] lg:text-[2.75rem] cursor-pointer mt-auto {{title-size}}" 
       role="link"
       x-data
       @click="window.location='article.html'">{{title}}</h1>
-    <p class="flex-grow cursor-pointer" 
+    <p class="cursor-pointer text-card-lead pt-4 lg:pt-8" 
       role="link"
       x-data
-      @click="window.location='article.html'">
+      @click="window.location='article.html?uri={{uri}}'">
       {{excerpt}}
     </p>
-    <div class="flex w-full items-center justify-between py-4 uppercase">
+    <div class="flex w-full items-center justify-between py-4 mt-auto uppercase">
       <a href="author.html" class="hero__author pr-4 font-serif uppercase text-gray-500">{{author}}</a>
       {{>bookmark}}
     </div>
