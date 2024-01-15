@@ -480,8 +480,8 @@
           </span>
         
         <div class="article-header flex w-full flex-col gap-y-4 lg:ml-20 lg:gap-y-4 pb-8">
-          <a href="" class="category-tag font-serif" x-text="!!post ? post.categories.nodes[0].name : $el.innerHTML ">Analīze</a>
-          <h1 class="title max-w-screen-sm leading-tight" x-text="!!post ? post.title : $el.innerHTML ">
+          <a href="" class="category-tag font-serif" x-text="!!post ? post.categories.nodes[0].name : $el.innerHTML "  contenteditable="true">Analīze</a>
+          <h1 class="title max-w-screen-sm leading-tight" x-text="!!post ? post.title : $el.innerHTML "  contenteditable="true">
             Imantas "iedzimtie" cīnās par pēdējo neprivatizēto muižu
           </h1>
           <div class="article-meta flex items-center gap-x-4 lg:gap-x-4">
@@ -500,15 +500,17 @@
                 x-html="!!post ? post.author.node.name : $el.innerHTML " 
                 role="link"
                 x-data
-                @click="window.location='author.html?id='">
+                @click="window.location='author.html?id='"  contenteditable="true">
                 Inga Spriņģe, Re:Baltica
               </li>
               <li
-                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden" 
+                contenteditable="true">
                 20. novembris, 2019
               </li>
               <li
-                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+                class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden" 
+                contenteditable="true">
                 ir
               </li>
             </ul>
@@ -669,12 +671,12 @@
         <div class="article-container relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
           <figure>
             <img :src="post != null ? 'http://irdev.devio.lv/wp-content/uploads/'+post.featuredImage.node.mediaDetails.file : './src/assets/img/temp/article-featured.jpg' " alt="" />
-            <p class="img-meta mt-3 mb-6 font-serif" x-html="!!post ? post.featuredImage.node.caption : $el.innerHTML ">
+            <p class="img-meta mt-3 mb-6 font-serif" x-html="!!post ? post.featuredImage.node.caption : $el.innerHTML "  contenteditable="true">
               Ilustrācija — Reinis Hofmanis
             </p>
           </figure>
           
-          <div class="article-content" x-html="!!post ? post.content : $el.innerHTML ">
+          <div class="article-content" x-html="!!post ? post.content : $el.innerHTML "  contenteditable="true">
 
             <h3 class="py-6">
               Pagājušajā pavasarī bijušais dzīvesbiedrs nogrieza Santai* ausi. Tad
