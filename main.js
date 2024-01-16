@@ -73,9 +73,120 @@ Alpine.magic('scrollAmount', () => {
   }
 })
 
+// HOME PAGE DATA
+Alpine.data("home", () => ({
+
+  posts: [],
+
+  async getPosts() {
+    return await new Promise((resolve, reject) =>
+    {
+      fetch("https://irdev.devio.lv/graphql", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `query HomePosts {
+            posts(first: 20) {
+              edges {
+                node {
+                  id
+                  title
+                  excerpt
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+              }
+            }
+          }`,
+        })
+    })
+    .then(response => response.json())
+    .then(res => {
+      this.posts = res.data.posts.edges;
+      console.log("posts loaded", this.posts);
+  }); 
+});
+
+},
+
+init() {
+  this.getPosts();
+}
+}));
+
+// ARTICLE DATA
 Alpine.data("article", () => ({
+
   dimToolbar: false,
-  scrollPos: {}
+  scrollPos: {},
+  id: '0', 
+  wp: [],
+  async retrievePost() {
+    //this.wp[0] = await (await fetch('https://baravika.com/wp-json/wp/v2/posts/'+this.id)).json();
+    // log out all the posts to the console
+    //console.log(this.wp[0]);
+
+  let id = this.id;
+  let query = `query GetPost($id: ID!) {
+    post(id: $id, idType: SLUG) {
+      id
+      title
+      content
+      featuredImage {
+        node {
+          mediaDetails {
+            file
+          }
+          caption
+        }
+      }
+      author {
+        node {
+          name
+          avatar {
+            url
+          }
+        }
+      }
+      categories {
+        nodes {
+          name
+        }
+      }
+    }
+  }`
+
+  fetch("https://irdev.devio.lv/graphql", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query,
+      variables: { id },
+    }),
+  })
+  .then(response => response.json())
+  .then(res => {
+    console.log("result", res);
+    this.wp[0] = res.data.post;
+    console.log("promise!!@!", res.data.post);
+})
+
+},
+
+init() {
+  let params = new URLSearchParams(window.location.search).get('slug');
+  this.id = params != null ? params : 'empty';
+  console.log('slug', this.id);
+  this.retrievePost();
+}
 }));
 
 Alpine.data("caricatures", () =>({
@@ -145,33 +256,29 @@ Alpine.store("content", {
 Alpine.start();
 
 
-var username = 'JanisSalins';
-var application_password = 'rrJf 6Y9s 0meK Tq7A htqZ ajyu';
-    
-
 let fetchHomePosts = async () =>
 {
     return await new Promise((resolve, reject) =>
     {
-      fetch("https://ir-wp.test/graphql", {
+      fetch("https://irdev.devio.lv/graphql", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          query: `query getHomePosts {
-            posts {
-              nodes {
-                content
-                author {
-                  node {
-                    id
-                    email
-                    lastName
-                    firstName
+          query: `query HomePosts {
+            posts(first: 20) {
+              edges {
+                node {
+                  id
+                  title
+                  excerpt
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
                   }
                 }
-                title
               }
             }
           }`

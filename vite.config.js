@@ -4,7 +4,6 @@ import { defineConfig } from "vite";
 import handlebars from "vite-plugin-handlebars";
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
-
 export default defineConfig({
   plugins: [
     handlebars({

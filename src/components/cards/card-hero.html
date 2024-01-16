@@ -4,11 +4,11 @@
     <h1 class="w-full leading-10 lg:leading-none text-[2.25rem] lg:text-[2.75rem] cursor-pointer mt-auto {{title-size}}" 
       role="link"
       x-data
-      @click="window.location='article.html'">{{title}}</h1>
+      @click="window.location='article.html?slug={{slug}}'" contenteditable="true">{{title}}</h1>
     <p class="cursor-pointer text-card-lead pt-4 lg:pt-8" 
       role="link"
       x-data
-      @click="window.location='article.html?uri={{uri}}'">
+      @click="window.location='article.html?slug={{slug}}'" contenteditable="true">
       {{excerpt}}
     </p>
     <div class="flex w-full items-center justify-between py-4 mt-auto uppercase">

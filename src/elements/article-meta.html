@@ -1,17 +1,30 @@
 <div class="article-meta flex items-center gap-x-4 lg:gap-x-4">
-  <div class="profile-thumb h-12 w-12 rounded-full bg-slate-500"></div>
+  <img 
+    class="profile-thumb w-12 h-12 rounded-full bg-slate-500 cursor-pointer" 
+    :src="!!post ? post.author.node.avatar.url : $el.innerHTML" 
+    alt="Rounded avatar" 
+    role="link"
+    x-data
+    @click="window.location='author.html?id={{post.author.id}}'">
+
   <ul
     class="meta-info flex flex-wrap items-center gap-x-3 font-serif uppercase lg:gap-3">
     <li
-      class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+      class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden cursor-pointer" 
+      x-html="!!post ? post.author.node.name : $el.innerHTML " 
+      role="link"
+      x-data
+      @click="window.location='author.html?id={{post.author.id}}'"  contenteditable="true">
       Inga Spriņģe, Re:Baltica
     </li>
     <li
-      class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+      class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden" 
+      contenteditable="true">
       20. novembris, 2019
     </li>
     <li
-      class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden">
+      class="flex items-center gap-3 whitespace-nowrap before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red first:before:hidden" 
+      contenteditable="true">
       ir
     </li>
   </ul>

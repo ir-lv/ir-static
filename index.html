@@ -3,18 +3,22 @@
   {{>head}}
 
   <body>
-    <div id="app">
+    <div x-data="home" id="app">
       {{>header}}
 
-      <section class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8">
+      <section 
+        class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8">
+
         <!-- prettier-ignore -->
         {{>card-hero 
-          title="Mūslaiku Lāčplēši" 
-          excerpt="Mārtiņš Lejiņš, Kristers Edgars Rauska un Bruno Bulders ir trīs karavīri no tiem 252 jauniešiem, kas šogad brīvprātīgi sāka dienēt valsts aizsardzības dienestā" 
-          author="Agnese Meiere" 
-          image="./src/assets/img/temp/home/JaunieKaraviri_Salmane_29.png"}}
+          title="Skolēns un atzīmes sākumskolā. Kā pilnveidota vērtēšana 1.–3. klasē?" 
+          excerpt="Sabiedrībā joprojām ir izplatīts uzskats, ka vērtība ir skolēna atzīmēm un reitingam klasē pašiem par sevi, nevis zināšanām un prasmēm." 
+          author="Pāvels Pestovs" 
+          image="./src/assets/img/temp/home/publicitates_foto_VISC.jpg" 
+          slug="skolens-un-atzimes-sakumskola-ka-pilnveidota-vertesana-1-3-klase"
+        }}
 
-        <aside class="flex flex-col justify-between">
+        <aside class="flex flex-col">
           {{>weekly-mag-btn}}
           <div class="sidebar-item flex flex-col gap-4 rounded-md pt-4">
             <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
@@ -179,11 +183,8 @@
             <h1 class="title">Raidieraksti</h1>
             <div>{{>sidebar-link label="Visas epizodes" link="podcasts.html"}}</div>
           </div>
-            <div id="buzzsprout-small-player" class="grid h-[420px] gap-4 overflow-hidden"></div>
-            <script
-              type="text/javascript"
-              charset="utf-8"
-              src="https://www.buzzsprout.com/686771.js?container_id=buzzsprout-small-player&player=small"></script>
+          <div id='buzzsprout-small-player-limit-2-artist-zurnals-ir' class="gap-4 flex flex-col"></div>
+          <script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/686771.js?artist=%C5%BDurn%C4%81ls+Ir&container_id=buzzsprout-small-player-limit-2-artist-zurnals-ir&limit=2&player=small'></script>
           </div>
           <div id="carousel" class="lg:w-2/5">
             <div class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">

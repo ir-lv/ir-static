@@ -33,14 +33,15 @@
       class="text-[26px] leading-tight w-full h-min cursor-pointer {{title-size}}" 
       role="link"
       x-data
-      @click="window.location='article.html'">
+      @click="window.location='article.html'" 
+      contenteditable="true">
       {{ title }}
     </h1>
     {{#if excerpt}}
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
       {{ excerpt}}
     </p>
     {{/if}}
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500"> {{ author }}</a>
+    <a href="author.html" class="font-serif card__author uppercase text-gray-500" contenteditable="true"> {{ author }}</a>
   </div>
 </figure>
