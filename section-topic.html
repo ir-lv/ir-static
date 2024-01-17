@@ -14,8 +14,8 @@
         console.log("A ",window.alpine.store("content").showLightBox);
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-b7080136.js"></script>
-    <link rel="stylesheet" href="./assets/main-b2fb3e7e.css">
+    <script type="module" crossorigin src="./assets/main-1d6f51f0.js"></script>
+    <link rel="stylesheet" href="./assets/main-3c4de5e5.css">
   </head>
 
   <body>
@@ -477,12 +477,12 @@
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
             
           
-            <img
-              src="./assets/haizivis-a47bae29.png"
-              alt=""
-              class="aspect-video w-full cursor-pointer object-cover"
+            <div 
+              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-[length:100%_auto] bg-top bg-no-repeat" style="background-image: url('./assets/haizivis-a47bae29.png')" 
+              role="link"
               x-data
-              @click="window.location='article.html'" />
+              @click="window.location='article.html?slug='">
+            </div>
           
             
             <div
@@ -529,7 +529,7 @@
                 class="text-[26px] leading-tight w-full h-min cursor-pointer " 
                 role="link"
                 x-data
-                @click="window.location='article.html'" 
+                @click="window.location='article.html?slug='" 
                 contenteditable="true">
                 Dziedātāja Zanda Švēde iekaro
                     Sanfrancisko
@@ -546,12 +546,12 @@
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
             
           
-            <img
-              src="./assets/UzvarasParks_Salmane_9-f9e6fe63.png"
-              alt=""
-              class="aspect-video w-full cursor-pointer object-cover"
+            <div 
+              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-[length:100%_auto] bg-top bg-no-repeat" style="background-image: url('./assets/UzvarasParks_Salmane_9-f9e6fe63.png')" 
+              role="link"
               x-data
-              @click="window.location='article.html'" />
+              @click="window.location='article.html?slug='">
+            </div>
           
             
             <div
@@ -598,7 +598,7 @@
                 class="text-[26px] leading-tight w-full h-min cursor-pointer " 
                 role="link"
                 x-data
-                @click="window.location='article.html'" 
+                @click="window.location='article.html?slug='" 
                 contenteditable="true">
                 Dace Rēķe, instagramā māca
                     latviešu valodu
@@ -615,12 +615,12 @@
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
             
           
-            <img
-              src="./assets/hero-cfd2d752.jpg"
-              alt=""
-              class="aspect-video w-full cursor-pointer object-cover"
+            <div 
+              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-[100% auto] bg-top bg-no-repeat" style="background-image: url('./assets/hero-cfd2d752.jpg')" 
+              role="link"
               x-data
-              @click="window.location='article.html'" />
+              @click="window.location='article.html?slug='">
+            </div>
           
             
             <div
@@ -667,7 +667,7 @@
                 class="text-[26px] leading-tight w-full h-min cursor-pointer " 
                 role="link"
                 x-data
-                @click="window.location='article.html'" 
+                @click="window.location='article.html?slug='" 
                 contenteditable="true">
                 Satriecošais spriedums Maximas lietā
               </h1>
@@ -734,14 +734,14 @@
                 <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'"  contenteditable="true">
+                @click="window.location='article.html?slug='"  contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
                 <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'" contenteditable="true">
+                @click="window.location='article.html?slug='" contenteditable="true">
                   Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
@@ -757,7 +757,7 @@
                     class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                     role="link"
                     x-data
-                    @click="window.location='article.html'"
+                    @click="window.location='article.html?slug='"
                     width="300" />
             
             
@@ -809,13 +809,13 @@
                  <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                  role="link"
                  x-data
-                 @click="window.location='article.html'"  contenteditable="true">
+                 @click="window.location='article.html?slug='"  contenteditable="true">
                    Dace Rēķe, instagramā māca latviešu valodu
                  </h1>
                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                  role="link"
                  x-data
-                 @click="window.location='article.html'" contenteditable="true">
+                 @click="window.location='article.html?slug='" contenteditable="true">
                    Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
                          vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
                          lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
@@ -831,7 +831,7 @@
                      class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                      role="link"
                      x-data
-                     @click="window.location='article.html'"
+                     @click="window.location='article.html?slug='"
                      width="300" />
              
              
@@ -883,14 +883,14 @@
                  <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                  role="link"
                  x-data
-                 @click="window.location='article.html'"  contenteditable="true">
+                 @click="window.location='article.html?slug='"  contenteditable="true">
                    Dace Rēķe,
                          instagramā māca latviešu valodu
                  </h1>
                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                  role="link"
                  x-data
-                 @click="window.location='article.html'" contenteditable="true">
+                 @click="window.location='article.html?slug='" contenteditable="true">
                    Šonedēļ starptautiskā
                          Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
                          apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
@@ -906,7 +906,7 @@
                      class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                      role="link"
                      x-data
-                     @click="window.location='article.html'"
+                     @click="window.location='article.html?slug='"
                      width="300" />
              
              
@@ -958,14 +958,14 @@
                 <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'"  contenteditable="true">
+                @click="window.location='article.html?slug='"  contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
                 <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'" contenteditable="true">
+                @click="window.location='article.html?slug='" contenteditable="true">
                   Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
@@ -981,7 +981,7 @@
                     class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                     role="link"
                     x-data
-                    @click="window.location='article.html'"
+                    @click="window.location='article.html?slug='"
                     width="300" />
             
             
@@ -1073,14 +1073,14 @@
                 <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'"  contenteditable="true">
+                @click="window.location='article.html?slug='"  contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
                 <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'" contenteditable="true">
+                @click="window.location='article.html?slug='" contenteditable="true">
                   Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
@@ -1096,7 +1096,7 @@
                     class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                     role="link"
                     x-data
-                    @click="window.location='article.html'"
+                    @click="window.location='article.html?slug='"
                     width="300" />
             
             
@@ -1148,13 +1148,13 @@
                 <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'"  contenteditable="true">
+                @click="window.location='article.html?slug='"  contenteditable="true">
                   Dace Rēķe, instagramā māca latviešu valodu
                 </h1>
                 <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'" contenteditable="true">
+                @click="window.location='article.html?slug='" contenteditable="true">
                   Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
                         vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
                         lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
@@ -1170,7 +1170,7 @@
                     class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                     role="link"
                     x-data
-                    @click="window.location='article.html'"
+                    @click="window.location='article.html?slug='"
                     width="300" />
             
             
@@ -1222,14 +1222,14 @@
                 <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'"  contenteditable="true">
+                @click="window.location='article.html?slug='"  contenteditable="true">
                   Dace Rēķe,
                         instagramā māca latviešu valodu
                 </h1>
                 <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'" contenteditable="true">
+                @click="window.location='article.html?slug='" contenteditable="true">
                   Šonedēļ starptautiskā
                         Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
                         apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
@@ -1245,7 +1245,7 @@
                     class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                     role="link"
                     x-data
-                    @click="window.location='article.html'"
+                    @click="window.location='article.html?slug='"
                     width="300" />
             
             
@@ -1297,14 +1297,14 @@
                 <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'"  contenteditable="true">
+                @click="window.location='article.html?slug='"  contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
                 <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
                 role="link"
                 x-data
-                @click="window.location='article.html'" contenteditable="true">
+                @click="window.location='article.html?slug='" contenteditable="true">
                   Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
@@ -1320,7 +1320,7 @@
                     class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
                     role="link"
                     x-data
-                    @click="window.location='article.html'"
+                    @click="window.location='article.html?slug='"
                     width="300" />
             
             
