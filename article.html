@@ -14,8 +14,8 @@
         console.log("A ",window.alpine.store("content").showLightBox);
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-a48b9015.js"></script>
-    <link rel="stylesheet" href="./assets/main-1972b8ae.css">
+    <script type="module" crossorigin src="./assets/main-a67a2e07.js"></script>
+    <link rel="stylesheet" href="./assets/main-13aa3cec.css">
   </head>
 
   <body x-data @keyup.escape="$store.content.showLightBox = false" :class="$store.content.showLightBox ? 'overflow-hidden' : '' ">
@@ -680,7 +680,7 @@
             </p>
           </figure>
           
-          <div class="article-content" x-html="!!post ? post.content : $el.innerHTML "  contenteditable="true">
+          <article class="article-content prose prose-h3:text-3xl" x-html="!!post ? post.content : $el.innerHTML "  contenteditable="true">
 
             <h3 class="py-6">
               Pagājušajā pavasarī bijušais dzīvesbiedrs nogrieza Santai* ausi. Tad
@@ -715,7 +715,7 @@
               Varmāka apgalvo — visu darījis mīlot. Sitis, lai viņa beidz dzert.
             </p>
 
-          </div>
+          </article>
 
           <div class="paywall-fog relative">
             <div
