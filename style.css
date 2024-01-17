@@ -80,7 +80,7 @@
     @apply font-serif;
   }
 
-  article b {
+  article > p > b {
     @apply font-sans font-extrabold;
   }
 

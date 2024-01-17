@@ -40,7 +40,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         article: resolve(__dirname, "article.html"),
-        article: resolve(__dirname, "paywall.html"),
+        paywall: resolve(__dirname, "paywall.html"),
         search: resolve(__dirname, "search.html"),
         magazine: resolve(__dirname, "magazine.html"),
         magazines: resolve(__dirname, "magazines.html"),
