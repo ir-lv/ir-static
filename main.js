@@ -12,7 +12,7 @@ window.alpine = Alpine;
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-import slide1 from './src/assets/img/temp/caricature.jpg';
+import slide1 from './src/assets/img/temp/home/elksnins.png';
 import slide2 from './src/assets/img/temp/article-featured.jpg';
 
 
@@ -192,7 +192,7 @@ init() {
 
 Alpine.data("caricatures", () =>({
   slides: [
-    { 'id': 1, 'title': 'Corona Kandinsky vienā vai divās rindās', 'author': 'Ernests Kļaviņš', pic: slide1 },
+    { 'id': 1, 'title': 'Vai viņi satiksies?', 'author': 'Ernests Kļaviņš', pic: slide1 },
     { 'id': 2, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: slide2 }
     ],
   activeSlide: 1

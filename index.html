@@ -11,11 +11,11 @@
 
         <!-- prettier-ignore -->
         {{>card-hero 
-          title="Skolēns un atzīmes sākumskolā. Kā pilnveidota vērtēšana 1.–3. klasē?" 
-          excerpt="Sabiedrībā joprojām ir izplatīts uzskats, ka vērtība ir skolēna atzīmēm un reitingam klasē pašiem par sevi, nevis zināšanām un prasmēm." 
-          author="Pāvels Pestovs" 
-          image="./src/assets/img/temp/home/publicitates_foto_VISC.jpg" 
-          slug="skolens-un-atzimes-sakumskola-ka-pilnveidota-vertesana-1-3-klase" 
+          title="Kultūra ir tautas imūnsistēma" 
+          excerpt="Jānis Šipkēvics jeb Shipsea šobrīd studē, uzstājas un rada mūziku pārmijus Latvijā un Zviedrijā. Meklē jaunus mērķus un ceļus, kas vienmēr atvedīs mājās" 
+          author="Laura Dumbere" 
+          image="./src/assets/img/temp/home/SHIPSI_SALMANE_17.png" 
+          slug="kultura-ir-tautas-imunsistema" 
           imgWidth="58%"
         }}
 
@@ -24,18 +24,18 @@
           <div class="sidebar-item flex flex-col gap-4 rounded-md pt-4">
             <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
               <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">
-                Brīvības sala
+                Miljonu vērts jautājums?
               </a>
-              <a href="" class="font-serif uppercase text-ir-light-gray">Pauls Rudeps</a>
+              <a href="article.html?slug=miljonu-verts-jautajums" class="font-serif uppercase text-ir-light-gray">Pauls Raudseps</a>
               {{>bookmark}}
             </div>
           </div>
           <div class="sidebar-item py-t flex flex-col gap-4 rounded-md">
             <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
               <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">
-                Referendumu sezona
+                Mazas cilts spēks
               </a>
-              <a href="" class="font-serif uppercase text-ir-light-gray">Aivars Ozoliņš</a>
+              <a href="article.html?slug=mazas-cilts-speks" class="font-serif uppercase text-ir-light-gray">Aivars Ozoliņš</a>
               {{>bookmark}}
             </div>
           </div>
@@ -45,21 +45,24 @@
       <section class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8 items-stretch">
         <!-- prettier-ignore -->
         {{>card
-          image="./src/assets/img/temp/home/haizivis.png" 
-          tag="Aktuāli" 
-          title="Žurnāls: Vai valsts stutēja nodokļu krāpniekus?" 
-          excerpt="Valsts dalījusi lielus Covid-19 grantus uzņēmumiem, kas iepriekš krāpušies ar PVN shēmām un aplokšņu algām. Tagad parādnieki nodokļos nav samaksājuši miljonus, atklāj žurnāla Ir pētījums." 
-          author="" 
+          image="./src/assets/img/temp/home/IMG_3152.jpg" 
+          tag="Tēma" 
+          title="«Vairs neticam»" 
+          excerpt="Pirms 10 gadiem Zolitūdē iegruva lielveikala Maxima jumts, izdzēšot 54 dzīvības. Cietušie par «spļāvienu sejā» sauc faktu, ka tiesā par vainīgu atzīts tikai viens atbildīgais — būvinženieris, kas smagi kļūdījās aprēķinos. " 
+          author="Baiba Litvina" 
+          slug="vairs-neticam" 
           class="flex-grow"}}
 
         <!-- prettier-ignore -->
         {{>card 
-          image="./src/assets/img/temp/home/UzvarasParks_Salmane_9.png"
+          image="./src/assets/img/temp/home/3stradnieki.png" 
           tag="Analīze" 
-          title="«Liekam jaunu bildi iekšā»" 
-          excerpt="Lāčplēša dienā Rīgas dome sola sabiedrībai atvērt rekonstruēto Uzvaras parku. Darbu pirmā kārta izmaksājusi 8,5 miljonus eiro — gandrīz miljonu vairāk, nekā plānots."
-          author="Baiba Litvina" 
-          class="flex-grow"}}
+          title="Spēle bez rezultāta" 
+          excerpt="Būvkompānija Velve, pār kuru krīt korupcijā apsūdzētā Māra Martinsona ēna, nespēj laikā uzbūvēt Stradiņa slimnīcas jauno korpusu." 
+          author="Ilze Šķietniece" 
+          slug="spele-bez-rezultata" 
+          class="flex-grow"
+        }}
 
           <div class="spotlight-block bg-slate-100 lg:max-w-[272px]">
             <div
@@ -98,6 +101,7 @@
               <div class="temp-wrap w-1/2">{{>btn-cta-black class="py-[0.5rem]" label="Pierakstīties"}}</div>
             </div>
           </div>
+
       </section>
 
       <section id="banner" class="container my-4 flex flex-col items-center justify-center px-4 lg:px-0">
@@ -109,25 +113,31 @@
         <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
           <!-- prettier-ignore -->
           {{>card
-            image="./src/assets/img/temp/home/Elksnins1.png" 
-            tag="Analīze" 
-            title="Modīgais cars" 
-            excerpt="Daugavpils mērs acīmredzami dzīvo pāri saviem līdzekļiem, bet pilsētā bez opozīcijas un ar vājiem medijiem jūs to neuzzināsit." 
-            author="Laura Dumbere"}}
+            image="./src/assets/img/temp/home/ArtursKruzkops_Salmane_19.png" 
+            tag="Slavenība" 
+            title="Varbūt esmu traks, varbūt drosmīgs" 
+            excerpt="Arturs Krūzkops (41) nominēts Spēlmaņu nakts balvai par lomu Nacionālajā teātrī, kur strādājis gandrīz 20 gadus. Nesen viņš kļuvis par Dailes teātra aktieri un 16. novembrī debitē uz lielās skatuves Raiņa lomā" 
+            author="Laura Dumbere" 
+            slug="varbut-esmu-traks-varbut-drosmigs"
+          }}
 
           {{>card 
-            image="./src/assets/img/temp/home/202770894_4392887460722460_7029474697220546039_n.png" 
+            image="./src/assets/img/temp/home/Agnese-Logina-20231109-Reinis-Hofmanis-02.png" 
+            tag="Intervija" 
+            title="Jāstrādā pie sistēmas uzlabojumiem" 
+            excerpt="Kultūras ministre Agnese Logina (33) par katoļticības vērtībām, sabiedrības saliedēšanu un saviem mērķiem politikā" 
+            author="Anda Burve-Rozīte" 
+            slug="jastrada-pie-sistemas-uzlabojumiem"
+          }}
+
+          {{>card 
+            image="./src/assets/img/temp/home/Family.png" 
             tag="Ārpolitika" 
-            title="Ticot uzvarai.* Paliec ar Ukrainu" 
-            excerpt="Kā kara apstākļos tiek reformēta izglītība." 
-            author="Anastasija Ringis, speciāli Ir"}}
-
-          {{>card 
-            image="./src/assets/img/temp/home/Marta-Herca_17.10.2023_Reinis-Inkens_-5.png" 
-            tag="Personība" 
-            title="Nesapucēti stāsti" 
-            excerpt="Laikmetā, kas mudina aizrautīgi sevi prezentēt un spodrināt spalvu, Martas Hercas raidieraksti Miers ar tevi, Normāla ģimene, Muša un citi izceļas ar atklātību un vienkāršību." 
-            author="Marija Leskavniece"}}
+            title="Ticot uzvarai.* Kā iemīlēt valodu" 
+            excerpt="Luhanskas apgabalā dzimušais Artūrs Proidakovs iekļauts pasaulē labāko skolotāju sarakstā" 
+            author="Darina Rogačuka, speciāli Ir "
+            slug="ticot-uzvarai-ka-iemilet-valodu"
+          }}
         </div>
       </section>
       
@@ -138,35 +148,35 @@
             <div class="swiper-wrapper">
               <!-- prettier-ignore -->
               {{>card-guest 
-                title="1 Investīciju piesaisti reģionos būtiski ietekmē teritorijas attīstības prioritātes" 
-                excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi..." 
-                author="Elizabete Vegnere"}}
-
+                title="Izraēla, Ukraina, Palestīna: vērtības un reālpolitika" 
+                excerpt="10. novembrī ASV valsts sekretārs Entonijs Blinkens Izraēlas–Hamās konflikta kontekstā nāca klajā ar paziņojumu, citu lietu starpā atzīmējot, ka “daudz par daudz palestīniešu ir tikuši nogalināti”." 
+                author="Aldis Austers, Māris Graudiņš*" 
+                slug="izraela-ukraina-palestina-vertibas-un-realpolitika"
+              }}
               {{>card-guest 
-                title="2 Manai valstij vajag cilvēkus ar Eiropas zināšanām" 
-                excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež  mūždien relaksētos austrāliešus sākt aktīvi..." 
-                author="Elizabete Vegnere"}}
-
+                title="Garais ceļš finanšu pasaules kāpās" 
+                excerpt="Visā mūsu dzīves gaitā labklājību ietekmē notikumi, kurus iepriekš nevarēja paredzēt. Piemēram, mūsu senčiem liels risks bija laika apstākļi." 
+                author="Pēteris Strautiņš" 
+                slug="garais-cels-finansu-pasaules-kapas"
+              }}
               {{>card-guest 
-                title="3 Galvenā naudas atmazgāšanas apkarotāja
-                optimistiska par Latvijas paveikto" 
-                excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi..." 
-                author="Elizabete Vegnere"}}
-
+                title="Latvija bez bezpajumtniecības 2030" 
+                excerpt="Bezpajumtniecība bieži tiek uzlūkota kā dabiska parādība, kuru veido situācija ekonomikā, kas mijas ar personu neveiksmīgām dzīves izvēlēm, kur daudzi neredz iespējas mainīt ne vienu, ne otru." 
+                author="Kārlis Lakševics" 
+                slug="latvija-bez-bezpajumtniecibas-2030"
+              }}
               {{>card-guest 
-                title="4 Ražošana samazinās, bet nākotnes signāli pretrunīgi" 
-                excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi..." 
-                author="Elizabete Vegnere"}}
-
-              {{>card-guest
-                title="5 Investīciju piesaisti reģionos būtiski ietekmē teritorijas attīstības prioritātes" 
-                excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi..."
-                author="Elizabete Vegnere"}}
-
+                title="Bibliotekārus nedrīkst iesaistīt cenzūras darbībās" 
+                excerpt="Latvijas Nacionālās bibliotēkas (LNB) un Latvijas bibliotekāru biedrības (LBB) viens no pamatuzdevumiem ir bibliotēku interešu aizstāvība, kā arī vērtību un principu," 
+                author="" 
+                slug="bibliotekarus-nedrikst-iesaistit-cenzuras-darbibas"
+              }}
               {{>card-guest 
-                title="6 Investīciju piesaisti reģionos būtiski ietekmē teritorijas attīstības prioritātes" 
-                excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi..." 
-                author="Elizabete Vegnere"}}
+                title="Bez ilgtermiņa elektroenerģijas pirkuma līgumiem neiztikt" 
+                excerpt="Kas motivē uzņēmumus pasaulē parakstīt ilgtermiņa korporatīvos elektroenerģijas pirkuma līgumus atjaunīgās enerģijas jomā?" 
+                author="Alnis Bāliņš" 
+                slug="bez-ilgtermina-elektroenergijas-pirkuma-ligumiem-neiztikt"
+              }}
             </div>
             <div class="swiper-pagination mt-12 max-w-[70px] mx-auto"></div>
           </div>
@@ -205,39 +215,43 @@
         <div class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
           <!-- prettier-ignore -->
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_15.jpg" 
-            tag="Komentārs" 
-            title="Dace Rēķe, instagramā māca latviešu valodu" 
-            excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ..." 
-            author="Laura Dumbere" 
-            title-size="text-[23px]"
+            image="./src/assets/img/temp/home/Skype_Picture_2023_10_25T14_57_15_764Z.png" 
+            title="Starp savējiem" 
+            excerpt="Lai salīdzinoši nelielā tirgū attīstītos birža, svarīgi domāt par investīciju kultūras veidošanu un sabiedrības labklājības audzēšanu kopumā"
+            slug="starp-savejiem" 
+            author="Marija Leskavniece" 
+            title-size="text-[23px]" 
+            class="[&>.img-container]:h-44"
           }}
 
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_16.jpg"  
-            tag="Komentārs"
-            title="Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles" 
-            excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ..." 
+            image="./src/assets/img/temp/home/sakums.png"  
+            title="Gribu būt investors!" 
+            excerpt="5 idejas, ko apsvērt, ja vēlaties sākt ieguldīt" 
+            slug="gribu-but-investors" 
             author="Indra Sprance"
-            title-size="text-[23px]"
+            title-size="text-[23px]" 
+            class="[&>.img-container]:h-44"
           }}
 
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_17.jpg"  
-            tag="Komentārs" 
-            title="Galvenā naudas atmazgāsānas" 
+            image="./src/assets/img/temp/home/002nathanwillock.png"  
+            title="Laiks izpurināt bankas" 
             excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ..." 
-            author="Indra Sprance" 
-            title-size="text-[23px]"
+            slug="laiks-izpurinat-bankas" 
+            author="Ovidijs Lukošus, IQ" 
+            title-size="text-[23px]" 
+            class="[&>.img-container]:h-44"
           }}
 
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_85.jpg"  
-            tag="Komentārs" 
-            title="Galvenā naudas atmazgāsānas" 
+            image="./src/assets/img/temp/home/darba-samaksa-1.png"  
+            title="Vai draud krīze?" 
             excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.." 
-            author="Indra Sprance" 
-            title-size="text-[23px]"
+            slug="vai-draud-krize" 
+            author="Ilze Šķietniece" 
+            title-size="text-[23px]" 
+            class="[&>.img-container]:h-44"
           }}
         </div>
       </section>
@@ -250,20 +264,28 @@
         <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
           <!-- prettier-ignore -->
           {{>card 
+            image="./src/assets/img/temp/home/UzvarasParks_Salmane_9.png"
             tag="Komentārs" 
-            title="Dziedātāja Zanda Švēde iekaro Sanfrancisko" 
-            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura Dumbere"
+            title="«Liekam jaunu bildi iekšā»" 
+            excerpt="Lāčplēša dienā Rīgas dome sola sabiedrībai atvērt rekonstruēto Uzvaras parku." 
+            slug="liekam-jaunu-bildi-ieksa" 
           }}
 
           {{>card 
+            image="./src/assets/img/temp/home/Elksnins1.png" 
             tag="Komentārs" 
-            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.." 
-            title="Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}}
+            title="Modīgais cars" 
+            excerpt="Daugavpils mērs acīmredzami dzīvo pāri saviem līdzekļiem, bet pilsētā bez opozīcijas un ar vājiem medijiem jūs to neuzzināsit" 
+            slug="modigais-cars" 
+          }}
 
           {{>card 
+            image="./src/assets/img/temp/home/uzvaretajs.png" 
             tag="Komentārs" 
-            title="Dziedātāja Zanda Švēde iekaro Sanfrancisko" 
-            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura Dumbere"}}
+            title="Gaida jauno paaudzi" 
+            excerpt="Kāpēc jaunākajā pasaules reitingā visas Latvijas zinātnes universitātes izkritušas no labāko tūkstoša? Un kā to labot?" 
+            slug="gaida-jauno-paaudzi" 
+          }}
         </div>
       </section>
 
@@ -275,43 +297,53 @@
         <div class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-5 lg:gap-8 lg:px-0">
           <!-- prettier-ignore -->
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_15.jpg" 
+            image="./src/assets/img/temp/home/5.png" 
             tag="Komentārs" 
-            title="Ugunsgrēki austrāliešiem liek domāt par dzīvesveida maiņu" 
-            author="Laura Dumbere" 
-            title-size="text-[18px]" 
+            title="Ceru, ka tās vēl nav beigas" 
+            author="Juta Ance Ķirķis" 
+            slug="ceru-ka-tas-vel-nav-beigas" 
+            title-size="text-lg" 
+            class="[&>.img-container]:h-32" 
           }}
 
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_16.jpg"  
+            image="./src/assets/img/temp/home/Screen-Shot-2023-11-07-at-1.webp"  
             tag="Komentārs"
-            title="Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles" 
-            author="Indra Sprance" 
-            title-size="text-[18px]" 
+            title="Daži vārdi par Lokatora sabrukšanu" 
+            author="Zane Radzobe" 
+            slug="dazi-vardi-par-lokatora-sabruksanu" 
+            title-size="text-lg" 
+            class="[&>.img-container]:h-32" 
           }}
 
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_17.jpg"  
+            image="./src/assets/img/temp/home/Lellu-teatris_06.11.2023_Reinis-Inkens-6116.png"  
             tag="Komentārs" 
-            title="Galvenā naudas atmazgāsānas" 
-            author="Indra Sprance" 
-            title-size="text-[18px]" 
+            title="Melnais jaunums" 
+            author="Marija Leskavniece" 
+            slug="melnais-jaunums" 
+            title-size="text-lg" 
+            class="[&>.img-container]:h-32" 
           }}
 
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_85.jpg"  
+            image="./src/assets/img/temp/home/Douskova2.webp"  
             tag="Komentārs" 
-            title="Galvenā naudas atmazgāsānas" 
-            author="Indra Sprance" 
-            title-size="text-[18px]" 
+            title="Šveika melanholija" 
+            author="Vilis Kasims" 
+            slug="sveika-melanholija" 
+            title-size="text-lg" 
+            class="[&>.img-container]:h-32" 
           }}
 
           {{>card
-            image="./src/assets/img/temp/ir/home/Rectangle_85.jpg"  
+            image="./src/assets/img/temp/home/jazeps_un_vina_brali_micule_dzudzilo_13_hMQl7YV.webp"  
             tag="Komentārs" 
-            title="Galvenā naudas atmazgāsānas" 
-            author="Indra Sprance" 
-            title-size="text-[18px]" 
+            title="Un rīts būs jāpieņem, lai kāds tas nāks" 
+            author="Edīte Tišheizere" 
+            slug="un-rits-bus-japienem-lai-kads-tas-naks" 
+            title-size="text-lg" 
+            class="[&>.img-container]:h-32"
           }}
         </div>
       </section>
@@ -375,60 +407,7 @@
         </div>
       </section>
 
-      <section>
-        <div class="container">
-          <!-- prettier-ignore -->
-          {{>article-content-cta title="
-          <b>Īsi par svarīgāko ik rītu</b>
-          — pieraksties jaunumu vēstulei Ir Svarīgākais!" btn-label="Pierakstīties"}}
-        </div>
-      </section>
-      <section id="cards-w-banner">
-        <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
-          <!-- prettier-ignore -->
-          {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro Sanfrancisko" excerpt="Šonedēļ starptautiskā
-          Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai
-          neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura Dumbere"}}
-
-          {{>card tag="Komentārs" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-            atmazgāšanu.." title="Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}}
-
-          <div class="ad-widget hiddne bg-slate-100 p-6 lg:visible">
-            <h2 class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">Reklāma</h2>
-            <ul class="relative flex flex-col gap-y-8">
-              <li class="border-b border-gray-300 pb-6">
-                <div class="meta flex uppercase">
-                  <span class="counter"></span>
-                  <span class="category">Koncerts</span>
-                </div>
-                <h4 class="font-serif">
-                  <b>Grupa Jumprava.</b>
-                  XO Arēnā Rīga
-                </h4>
-                <div class="meta flex uppercase">
-                  <span class="counter"></span>
-                  <span class="category">28. novembris</span>
-                </div>
-              </li>
-              <li class="border-b border-gray-300 pb-6">
-                <div class="meta flex uppercase">
-                  <span class="counter"></span>
-                  <span class="category">Koncerts</span>
-                </div>
-                <h4 class="font-serif">
-                  <b>Rīgas Gredzens VEF</b>
-                  Kultūras pilī
-                </h4>
-                <div class="meta flex uppercase">
-                  <span class="counter"></span>
-                  <span class="category">28. novembris</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section id="ir-workshops" class="-mb-[2rem] bg-slate-200 py-20">
+      <section id="ir-workshops" class="-mb-[2rem] bg-slate-200 py-20 lg:-m-10">
         <div class="container px-4 lg:px-0">
           <h1 class="text-center">Izglītojies IR Darbnīcās</h1>
           <div class="flex flex-col gap-10 py-20 lg:flex-row lg:gap-8">
@@ -487,17 +466,33 @@
         </div>
         <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
           <!-- prettier-ignore -->
-          {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro Sanfrancisko" excerpt="Šonedēļ starptautiskā
-          Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai
-          neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura Dumbere"}}
+          {{>card 
+            tag="Komentārs" 
+            image="./src/assets/img/temp/home/DSC_8543.webp" 
+            title="Lāci nevar tik vienkārši apgāzt" 
+            excerpt="Zemessardzes virsnieks Jānis Slaidiņš analizē situāciju frontē un negrib pieļaut domu par «Somijas variantu» Ukrainā" 
+            author="Māra Miķelsone" 
+            slug="laci-nevar-tik-vienkarsi-apgazt"
+          }}
 
-          {{>card tag="Komentārs"
-            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-            atmazgāšanu.." title="Galvenā naudas atmazg lkewnkl lkwleknw en kefkeljh" author="Indra Sprance"}}
+          {{>card 
+            tag="Komentārs" 
+            image="./src/assets/img/temp/home/Slejas_Salmane_8.png" 
+            title="Dalīties ar savām mājām" 
+            excerpt="Māra un Mārtiņš Slejas izveidojuši divus īslaicīgas īres dzīvokļus Liepājā kā investīciju nākotnē un uzskata — viesiem labi redzams, vai saimnieks ir mēģinājis mājoklī iedvest dvēselīti, vai arī tas ir tikai peļņas projekts" 
+            author="Alise Zita Zeidaka" 
+            slug="dalities-ar-savam-majam"
+          }}
 
-          {{>card tag="Komentārs" title="Dziedātāja Zanda Švēde iekaro Sanfrancisko" excerpt="Šonedēļ starptautiskā Finanšu
-            darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu
-            neuzticamo valstu pelēkajā sarakstā?" author="Laura Dumbere"}}
+          {{>card 
+            tag="Komentārs" 
+            image="./src/assets/img/temp/home/FVK_Salmane_15.webp" 
+            title="Dīvānu eksperti" 
+            excerpt="Sākuši divatā nelielā darbnīcā Talsos, brāļi Frīdenbergi izveidojuši uzņēmumu, pēc kura ražotajām mēbelēm gaida rindā cilvēki no visas Latvijas" 
+            author="Mārtiņš Galenieks" 
+            slug="divanu-eksperti"
+          }}
+
         </div>
         <div>
           <div class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">

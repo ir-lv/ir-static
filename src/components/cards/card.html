@@ -2,38 +2,37 @@
   
   {{#if image}}
 
-  <img
-    src="{{image}}"
-    alt=""
-    class="aspect-video w-full cursor-pointer object-cover"
+  <div 
+    class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('{{image}}')" 
+    role="link"
     x-data
-    @click="window.location='article.html'" />
+    @click="window.location='article.html?slug={{slug}}'">
+  </div>
 
   {{else}}
 
-  <img
-    src="./src/assets/img/temp/hero.jpg"
-    alt=""
-    class="aspect-video w-full cursor-pointer object-cover"
+  <div 
+    class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('./src/assets/img/temp/hero.jpg')" 
+    role="link"
     x-data
-    @click="window.location='article.html'" />
+    @click="window.location='article.html?slug={{slug}}'">
+  </div>
 
   {{/if}}
   
   <div
-    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4">
+    class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
     <div class="flex w-full justify-between">
-      <a href="category.html"
-        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
-        >{{ tag }}</a
-      >
+      {{#if tag}}
+        <a href="category.html" class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">{{ tag }}</a>
+      {{/if}}
       {{>bookmark}}
     </div>
     <h1
       class="text-[26px] leading-tight w-full h-min cursor-pointer {{title-size}}" 
       role="link"
       x-data
-      @click="window.location='article.html'" 
+      @click="window.location='article.html?slug={{slug}}'" 
       contenteditable="true">
       {{ title }}
     </h1>
@@ -42,6 +41,6 @@
       {{ excerpt}}
     </p>
     {{/if}}
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500" contenteditable="true"> {{ author }}</a>
+    <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true"> {{ author }}</a>
   </div>
 </figure>

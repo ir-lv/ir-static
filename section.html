@@ -14,7 +14,7 @@
           <figure class="lg:flex gap-4 bg-white text-ir-gray-80 lg:gap-8 cursor-pointer"
             role="link"
             x-data
-            @click="window.location='article.html'">
+            @click="window.location='article.html?slug={{slug}}'">
             <img src="./src/assets/img/temp/ir/home/Rectangle_85.jpg" alt=""
               class="aspect-square h-full w-auto object-cover" />
             <div class="flex flex-col justify-center gap-y-8 px-4 lg:col-span-5 lg:px-0 lg:pr-8">
@@ -22,7 +22,7 @@
               class="w-full pt-8 text-4xl leading-tight lg:pt-10 cursor-pointer"
               role="link"
               x-data
-              @click="window.location='article.html'" >
+              @click="window.location='article.html?slug={{slug}}'" >
                 Dziedātāja Zanda Švēde iekaro Sanfrancisko
               </h3>
               <p class="flex-grow text-[0.938rem]">

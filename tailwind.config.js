@@ -19,6 +19,7 @@ export default {
 
       fontSize: {
         "card-lead": "15px",
+        md: ["1.125rem", "1.125"],
         xl: ["1.375rem", "1.87rem"],
       },
       colors: {
