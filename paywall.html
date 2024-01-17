@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  {{>head }}
+
+  <body x-data @keyup.escape="$store.content.showLightBox = false" :class="$store.content.showLightBox ? 'overflow-hidden' : '' ">
+    
+    <div id="app">
+      {{>header}}
+      <div id="article"
+        x-data="article"
+        x-on:scroll.window="scrollPos = $scrollAmount"
+        x-intersect="dimToolbar = false"
+        x-intersect:leave="dimToolbar = true"
+        class="container flex flex-col flex-wrap gap-y-4 px-4 lg:flex-row lg:items-stretch justify-stretch lg:gap-y-8 lg:py-0">
+        
+        <!-- prettier-ignore -->
+        {{>article-header}}
+
+        <template x-for="post in wp">
+          <div>
+            <span 
+            id="progress-bar" 
+            class="h-[2px] bg-ir-red fixed top-[70px] lg:top-[67px] left-0 z-[40]" 
+            :class="scrollPos.scrollPercent >= 100 ? 'opacity-0' : '' "
+            :style="{ width: `${scrollPos.scrollPercent}%` }">
+          </span>
+        
+        {{>socials-toolbar}}
+
+        <div class="article-container relative flex flex-col pb-20 lg:ml-20 lg:max-w-[650px]">
+          <figure>
+            <img :src="post != null ? 'http://irdev.devio.lv/wp-content/uploads/'+post.featuredImage.node.mediaDetails.file : './src/assets/img/temp/article-featured.jpg' " alt="" />
+            <p class="img-meta mt-3 mb-6 font-serif" x-html="!!post ? post.featuredImage.node.caption : $el.innerHTML "  contenteditable="true">
+              Ilustrācija — Reinis Hofmanis
+            </p>
+          </figure>
+
+          <div class="paywall-fog relative">
+            <div
+              class="fog-overlay absolute bottom-0 h-full w-full bg-gradient-to-t from-white to-transparent"></div>
+            <h2>Prologs. «Man ir bail»</h2>
+            <p>
+              Par Santas situāciju uzzināju, rakstot iepriekšējo Re:Baltica
+              sēriju par vardarbību. E-pastā iekrita vēstule ar tekstu: «Vīrs
+              man nogrieza ausi. Viņu tūlīt izlaidīs no apcietinājuma. Man ir
+              bail.» Sekoja vārds un telefona numurs. Vēlāk izrādījās, ka
+              vēstuli uzrakstījusi kolēģe. Kā daudzas citas reizes, Santa pati
+              nerīkojas, bet paļaujas uz citiem. Vai padodas.
+            </p>
+            <p>
+              Tā pērn maijā iepazināmies. Īsa gaišmate ap 40. Kopš auss
+              nogriešanas bija pagājuši divi mēneši. Vīrietis bija tikko
+              izlaists no apcietinājuma. Santa runāja lēni, bet domas bija
+              skaidras. Viņa lietoja nomierinošas zāles, lai izturētu spriedzi.
+              Abu kopdzīvē vardarbības bijis tik daudz, ka Santa jauc datumus un
+              detaļas. Tādēļ šajā rakstā balstos uz dokumentiem, ko viņa iedeva.
+            </p>
+          </div>
+
+          <!-- prettier-ignore -->
+          {{>paywall-login
+            title="Pirms lasi tālāk, iepazīsimies!" 
+            description="Ienāc vai reģistrējies portālā un saņem pieeju bezmaksas rakstiem
+            un IR Svarīgākais vēstkopai"
+          }}
+
+          <!-- prettier-ignore -->
+          {{>paywall-subscribe 
+            title="Turpini lasīt, atbalsti kvalitatīvu žurnālistiku!"
+            description="Iepazīšanās piedāvājums ir.lv abonēšanai - pirmie trīs mēneši par 2,99 eur/mēnesī. Atcel jebkurā brīdī."
+          }}
+
+          <h2>1. cēliens. Uz riņķi</h2>
+          <p>
+            Santa un Andrejs iepazinās 2011. gadā. Vīrietis strādāja
+            celtniecībā, Santas mātei likās varens ķēriens: zelta rokas, varēs
+            palīdzēt lauku mājās. Sākumā ar cieņu izturējās pret Santu un viņas
+            meitu no iepriekšējām attiecībām. Pēc gada Santa gaidīja bērnu un
+            Andrejs kļuva agresīvs. Sākumā tikai vārdos, bet mēnesi pēc bērna
+            piedzimšanas, 2013. gada pavasarī, vīrietis palaida rokas.
+            Ierosināta administratīvā lieta par maznozīmīgiem miesas bojājumiem,
+            bet Santa iesniegumu beigās atsauca. Parastais vardarbības aplis —
+            viņš nolūdzās, viņa piedeva.
+          </p>
+
+          <!-- prettier-ignore -->
+          {{>article-content-cta 
+            title="<b>Īsi par svarīgāko ik rītu</b> — pieraksties jaunumu vēstulei Ir Svarīgākais!" btn-label="Pierakstīties"
+          }}
+
+          <span class="anchor relative"></span>
+          <p>
+            Pēc diviem gadiem, 2015. gada oktobrī, policija viņu uz četrām
+            stundām izolēja no dzīvesvietas. Administratīvajā protokolā fiksēta
+            «fiziska un emocionāla vardarbība pret bērnu». Pēc šī gadījuma Santa
+            ar centra Marta palīdzību tiesai lūdza pagaidu aizsardzību pret
+            vardarbību. Tiesa aizliedza Andrejam tuvoties viņai un bērniem. Taču
+            vienlaikus gaidīja, ka Santa rīkosies un mēneša laikā iesniegs tiesā
+            jaunu prasību. Šādi tiesas mudina sievietes, kuras lūdz aizsardzību
+            no varmākām, nokārtot attiecības līdz galam. Par to, ka Andrejs sit
+            Santu, pirmā uzzināja otra bērnudārza vadītāja Anita. «Viņa
+            piezvanīja. Neteica neko par aci. Tikai, ka nelaimes gadījums,
+            pakritusi,» stāsta Anita. Viņai likās aizdomīgi, ka ārstēšanai vajag
+            pusotru mēnesi. Kad atgriezās darbā, Anita tieši noprasīja, kas
+            notiek. Santa pastāstīja, ka viņu sit. Ka «nespēj tikt no Andreja
+            vaļā, ir paniskas bailes».
+          </p>
+
+          <div class="h-[400px] bg-slate-200">
+            <h3>Reklāma</h3>
+          </div>
+
+          <div class="py-8">
+            <!-- prettier-ignore -->
+            {{>card-article-related 
+              title="Ko apdraud mežu izciršana?" 
+              author="Jānis Saliņš" tag="Pasaulē" 
+              excerpt="Vai atļaut cirst tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt aptuveni 20 
+              gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+          </div>
+
+          <p>
+            Pēc diviem gadiem, 2015. gada oktobrī, policija viņu uz četrām
+            stundām izolēja no dzīvesvietas. Administratīvajā protokolā fiksēta
+            «fiziska un emocionāla vardarbība pret bērnu». Pēc šī gadījuma Santa
+            ar centra Marta palīdzību tiesai lūdza pagaidu aizsardzību pret
+            vardarbību. Tiesa aizliedza Andrejam tuvoties viņai un bērniem. Taču
+            vienlaikus gaidīja, ka Santa rīkosies un mēneša laikā iesniegs tiesā
+            jaunu prasību. Šādi tiesas mudina sievietes, kuras lūdz aizsardzību
+            no varmākām, nokārtot attiecības līdz galam. Par to, ka Andrejs sit
+            Santu, pirmā uzzināja otra bērnudārza vadītāja Anita. «Viņa
+            piezvanīja. Neteica neko par aci. Tikai, ka nelaimes gadījums,
+            pakritusi,» stāsta Anita. Viņai likās aizdomīgi, ka ārstēšanai vajag
+            pusotru mēnesi. Kad atgriezās darbā, Anita tieši noprasīja, kas
+            notiek. Santa pastāstīja, ka viņu sit. Ka «nespēj tikt no Andreja
+            vaļā, ir paniskas bailes».
+          </p>
+
+          {{>quote text="Atbrauca ugunsdzēsēji, mēģināja iekāpt pa balkonu.
+          Beigās kāds no ciemiņiem atvēra. Policija Santu ar jaunāko dēlu atrada
+          paslēpušos skapī."}}
+
+          <p>
+            Tāpat vīrietis regulāri zvanīja un sūdzējās izmeklētājai Meikšānei,
+            ka Santa dzer. «Uz to atbildēju — vai jums neliekas, ka viņa dzer
+            vēl vairāk tieši jūsu dēļ? Viņš meta nost klausuli, tad zvanīja
+            atkal,» atceras Meikšāne. Izskatās, viņš zvanīja arī pašvaldības
+            sociālā dienesta darbiniecei Zanei Stieģelei, kas strādāja ar ģimeni
+            (viņa no intervijas atteicās, jo runāt par konkrēto lietu liedzot
+            likums). Andrejs pats vairs dzīvoklim netuvojās, bet Santu
+            uzraudzīja kāpņu telpas kaimiņi. Par novēroto ziņoja viņam. Viņš —
+            Stieģelei. No policijas sniegtās informācijas Re:Baltica izriet, ka
+            Stieģele uz Santas dzīvokli regulāri sūtīja pašvaldības policiju.
+            Nepilna pusgada laikā policija pie Santas dzīvokļa durvīm klauvēja
+            22 reizes. Tik daudz, jo Santa bieži neatvēra, tāpēc policisti nāca
+            atkārtoti. Reizēs, kad pašvaldības policija iekļuva dzīvoklī, nekas
+            aizdomīgs netika konstatēts.
+          </p>
+
+          {{>article-content-tags}}
+
+          {{>gallery}}
+
+          <div x-show="$store.content.showLightBox">
+            <div class="fixed inset-0 z-40 flex items-center justify-center w-full p-2 overflow-hidden bg-black bg-opacity-75 h-100">
+              <div class="bg-white">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+          </div>
+        </template>
+
+        <aside class="sidebar ml-auto hidden px-5 lg:block lg:max-w-[270px]">
+
+          {{>aside-list-posts}}
+
+        </aside>
+
+      </div>
+      <section id="related-articles">
+        <div class="container mt-10">
+
+          <div class="lg:max-w-[650px] lg:ml-20 flex flex-col gap-y-6">
+            <h1 class="text-center lg:text-left">Saistītie raksti</h1>
+
+            {{>card-article-related title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+  
+            {{>card-article-related title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+  
+            {{>card-article-related title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+  
+            {{>card-article-related title="Ko apdraud mežu izciršana?"
+            author="Jānis Saliņš" tag="Pasaulē" excerpt="Vai atļaut cirst
+            tievākus kokus, lai meža aprites ciklā īpašnieki varētu ietaupīt
+            aptuveni 20 gadus un valsts iekasētu papildu miljonus nodokļos? "}}
+          </div>
+        </div>
+      </section>
+      <section id="cards-1/4" class="bg-slate-100 mt-8">
+        <h1
+          class="title container pl-4 text-center lg:mt-16 lg:pl-0 lg:text-left">
+          Jaunākajā žurnālā
+        </h1>
+        <div
+          class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
+          
+          {{>card tag="Komentārs" title="Dace Rēķe, instagramā māca latviešu
+          valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa
+          (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
+          paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?"
+          author="Laura Dumbere"}} 
+          
+          {{>card tag="Komentārs" title="Satriecošais
+          spriedums Maximas lietā - reportāža no tiesas zāles" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} 
+          
+          {{>card
+          tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}} 
+          
+          {{>card
+          tag="Komentārs" title="Galvenā naudas atmazgāsānas" excerpt="Šonedēļ
+          starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
+          Latvija apkaro naudas atmazgāšanu.." author="Indra Sprance"}}
+        </div>
+        <div
+          class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
+          {{>btn-cta-black label="Vairāk rakstu"}}
+        </div>
+        <div
+          class="social-block-botto container my-20 flex max-w-md flex-col gap-6 px-8 py-8 lg:px-0">
+          <h4 class="text-center font-serif">
+            <b>Mums ir pa ceļam</b> — lasi jaunāko savā laika joslā!
+          </h4>
+          <div class="social-buttons flex justify-center gap-x-4">
+            <span><a href="">{{>instagram}}</a></span>
+            <span><a href="">{{>facebook}}</a></span>
+            <span><a href="">{{>twitter}}</a></span>
+          </div>
+        </div>
+      </section>
+    </div>
+    {{>footer}}
+  </body>
+</html>

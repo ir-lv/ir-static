@@ -80,12 +80,8 @@
     @apply font-serif;
   }
 
-  .article-content h2 {
-    @apply pb-1.5 pt-6;
-  }
-
-  .article-content p {
-    @apply py-2.5;
+  article b {
+    @apply font-sans font-extrabold;
   }
 
   .list-bullet {
