@@ -88,6 +88,10 @@
     @apply py-2.5;
   }
 
+  .list-bullet {
+    @apply before:mb-1 before:block before:h-1 before:w-1 before:rounded-lg before:bg-ir-red before:mr-2 first:before:hidden;
+  }
+
   /* This won't be included in your compiled CSS unless you actually use it */
   header nav > ul > li.active {
     @apply bg-white;

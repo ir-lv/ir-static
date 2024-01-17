@@ -12,6 +12,7 @@ export default defineConfig({
         resolve(__dirname, "src/components/"),
         resolve(__dirname, "src/components/general"),
         resolve(__dirname, "src/components/cards"),
+        resolve(__dirname, "src/components/article"),
         resolve(__dirname, "src/elements/"),
         resolve(__dirname, "src/elements/icons/"),
         resolve(__dirname, "src/elements/buttons/"),

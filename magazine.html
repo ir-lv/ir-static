@@ -19,43 +19,18 @@
         </div>
 
         <div class="flex gap-8">
-          <div class="hero w-full border-t border-t-slate-100 shadow-md lg:px-0">
-            <figure
-              class="grid grid-flow-row gap-4 bg-white lg:grid-cols-8 lg:gap-8">
-              <img
-                src="./src/assets/img/temp/ir/home/Rectangle_80.jpg"
-                alt=""
-                class="lg:w-auto w-full max-h-[370px] object-cover lg:col-span-3 cursor-pointer" 
-                role="link"
-                x-data
-                @click="window.location='article.html'"/>
-              <div
-                class="flex flex-col justify-center gap-y-8 px-4 lg:col-span-5 lg:px-0 lg:pr-8">
-                <h3 class="w-full pt-8 text-4xl leading-tight lg:pt-10 cursor-pointer"
-                  role="link"
-                  x-data
-                  @click="window.location='article.html'">
-                  Ar četrām prioritātēm vai garāks virsraksts
-                </h3>
-                <p class="flex-grow cursor-pointer"
-                  role="link"
-                  x-data
-                  @click="window.location='article.html'">
-                  Uzņēmīgā Zanda Švēde mūziku sāka mācīties tikai 25 gadu
-                  vecumā, nokļuva Sanfrancisko operā un nu jau otro sezonu ir
-                  Frankfurtes operas soliste. Kad vien apstākļi ļauj, viņa
-                  uzstājas Rīgā.
-                </p>
-                <div
-                  class="flex w-full items-center justify-between py-4 uppercase">
-                  <a href="author.html" class="hero__author font-serif pr-4 uppercase text-gray-500"
-                    >Laura Dumbere</a
-                  >
-                  {{>bookmark}}
-                </div>
-              </div>
-            </figure>
-          </div>
+
+          {{>card-hero 
+            title="Ar četrām prioritātēm vai garāks virsraksts." 
+            excerpt="Uzņēmīgā Zanda Švēde mūziku sāka mācīties tikai 25 gadu
+            vecumā, nokļuva Sanfrancisko operā un nu jau otro sezonu ir
+            Frankfurtes operas soliste. Kad vien apstākļi ļauj, viņa
+            uzstājas Rīgā." 
+            author="Pāvels Pestovs" 
+            image="./src/assets/img/temp/ir/home/Rectangle_80.jpg" 
+            slug="skolens-un-atzimes-sakumskola-ka-pilnveidota-vertesana-1-3-klase?"
+          }}
+
           <aside class="sidebar ml-auto hidden bg-slate-100 p-5 lg:block lg:max-w-[270px]">
             <div class="articles-widget bg-slate-100">
               <ul class="relative flex flex-col gap-y-8">
@@ -83,6 +58,7 @@
             </div>
           </aside>
         </div>
+        
       </div>
       <section
         id="banner"

@@ -1,0 +1,17 @@
+<div class="paywall-login my-8 flex flex-col items-center justify-center text-center">
+  <h2>{{title}}</h2>
+  <p class="font-serif">
+    {{description}}
+  </p>
+  <div
+    class="line-item flex w-full max-w-xs flex-col items-center gap-y-3 font-serif">
+    <input
+      type="text"
+      class="w-full rounded-md border-slate-200 px-4 py-3 font-serif"
+      placeholder="E-pasts" />
+    {{>btn-cta-black label="Turpināt"}}
+    <p>vai</p>
+    {{>btn-social-facebook label="Turpināt ar Facebook"}}
+    {{>btn-social-google label="Turpināt ar Google"}}
+  </div>
+</div>

@@ -124,6 +124,7 @@ Alpine.data("article", () => ({
 
   dimToolbar: false,
   scrollPos: {},
+  post: null,
   id: '0', 
   wp: [],
   async retrievePost() {
@@ -175,7 +176,7 @@ Alpine.data("article", () => ({
   .then(response => response.json())
   .then(res => {
     console.log("result", res);
-    this.wp[0] = res.data.post;
+    this.wp[0] = this.post = res.data.post;
     console.log("promise!!@!", res.data.post);
 })
 
