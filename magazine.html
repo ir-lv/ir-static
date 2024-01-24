@@ -14,26 +14,30 @@
         console.log("A ",window.alpine.store("content").showLightBox);
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-fe5dd3e5.js"></script>
-    <link rel="stylesheet" href="./assets/main-5852b864.css">
+    <script type="module" crossorigin src="./assets/main-bac8467b.js"></script>
+    <link rel="stylesheet" href="./assets/main-44ffe968.css">
   </head>
 
   <body>
     <div id="app">
-      <header
-        class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm"
-        x-data
+      <header class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm" x-data
         :class="$store.header.showSubmenu ? 'lg:bg-slate-100' : ''">
         <div class="container flex flex-wrap items-center justify-between">
           <div class="order-2 flex items-center">
-            <a
-              aria-current="page"
-              href="./"
-              class="router-link-active router-link-exact-active">
-              <img src="./assets/ir-logo-3b1e43b2.svg" alt="" />
+            <a aria-current="page" href="./" class="router-link-active router-link-exact-active">
+              <svg id="header-logo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                alt="Ir Logo">
+                <path
+                  d="M21.7993 11.082C23.947 11.082 25.751 12.9505 25.751 15.1411C25.751 17.4391 23.9685 19.2861 21.7993 19.2861C19.6087 19.2861 17.8477 17.4176 17.8477 15.1411C17.8477 12.9505 19.6732 11.082 21.7993 11.082Z"
+                  fill="#ED2926" />
+                <path
+                  d="M49.7821 33.2242C47.2908 33.2242 45.7874 31.1625 45.9807 29.2081C46.0881 28.2202 46.5606 27.2108 46.1311 26.2014C45.6371 24.9773 44.2197 25.0846 42.8452 25.7504C40.8049 26.7383 39.3015 29.4014 39.3015 32.4511V41.4927L39.3445 42.8028C39.4304 45.5303 40.9552 47.0981 43.468 47.0981V48.1289H29.1217H14.7754V47.0981C17.2237 47.0981 18.6841 45.5732 18.8988 42.7813L18.9848 41.0632V31.8068C18.9848 30.4752 18.5552 29.3155 17.7606 28.5638C17.0304 27.8551 16.021 27.533 14.8613 27.5974L14.6895 26.588C14.6895 26.588 24.6331 23.0873 24.7405 23.0444C24.8264 23.0229 24.9337 23.0444 24.9337 23.1732V41.4712L24.9767 42.7598C25.0841 45.5088 26.5874 47.0766 29.1002 47.0551C31.5485 47.0551 33.0089 45.5303 33.2237 42.7383L33.3096 41.0202V31.7638C33.3096 30.4323 32.8801 29.2726 32.0854 28.5424C31.3552 27.8336 30.3458 27.5115 29.1861 27.5759L29.0358 26.5665L37.4546 23.6028L37.5405 23.7101C37.8411 24.0538 38.7002 25.4712 39.1082 27.1679C40.0317 26.2014 41.2344 25.1705 42.5874 24.3974C42.6089 24.3974 42.6089 24.3759 42.6304 24.3759C43.8546 23.6887 45.2076 23.2377 46.625 23.2377H46.6035C48.6653 23.1947 50.5123 23.9893 51.8653 25.192C52.9176 26.137 53.6264 27.7692 53.6264 29.0793C53.6478 31.0981 52.2948 33.2242 49.7821 33.2242Z"
+                  fill="#ED2926" />
+              </svg>
             </a>
           </div>
       
+          <!-- prettier-ignore -->
           <nav role="navigation" aria-label="Main Navigation"
             class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
             :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-transition.opacity.duration.500ms>
@@ -160,6 +164,7 @@
             </ul>
           </nav>
           <div class="flex items-center justify-end gap-4 lg:order-last lg:ml-auto">
+            <!-- prettier-ignore -->
             <div x-data class="cursor-pointer">
         <a
           x-show="$store.header.isLoggedIn !=true"
@@ -208,7 +213,7 @@
           <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
         </svg>
       </div>
-        <div
+       <div
         x-data="{enabled: false, toggle(){
           this.enabled = !this.enabled;
           if(this.enabled){
@@ -291,6 +296,7 @@
       
           </div>
       
+          <!-- prettier-ignore -->
           <div id="hamburger" class="order-3 lg:hidden">
             <button
               @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
@@ -349,8 +355,10 @@
               </svg>
             </button>
           </div>
+      
         </div>
       
+        <!-- prettier-ignore -->
         <div
           :class="$store.header.showSearch ? 'block' : '' "
           @click.away="$store.header.showSearch=false"
@@ -461,8 +469,7 @@
           </div>
         </div>
         <!---->
-      </header>
-      <div
+      </header>      <div
         class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0">
         <div class="w-full flex flex-col lg:flex-row lg:justify-between gap-4 lg:gap-0 py-4 lg:py-0">
           <div class="flex items-center justify-center gap-x-3 uppercase before:-ml-4">
@@ -494,16 +501,13 @@
 
         <div class="flex gap-8">
 
-          <figure class="grid grid-flow-row gap-4 bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_1px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] lg:grid-cols-2 lg:gap-8 lg:min-h-[370px]" data-uri="">
-            <img src="./assets/Rectangle_80-6e52075f.jpg" alt="" class="h-full object-cover" />
+          <figure class="relative grid grid-flow-row gap-4 shadow-ir-default lg:grid-cols-2 lg:gap-8 lg:min-h-[370px] w-full"
+            data-uri="">
+            <img src="./assets/Rectangle_80-6e52075f.jpg" alt="" class="object-cover w-full h-full" />
             <div class="flex flex-col justify-center px-4 lg:px-0 lg:pt-8 lg:pr-8">
-              <h1 class="w-full leading-10 lg:leading-none text-[2.25rem] lg:text-[2.75rem] cursor-pointer mt-auto " 
-                role="link"
-                x-data
-                @click="window.location='article.html?slug=skolens-un-atzimes-sakumskola-ka-pilnveidota-vertesana-1-3-klase?'" contenteditable="true">Ar četrām prioritātēm vai garāks virsraksts.</h1>
-              <p class="cursor-pointer text-card-lead pt-4 lg:pt-8" 
-                role="link"
-                x-data
+              <h1 class="w-full leading-10 lg:leading-none text-[2.25rem] lg:text-[2.75rem] cursor-pointer mt-auto "
+                role="link" x-data @click="window.location='article.html?slug=skolens-un-atzimes-sakumskola-ka-pilnveidota-vertesana-1-3-klase?'" contenteditable="true">Ar četrām prioritātēm vai garāks virsraksts.</h1>
+              <p class="cursor-pointer text-card-lead pt-4 lg:pt-8" role="link" x-data
                 @click="window.location='article.html?slug=skolens-un-atzimes-sakumskola-ka-pilnveidota-vertesana-1-3-klase?'" contenteditable="true">
                 Uzņēmīgā Zanda Švēde mūziku sāka mācīties tikai 25 gadu
                       vecumā, nokļuva Sanfrancisko operā un nu jau otro sezonu ir
@@ -634,20 +638,18 @@
         <div class="container gap-4 px-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8">
           <!-- prettier-ignore -->
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-            
           
-            <div 
-              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('./assets/hero-cfd2d752.jpg')" 
-              role="link"
-              x-data
-              @click="window.location='article.html?slug='">
-            </div>
           
-            
-            <div
-              class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+              <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+                style="background-image: url('./assets/hero-cfd2d752.jpg')" role="link" x-data
+                @click="window.location='article.html?slug='">
+              </div>
+          
+          
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
               <div class="flex w-full justify-between">
-                  <a href="category.html" class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                  <a href="category.html"
+                    class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                   x-data="{ saved: false }"
@@ -682,39 +684,33 @@
                   </svg>
                 </a>
               </div>
-              <h1
-                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" 
-                contenteditable="true">
+              <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                @click="window.location='article.html?slug='" contenteditable="true">
                 Dziedātāja Zanda Švēde iekaro
                     Sanfrancisko
               </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Šonedēļ starptautiskā Finanšu darījumu darba
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
+                  Šonedēļ starptautiskā Finanšu darījumu darba
                     grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
                     paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-              </p>
-              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true"> Laura Dumbere</a>
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                Laura Dumbere</a>
             </div>
-          </figure>
-          
+          </figure>          
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-            
           
-            <div 
-              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('./assets/Rectangle_17-78b46adf.jpg')" 
-              role="link"
-              x-data
-              @click="window.location='article.html?slug='">
-            </div>
           
-            
-            <div
-              class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+              <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+                style="background-image: url('./assets/Rectangle_17-78b46adf.jpg')" role="link" x-data
+                @click="window.location='article.html?slug='">
+              </div>
+          
+          
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
               <div class="flex w-full justify-between">
-                  <a href="category.html" class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                  <a href="category.html"
+                    class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                   x-data="{ saved: false }"
@@ -749,23 +745,19 @@
                   </svg>
                 </a>
               </div>
-              <h1
-                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" 
-                contenteditable="true">
+              <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                @click="window.location='article.html?slug='" contenteditable="true">
                 Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles
               </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Šonedēļ
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
+                  Šonedēļ
                     starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
                     Latvija apkaro naudas atmazgāšanu..
-              </p>
-              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true"> Indra Sprance</a>
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                Indra Sprance</a>
             </div>
-          </figure>
-          <div
+          </figure>          <div
             class="ad-widget my-4 flex flex-col justify-between bg-white px-4 shadow-md lg:my-0 lg:max-w-[270px]">
             <div class="flex w-full justify-between">
               <span
@@ -826,16 +818,12 @@
           <div
             class="related-articles flex w-full flex-col gap-y-6 px-4 lg:w-9/12 lg:px-0">
             <!-- prettier-ignore -->
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -870,48 +858,38 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
                         sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura Dumbere</a>
               </div>
-              
             
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
+            
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
             
             
             </figure>
-
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -946,47 +924,37 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe, instagramā māca latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
                         vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
                         lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura
                         Dumbere</a>
               </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
             
             
-            </figure>
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
             
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            
+            </figure>            
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -1021,48 +989,38 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe,
                         instagramā māca latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā
                         Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
                         apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
                         valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura Dumbere</a>
               </div>
-              
             
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
+            
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
             
             
             </figure>
-
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -1097,38 +1055,32 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
                         sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura Dumbere</a>
               </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
             
             
-            </figure>
-          </div>
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
+            
+            
+            </figure>          </div>
           <div class="ad-widget hiddne bg-slate-100 p-6 lg:visible">
             <h2
               class="mb-6 border-b border-gray-300 py-6 pt-2 text-center text-xl">
@@ -1169,20 +1121,18 @@
           class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:pb-8">
           <!-- prettier-ignore -->
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-            
           
-            <div 
-              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('./assets/hero-cfd2d752.jpg')" 
-              role="link"
-              x-data
-              @click="window.location='article.html?slug='">
-            </div>
           
-            
-            <div
-              class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+              <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+                style="background-image: url('./assets/hero-cfd2d752.jpg')" role="link" x-data
+                @click="window.location='article.html?slug='">
+              </div>
+          
+          
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
               <div class="flex w-full justify-between">
-                  <a href="category.html" class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                  <a href="category.html"
+                    class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                   x-data="{ saved: false }"
@@ -1217,39 +1167,33 @@
                   </svg>
                 </a>
               </div>
-              <h1
-                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" 
-                contenteditable="true">
+              <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                @click="window.location='article.html?slug='" contenteditable="true">
                 Dziedātāja Zanda Švēde iekaro
                     Sanfrancisko
               </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Šonedēļ starptautiskā Finanšu darījumu darba
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
+                  Šonedēļ starptautiskā Finanšu darījumu darba
                     grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas
                     paveikts, lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-              </p>
-              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true"> Laura Dumbere</a>
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                Laura Dumbere</a>
             </div>
-          </figure>
-          
+          </figure>          
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-            
           
-            <div 
-              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('./assets/hero-cfd2d752.jpg')" 
-              role="link"
-              x-data
-              @click="window.location='article.html?slug='">
-            </div>
           
-            
-            <div
-              class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+              <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+                style="background-image: url('./assets/hero-cfd2d752.jpg')" role="link" x-data
+                @click="window.location='article.html?slug='">
+              </div>
+          
+          
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
               <div class="flex w-full justify-between">
-                  <a href="category.html" class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                  <a href="category.html"
+                    class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                   x-data="{ saved: false }"
@@ -1284,39 +1228,33 @@
                   </svg>
                 </a>
               </div>
-              <h1
-                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" 
-                contenteditable="true">
+              <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                @click="window.location='article.html?slug='" contenteditable="true">
                 Galvenā naudas atmazg
                     lkewnkl lkwleknw en kefkeljh
               </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Šonedēļ
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
+                  Šonedēļ
                     starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi
                     Latvija apkaro naudas atmazgāšanu..
-              </p>
-              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true"> Indra Sprance</a>
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                Indra Sprance</a>
             </div>
-          </figure>
-          
+          </figure>          
           <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-            
           
-            <div 
-              class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('./assets/hero-cfd2d752.jpg')" 
-              role="link"
-              x-data
-              @click="window.location='article.html?slug='">
-            </div>
           
-            
-            <div
-              class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+              <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+                style="background-image: url('./assets/hero-cfd2d752.jpg')" role="link" x-data
+                @click="window.location='article.html?slug='">
+              </div>
+          
+          
+            <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
               <div class="flex w-full justify-between">
-                  <a href="category.html" class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                  <a href="category.html"
+                    class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
                 <a
                   class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                   x-data="{ saved: false }"
@@ -1351,24 +1289,20 @@
                   </svg>
                 </a>
               </div>
-              <h1
-                class="text-[26px] leading-tight w-full h-min cursor-pointer " 
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" 
-                contenteditable="true">
+              <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                @click="window.location='article.html?slug='" contenteditable="true">
                 Dziedātāja Zanda Švēde iekaro Sanfrancisko
               </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
+                  Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
                     vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
                     lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-              </p>
-              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true"> Laura
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                Laura
                     Dumbere</a>
             </div>
-          </figure>
-        </div>
+          </figure>        </div>
       </section>
       <section>
         <div class="container">
@@ -1409,16 +1343,12 @@
           <div
             class="related-articles flex w-full flex-col gap-y-6 px-4 lg:w-9/12 lg:px-0">
             <!-- prettier-ignore -->
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -1453,48 +1383,38 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
                         sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura Dumbere</a>
               </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
             
             
-            </figure>
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
             
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            
+            </figure>            
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -1529,47 +1449,37 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe, instagramā māca latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
                         vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
                         lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura
                         Dumbere</a>
               </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
             
             
-            </figure>
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
             
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            
+            </figure>            
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -1604,49 +1514,39 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe,
                         instagramā māca latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā
                         Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
                         apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
                         valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura Dumbere</a>
               </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
             
             
-            </figure>
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
             
             
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+            </figure>            
+            
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
                 <div class="flex w-full justify-between">
                   <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Komentārs</span
-                  >
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Komentārs</span>
                   <a
                     class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                     x-data="{ saved: false }"
@@ -1681,50 +1581,49 @@
                     </svg>
                   </a>
                 </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
                   Dace Rēķe, instagramā māca
                         latviešu valodu
                 </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu
                         darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
                         atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
                         sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura Dumbere</a>
               </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
             
             
-            </figure>
-          </div>
+                <img src="./assets/hero-cfd2d752.jpg" alt=""
+                  class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                  role="link" x-data @click="window.location='article.html?slug='" width="300" />
+            
+            
+            </figure>          </div>
         </div>
       </section>
     </div>
     <footer aria-label="footer" class="bg-ir-dark-gray">
       <div class="container flex-row items-center p-10 lg:flex">
-        <img
-          src="./assets/ir-logo-footer-61039508.svg"
-          alt="Footer Logo"
-          class="pr-10" />
-        <ul
-          role="navigation"
-          aria-roledescription="Footer navigation"
+        <svg id="footer-logo" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+          alt="Footer Logo" class="mr-10">
+          <path d="M24 0C10.7 0 0 10.7 0 24C0 37.3 10.7 48 24 48C37.3 48 48 37.3 48 24C48 10.7 37.3 0 24 0Z"
+            fill="#ED2926" />
+          <path
+            d="M16.4004 8.30078C18.0004 8.30078 19.4004 9.70078 19.4004 11.3008C19.4004 13.0008 18.1004 14.4008 16.4004 14.4008C14.8004 14.4008 13.4004 13.0008 13.4004 11.3008C13.4004 9.70078 14.7004 8.30078 16.4004 8.30078Z"
+            fill="white" />
+          <path
+            d="M37.3004 24.9008C35.4004 24.9008 34.3004 23.3008 34.5004 21.9008C34.6004 21.2008 34.9004 20.4008 34.6004 19.6008C34.2004 18.7008 33.2004 18.8008 32.1004 19.3008C30.6004 20.0008 29.4004 22.0008 29.4004 24.3008V31.1008V32.1008C29.5004 34.2008 30.6004 35.3008 32.5004 35.3008V36.1008H21.7004H10.9004V35.3008C12.7004 35.3008 13.8004 34.1008 14.0004 32.1008L14.1004 30.8008V23.9008C14.1004 22.9008 13.8004 22.0008 13.2004 21.5008C12.6004 21.0008 11.9004 20.7008 11.0004 20.8008V20.0008C11.0004 20.0008 18.5004 17.4008 18.5004 17.3008C18.6004 17.3008 18.6004 17.3008 18.6004 17.4008V31.1008V32.1008C18.7004 34.2008 19.8004 35.3008 21.7004 35.3008C23.5004 35.3008 24.6004 34.2008 24.8004 32.1008L24.9004 30.8008V23.9008C24.9004 22.9008 24.6004 22.0008 24.0004 21.5008C23.4004 21.0008 22.7004 20.7008 21.8004 20.8008V20.0008L28.1004 17.8008L28.2004 17.9008C28.4004 18.2008 29.1004 19.2008 29.4004 20.5008C30.1004 19.8008 31.0004 19.0008 32.0004 18.4008C32.9004 17.9008 33.9004 17.5008 35.0004 17.5008C36.5004 17.5008 37.9004 18.1008 38.9004 19.0008C39.7004 19.7008 40.2004 20.9008 40.2004 21.9008C40.2004 23.3008 39.2004 24.9008 37.3004 24.9008Z"
+            fill="white" />
+        </svg>
+        <ul role="navigation" aria-roledescription="Footer navigation"
           class="block w-full gap-10 font-serif leading-[5rem] text-ir-light-gray lg:flex lg:py-20 lg:leading-normal">
           <li><a href="">Komanda</a></li>
           <li><a href="">Manifests</a></li>
@@ -1735,6 +1634,5 @@
           <li><a href="">Privātuma politika</a></li>
         </ul>
       </div>
-    </footer>
-  </body>
+    </footer>  </body>
 </html>

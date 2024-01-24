@@ -1,1058 +1,1147 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IR žurnāls</title>
-    
-    
-    <script type="text/javascript">
-      window.document.addEventListener("alpine:init", () => {
-        let state = window.alpine.store("header");
-        state.showMenu = state.isScreenDesktop();
-        console.log("A ",window.alpine.store("content").showLightBox);
-      });
-    </script>
-    <script type="module" crossorigin src="./assets/main-fe5dd3e5.js"></script>
-    <link rel="stylesheet" href="./assets/main-5852b864.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IR žurnāls</title>
+  
+  
+  <script type="text/javascript">
+    window.document.addEventListener("alpine:init", () => {
+      let state = window.alpine.store("header");
+      state.showMenu = state.isScreenDesktop();
+      console.log("A ",window.alpine.store("content").showLightBox);
+    });
+  </script>
+  <script type="module" crossorigin src="./assets/main-bac8467b.js"></script>
+  <link rel="stylesheet" href="./assets/main-44ffe968.css">
+</head>
 
-  <body>
-    <div id="app">
-      <header
-        class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm"
-        x-data
-        :class="$store.header.showSubmenu ? 'lg:bg-slate-100' : ''">
-        <div class="container flex flex-wrap items-center justify-between">
-          <div class="order-2 flex items-center">
-            <a
-              aria-current="page"
-              href="./"
-              class="router-link-active router-link-exact-active">
-              <img src="./assets/ir-logo-3b1e43b2.svg" alt="" />
-            </a>
-          </div>
-      
-          <nav role="navigation" aria-label="Main Navigation"
-            class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
-            :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-transition.opacity.duration.500ms>
-            <ul class="flex h-full flex-col leading-[2.8rem] lg:flex-row lg:items-end lg:gap-1">
-              <!-- prettier-ignore -->
-              <li
-                class="has-children px-4 pt-3"
-                :class="$store.header.showSubmenu ? 'active' : ''"
-                @click.away="$store.header.showSubmenu=false">
-                <a
-                  aria-current="page"
-                  x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
-                  class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all"
-                  >Tēmas
-                  <svg
-                    class="-mt-[0.1rem]"
-                    width="6"
-                    height="10"
-                    viewBox="0 0 6 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    :class="$store.header.showSubmenu ? 'rotate-90' : ''">
-                    <path
-                      d="M1 1L5 5L1 9"
-                      stroke="#212225"
-                      stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-                <ul
-                  x-cloak
-                  class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-md"
-                  x-show="$store.header.showSubmenu"
-                  x-transition.opacity>
-                  <li>
-                    <b
-                      class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]"
-                      >Tēmas</b
-                    >
-                    <ul>
-                      <li><a href="section.html?cat=Politika" class="hover:text-ir-red">Politika</a></li>
-                      <li><a href="section.html?cat=Personības" class="hover:text-ir-red">Personības</a></li>
-                      <li><a href="section.html?cat=Nauda" class="hover:text-ir-red">Nauda</a></li>
-                      <li><a href="section.html?cat=Kultūra" class="hover:text-ir-red">Kultūra</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b
-                      class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                      >Rubrikas</b
-                    >
-                    <ul>
-                      <li><a href="category.html?cat=Pētījumi" class="hover:text-ir-red">Pētījumi</a></li>
-                      <li><a href="category.html?cat=Intervijas" class="hover:text-ir-red">Intervijas</a></li>
-                      <li><a href="category.html?cat=Recenzijas" class="hover:text-ir-red">Recenzijas</a></li>
-                      <li>
-                        <a href="category.html?cat=Komentāri" class="hover:text-ir-red">Komentāri</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><a href="category.html?cat=Viedokļi" class="hover:text-ir-red">Viedokļi</a></li>
-                      <li>
-                        <a href="category.html?cat=1 no 2 miljoniem" class="hover:text-ir-red">1 no 2 miljoniem</a>
-                      </li>
-                      <li><a href="category.html?cat=Pasaulē" class="hover:text-ir-red">Pasaulē</a></li>
-                      <li><a href="category.html?cat=Apceļo Latviju" class="hover:text-ir-red">Apceļo Latviju</a></li>
-                      <li>
-                        <a href="section-topic.html?cat=Politika" class="hover:text-ir-red">Vēlēšanas 2024</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li>
-                        <a href="article.html" class="hover:text-ir-red">Veiksme</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b
-                      class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                      >Vairāk no IR</b
-                    >
-                    <ul>
-                      <li><a href="podcasts.html" class="hover:text-ir-red">Šķiltava</a></li>
-                      <li><a href="podcasts.html" class="hover:text-ir-red">Ārskats</a></li>
-                      <li>
-                        <a href="article.html" class="hover:text-ir-red">IR Svarīgākais</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="px-4 pt-3">
-                <a
-                  href="section-topic.html"
-                  class="flex w-full text-ir-red relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
-                  >Vēlēšanas 2024</a
-                >
-              </li>
-              <li class="px-4 pt-3">
-                <a
-                  href="magazines.html"
-                  class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
-                  >Žurnāli</a
-                >
-              </li>
-              <li class="px-4 pt-3">
-                <a
-                  href="article.html"
-                  class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
-                  >Abonēšana</a
-                >
-              </li>
-              <li class="px-4 pt-3">
-                <a
-                  href="terms.html"
-                  class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
-                  >Noteikumi</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <div class="flex items-center justify-end gap-4 lg:order-last lg:ml-auto">
-            <div x-data class="cursor-pointer">
-        <a
-          x-show="$store.header.isLoggedIn !=true"
-          x-on:click="$store.header.isLoggedIn = true"
-          class="flex items-center pl-4 lg:pl-0"
-          title="Sign In">
-          <img src="./assets/sign_in-5c74b4a3.svg" alt="" /><span class="font-serif"
-            >Ienākt</span
-          >
+<body>
+  <div id="app" x-data="category_page">
+    <header class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm" x-data
+      :class="$store.header.showSubmenu ? 'lg:bg-slate-100' : ''">
+      <div class="container flex flex-wrap items-center justify-between">
+        <div class="order-2 flex items-center">
+          <a aria-current="page" href="./" class="router-link-active router-link-exact-active">
+            <svg id="header-logo" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+              alt="Ir Logo">
+              <path
+                d="M21.7993 11.082C23.947 11.082 25.751 12.9505 25.751 15.1411C25.751 17.4391 23.9685 19.2861 21.7993 19.2861C19.6087 19.2861 17.8477 17.4176 17.8477 15.1411C17.8477 12.9505 19.6732 11.082 21.7993 11.082Z"
+                fill="#ED2926" />
+              <path
+                d="M49.7821 33.2242C47.2908 33.2242 45.7874 31.1625 45.9807 29.2081C46.0881 28.2202 46.5606 27.2108 46.1311 26.2014C45.6371 24.9773 44.2197 25.0846 42.8452 25.7504C40.8049 26.7383 39.3015 29.4014 39.3015 32.4511V41.4927L39.3445 42.8028C39.4304 45.5303 40.9552 47.0981 43.468 47.0981V48.1289H29.1217H14.7754V47.0981C17.2237 47.0981 18.6841 45.5732 18.8988 42.7813L18.9848 41.0632V31.8068C18.9848 30.4752 18.5552 29.3155 17.7606 28.5638C17.0304 27.8551 16.021 27.533 14.8613 27.5974L14.6895 26.588C14.6895 26.588 24.6331 23.0873 24.7405 23.0444C24.8264 23.0229 24.9337 23.0444 24.9337 23.1732V41.4712L24.9767 42.7598C25.0841 45.5088 26.5874 47.0766 29.1002 47.0551C31.5485 47.0551 33.0089 45.5303 33.2237 42.7383L33.3096 41.0202V31.7638C33.3096 30.4323 32.8801 29.2726 32.0854 28.5424C31.3552 27.8336 30.3458 27.5115 29.1861 27.5759L29.0358 26.5665L37.4546 23.6028L37.5405 23.7101C37.8411 24.0538 38.7002 25.4712 39.1082 27.1679C40.0317 26.2014 41.2344 25.1705 42.5874 24.3974C42.6089 24.3974 42.6089 24.3759 42.6304 24.3759C43.8546 23.6887 45.2076 23.2377 46.625 23.2377H46.6035C48.6653 23.1947 50.5123 23.9893 51.8653 25.192C52.9176 26.137 53.6264 27.7692 53.6264 29.0793C53.6478 31.0981 52.2948 33.2242 49.7821 33.2242Z"
+                fill="#ED2926" />
+            </svg>
+          </a>
+        </div>
+    
+        <!-- prettier-ignore -->
+        <nav role="navigation" aria-label="Main Navigation"
+          class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
+          :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-transition.opacity.duration.500ms>
+          <ul class="flex h-full flex-col leading-[2.8rem] lg:flex-row lg:items-end lg:gap-1">
+            <!-- prettier-ignore -->
+            <li
+              class="has-children px-4 pt-3"
+              :class="$store.header.showSubmenu ? 'active' : ''"
+              @click.away="$store.header.showSubmenu=false">
+              <a
+                aria-current="page"
+                x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
+                class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all"
+                >Tēmas
+                <svg
+                  class="-mt-[0.1rem]"
+                  width="6"
+                  height="10"
+                  viewBox="0 0 6 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="$store.header.showSubmenu ? 'rotate-90' : ''">
+                  <path
+                    d="M1 1L5 5L1 9"
+                    stroke="#212225"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+              <ul
+                x-cloak
+                class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-md"
+                x-show="$store.header.showSubmenu"
+                x-transition.opacity>
+                <li>
+                  <b
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]"
+                    >Tēmas</b
+                  >
+                  <ul>
+                    <li><a href="section.html?cat=Politika" class="hover:text-ir-red">Politika</a></li>
+                    <li><a href="section.html?cat=Personības" class="hover:text-ir-red">Personības</a></li>
+                    <li><a href="section.html?cat=Nauda" class="hover:text-ir-red">Nauda</a></li>
+                    <li><a href="section.html?cat=Kultūra" class="hover:text-ir-red">Kultūra</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <b
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+                    >Rubrikas</b
+                  >
+                  <ul>
+                    <li><a href="category.html?cat=Pētījumi" class="hover:text-ir-red">Pētījumi</a></li>
+                    <li><a href="category.html?cat=Intervijas" class="hover:text-ir-red">Intervijas</a></li>
+                    <li><a href="category.html?cat=Recenzijas" class="hover:text-ir-red">Recenzijas</a></li>
+                    <li>
+                      <a href="category.html?cat=Komentāri" class="hover:text-ir-red">Komentāri</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="category.html?cat=Viedokļi" class="hover:text-ir-red">Viedokļi</a></li>
+                    <li>
+                      <a href="category.html?cat=1 no 2 miljoniem" class="hover:text-ir-red">1 no 2 miljoniem</a>
+                    </li>
+                    <li><a href="category.html?cat=Pasaulē" class="hover:text-ir-red">Pasaulē</a></li>
+                    <li><a href="category.html?cat=Apceļo Latviju" class="hover:text-ir-red">Apceļo Latviju</a></li>
+                    <li>
+                      <a href="section-topic.html?cat=Politika" class="hover:text-ir-red">Vēlēšanas 2024</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">Veiksme</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
+                    >Vairāk no IR</b
+                  >
+                  <ul>
+                    <li><a href="podcasts.html" class="hover:text-ir-red">Šķiltava</a></li>
+                    <li><a href="podcasts.html" class="hover:text-ir-red">Ārskats</a></li>
+                    <li>
+                      <a href="article.html" class="hover:text-ir-red">IR Svarīgākais</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="section-topic.html"
+                class="flex w-full text-ir-red relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Vēlēšanas 2024</a
+              >
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="magazines.html"
+                class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Žurnāli</a
+              >
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="article.html"
+                class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Abonēšana</a
+              >
+            </li>
+            <li class="px-4 pt-3">
+              <a
+                href="terms.html"
+                class="flex w-full  relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
+                >Noteikumi</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="flex items-center justify-end gap-4 lg:order-last lg:ml-auto">
+          <!-- prettier-ignore -->
+          <div x-data class="cursor-pointer">
+      <a
+        x-show="$store.header.isLoggedIn !=true"
+        x-on:click="$store.header.isLoggedIn = true"
+        class="flex items-center pl-4 lg:pl-0"
+        title="Sign In">
+        <img src="./assets/sign_in-5c74b4a3.svg" alt="" /><span class="font-serif"
+          >Ienākt</span
+        >
+      </a>
+      <div
+        x-cloak
+        class="logged-in flex items-center gap-x-4 pl-4"
+        x-show="$store.header.isLoggedIn">
+        <a href="" class="font-serif underline">Annemarija</a>
+        <a x-on:click="$store.header.isLoggedIn = false" class="flex items-center">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M25.3536 16.3536C25.5488 16.1583 25.5488 15.8417 25.3536 15.6464L22.1716 12.4645C21.9763 12.2692 21.6597 12.2692 21.4645 12.4645C21.2692 12.6597 21.2692 12.9763 21.4645 13.1716L24.2929 16L21.4645 18.8284C21.2692 19.0237 21.2692 19.3403 21.4645 19.5355C21.6597 19.7308 21.9763 19.7308 22.1716 19.5355L25.3536 16.3536ZM11 16.5L25 16.5V15.5L11 15.5V16.5Z"
+              fill="#212225" />
+            <path
+              d="M10 12C7.79086 12 6 13.7909 6 16C6 18.2091 7.79086 20 10 20"
+              stroke="#212225" />
+          </svg>
+          <span class="font-serif">Iziet</span>
         </a>
-        <div
-          x-cloak
-          class="logged-in flex items-center gap-x-4 pl-4"
-          x-show="$store.header.isLoggedIn">
-          <a href="" class="font-serif underline">Annemarija</a>
-          <a x-on:click="$store.header.isLoggedIn = false" class="flex items-center">
+      </div>
+    </div>
+     <div
+      @click="$store.header.showSearch = !$store.header.showSearch"
+      class="hidden cursor-pointer lg:block"
+      title="Meklēt"
+      aria-label="Meklēt">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+        <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
+      </svg>
+    </div>
+     <div
+      x-data="{enabled: false, toggle(){
+        this.enabled = !this.enabled;
+        if(this.enabled){
+          document.body.style.fontSize = 'x-large';
+        }
+        else{
+          document.body.style.fontSize = 'initial';
+        }
+      }}"
+      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+      @click="toggle()"
+      class="hidden cursor-pointer lg:block"
+      title="Teksta lielums"
+      aria-label="Teksta lielums">
+    
+      <svg
+        x-show="!enabled" 
+        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.40498 22C9.33898 22 9.29498 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.614 9.00898 20.592 8.98698 20.592H7.19398C7.17198 20.592 7.13898 20.614 7.13898 20.636L6.90798 21.901C6.89698 21.967 6.85298 22 6.78698 22H5.95098C5.87398 22 5.84098 21.945 5.85198 21.879L7.49098 14.399C7.50198 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.65698 14.3 8.70098 14.333 8.71198 14.399L10.362 21.879C10.373 21.945 10.34 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.734 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.734 8.85498 19.712L8.10698 15.807C8.09598 15.774 8.07398 15.774 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
+        <path d="M16.1063 22C16.0223 22 15.9663 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.236 15.6023 20.208 15.5743 20.208H13.2923C13.2643 20.208 13.2223 20.236 13.2223 20.264L12.9283 21.874C12.9143 21.958 12.8583 22 12.7743 22H11.7103C11.6123 22 11.5703 21.93 11.5843 21.846L13.6703 12.326C13.6843 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1543 12.2 15.2103 12.242 15.2243 12.326L17.3243 21.846C17.3383 21.93 17.2963 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.116 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.116 15.4063 19.088L14.4543 14.118C14.4403 14.076 14.4123 14.076 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
+        <path d="M24.7082 22C24.6002 22 24.5282 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.732 24.0602 19.696 24.0242 19.696H21.0902C21.0542 19.696 21.0002 19.732 21.0002 19.768L20.6222 21.838C20.6042 21.946 20.5322 22 20.4242 22H19.0562C18.9302 22 18.8762 21.91 18.8942 21.802L21.5762 9.562C21.5942 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4842 9.4 23.5562 9.454 23.5742 9.562L26.2742 21.802C26.2922 21.91 26.2382 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.292 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.292 23.8082 18.256L22.5842 11.866C22.5662 11.812 22.5302 11.812 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
+      </svg>
+    
+      <svg
+        x-show="enabled" 
+        x-cloak 
+        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="30" height="30" rx="3" stroke="#171717" stroke-width="2"/>
+        <path d="M9.40498 22C9.33898 22 9.29865 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.6213 9.03465 20.6103 9.01998 20.603C9.01265 20.5957 9.00165 20.592 8.98698 20.592H7.19398C7.17932 20.592 7.16465 20.5957 7.14998 20.603C7.14265 20.6103 7.13898 20.6213 7.13898 20.636L6.90798 21.901C6.90065 21.967 6.86032 22 6.78698 22H5.95098C5.91432 22 5.88498 21.989 5.86298 21.967C5.84832 21.945 5.84465 21.9157 5.85198 21.879L7.49098 14.399C7.50565 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.66432 14.3 8.70465 14.333 8.71198 14.399L10.362 21.879V21.901C10.362 21.967 10.329 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.7413 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.7413 8.85498 19.712L8.10698 15.807C8.09965 15.7923 8.09232 15.785 8.08498 15.785C8.07765 15.785 8.07032 15.7923 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
+        <path d="M16.1063 22C16.0223 22 15.971 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.2453 15.635 20.2313 15.6163 20.222C15.607 20.2127 15.593 20.208 15.5743 20.208H13.2923C13.2737 20.208 13.255 20.2127 13.2363 20.222C13.227 20.2313 13.2223 20.2453 13.2223 20.264L12.9283 21.874C12.919 21.958 12.8677 22 12.7743 22H11.7103C11.6637 22 11.6263 21.986 11.5983 21.958C11.5797 21.93 11.575 21.8927 11.5843 21.846L13.6703 12.326C13.689 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1637 12.2 15.215 12.242 15.2243 12.326L17.3243 21.846V21.874C17.3243 21.958 17.2823 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.1253 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.1253 15.4063 19.088L14.4543 14.118C14.445 14.0993 14.4357 14.09 14.4263 14.09C14.417 14.09 14.4077 14.0993 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
+        <path d="M24.7082 22C24.6002 22 24.5342 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.744 24.1022 19.726 24.0782 19.714C24.0662 19.702 24.0482 19.696 24.0242 19.696H21.0902C21.0662 19.696 21.0422 19.702 21.0182 19.714C21.0062 19.726 21.0002 19.744 21.0002 19.768L20.6222 21.838C20.6102 21.946 20.5442 22 20.4242 22H19.0562C18.9962 22 18.9482 21.982 18.9122 21.946C18.8882 21.91 18.8822 21.862 18.8942 21.802L21.5762 9.562C21.6002 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4962 9.4 23.5622 9.454 23.5742 9.562L26.2742 21.802V21.838C26.2742 21.946 26.2202 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.304 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.304 23.8082 18.256L22.5842 11.866C22.5722 11.842 22.5602 11.83 22.5482 11.83C22.5362 11.83 22.5242 11.842 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
+      </svg>        
+    </div>
+     <div
+      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+      x-data="{arr : [1, 2, 3], currentIndex:0, next(){
+        this.currentIndex = this.currentIndex < this.arr.length ? this.currentIndex + 1 : 0;
+        return this.currentIndex;
+      }}"
+      @click="next()"
+      class="hidden cursor-pointer lg:block"
+      title="Kontrasts"
+      aria-label="Kontrasts">
+    
+      <svg 
+        x-show="currentIndex == 0"
+        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225"/>
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225"/>
+      </svg>
+    
+      <svg 
+        x-show="currentIndex == 1"
+        x-cloak 
+        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225"/>
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8"/>
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8"/>
+      </svg>
+    
+      <svg 
+        x-show="currentIndex == 2"
+        x-cloak 
+        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225"/>
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500"/>
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500"/>
+      </svg>
+    
+      <svg 
+        x-show="currentIndex == 3"
+        x-cloak 
+        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225"/>
+        <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500"/>
+        <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500"/>
+      </svg>
+        
+    </div>
+    
+        </div>
+    
+        <!-- prettier-ignore -->
+        <div id="hamburger" class="order-3 lg:hidden">
+          <button
+            @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
+            class="flex justify-between px-2 py-4">
+            <svg
+              x-show="!$store.header.showMenu"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line
+                x1="5.5"
+                y1="11.5"
+                x2="34.5"
+                y2="11.5"
+                stroke="#2E2E30"
+                stroke-linecap="square" />
+              <line
+                x1="5.5"
+                y1="19.5"
+                x2="34.5"
+                y2="19.5"
+                stroke="#2E2E30"
+                stroke-linecap="square" />
+              <line
+                x1="20.5"
+                y1="27.5"
+                x2="34.5"
+                y2="27.5"
+                stroke="#2E2E30"
+                stroke-linecap="square" />
+            </svg>
+        
+            <svg
+              x-show="$store.header.showMenu"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line
+                x1="10.7071"
+                y1="9.99982"
+                x2="30.0002"
+                y2="29.2929"
+                stroke="#212225"
+                stroke-linecap="square" />
+              <line
+                x1="11"
+                y1="29.2929"
+                x2="30.2927"
+                y2="9.9997"
+                stroke="#212225"
+                stroke-linecap="square" />
+            </svg>
+          </button>
+        </div>
+    
+      </div>
+    
+      <!-- prettier-ignore -->
+      <div
+        :class="$store.header.showSearch ? 'block' : '' "
+        @click.away="$store.header.showSearch=false"
+        x-cloak
+        x-show="$store.header.showSearch"
+        x-transition.opacity
+        class="container relative flex flex-col lg:flex-row w-full justify-center bg-slate-100 p-4 gap-4 ">
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[570px]"
+            placeholder="Meklēt"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
             <svg
               width="32"
               height="32"
               viewBox="0 0 32 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M25.3536 16.3536C25.5488 16.1583 25.5488 15.8417 25.3536 15.6464L22.1716 12.4645C21.9763 12.2692 21.6597 12.2692 21.4645 12.4645C21.2692 12.6597 21.2692 12.9763 21.4645 13.1716L24.2929 16L21.4645 18.8284C21.2692 19.0237 21.2692 19.3403 21.4645 19.5355C21.6597 19.7308 21.9763 19.7308 22.1716 19.5355L25.3536 16.3536ZM11 16.5L25 16.5V15.5L11 15.5V16.5Z"
-                fill="#212225" />
-              <path
-                d="M10 12C7.79086 12 6 13.7909 6 16C6 18.2091 7.79086 20 10 20"
-                stroke="#212225" />
+              <circle cx="14.5" cy="14" r="6" stroke="#212225" />
+              <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
             </svg>
-            <span class="font-serif">Iziet</span>
+          </a>
+        </div>
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+            placeholder="Datums no"
+            value="08.2001"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M16 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M8 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M4 10H20"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="line-item relative flex">
+          <input
+            type="text"
+            class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
+            placeholder="Datums līdz"
+            value="10.2002"
+            class="font-serif" />
+          <a
+            title="Meklēt"
+            href="search.html"
+            class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M16 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M8 3V7"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+              <path
+                d="M4 10H20"
+                stroke="#3A3C41"
+                stroke-linecap="square"
+                stroke-linejoin="round" />
+            </svg>
           </a>
         </div>
       </div>
-       <div
-        @click="$store.header.showSearch = !$store.header.showSearch"
-        class="hidden cursor-pointer lg:block"
-        title="Meklēt"
-        aria-label="Meklēt">
+      <!---->
+    </header>    <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0"
+      x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
+      <div class="w-full lg:gap-0 py-4 lg:py-0">
+        <h1 class="text-center" x-text="params">Pasaulē</h1>
+      </div>
+    </div>
+
+    <section>
+      <div class="container gap-4 px-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8  lg:w-3/5">
+        <div class="related-articles flex w-full flex-col gap-y-6">
+
+          <template x-for="post in posts">
+            <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+              <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+                <div class="flex w-full justify-between">
+                  <span
+                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                    contenteditable="true">Pasaulē</span>
+                  <a
+                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+                    x-data="{ saved: false }"
+                    @click="saved = ! saved">
+                    <svg
+                      x-show="!saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                        stroke="#73757A"
+                        stroke-linejoin="round" />
+                    </svg>
+                  
+                    <svg
+                      x-cloak
+                      x-show="saved"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                        fill="white"
+                        stroke="#212225"
+                        stroke-linejoin="round" />
+                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                    </svg>
+                  </a>
+                </div>
+                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+                  Dace Rēķe, instagramā māca
+                        latviešu valodu
+                </h1>
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                    @click="window.location='article.html?slug='"
+                    x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu
+                        darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+                        atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+                        sarakstā?
+                  </p>
+                <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                  x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                  Laura Dumbere</a>
+              </div>
+            
+            
+                <img img-source="./src/assets/img/temp/home/Elksnins1.png"
+                  :src="(typeof post === 'object') ? post.node.featuredImage.node.sourceUrl : $el.getAttribute('img-source')"
+                  alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+                  x-data @click="window.location='article.html?slug='" width="300" />
+            
+            
+            </figure>          </template>
+
+          <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+              <div class="flex w-full justify-between">
+                <span
+                  class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  contenteditable="true">Pasaulē</span>
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-cloak
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                @click="window.location='article.html?slug='"
+                x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+                Dace Rēķe, instagramā māca
+                      latviešu valodu
+              </h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                  Šonedēļ starptautiskā Finanšu darījumu
+                      darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+                      atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+                      sarakstā?
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                Laura Dumbere</a>
+            </div>
+          
+          
+              <img img-source="./src/assets/img/temp/home/Elksnins1.png"
+                :src="(typeof post === 'object') ? post.node.featuredImage.node.sourceUrl : $el.getAttribute('img-source')"
+                alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+                x-data @click="window.location='article.html?slug='" width="300" />
+          
+          
+          </figure>
+
+
+
+          <!-- prettier-ignore -->
+          <!-- <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+  <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+    <div class="flex w-full justify-between">
+      <span
+        class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+        contenteditable="true">Pasaulē</span>
+      <a
+        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+        x-data="{ saved: false }"
+        @click="saved = ! saved">
         <svg
+          x-show="!saved"
           width="32"
           height="32"
           viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
-          <circle cx="14.5" cy="14" r="6" stroke="#212225" />
-          <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
-        </svg>
-      </div>
-        <div
-        x-data="{enabled: false, toggle(){
-          this.enabled = !this.enabled;
-          if(this.enabled){
-            document.body.style.fontSize = 'x-large';
-          }
-          else{
-            document.body.style.fontSize = 'initial';
-          }
-        }}"
-        class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-        @click="toggle()"
-        class="hidden cursor-pointer lg:block"
-        title="Teksta lielums"
-        aria-label="Teksta lielums">
-      
-        <svg
-          x-show="!enabled" 
-          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9.40498 22C9.33898 22 9.29498 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.614 9.00898 20.592 8.98698 20.592H7.19398C7.17198 20.592 7.13898 20.614 7.13898 20.636L6.90798 21.901C6.89698 21.967 6.85298 22 6.78698 22H5.95098C5.87398 22 5.84098 21.945 5.85198 21.879L7.49098 14.399C7.50198 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.65698 14.3 8.70098 14.333 8.71198 14.399L10.362 21.879C10.373 21.945 10.34 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.734 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.734 8.85498 19.712L8.10698 15.807C8.09598 15.774 8.07398 15.774 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
-          <path d="M16.1063 22C16.0223 22 15.9663 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.236 15.6023 20.208 15.5743 20.208H13.2923C13.2643 20.208 13.2223 20.236 13.2223 20.264L12.9283 21.874C12.9143 21.958 12.8583 22 12.7743 22H11.7103C11.6123 22 11.5703 21.93 11.5843 21.846L13.6703 12.326C13.6843 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1543 12.2 15.2103 12.242 15.2243 12.326L17.3243 21.846C17.3383 21.93 17.2963 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.116 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.116 15.4063 19.088L14.4543 14.118C14.4403 14.076 14.4123 14.076 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
-          <path d="M24.7082 22C24.6002 22 24.5282 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.732 24.0602 19.696 24.0242 19.696H21.0902C21.0542 19.696 21.0002 19.732 21.0002 19.768L20.6222 21.838C20.6042 21.946 20.5322 22 20.4242 22H19.0562C18.9302 22 18.8762 21.91 18.8942 21.802L21.5762 9.562C21.5942 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4842 9.4 23.5562 9.454 23.5742 9.562L26.2742 21.802C26.2922 21.91 26.2382 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.292 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.292 23.8082 18.256L22.5842 11.866C22.5662 11.812 22.5302 11.812 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
+          <path
+            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+            stroke="#73757A"
+            stroke-linejoin="round" />
         </svg>
       
         <svg
-          x-show="enabled" 
-          x-cloak 
-          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="30" height="30" rx="3" stroke="#171717" stroke-width="2"/>
-          <path d="M9.40498 22C9.33898 22 9.29865 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.6213 9.03465 20.6103 9.01998 20.603C9.01265 20.5957 9.00165 20.592 8.98698 20.592H7.19398C7.17932 20.592 7.16465 20.5957 7.14998 20.603C7.14265 20.6103 7.13898 20.6213 7.13898 20.636L6.90798 21.901C6.90065 21.967 6.86032 22 6.78698 22H5.95098C5.91432 22 5.88498 21.989 5.86298 21.967C5.84832 21.945 5.84465 21.9157 5.85198 21.879L7.49098 14.399C7.50565 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.66432 14.3 8.70465 14.333 8.71198 14.399L10.362 21.879V21.901C10.362 21.967 10.329 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.7413 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.7413 8.85498 19.712L8.10698 15.807C8.09965 15.7923 8.09232 15.785 8.08498 15.785C8.07765 15.785 8.07032 15.7923 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
-          <path d="M16.1063 22C16.0223 22 15.971 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.2453 15.635 20.2313 15.6163 20.222C15.607 20.2127 15.593 20.208 15.5743 20.208H13.2923C13.2737 20.208 13.255 20.2127 13.2363 20.222C13.227 20.2313 13.2223 20.2453 13.2223 20.264L12.9283 21.874C12.919 21.958 12.8677 22 12.7743 22H11.7103C11.6637 22 11.6263 21.986 11.5983 21.958C11.5797 21.93 11.575 21.8927 11.5843 21.846L13.6703 12.326C13.689 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1637 12.2 15.215 12.242 15.2243 12.326L17.3243 21.846V21.874C17.3243 21.958 17.2823 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.1253 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.1253 15.4063 19.088L14.4543 14.118C14.445 14.0993 14.4357 14.09 14.4263 14.09C14.417 14.09 14.4077 14.0993 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
-          <path d="M24.7082 22C24.6002 22 24.5342 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.744 24.1022 19.726 24.0782 19.714C24.0662 19.702 24.0482 19.696 24.0242 19.696H21.0902C21.0662 19.696 21.0422 19.702 21.0182 19.714C21.0062 19.726 21.0002 19.744 21.0002 19.768L20.6222 21.838C20.6102 21.946 20.5442 22 20.4242 22H19.0562C18.9962 22 18.9482 21.982 18.9122 21.946C18.8882 21.91 18.8822 21.862 18.8942 21.802L21.5762 9.562C21.6002 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4962 9.4 23.5622 9.454 23.5742 9.562L26.2742 21.802V21.838C26.2742 21.946 26.2202 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.304 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.304 23.8082 18.256L22.5842 11.866C22.5722 11.842 22.5602 11.83 22.5482 11.83C22.5362 11.83 22.5242 11.842 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
-        </svg>        
-      </div>
-       <div
-        class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-        x-data="{arr : [1, 2, 3], currentIndex:0, next(){
-          this.currentIndex = this.currentIndex < this.arr.length ? this.currentIndex + 1 : 0;
-          return this.currentIndex;
-        }}"
-        @click="next()"
-        class="hidden cursor-pointer lg:block"
-        title="Kontrasts"
-        aria-label="Kontrasts">
-      
-        <svg 
-          x-show="currentIndex == 0"
-          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225"/>
-          <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225"/>
-        </svg>
-      
-        <svg 
-          x-show="currentIndex == 1"
-          x-cloak 
-          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="4" fill="#212225"/>
-          <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8"/>
-          <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8"/>
-        </svg>
-      
-        <svg 
-          x-show="currentIndex == 2"
-          x-cloak 
-          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="4" fill="#212225"/>
-          <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500"/>
-          <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500"/>
-        </svg>
-      
-        <svg 
-          x-show="currentIndex == 3"
-          x-cloak 
-          width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="4" fill="#212225"/>
-          <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500"/>
-          <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500"/>
-        </svg>
-          
-      </div>
-      
-          </div>
-      
-          <div id="hamburger" class="order-3 lg:hidden">
-            <button
-              @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
-              class="flex justify-between px-2 py-4">
-              <svg
-                x-show="!$store.header.showMenu"
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <line
-                  x1="5.5"
-                  y1="11.5"
-                  x2="34.5"
-                  y2="11.5"
-                  stroke="#2E2E30"
-                  stroke-linecap="square" />
-                <line
-                  x1="5.5"
-                  y1="19.5"
-                  x2="34.5"
-                  y2="19.5"
-                  stroke="#2E2E30"
-                  stroke-linecap="square" />
-                <line
-                  x1="20.5"
-                  y1="27.5"
-                  x2="34.5"
-                  y2="27.5"
-                  stroke="#2E2E30"
-                  stroke-linecap="square" />
-              </svg>
-          
-              <svg
-                x-show="$store.header.showMenu"
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <line
-                  x1="10.7071"
-                  y1="9.99982"
-                  x2="30.0002"
-                  y2="29.2929"
-                  stroke="#212225"
-                  stroke-linecap="square" />
-                <line
-                  x1="11"
-                  y1="29.2929"
-                  x2="30.2927"
-                  y2="9.9997"
-                  stroke="#212225"
-                  stroke-linecap="square" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      
-        <div
-          :class="$store.header.showSearch ? 'block' : '' "
-          @click.away="$store.header.showSearch=false"
           x-cloak
-          x-show="$store.header.showSearch"
-          x-transition.opacity
-          class="container relative flex flex-col lg:flex-row w-full justify-center bg-slate-100 p-4 gap-4 ">
-          <div class="line-item relative flex">
-            <input
-              type="text"
-              class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[570px]"
-              placeholder="Meklēt"
-              class="font-serif" />
-            <a
-              title="Meklēt"
-              href="search.html"
-              class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <circle cx="14.5" cy="14" r="6" stroke="#212225" />
-                <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
-              </svg>
-            </a>
-          </div>
-          <div class="line-item relative flex">
-            <input
-              type="text"
-              class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
-              placeholder="Datums no"
-              value="08.2001"
-              class="font-serif" />
-            <a
-              title="Meklēt"
-              href="search.html"
-              class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-                <path
-                  d="M16 3V7"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-                <path
-                  d="M8 3V7"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-                <path
-                  d="M4 10H20"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-          <div class="line-item relative flex">
-            <input
-              type="text"
-              class="rounded-md border-slate-200 px-4 py-3 font-serif lg:w-[100px]"
-              placeholder="Datums līdz"
-              value="10.2002"
-              class="font-serif" />
-            <a
-              title="Meklēt"
-              href="search.html"
-              class="icon absolute bottom-0 right-0 top-0 mb-1 mr-1 mt-1 flex cursor-pointer items-center bg-white pl-1 pr-2">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.2222 5H5.77778C4.79594 5 4 5.79594 4 6.77778V19.2222C4 20.2041 4.79594 21 5.77778 21H18.2222C19.2041 21 20 20.2041 20 19.2222V6.77778C20 5.79594 19.2041 5 18.2222 5Z"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-                <path
-                  d="M16 3V7"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-                <path
-                  d="M8 3V7"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-                <path
-                  d="M4 10H20"
-                  stroke="#3A3C41"
-                  stroke-linecap="square"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <!---->
-      </header>
-      <div
-        class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0" x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
-        <div class="w-full lg:gap-0 py-4 lg:py-0">
-          <h1 class="text-center" x-text="params">Pasaulē</h1>
-        </div>
-      </div>
-
-      <section>
-        <div class="container gap-4 px-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8  lg:w-3/5">
-          <div class="related-articles flex w-full flex-col gap-y-6">
-            <!-- prettier-ignore -->
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
-                <div class="flex w-full justify-between">
-                  <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Pasaulē</span
-                  >
-                  <a
-                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                    x-data="{ saved: false }"
-                    @click="saved = ! saved">
-                    <svg
-                      x-show="!saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                        stroke="#73757A"
-                        stroke-linejoin="round" />
-                    </svg>
-                  
-                    <svg
-                      x-cloak
-                      x-show="saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                        fill="white"
-                        stroke="#212225"
-                        stroke-linejoin="round" />
-                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                    </svg>
-                  </a>
-                </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
-                  Dace Rēķe, instagramā māca
-                        latviešu valodu
-                </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu
-                        darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-                        atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
-                        sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
-              </div>
-              
-            
-                <img
-                  src="./assets/Elksnins1-009f1d72.png"
-                  alt=""
-                  class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                  role="link"
-                  x-data
-                  @click="window.location='article.html?slug='"
-                  width="300" />
-            
-            
-            </figure>
-            
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
-                <div class="flex w-full justify-between">
-                  <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Pasaulē</span
-                  >
-                  <a
-                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                    x-data="{ saved: false }"
-                    @click="saved = ! saved">
-                    <svg
-                      x-show="!saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                        stroke="#73757A"
-                        stroke-linejoin="round" />
-                    </svg>
-                  
-                    <svg
-                      x-cloak
-                      x-show="saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                        fill="white"
-                        stroke="#212225"
-                        stroke-linejoin="round" />
-                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                    </svg>
-                  </a>
-                </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
-                  Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles
-                </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
-                        vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
-                        lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura
-                        Dumbere</a>
-              </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
-            
-            
-            </figure>
-            
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
-                <div class="flex w-full justify-between">
-                  <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Pasaulē</span
-                  >
-                  <a
-                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                    x-data="{ saved: false }"
-                    @click="saved = ! saved">
-                    <svg
-                      x-show="!saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                        stroke="#73757A"
-                        stroke-linejoin="round" />
-                    </svg>
-                  
-                    <svg
-                      x-cloak
-                      x-show="saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                        fill="white"
-                        stroke="#212225"
-                        stroke-linejoin="round" />
-                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                    </svg>
-                  </a>
-                </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
-                  Dziedātāja Zanda Švēde iekaro Sanfrancisko
-                </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā
-                        Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
-                        apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
-                        valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
-              </div>
-              
-            
-                <img
-                  src="./assets/haizivis-a47bae29.png"
-                  alt=""
-                  class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                  role="link"
-                  x-data
-                  @click="window.location='article.html?slug='"
-                  width="300" />
-            
-            
-            </figure>
-
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
-                <div class="flex w-full justify-between">
-                  <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Pasaulē</span
-                  >
-                  <a
-                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                    x-data="{ saved: false }"
-                    @click="saved = ! saved">
-                    <svg
-                      x-show="!saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                        stroke="#73757A"
-                        stroke-linejoin="round" />
-                    </svg>
-                  
-                    <svg
-                      x-cloak
-                      x-show="saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                        fill="white"
-                        stroke="#212225"
-                        stroke-linejoin="round" />
-                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                    </svg>
-                  </a>
-                </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
-                  Dace Rēķe, instagramā māca
-                        latviešu valodu
-                </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu
-                        darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-                        atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
-                        sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
-              </div>
-              
-            
-                <img
-                  src="./assets/UzvarasParks_Salmane_9-f9e6fe63.png"
-                  alt=""
-                  class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                  role="link"
-                  x-data
-                  @click="window.location='article.html?slug='"
-                  width="300" />
-            
-            
-            </figure>
-
-            <div class="content-cta flex flex-col items-center justify-center gap-4 py-10">
-              <svg
-                width="72"
-                height="72"
-                viewBox="0 0 72 72"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect width="72" height="72" fill="url(#pattern0)" />
-                <defs>
-                  <pattern
-                    id="pattern0"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1">
-                    <use xlink:href="#image0_2905_6271" transform="scale(0.00377358)" />
-                  </pattern>
-                </defs>
-              </svg>
-              <h4 class="text-center font-serif"><b>Īsi par svarīgāko ik rītu</b> — pieraksties jaunumu vēstulei Ir Svarīgākais!</h4>
-              <div class="max-w-xs"><a
-              href=""
-              class="button block w-full cursor-pointer flex-col whitespace-nowrap rounded-md px-7 py-3 text-center font-serif text-ir-red outline outline-1 -outline-offset-1 outline-ir-red transition-colors hover:bg-ir-red hover:text-white focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs " >
-              Pierakstīties!
-            </a>
-            </div>
-            </div>
-
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
-                <div class="flex w-full justify-between">
-                  <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Pasaulē</span
-                  >
-                  <a
-                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                    x-data="{ saved: false }"
-                    @click="saved = ! saved">
-                    <svg
-                      x-show="!saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                        stroke="#73757A"
-                        stroke-linejoin="round" />
-                    </svg>
-                  
-                    <svg
-                      x-cloak
-                      x-show="saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                        fill="white"
-                        stroke="#212225"
-                        stroke-linejoin="round" />
-                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                    </svg>
-                  </a>
-                </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
-                  Dace Rēķe, instagramā māca latviešu valodu
-                </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
-                        vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
-                        lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura
-                        Dumbere</a>
-              </div>
-              
-            
-                <img
-                    src="./assets/hero-cfd2d752.jpg"
-                    alt=""
-                    class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                    role="link"
-                    x-data
-                    @click="window.location='article.html?slug='"
-                    width="300" />
-            
-            
-            </figure>
-            
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
-                <div class="flex w-full justify-between">
-                  <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Pasaulē</span
-                  >
-                  <a
-                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                    x-data="{ saved: false }"
-                    @click="saved = ! saved">
-                    <svg
-                      x-show="!saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                        stroke="#73757A"
-                        stroke-linejoin="round" />
-                    </svg>
-                  
-                    <svg
-                      x-cloak
-                      x-show="saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                        fill="white"
-                        stroke="#212225"
-                        stroke-linejoin="round" />
-                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                    </svg>
-                  </a>
-                </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
-                  Dace Rēķe,
-                        instagramā māca latviešu valodu
-                </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā
-                        Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
-                        apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
-                        valstu pelēkajā sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
-              </div>
-              
-            
-                <img
-                  src="./assets/Elksnins1-009f1d72.png"
-                  alt=""
-                  class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                  role="link"
-                  x-data
-                  @click="window.location='article.html?slug='"
-                  width="300" />
-            
-            
-            </figure>
-
-            <figure
-              class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-              <div
-                class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
-                <div class="flex w-full justify-between">
-                  <span
-                    class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-                    contenteditable="true"
-                    >Pasaulē</span
-                  >
-                  <a
-                    class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                    x-data="{ saved: false }"
-                    @click="saved = ! saved">
-                    <svg
-                      x-show="!saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                        stroke="#73757A"
-                        stroke-linejoin="round" />
-                    </svg>
-                  
-                    <svg
-                      x-cloak
-                      x-show="saved"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                        fill="white"
-                        stroke="#212225"
-                        stroke-linejoin="round" />
-                      <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                    </svg>
-                  </a>
-                </div>
-                <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='"  contenteditable="true">
-                  Dace Rēķe, instagramā māca
-                        latviešu valodu
-                </h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-                role="link"
-                x-data
-                @click="window.location='article.html?slug='" contenteditable="true">
-                  Šonedēļ starptautiskā Finanšu darījumu
-                        darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-                        atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
-                        sarakstā?
-                </p>
-                <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> Laura Dumbere</a>
-              </div>
-              
-            
-                <img
-                  src="./assets/Elksnins1-009f1d72.png"
-                  alt=""
-                  class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-                  role="link"
-                  x-data
-                  @click="window.location='article.html?slug='"
-                  width="300" />
-            
-            
-            </figure>
-
-          </div>
-        </div>
-      </section>
+          x-show="saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+            fill="white"
+            stroke="#212225"
+            stroke-linejoin="round" />
+          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+        </svg>
+      </a>
     </div>
-    <footer aria-label="footer" class="bg-ir-dark-gray">
-      <div class="container flex-row items-center p-10 lg:flex">
-        <img
-          src="./assets/ir-logo-footer-61039508.svg"
-          alt="Footer Logo"
-          class="pr-10" />
-        <ul
-          role="navigation"
-          aria-roledescription="Footer navigation"
-          class="block w-full gap-10 font-serif leading-[5rem] text-ir-light-gray lg:flex lg:py-20 lg:leading-normal">
-          <li><a href="">Komanda</a></li>
-          <li><a href="">Manifests</a></li>
-          <li><a href="">Ētikas kodekss</a></li>
-          <li><a href="">Kontakti</a></li>
-          <li><a href="">Reklāma</a></li>
-          <li><a href="">Abonēšanas un iepirkšanās noteikumi</a></li>
-          <li><a href="">Privātuma politika</a></li>
-        </ul>
+    <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+      @click="window.location='article.html?slug='"
+      x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+      Dace Rēķe, instagramā māca
+            latviešu valodu
+    </h1>
+      <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+        @click="window.location='article.html?slug='"
+        x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+        Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?
+      </p>
+    <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+      x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+      Laura Dumbere</a>
+  </div>
+
+
+    <img img-source="./src/assets/img/temp/home/Elksnins1.png"
+      :src="(typeof post === 'object') ? post.node.featuredImage.node.sourceUrl : $el.getAttribute('img-source')"
+      alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+      x-data @click="window.location='article.html?slug='" width="300" />
+
+
+</figure>
+
+          <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+              <div class="flex w-full justify-between">
+                <span
+                  class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  contenteditable="true">Pasaulē</span>
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-cloak
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                @click="window.location='article.html?slug='"
+                x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+                Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles
+              </h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                  Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+                      vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+                      lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                Laura
+                      Dumbere</a>
+            </div>
+          
+          
+              <img src="./src/assets/img/temp/hero.jpg" alt=""
+                class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                role="link" x-data @click="window.location='article.html?slug='" width="300" />
+          
+          
+          </figure>
+          <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+              <div class="flex w-full justify-between">
+                <span
+                  class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  contenteditable="true">Pasaulē</span>
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-cloak
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                @click="window.location='article.html?slug='"
+                x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+                Dziedātāja Zanda Švēde iekaro Sanfrancisko
+              </h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                  Šonedēļ starptautiskā
+                      Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
+                      apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
+                      valstu pelēkajā sarakstā?
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                Laura Dumbere</a>
+            </div>
+          
+          
+              <img img-source="./src/assets/img/temp/home/haizivis.png"
+                :src="(typeof post === 'object') ? post.node.featuredImage.node.sourceUrl : $el.getAttribute('img-source')"
+                alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+                x-data @click="window.location='article.html?slug='" width="300" />
+          
+          
+          </figure>
+          <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+              <div class="flex w-full justify-between">
+                <span
+                  class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  contenteditable="true">Pasaulē</span>
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-cloak
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                @click="window.location='article.html?slug='"
+                x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+                Dace Rēķe, instagramā māca
+                      latviešu valodu
+              </h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                  Šonedēļ starptautiskā Finanšu darījumu
+                      darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+                      atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+                      sarakstā?
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                Laura Dumbere</a>
+            </div>
+          
+          
+              <img img-source="./src/assets/img/temp/home/UzvarasParks_Salmane_9.png"
+                :src="(typeof post === 'object') ? post.node.featuredImage.node.sourceUrl : $el.getAttribute('img-source')"
+                alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+                x-data @click="window.location='article.html?slug='" width="300" />
+          
+          
+          </figure>
+          <div class="content-cta flex flex-col items-center justify-center gap-4 py-10">
+            <svg
+              width="72"
+              height="72"
+              viewBox="0 0 72 72"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <rect width="72" height="72" fill="url(#pattern0)" />
+              <defs>
+                <pattern
+                  id="pattern0"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1">
+                  <use xlink:href="#image0_2905_6271" transform="scale(0.00377358)" />
+                </pattern>
+              </defs>
+            </svg>
+            <h4 class="text-center font-serif"><b>Īsi par svarīgāko ik rītu</b> — pieraksties jaunumu vēstulei Ir Svarīgākais!</h4>
+            <div class="max-w-xs"><a
+            href=""
+            class="button block w-full cursor-pointer flex-col whitespace-nowrap rounded-md px-7 py-3 text-center font-serif text-ir-red outline outline-1 -outline-offset-1 outline-ir-red transition-colors hover:bg-ir-red hover:text-white focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs " >
+            Pierakstīties!
+          </a>
+          </div>
+          </div>
+
+          <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+              <div class="flex w-full justify-between">
+                <span
+                  class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  contenteditable="true">Pasaulē</span>
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-cloak
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                @click="window.location='article.html?slug='"
+                x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+                Dace Rēķe, instagramā māca latviešu valodu
+              </h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                  Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
+                      vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
+                      lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                Laura
+                      Dumbere</a>
+            </div>
+          
+          
+              <img src="./src/assets/img/temp/hero.jpg" alt=""
+                class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+                role="link" x-data @click="window.location='article.html?slug='" width="300" />
+          
+          
+          </figure>
+          <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+              <div class="flex w-full justify-between">
+                <span
+                  class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+                  contenteditable="true">Pasaulē</span>
+                <a
+                  class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+                  x-data="{ saved: false }"
+                  @click="saved = ! saved">
+                  <svg
+                    x-show="!saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                      stroke="#73757A"
+                      stroke-linejoin="round" />
+                  </svg>
+                
+                  <svg
+                    x-cloak
+                    x-show="saved"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                      fill="white"
+                      stroke="#212225"
+                      stroke-linejoin="round" />
+                    <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+                  </svg>
+                </a>
+              </div>
+              <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+                @click="window.location='article.html?slug='"
+                x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+                Dace Rēķe,
+                      instagramā māca latviešu valodu
+              </h1>
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+                  @click="window.location='article.html?slug='"
+                  x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+                  Šonedēļ starptautiskā
+                      Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
+                      apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
+                      valstu pelēkajā sarakstā?
+                </p>
+              <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+                x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+                Laura Dumbere</a>
+            </div>
+          
+          
+              <img img-source="./src/assets/img/temp/home/Elksnins1.png"
+                :src="(typeof post === 'object') ? post.node.featuredImage.node.sourceUrl : $el.getAttribute('img-source')"
+                alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+                x-data @click="window.location='article.html?slug='" width="300" />
+          
+          
+          </figure>
+          <figure class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
+  <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+    <div class="flex w-full justify-between">
+      <span
+        class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red"
+        contenteditable="true">Pasaulē</span>
+      <a
+        class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+        x-data="{ saved: false }"
+        @click="saved = ! saved">
+        <svg
+          x-show="!saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+            stroke="#73757A"
+            stroke-linejoin="round" />
+        </svg>
+      
+        <svg
+          x-cloak
+          x-show="saved"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+            fill="white"
+            stroke="#212225"
+            stroke-linejoin="round" />
+          <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+        </svg>
+      </a>
+    </div>
+    <h1 class="text-[22px] leading-tight  w-full h-min flex-grow cursor-pointer" role="link" x-data
+      @click="window.location='article.html?slug='"
+      x-html="(typeof post === 'object') ? post?.node?.title : $el.innerHTML " contenteditable="true">
+      Dace Rēķe, instagramā māca
+            latviešu valodu
+    </h1>
+      <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer" role="link" x-data
+        @click="window.location='article.html?slug='"
+        x-html="(typeof post === 'object') ? post?.node?.excerpt : $el.innerHTML " contenteditable="true">
+        Šonedēļ starptautiskā Finanšu darījumu
+            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+            sarakstā?
+      </p>
+    <a href="author.html" class="font-serif card__author uppercase text-gray-500"
+      x-html="(typeof post === 'object') ? post?.node?.author?.node?.name : $el.innerHTML " contenteditable="true">
+      Laura Dumbere</a>
+  </div>
+
+
+    <img img-source="./src/assets/img/temp/home/Elksnins1.png"
+      :src="(typeof post === 'object') ? post.node.featuredImage.node.sourceUrl : $el.getAttribute('img-source')"
+      alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+      x-data @click="window.location='article.html?slug='" width="300" />
+
+
+</figure> -->
+
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+  </div>
+  <footer aria-label="footer" class="bg-ir-dark-gray">
+    <div class="container flex-row items-center p-10 lg:flex">
+      <svg id="footer-logo" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+        alt="Footer Logo" class="mr-10">
+        <path d="M24 0C10.7 0 0 10.7 0 24C0 37.3 10.7 48 24 48C37.3 48 48 37.3 48 24C48 10.7 37.3 0 24 0Z"
+          fill="#ED2926" />
+        <path
+          d="M16.4004 8.30078C18.0004 8.30078 19.4004 9.70078 19.4004 11.3008C19.4004 13.0008 18.1004 14.4008 16.4004 14.4008C14.8004 14.4008 13.4004 13.0008 13.4004 11.3008C13.4004 9.70078 14.7004 8.30078 16.4004 8.30078Z"
+          fill="white" />
+        <path
+          d="M37.3004 24.9008C35.4004 24.9008 34.3004 23.3008 34.5004 21.9008C34.6004 21.2008 34.9004 20.4008 34.6004 19.6008C34.2004 18.7008 33.2004 18.8008 32.1004 19.3008C30.6004 20.0008 29.4004 22.0008 29.4004 24.3008V31.1008V32.1008C29.5004 34.2008 30.6004 35.3008 32.5004 35.3008V36.1008H21.7004H10.9004V35.3008C12.7004 35.3008 13.8004 34.1008 14.0004 32.1008L14.1004 30.8008V23.9008C14.1004 22.9008 13.8004 22.0008 13.2004 21.5008C12.6004 21.0008 11.9004 20.7008 11.0004 20.8008V20.0008C11.0004 20.0008 18.5004 17.4008 18.5004 17.3008C18.6004 17.3008 18.6004 17.3008 18.6004 17.4008V31.1008V32.1008C18.7004 34.2008 19.8004 35.3008 21.7004 35.3008C23.5004 35.3008 24.6004 34.2008 24.8004 32.1008L24.9004 30.8008V23.9008C24.9004 22.9008 24.6004 22.0008 24.0004 21.5008C23.4004 21.0008 22.7004 20.7008 21.8004 20.8008V20.0008L28.1004 17.8008L28.2004 17.9008C28.4004 18.2008 29.1004 19.2008 29.4004 20.5008C30.1004 19.8008 31.0004 19.0008 32.0004 18.4008C32.9004 17.9008 33.9004 17.5008 35.0004 17.5008C36.5004 17.5008 37.9004 18.1008 38.9004 19.0008C39.7004 19.7008 40.2004 20.9008 40.2004 21.9008C40.2004 23.3008 39.2004 24.9008 37.3004 24.9008Z"
+          fill="white" />
+      </svg>
+      <ul role="navigation" aria-roledescription="Footer navigation"
+        class="block w-full gap-10 font-serif leading-[5rem] text-ir-light-gray lg:flex lg:py-20 lg:leading-normal">
+        <li><a href="">Komanda</a></li>
+        <li><a href="">Manifests</a></li>
+        <li><a href="">Ētikas kodekss</a></li>
+        <li><a href="">Kontakti</a></li>
+        <li><a href="">Reklāma</a></li>
+        <li><a href="">Abonēšanas un iepirkšanās noteikumi</a></li>
+        <li><a href="">Privātuma politika</a></li>
+      </ul>
+    </div>
+  </footer></body>
+
 </html>
