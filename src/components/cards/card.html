@@ -1,46 +1,36 @@
-<figure class="flex flex-1 flex-grow flex-col bg-white shadow-md {{class}} [&>h1]:text-blue-500">
-  
+<figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default {{class}} [&>h1]:text-blue-500">
+
   {{#if image}}
 
-  <div 
-    class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('{{image}}')" 
-    role="link"
-    x-data
-    @click="window.location='article.html?slug={{slug}}'">
-  </div>
+    <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+      style="background-image: url('{{image}}')" role="link" x-data
+      @click="window.location='article.html?slug={{slug}}'">
+    </div>
 
   {{else}}
 
-  <div 
-    class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat" style="background-image: url('./src/assets/img/temp/hero.jpg')" 
-    role="link"
-    x-data
-    @click="window.location='article.html?slug={{slug}}'">
-  </div>
+    <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+      style="background-image: url('./src/assets/img/temp/hero.jpg')" role="link" x-data
+      @click="window.location='article.html?slug={{slug}}'">
+    </div>
 
   {{/if}}
-  
-  <div
-    class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+
+  <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
     <div class="flex w-full justify-between">
-      {{#if tag}}
-        <a href="category.html" class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">{{ tag }}</a>
-      {{/if}}
+      <a href="category.html"
+        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">{{ tag }}</a>
       {{>bookmark}}
     </div>
-    <h1
-      class="text-[26px] leading-tight w-full h-min cursor-pointer {{title-size}}" 
-      role="link"
-      x-data
-      @click="window.location='article.html?slug={{slug}}'" 
-      contenteditable="true">
+    <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer {{title-size}} empty:hidden" role="link" x-data
+      @click="window.location='article.html?slug={{slug}}'" contenteditable="true">
       {{ title }}
     </h1>
-    {{#if excerpt}}
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
       {{ excerpt}}
     </p>
-    {{/if}}
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true"> {{ author }}</a>
+    <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+      contenteditable="true">
+      {{ author }}</a>
   </div>
 </figure>

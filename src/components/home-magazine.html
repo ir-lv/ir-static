@@ -1,0 +1,18 @@
+<figure class="magazine items-stretch gap-20 lg:flex">
+  <img src="./src/assets/img/temp/ir/home/Rectangle_107.jpg" :src="mag.cover"
+    class="mx-auto mb-10 h-[348px] shadow-ir-default lg:mb-0" alt="" />
+  <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
+    <ul class="mb-6 w-full grid-cols-2 gap-x-8 gap-y-6 lg:mb-0 lg:grid">
+
+      <template x-for="post in mag.posts">
+        {{>magazine-article-list-item title="Ideju metropole" author="Laura Dumbere"}}
+      </template>
+      <!-- prettier-ignore -->
+      {{>magazine-article-list-item title="Ideju metropole" author="Laura Dumbere"}}
+      {{>magazine-article-list-item title="Riskē un laimē" author="Jānis vēvers"}}
+      {{>magazine-article-list-item title="Tilts starp personāla nodaļu un darbiniekiem" author="Jānis Vēvers"}}
+      {{>magazine-article-list-item title="Lielsaimnieki" author="Laura Dumbere"}}
+    </ul>
+    {{>btn-cta-black-secondary label="Lasi portālā" class="lg:ml-4"}}
+  </div>
+</figure>

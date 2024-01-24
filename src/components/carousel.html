@@ -1,13 +1,8 @@
-
 <div class="flex flex-col items-center justify-center  bg-white shadow-ir-default" x-data="caricatures">
-  <div
-    class="relative mx-auto w-full h-full"
-    x-data="caricatures">
+  <div class="relative mx-auto w-full h-full" x-data="caricatures">
     <!-- Slides -->
     <template x-for="slide in slides" :key="slide.id">
-      <div
-        x-show="activeSlide === slide.id"
-        class="w-full h-[350px] flex flex-col items-center justify-center">
+      <div x-show="activeSlide === slide.id" class="w-full h-[350px] flex flex-col items-center justify-center">
         <a href="caricatures.html?cat=Karikatūras">
           <img :src="slide.pic" alt="" class="flex-grow">
         </a>
@@ -18,23 +13,11 @@
     </template>
 
     <!-- Buttons -->
-    <div
-      class="bottom-0 flex w-full items-center justify-center gap-2 pt-6 pb-2 px-2">
+    <div class="bottom-0 flex w-full items-center justify-center gap-2 pt-6 pb-2 px-2">
       <div class="flex w-1/2 items-center justify-start">
-        <button
-          class=""
-          x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M19 21L14 16L19 11"
-              stroke="#2E2E30"
-              stroke-linecap="round"
-              stroke-linejoin="round" />
+        <button class="" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 21L14 16L19 11" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
       </div>
@@ -46,25 +29,13 @@
           :class="{ 
                 'bg-ir-red': activeSlide === slide.id,
                 'bg-slate-400': activeSlide !== slide.id 
-            }"
-          x-on:click="activeSlide = slide.id"></button>
+            }" x-on:click="activeSlide = slide.id"></button>
       </template>
 
       <div class="flex w-1/2 items-center justify-end">
-        <button
-          class=""
-          x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13 11L18 16L13 21"
-              stroke="#2E2E30"
-              stroke-linecap="round"
-              stroke-linejoin="round" />
+        <button class="" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 11L18 16L13 21" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
       </div>

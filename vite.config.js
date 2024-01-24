@@ -9,7 +9,8 @@ export default defineConfig({
     handlebars({
       partialDirectory: [
         resolve(__dirname, "src/"),
-        resolve(__dirname, "src/components/"),
+        resolve(__dirname, "src/components"),
+        resolve(__dirname, "src/components/sidebar"),
         resolve(__dirname, "src/components/general"),
         resolve(__dirname, "src/components/cards"),
         resolve(__dirname, "src/components/article"),

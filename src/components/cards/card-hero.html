@@ -1,13 +1,10 @@
-<figure class="grid grid-flow-row gap-4 bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_1px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] lg:grid-cols-2 lg:gap-8 lg:min-h-[370px]" data-uri="{{uri}}">
-  <img src="{{image}}" alt="" class="h-full object-cover" />
+<figure class="relative grid grid-flow-row gap-4 shadow-ir-default lg:grid-cols-2 lg:gap-8 lg:min-h-[370px] w-full"
+  data-uri="{{uri}}">
+  <img src="{{image}}" alt="" class="object-cover w-full h-full" />
   <div class="flex flex-col justify-center px-4 lg:px-0 lg:pt-8 lg:pr-8">
-    <h1 class="w-full leading-10 lg:leading-none text-[2.25rem] lg:text-[2.75rem] cursor-pointer mt-auto {{title-size}}" 
-      role="link"
-      x-data
-      @click="window.location='article.html?slug={{slug}}'" contenteditable="true">{{title}}</h1>
-    <p class="cursor-pointer text-card-lead pt-4 lg:pt-8" 
-      role="link"
-      x-data
+    <h1 class="w-full leading-10 lg:leading-none text-[2.25rem] lg:text-[2.75rem] cursor-pointer mt-auto {{title-size}}"
+      role="link" x-data @click="window.location='article.html?slug={{slug}}'" contenteditable="true">{{title}}</h1>
+    <p class="cursor-pointer text-card-lead pt-4 lg:pt-8" role="link" x-data
       @click="window.location='article.html?slug={{slug}}'" contenteditable="true">
       {{excerpt}}
     </p>

@@ -1,30 +1,23 @@
-<figure class="flex flex-1 flex-grow flex-col bg-white shadow-md border-t border-slate-100 {{class}}">
-  
+<figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default border-t border-slate-100 {{class}}">
+
   {{#if image}}
 
-  <img
-    src="{{image}}"
-    alt=""
-    class="aspect-auto w-full  h-[60%] cursor-pointer object-cover"
-    x-data
-    @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
+    <img src="{{image}}" alt="" class="aspect-auto w-full  h-[60%] cursor-pointer object-cover" x-data
+      @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
 
   {{else}}
 
-  <img
-    src="./src/assets/img/temp/hero.jpg"
-    alt=""
-    class="aspect-video w-full h-[60%] cursor-pointer object-cover"
-    x-data
-    @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
+    <img src="./src/assets/img/temp/hero.jpg" alt="" class="aspect-video w-full h-[60%] cursor-pointer object-cover"
+      x-data
+      @click="$dispatch('lightbox',  {  imgModalSrc: $el.getAttribute('src'), imgModalAlt: 'Author', imgModalDesc: 'Iesitīsim ar likumu pa likmi' })" />
 
   {{/if}}
-  
+
   <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 p-4 lg:p-8">
-    <h1
-      class="leading-tight text-sm lg:text-2xl w-full h-min cursor-pointer {{title-size}}" 
-      role="link"  contenteditable="true">
+    <h1 class="leading-tight text-sm lg:text-2xl w-full h-min cursor-pointer {{title-size}}" role="link"
+      contenteditable="true">
       {{ title }}
     </h1>
-    <a href="author.html" class="font-serif text-xs lg:text-base card__author uppercase text-gray-500"> {{ author }}</a>  </div>
+    <a href="author.html" class="font-serif text-xs lg:text-base card__author uppercase text-gray-500"> {{ author }}</a>
+  </div>
 </figure>

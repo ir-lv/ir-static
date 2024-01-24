@@ -1,58 +1,17 @@
 <div id="hamburger" class="order-3 lg:hidden">
-  <button
-    @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
+  <button @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
     class="flex justify-between px-2 py-4">
-    <svg
-      x-show="!$store.header.showMenu"
-      width="40"
-      height="40"
-      viewBox="0 0 40 40"
-      fill="none"
+    <svg x-show="!$store.header.showMenu" width="40" height="40" viewBox="0 0 40 40" fill="none"
       xmlns="http://www.w3.org/2000/svg">
-      <line
-        x1="5.5"
-        y1="11.5"
-        x2="34.5"
-        y2="11.5"
-        stroke="#2E2E30"
-        stroke-linecap="square" />
-      <line
-        x1="5.5"
-        y1="19.5"
-        x2="34.5"
-        y2="19.5"
-        stroke="#2E2E30"
-        stroke-linecap="square" />
-      <line
-        x1="20.5"
-        y1="27.5"
-        x2="34.5"
-        y2="27.5"
-        stroke="#2E2E30"
-        stroke-linecap="square" />
+      <line x1="5.5" y1="11.5" x2="34.5" y2="11.5" stroke="#2E2E30" stroke-linecap="square" />
+      <line x1="5.5" y1="19.5" x2="34.5" y2="19.5" stroke="#2E2E30" stroke-linecap="square" />
+      <line x1="20.5" y1="27.5" x2="34.5" y2="27.5" stroke="#2E2E30" stroke-linecap="square" />
     </svg>
 
-    <svg
-      x-show="$store.header.showMenu"
-      width="40"
-      height="40"
-      viewBox="0 0 40 40"
-      fill="none"
+    <svg x-show="$store.header.showMenu" x-cloak width="40" height="40" viewBox="0 0 40 40" fill="none"
       xmlns="http://www.w3.org/2000/svg">
-      <line
-        x1="10.7071"
-        y1="9.99982"
-        x2="30.0002"
-        y2="29.2929"
-        stroke="#212225"
-        stroke-linecap="square" />
-      <line
-        x1="11"
-        y1="29.2929"
-        x2="30.2927"
-        y2="9.9997"
-        stroke="#212225"
-        stroke-linecap="square" />
+      <line x1="10.7071" y1="9.99982" x2="30.0002" y2="29.2929" stroke="#212225" stroke-linecap="square" />
+      <line x1="11" y1="29.2929" x2="30.2927" y2="9.9997" stroke="#212225" stroke-linecap="square" />
     </svg>
   </button>
 </div>

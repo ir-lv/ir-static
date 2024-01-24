@@ -1,53 +1,37 @@
-<figure
-  class="flex flex-col border-t border-slate-100 bg-white shadow-md lg:flex-row">
-  <div
-    class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3">
+<figure class="flex flex-col border-t border-slate-100 bg-white shadow-ir-default lg:flex-row" x-data="{res:{}}"
+  x-init="res = (typeof {{model}} === 'object') ? {{model}} : {}">
+  <div class="flex flex-1 flex-col flex-wrap items-start justify-between gap-y-3 px-4 py-4 lg:w-2/3  empty:hidden">
     <div class="flex w-full justify-between">
       <span
-        class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red" 
-        contenteditable="true"
-        >{{ tag }}</span
-      >
+        class="relative uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden"
+        contenteditable="true">{{ tag }}</span>
       {{>bookmark}}
     </div>
-    <h1 class="text-[22px] leading-tight {{title-size}} w-full h-min flex-grow cursor-pointer"
-    role="link"
-    x-data
-    @click="window.location='article.html?slug={{slug}}'"  contenteditable="true">
+    <h1 class="text-[22px] leading-tight {{title-size}} w-full cursor-pointer" role="link" x-data
+      @click="window.location='article.html?slug={{slug}}'" x-html="res?.node?.title || $el.innerHTML "
+      contenteditable="true">
       {{ title }}
     </h1>
-    {{#if excerpt}}
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer"
-    role="link"
-    x-data
-    @click="window.location='article.html?slug={{slug}}'" contenteditable="true">
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 cursor-pointer empty:hidden" role="link"
+      x-data @click="window.location='article.html?slug={{slug}}'" x-html="res?.node?.excerpt || $el.innerHTML "
+      contenteditable="true">
       {{ excerpt}}
     </p>
-    {{/if}}
-    <a href="author.html" class="font-serif card__author uppercase text-gray-500"  contenteditable="true"> {{ author }}</a>
+    <a href="author.html" class="font-serif uppercase text-gray-500 empty:hidden"
+      x-html="res?.node?.author?.node?.name || $el.innerHTML " contenteditable="true">{{ author }}</a>
   </div>
-  
+
   {{#if image}}
 
-    <img
-      src="{{image}}"
-      alt=""
-      class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-      role="link"
-      x-data
-      @click="window.location='article.html?slug={{slug}}'"
-      width="300" />
+    <img img-source="{{image}}" :src="res?.node?.featuredImage?.node?.sourceUrl || $el.getAttribute('img-source')"
+      alt="@" class="-order-1 w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[230px] cursor-pointer" role="link"
+      x-data @click="window.location='article.html?slug={{slug}}'" width="300" />
 
   {{else}}
 
-    <img
-        src="./src/assets/img/temp/hero.jpg"
-        alt=""
-        class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] cursor-pointer"
-        role="link"
-        x-data
-        @click="window.location='article.html?slug={{slug}}'"
-        width="300" />
+    <img src="./src/assets/img/temp/hero.jpg" alt=""
+      class="-order-1 aspect-video w-full object-cover lg:order-2 lg:w-[200px] lg:min-h-[250px] cursor-pointer"
+      role="link" x-data @click="window.location='article.html?slug={{slug}}'" width="300" />
 
   {{/if}}
 

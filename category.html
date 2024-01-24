@@ -1,79 +1,47 @@
 <!doctype html>
 <html lang="en">
-  {{>head}}
+{{>head}}
 
-  <body>
-    <div id="app">
-      {{>header}}
-      <div
-        class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0" x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
-        <div class="w-full lg:gap-0 py-4 lg:py-0">
-          <h1 class="text-center" x-text="params">Pasaulē</h1>
-        </div>
+<body>
+  <div id="app" x-data="category_page">
+    {{>header}}
+    <div class="container items-start gap-8 px-4 lg:flex lg:flex-wrap lg:px-0"
+      x-data="{ params: new URLSearchParams(window.location.search).get('cat') }">
+      <div class="w-full lg:gap-0 py-4 lg:py-0">
+        <h1 class="title text-center" x-text="params">Pasaulē</h1>
       </div>
+    </div>
 
-      <section>
-        <div class="container gap-4 px-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8  lg:w-3/5">
-          <div class="related-articles flex w-full flex-col gap-y-6">
-            <!-- prettier-ignore -->
-            {{>card-horizontal tag="Pasaulē" title="Dace Rēķe, instagramā māca
-            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
-            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
-            sarakstā?" author="Laura Dumbere"
-            image="./src/assets/img/temp/home/Elksnins1.png"}} 
-            
+    <section>
+      <div class="container gap-4 px-4 lg:flex lg:gap-8 lg:px-0 lg:pb-8  lg:w-3/5">
+        <div class="related-articles flex w-full flex-col gap-y-6">
+
+          <template x-for="post in posts">
             {{>card-horizontal
-            tag="Pasaulē" title="Satriecošais spriedums Maximas lietā - reportāža no tiesas zāles"
-            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
-            vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
-            lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
-            Dumbere"}} 
-            
-            {{>card-horizontal tag="Pasaulē" title="Dziedātāja Zanda Švēde iekaro Sanfrancisko" excerpt="Šonedēļ starptautiskā
-            Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
-            apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
-            valstu pelēkajā sarakstā?" author="Laura Dumbere" 
-            image="./src/assets/img/temp/home/haizivis.png"}}
-
-            {{>card-horizontal tag="Pasaulē" title="Dace Rēķe, instagramā māca
-            latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
-            darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
-            atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
-            sarakstā?" author="Laura Dumbere"
-            image="./src/assets/img/temp/home/UzvarasParks_Salmane_9.png"}}
-
-            {{>article-content-cta 
-              title="<b>Īsi par svarīgāko ik rītu</b> — pieraksties jaunumu vēstulei Ir Svarīgākais!" 
-              btn-label="Pierakstīties"}}
-
-            {{>card-horizontal
-            tag="Pasaulē" title="Dace Rēķe, instagramā māca latviešu valodu"
-            excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF)
-            vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu. Kas paveikts,
-            lai neiekļūtu neuzticamo valstu pelēkajā sarakstā?" author="Laura
-            Dumbere"}} 
-            
-            {{>card-horizontal tag="Pasaulē" 
-            title="Dace Rēķe,
-            instagramā māca latviešu valodu" excerpt="Šonedēļ starptautiskā
-            Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija
-            apkaro naudas atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo
-            valstu pelēkajā sarakstā?" author="Laura Dumbere"
-              image="./src/assets/img/temp/home/Elksnins1.png"
+              tag="Pasaulē" 
+              title="Dace Rēķe, instagramā māca
+              latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
+              darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
+              atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
+              sarakstā?" 
+              author="Laura Dumbere" 
+              image="./src/assets/img/temp/home/Elksnins1.png" 
+              model="post"
             }}
+          </template>
 
-            {{>card-horizontal tag="Pasaulē" title="Dace Rēķe, instagramā māca
+          {{>card-horizontal tag="Pasaulē" title="Dace Rēķe, instagramā māca
             latviešu valodu" excerpt="Šonedēļ starptautiskā Finanšu darījumu
             darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas
             atmazgāšanu. Kas paveikts, lai neiekļūtu neuzticamo valstu pelēkajā
             sarakstā?" author="Laura Dumbere"
             image="./src/assets/img/temp/home/Elksnins1.png"}}
 
-          </div>
         </div>
-      </section>
-    </div>
-    {{>footer}}
-  </body>
+      </div>
+    </section>
+  </div>
+  {{>footer}}
+</body>
+
 </html>

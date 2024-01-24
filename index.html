@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
-  {{>head}}
+{{>head}}
 
-  <body>
-    <div x-data="home" id="app">
-      {{>header}}
+<body>
+  <div x-data="home" id="app">
 
-      <section 
-        class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8">
+    {{>header}}
 
-        <!-- prettier-ignore -->
-        {{>card-hero 
+    <section class="container flex flex-col md:flex-row px-4  md:mt-4 lg:mt-0 lg:px-0 gap-8">
+
+      <!-- prettier-ignore -->
+      {{>card-hero
           title="Kultūra ir tautas imūnsistēma" 
           excerpt="Jānis Šipkēvics jeb Shipsea šobrīd studē, uzstājas un rada mūziku pārmijus Latvijā un Zviedrijā. Meklē jaunus mērķus un ceļus, kas vienmēr atvedīs mājās" 
           author="Laura Dumbere" 
@@ -19,32 +19,26 @@
           imgWidth="58%"
         }}
 
-        <aside class="flex flex-col">
-          {{>weekly-mag-btn}}
-          <div class="sidebar-item flex flex-col gap-4 rounded-md pt-4">
-            <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
-              <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">
-                Miljonu vērts jautājums?
-              </a>
-              <a href="article.html?slug=miljonu-verts-jautajums" class="font-serif uppercase text-ir-light-gray">Pauls Raudseps</a>
-              {{>bookmark}}
-            </div>
-          </div>
-          <div class="sidebar-item py-t flex flex-col gap-4 rounded-md">
-            <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
-              <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight">
-                Mazas cilts spēks
-              </a>
-              <a href="article.html?slug=mazas-cilts-speks" class="font-serif uppercase text-ir-light-gray">Aivars Ozoliņš</a>
-              {{>bookmark}}
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <section class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8 items-stretch">
+      <aside class="flex flex-col lg:max-w-[272px]">
         <!-- prettier-ignore -->
-        {{>card
+
+        {{>weekly-mag-btn}}
+
+        {{>post-list-item-1
+          title="Miljonu vērts jautājums?"
+          author="Pauls Raudseps" 
+        }}
+
+        {{>post-list-item-1
+          title="Mazas cilts spēks"
+          author="Aivars Ozoliņš" 
+        }}
+      </aside>
+    </section>
+
+    <section class="container flex flex-col md:flex-row px-4 lg:px-0 gap-8 items-stretch">
+      <!-- prettier-ignore -->
+      {{>card
           image="./src/assets/img/temp/home/IMG_3152.jpg" 
           tag="Tēma" 
           title="«Vairs neticam»" 
@@ -53,8 +47,8 @@
           slug="vairs-neticam" 
           class="flex-grow"}}
 
-        <!-- prettier-ignore -->
-        {{>card 
+      <!-- prettier-ignore -->
+      {{>card
           image="./src/assets/img/temp/home/3stradnieki.png" 
           tag="Analīze" 
           title="Spēle bez rezultāta" 
@@ -64,157 +58,130 @@
           class="flex-grow"
         }}
 
-          <div class="spotlight-block bg-slate-100 lg:max-w-[272px]">
-            <div
-              class="spotlight-header flex items-center gap-x-16 rounded-tl-md rounded-tr-md bg-ir-red p-4 lg:gap-x-8">
-              <div class="logo">
-                <svg width="45" height="30" viewBox="0 0 45 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M41.8066 27.5189C41.6923 27.5189 41.578 27.4949 41.4637 27.4529C41.0005 27.2612 40.784 26.7398 40.9765 26.2783C42.4502 22.7126 43.2021 18.9192 43.2021 15.0059C43.2021 11.0926 42.4562 7.29313 40.9765 3.7334C40.784 3.27196 41.0065 2.75058 41.4637 2.55881C41.9269 2.37304 42.4502 2.58878 42.6427 3.04423C44.2066 6.82569 45.0067 10.8529 45.0067 15.0059C45.0067 19.1589 44.2127 23.1861 42.6427 26.9675C42.4983 27.3151 42.1615 27.5249 41.8066 27.5249V27.5189Z" fill="white"/>
-                  <path d="M37.1559 25.1878C37.0416 25.1878 36.9274 25.1638 36.8191 25.1219C36.3559 24.9361 36.1333 24.4147 36.3198 23.9533C37.4627 21.1187 38.0402 18.1043 38.0402 15C38.0402 11.8957 37.4627 8.88136 36.3198 6.04676C36.1333 5.58531 36.3559 5.06394 36.8191 4.87816C37.2823 4.69238 37.8056 4.91412 37.992 5.37556C39.2192 8.4259 39.8447 11.662 39.8447 15C39.8447 18.338 39.2192 21.5741 37.992 24.6245C37.8537 24.978 37.5108 25.1878 37.1559 25.1878Z" fill="white"/>
-                  <path d="M32.7898 23.0006C32.6815 23.0006 32.5732 22.9826 32.4649 22.9407C32.0018 22.7609 31.7672 22.2395 31.9476 21.7781C32.7838 19.6206 33.2048 17.3374 33.2048 15.0002C33.2048 12.663 32.7838 10.3797 31.9476 8.22232C31.7672 7.76087 32.0018 7.2395 32.4649 7.05971C32.9281 6.87993 33.4514 7.11365 33.6319 7.57509C34.5462 9.94225 35.0094 12.4353 35.0094 15.0002C35.0094 17.5651 34.5462 20.0581 33.6319 22.4253C33.4936 22.7848 33.1507 23.0006 32.7898 23.0006Z" fill="white"/>
-                  <g clip-path="url(#clip0_2699_5551)">
-                  <path d="M15 0C6.6875 0 0 6.6875 0 15C0 23.3125 6.6875 30 15 30C23.3125 30 30 23.3125 30 15C30 6.6875 23.3125 0 15 0Z" fill="white"/>
-                  <path d="M10.2762 5.18164C11.2788 5.18164 12.156 6.05559 12.156 7.05439C12.156 8.11562 11.3414 8.98957 10.2762 8.98957C9.27371 8.98957 8.39648 8.11562 8.39648 7.05439C8.39648 6.05559 9.21105 5.18164 10.2762 5.18164Z" fill="#ED2926"/>
-                  <path d="M23.372 15.5441C22.1815 15.5441 21.4922 14.5453 21.6175 13.6714C21.6802 13.2344 21.8682 12.735 21.6802 12.2356C21.4296 11.6738 20.803 11.7362 20.1137 12.0483C19.1738 12.4853 18.4219 13.7338 18.4219 15.1696V19.4145V20.0387C18.4846 21.3496 19.1739 22.0363 20.3644 22.0363V22.5357H13.5972H6.83008V22.0363C7.95794 22.0363 8.64718 21.2872 8.7725 20.0387L8.83516 19.2272V14.9199C8.83516 14.2956 8.64718 13.7338 8.27123 13.4217C7.89528 13.1095 7.45667 12.9223 6.89274 12.9847V12.4853C6.89274 12.4853 11.5921 10.8622 11.5921 10.7998C11.6548 10.7998 11.6548 10.7998 11.6548 10.8622V19.4145V20.0387C11.7175 21.3496 12.4067 22.0363 13.5972 22.0363C14.7251 22.0363 15.4143 21.3496 15.5396 20.0387L15.6023 19.2272V14.9199C15.6023 14.2956 15.4143 13.7338 15.0384 13.4217C14.6624 13.1095 14.2238 12.9223 13.6599 12.9847V12.4853L17.6074 11.1119L17.67 11.1744C17.7954 11.3616 18.234 11.9859 18.4219 12.7974C18.8606 12.3604 19.4245 11.861 20.0511 11.4865C20.615 11.1744 21.2416 10.9247 21.9308 10.9247C22.8707 10.9247 23.7479 11.2992 24.3745 11.861C24.8758 12.298 25.1891 13.0471 25.1891 13.6714C25.1891 14.5453 24.5625 15.5441 23.372 15.5441Z" fill="#ED2926"/>
-                  </g>
-                  <defs>
-                  <clipPath id="clip0_2699_5551">
-                  <rect width="30.0762" height="29.964" fill="white"/>
-                  </clipPath>
-                  </defs>
-                  </svg>
-              </div>
-              <h2 class="title pt-1 font-serif uppercase leading-none text-white">Svarīgākais</h2>
-            </div>
-            <div class="spotlight-body px-5 py-8">
-              <h3 class="pb-14">
-                Sadarbosies ieroču ražotāji Ukrainai;
-                <br />
-                Slovākijā vēlēšanās uzvarējuši kremlini;
-                <br />
-                Divi pasaules rekordi Rīgā
-              </h3>
-              <p class="border-t border-slate-300 py-4 font-serif text-lg ">
-                <b>Īsi par svarīgāko ik rītu —</b>
-                pieraksties jaunumu vēstulei Ir Svarīgākais!
-              </p>
-              <div class="temp-wrap w-1/2">{{>btn-cta-black class="py-[0.5rem]" label="Pierakstīties"}}</div>
-            </div>
-          </div>
+      <aside class="spotlight-block bg-slate-100 md:max-w-[272px]">
+        {{>post-spotlight}}
+      </aside>
 
-      </section>
+    </section>
 
-      <section id="banner" class="container my-4 flex flex-col items-center justify-center px-4 lg:px-0">
-        <p class="mb-4 text-right font-serif lg:w-10/12">Reklāma</p>
-        <img src="./src/assets/img/temp/banner.jpg" class="h-40 w-full object-cover lg:h-auto lg:w-10/12" alt="" />
-      </section>
+    <section id="banner" class="container my-4 flex flex-col items-center justify-center px-4 lg:px-0">
+      <p class="mb-4 text-right font-serif lg:w-10/12">Reklāma</p>
+      <img src="./src/assets/img/temp/banner.jpg" class="h-40 w-full object-cover lg:h-auto lg:w-10/12" alt="" />
+    </section>
 
-      <section id="cards-1/3">
-        <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
-          <!-- prettier-ignore -->
-          {{>card
-            image="./src/assets/img/temp/home/ArtursKruzkops_Salmane_19.png" 
-            tag="Slavenība" 
-            title="Varbūt esmu traks, varbūt drosmīgs" 
-            excerpt="Arturs Krūzkops (41) nominēts Spēlmaņu nakts balvai par lomu Nacionālajā teātrī, kur strādājis gandrīz 20 gadus. Nesen viņš kļuvis par Dailes teātra aktieri un 16. novembrī debitē uz lielās skatuves Raiņa lomā" 
-            author="Laura Dumbere" 
-            slug="varbut-esmu-traks-varbut-drosmigs"
-          }}
+    <section class="container grid grid-flow-row gap-4 px-4 md:grid-cols-3 lg:grid-cols-3 lg:gap-8 lg:px-0 pt-4 pb-11">
+      <!-- prettier-ignore -->
+      {{>card
+        image="./src/assets/img/temp/home/ArtursKruzkops_Salmane_19.png" 
+        tag="Slavenība" 
+        title="Varbūt esmu traks, varbūt drosmīgs" 
+        excerpt="Arturs Krūzkops (41) nominēts Spēlmaņu nakts balvai par lomu Nacionālajā teātrī, kur strādājis gandrīz 20 gadus. Nesen viņš kļuvis par Dailes teātra aktieri un 16. novembrī debitē uz lielās skatuves Raiņa lomā" 
+        author="Laura Dumbere" 
+        slug="varbut-esmu-traks-varbut-drosmigs"
+      }}
 
-          {{>card 
-            image="./src/assets/img/temp/home/IljaStoligvo_Salmane_3.png" 
-            tag="Intervija" 
-            title="Iļja Niks Stoligvo, divu Eiropas jauno zinātnieku konkursu laureāts" 
-            excerpt="Hannoverē notikušajā Eiropas fizikas olimpiādē Iļja (18) šovasar ieguva bronzas medaļu, bet nupat septembrī Briselē saņēma speciālbalvu no pētniecības centra ESRF" 
-            author="Anda Burve-Rozīte" 
-            slug="ilja-niks-stoligvo-divu-eiropas-jauno-zinatnieku-konkursu-laureats"
-          }}
+      {{>card
+        image="./src/assets/img/temp/home/IljaStoligvo_Salmane_3.png" 
+        tag="Intervija" 
+        title="Iļja Niks Stoligvo, divu Eiropas jauno zinātnieku konkursu laureāts" 
+        excerpt="Hannoverē notikušajā Eiropas fizikas olimpiādē Iļja (18) šovasar ieguva bronzas medaļu, bet nupat septembrī Briselē saņēma speciālbalvu no pētniecības centra ESRF" 
+        author="Anda Burve-Rozīte" 
+        slug="ilja-niks-stoligvo-divu-eiropas-jauno-zinatnieku-konkursu-laureats"
+      }}
 
-          {{>card 
-            image="./src/assets/img/temp/home/Family.png" 
-            tag="Ārpolitika" 
-            title="Ticot uzvarai.* Kā iemīlēt valodu" 
-            excerpt="Luhanskas apgabalā dzimušais Artūrs Proidakovs iekļauts pasaulē labāko skolotāju sarakstā" 
-            author="Darina Rogačuka, speciāli Ir "
-            slug="ticot-uzvarai-ka-iemilet-valodu"
-          }}
-        </div>
-      </section>
-      
-      <section id="guest-authors" class="bg-slate-100 py-20">
-        <h1 class="title container mb-8 pl-4 lg:pl-0">Viesautori</h1>
-        <div class="container">
-          <div class="swiper swiper-1">
-            <div class="swiper-wrapper">
-              <!-- prettier-ignore -->
-              {{>card-guest 
+      {{>card
+        image="./src/assets/img/temp/home/Family.png" 
+        tag="Ārpolitika" 
+        title="Ticot uzvarai.* Kā iemīlēt valodu" 
+        excerpt="Luhanskas apgabalā dzimušais Artūrs Proidakovs iekļauts pasaulē labāko skolotāju sarakstā" 
+        author="Darina Rogačuka, speciāli Ir "
+        slug="ticot-uzvarai-ka-iemilet-valodu"
+      }}
+    </section>
+
+    <section id="guest-authors" class="bg-slate-100 py-12 lg:py-20">
+      <div class="container">
+        <h1 class="title pl-4">Viesautori</h1>
+        <div class="swiper swiper-1 mt-4">
+          <div class="swiper-wrapper">
+            <!-- prettier-ignore -->
+            {{>card-guest
                 title="Izraēla, Ukraina, Palestīna: vērtības un reālpolitika" 
                 excerpt="10. novembrī ASV valsts sekretārs Entonijs Blinkens Izraēlas–Hamās konflikta kontekstā nāca klajā ar paziņojumu, citu lietu starpā atzīmējot, ka “daudz par daudz palestīniešu ir tikuši nogalināti”." 
                 author="Aldis Austers, Māris Graudiņš*" 
                 slug="izraela-ukraina-palestina-vertibas-un-realpolitika"
               }}
-              {{>card-guest 
+            {{>card-guest
                 title="Garais ceļš finanšu pasaules kāpās" 
                 excerpt="Visā mūsu dzīves gaitā labklājību ietekmē notikumi, kurus iepriekš nevarēja paredzēt. Piemēram, mūsu senčiem liels risks bija laika apstākļi." 
                 author="Pēteris Strautiņš" 
                 slug="garais-cels-finansu-pasaules-kapas"
               }}
-              {{>card-guest 
+            {{>card-guest
                 title="Latvija bez bezpajumtniecības 2030" 
                 excerpt="Bezpajumtniecība bieži tiek uzlūkota kā dabiska parādība, kuru veido situācija ekonomikā, kas mijas ar personu neveiksmīgām dzīves izvēlēm, kur daudzi neredz iespējas mainīt ne vienu, ne otru." 
                 author="Kārlis Lakševics" 
                 slug="latvija-bez-bezpajumtniecibas-2030"
               }}
-              {{>card-guest 
+            {{>card-guest
                 title="Bibliotekārus nedrīkst iesaistīt cenzūras darbībās" 
                 excerpt="Latvijas Nacionālās bibliotēkas (LNB) un Latvijas bibliotekāru biedrības (LBB) viens no pamatuzdevumiem ir bibliotēku interešu aizstāvība, kā arī vērtību un principu," 
                 author="" 
                 slug="bibliotekarus-nedrikst-iesaistit-cenzuras-darbibas"
               }}
-              {{>card-guest 
+            {{>card-guest
                 title="Bez ilgtermiņa elektroenerģijas pirkuma līgumiem neiztikt" 
                 excerpt="Kas motivē uzņēmumus pasaulē parakstīt ilgtermiņa korporatīvos elektroenerģijas pirkuma līgumus atjaunīgās enerģijas jomā?" 
                 author="Alnis Bāliņš" 
                 slug="bez-ilgtermina-elektroenergijas-pirkuma-ligumiem-neiztikt"
               }}
-            </div>
-            <div class="swiper-pagination mt-12 max-w-[70px] mx-auto"></div>
           </div>
-          <div class="relative w-full bg-slate-700">
-            <div class="swiper-button-next after:scale-[0.3]"></div>
-            <div class="swiper-button-prev after:scale-[0.3]"></div>
-          </div>
+          <div class="swiper-pagination mt-12 max-w-[70px] mx-auto"></div>
         </div>
-      </section>
+        <div class="relative w-full bg-slate-700">
+          <div class="swiper-button-next after:scale-[0.3]"></div>
+          <div class="swiper-button-prev after:scale-[0.3]"></div>
+        </div>
+      </div>
+    </section>
 
-      <section id="media" class="flex flex-col items-center px-4 lg:px-0">
-        <div class="container my-20 flex-row gap-14 lg:flex">
-          <div id="podcasts" class="lg:w-3/5">
-          <div class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">
-            <h1 class="title">Raidieraksti</h1>
+    <section id="media" class="flex flex-col items-center px-4 lg:px-0 py-12 lg:py-20">
+      <div class="container flex-row gap-14 lg:flex">
+        <div id="podcasts" class="lg:w-3/5">
+          <div
+            class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">
+            <h1 class="title lg:pl-4">Raidieraksti</h1>
             <div>{{>sidebar-link label="Visas epizodes" link="podcasts.html"}}</div>
           </div>
-          <div id='buzzsprout-small-player-limit-2-artist-zurnals-ir' class="gap-4 flex flex-col"></div>
-          <script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/686771.js?artist=%C5%BDurn%C4%81ls+Ir&container_id=buzzsprout-small-player-limit-2-artist-zurnals-ir&limit=2&player=small'></script>
-          </div>
-          <div id="carousel" class="lg:w-2/5">
-            <div class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">
-              <h1 class="title">Karikatūra</h1>
-            </div>
-            {{>carousel}}
+          <div class="gap-2 flex flex-col">
+            <div id='buzzsprout-small-player-limit-2-artist-zurnals-ir'></div>
+            <script type='text/javascript' charset='utf-8'
+              src='https://www.buzzsprout.com/686771.js?artist=%C5%BDurn%C4%81ls+Ir&container_id=buzzsprout-small-player-limit-2-artist-zurnals-ir&limit=1&player=small'></script>
+            <div id="buzzsprout-player-14367841"></div>
+            <div id='buzzsprout-small-player-limit-1-artist-zurnals-ir'></div>
+            <script type='text/javascript' charset='utf-8'
+              src='https://www.buzzsprout.com/2306904.js?artist=Zurnals+Ir&container_id=buzzsprout-small-player-limit-1-artist-zurnals-ir&limit=1&player=small'></script>
           </div>
         </div>
-      </section>
-
-
-      <section id="cards-1/4" class="bg-slate-100 py-20">
-        <div class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
-          <h1 class="title">Bizness un ekonomika</h1>
-          <div>{{>sidebar-link label="Visi sadaļas raksti"}}</div>
+        <div id="carousel" class="lg:w-2/5">
+          <div
+            class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">
+            <h1 class="title">Karikatūra</h1>
+          </div>
+          {{>carousel}}
         </div>
-        <div class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
-          <!-- prettier-ignore -->
-          {{>card
+      </div>
+    </section>
+
+    <section id="cards-1/4" class="bg-slate-100 py-12 lg:py-20">
+      <div
+        class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
+        <h1 class="title lg:pl-4">Bizness un ekonomika</h1>
+        <div>{{>sidebar-link label="Visi sadaļas raksti"}}</div>
+      </div>
+      <div class="container grid grid-flow-row gap-4 px-4 mt-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:px-0">
+        <!-- prettier-ignore -->
+        {{>card
             image="./src/assets/img/temp/home/Skype_Picture_2023_10_25T14_57_15_764Z.png" 
             title="Starp savējiem" 
             excerpt="Lai salīdzinoši nelielā tirgū attīstītos birža, svarīgi domāt par investīciju kultūras veidošanu un sabiedrības labklājības audzēšanu kopumā"
@@ -224,7 +191,7 @@
             class="[&>.img-container]:h-44"
           }}
 
-          {{>card
+        {{>card
             image="./src/assets/img/temp/home/sakums.png"  
             title="Gribu būt investors!" 
             excerpt="5 idejas, ko apsvērt, ja vēlaties sākt ieguldīt" 
@@ -234,7 +201,7 @@
             class="[&>.img-container]:h-44"
           }}
 
-          {{>card
+        {{>card
             image="./src/assets/img/temp/home/002nathanwillock.png"  
             title="Laiks izpurināt bankas" 
             excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ..." 
@@ -244,7 +211,7 @@
             class="[&>.img-container]:h-44"
           }}
 
-          {{>card
+        {{>card
             image="./src/assets/img/temp/home/darba-samaksa-1.png"  
             title="Vai draud krīze?" 
             excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.." 
@@ -253,17 +220,18 @@
             title-size="text-[23px]" 
             class="[&>.img-container]:h-44"
           }}
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="cards-1/3">
-        <div class="container flex flex-col py-4 lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
-          <h1 class="title">Pētījumi</h1>
-          <div>{{>sidebar-link label="Visi sadaļas raksti"}}</div>
-        </div>
-        <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
-          <!-- prettier-ignore -->
-          {{>card 
+    <section id="cards-1/3" class="py-12 lg:py-20">
+      <div
+        class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
+        <h1 class="title lg:pl-4">Pētījumi</h1>
+        <div>{{>sidebar-link label="Visi sadaļas raksti"}}</div>
+      </div>
+      <div class="container grid grid-flow-row gap-4 px-4 mt-4 md:grid-cols-3 lg:gap-8 lg:px-0">
+        <!-- prettier-ignore -->
+        {{>card
             image="./src/assets/img/temp/home/UzvarasParks_Salmane_9.png"
             tag="Komentārs" 
             title="«Liekam jaunu bildi iekšā»" 
@@ -271,7 +239,7 @@
             slug="liekam-jaunu-bildi-ieksa" 
           }}
 
-          {{>card 
+        {{>card
             image="./src/assets/img/temp/home/Elksnins1.png" 
             tag="Komentārs" 
             title="Modīgais cars" 
@@ -279,24 +247,26 @@
             slug="modigais-cars" 
           }}
 
-          {{>card 
+        {{>card
             image="./src/assets/img/temp/home/uzvaretajs.png" 
             tag="Komentārs" 
             title="Gaida jauno paaudzi" 
             excerpt="Kāpēc jaunākajā pasaules reitingā visas Latvijas zinātnes universitātes izkritušas no labāko tūkstoša? Un kā to labot?" 
             slug="gaida-jauno-paaudzi" 
           }}
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="cards-1/4" class="bg-slate-100 py-20">
-        <div class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
-          <h1 class="title">Recenzijas</h1>
-          <div>{{>sidebar-link label="Visi sadaļas raksti"}}</div>
-        </div>
-        <div class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-5 lg:gap-8 lg:px-0">
-          <!-- prettier-ignore -->
-          {{>card
+    <section id="cards-1/4" class="bg-slate-100 py-12 lg:py-20">
+      <div
+        class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
+        <h1 class="title lg:pl-4">Recenzijas</h1>
+        <div>{{>sidebar-link label="Visi sadaļas raksti"}}</div>
+      </div>
+      <div
+        class="container grid grid-flow-row gap-4 px-4 mt-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:px-0">
+        <!-- prettier-ignore -->
+        {{>card
             image="./src/assets/img/temp/home/5.png" 
             tag="Komentārs" 
             title="Es dziedu, tu dziedi. Kāpēc nedzied viņi?" 
@@ -306,7 +276,7 @@
             class="[&>.img-container]:h-32" 
           }}
 
-          {{>card
+        {{>card
             image="./src/assets/img/temp/home/Screen-Shot-2023-11-07-at-1.webp"  
             tag="Komentārs"
             title="Daži vārdi par Lokatora sabrukšanu" 
@@ -316,7 +286,7 @@
             class="[&>.img-container]:h-32" 
           }}
 
-          {{>card
+        {{>card
             image="./src/assets/img/temp/home/Lellu-teatris_06.11.2023_Reinis-Inkens-6116.png"  
             tag="Komentārs" 
             title="Melnais jaunums" 
@@ -326,7 +296,7 @@
             class="[&>.img-container]:h-32" 
           }}
 
-          {{>card
+        {{>card
             image="./src/assets/img/temp/home/Douskova2.webp"  
             tag="Komentārs" 
             title="Šveika melanholija" 
@@ -336,7 +306,7 @@
             class="[&>.img-container]:h-32" 
           }}
 
-          {{>card
+        {{>card
             image="./src/assets/img/temp/home/jazeps_un_vina_brali_micule_dzudzilo_13_hMQl7YV.webp"  
             tag="Komentārs" 
             title="Un rīts būs jāpieņem, lai kāds tas nāks" 
@@ -345,128 +315,137 @@
             title-size="text-lg" 
             class="[&>.img-container]:h-32"
           }}
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="cards-1/4" class="py-20 bg-ir-black -mt-8">
-        <div class="container flex items-end flex-nowrap whitespace-nowrap justify-between">
-          <h1 class="title text-gray-50 pl-4 lg:pl-0">Vēlēšanas 2024</h1>
-        </div>
-        <div class="container gap-4 px-4 py-8 lg:gap-8 lg:px-0">
-          <!-- prettier-ignore -->
-          <div class="swiper swiper-2" pagination="true">
-            <div class="swiper-wrapper flex items-stretch">
-              <div class="swiper-slide">
-                {{>card
+    <section id="cards-1/4" class="py-12 lg:py-20 bg-ir-black -mt-10">
+      <div class="container flex items-end flex-nowrap whitespace-nowrap justify-between">
+        <h1 class="title text-gray-50 pl-4">Vēlēšanas 2024</h1>
+      </div>
+      <div class="container gap-4 px-4 py-8 lg:gap-8 lg:px-0">
+        <!-- prettier-ignore -->
+        <div class="swiper swiper-2" pagination="true">
+          <div class="swiper-wrapper flex items-stretch">
+            <div class="swiper-slide">
+              {{>card
                   image="./src/assets/img/temp/ir/home/Rectangle_15.jpg" 
                   tag="Komentārs" 
                   title="Dace Rēķe, instagramā māca latviešu valodu" 
                   excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ..." 
                   author="Laura Dumbere" 
                 }}
-              </div>
-              <div class="swiper-slide">
-                {{>card
+            </div>
+            <div class="swiper-slide">
+              {{>card
                   image="./src/assets/img/temp/ir/home/Rectangle_16.jpg"  
                   tag="Komentārs"
                   title="Satriecošais spriedums Maximas lietā" 
                   excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ..." 
                   author="Indra Sprance"
                 }}
-              </div>
-              <div class="swiper-slide">
-                {{>card
+            </div>
+            <div class="swiper-slide">
+              {{>card
                   image="./src/assets/img/temp/ir/home/Rectangle_17.jpg"  
                   tag="Komentārs" 
                   title="Galvenā naudas atmazgāsānas" 
                   excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ..." 
                   author="Indra Sprance" 
                 }}
-              </div>
-              <div class="swiper-slide">
-                {{>card
+            </div>
+            <div class="swiper-slide">
+              {{>card
                   image="./src/assets/img/temp/ir/home/Rectangle_85.jpg"  
                   tag="Komentārs" 
                   title="Galvenā naudas atmazgāsānas" 
                   excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.." 
                   author="Indra Sprance" 
                 }}
-              </div>
-              <div class="swiper-slide h-auto">
-                {{>card
+            </div>
+            <div class="swiper-slide h-auto">
+              {{>card
                   image="./src/assets/img/temp/ir/home/Rectangle_85.jpg"  
                   tag="Komentārs" 
                   title="Galvenā naudas atmazgāsānas" 
                   excerpt="Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu.." 
                   author="Indra Sprance" 
                 }}
-              </div>
             </div>
-            <div class="swiper-pagination mt-12 max-w-[70px] mx-auto"></div>
           </div>
+          <div class="swiper-pagination mt-12 max-w-[70px] mx-auto"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ir-workshops" class="-mb-[2rem] bg-slate-200 py-20 lg:-m-10">
-        <div class="container px-4 lg:px-0">
-          <h1 class="text-center">Izglītojies IR Darbnīcās</h1>
-          <div class="flex flex-col gap-10 py-20 lg:flex-row lg:gap-8">
-            <!-- prettier-ignore -->
-            {{>card-workshop tag="26/07" title="Dzīves un darba balansa prasmes" author="Darbnīca ar Ilzi Medni"
-            excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi" }}
-
-            {{>card-workshop tag="26/07" title="Dzīves un darba balansa prasmes" author="Darbnīca ar Ilzi Medni"
-            excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi" }}
-          </div>
-          <div class="text-center">{{>sidebar-link label="Uz darbnīcu kalendāru"}}</div>
-        </div>
-      </section>
-      <section id="magazines" class="mb-8 bg-slate-100 px-4 py-20 lg:px-0">
-        <div class="container">
-          <figure class="magazine items-stretch gap-20 lg:flex">
-            <img
-              src="./src/assets/img/temp/ir/home/Rectangle_107.jpg"
-              class="mx-auto mb-10 h-[348px] shadow-md lg:mb-0"
-              alt="" />
-            <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
-              <ul class="mb-6 w-full grid-cols-2 gap-x-8 gap-y-6 lg:mb-0 lg:grid">
-                <!-- prettier-ignore -->
-                {{>magazine-article-list-item title="Ideju metropole" author="Laura Dumbere"}}
-                {{>magazine-article-list-item title="Riskē un laimē" author="Jānis vēvers"}}
-                {{>magazine-article-list-item title="Tilts starp personāla nodaļu un darbiniekiem" author="Jānis
-                Vēvers"}} {{>magazine-article-list-item title="Lielsaimnieki" author="Laura Dumbere"}}
-              </ul>
-              {{>btn-cta-black-secondary label="Lasi portālā" class="lg:ml-4"}}
-            </div>
-          </figure>
-
-          <hr class="my-14" />
-
-          <figure class="magazine items-stretch gap-20 lg:flex">
-            <img
-              src="./src/assets/img/temp/ir/home/Rectangle_108.jpg"
-              class="mx-auto mb-10 h-[348px] shadow-md lg:mb-0"
-              alt="" />
-            <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
-              <ul class="mb-6 w-full grid-cols-2 gap-x-8 gap-y-6 lg:mb-0 lg:grid">
-                <!-- prettier-ignore -->
-                {{>magazine-article-list-item title="Dzimtas koka impresijas" author="Laura Dumbere"}}
-                {{>magazine-article-list-item title="Latviešu valodas lielais gadsimts" author="Jānis vēvers"}}
-                {{>magazine-article-list-item title="Visus dialogus izrunāju balsī" author="Jānis vēvers"}}
-                {{>magazine-article-list-item title="Aizmirstā deportācija" author="Laura Dumbere"}}
-              </ul>
-              {{>btn-cta-black-secondary label="Lasi portālā" class="lg:ml-4"}}
-            </div>
-          </figure>
-        </div>
-      </section>
-      <section id="cards-1/3">
-        <div class="container flex items-end flex-nowrap whitespace-nowrap justify-between">
-          <h1 class="title pl-4 lg:pl-0">Lasītākie raksti</h1>
-        </div>
-        <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+    <section id="ir-workshops" class="-mb-[2rem] bg-slate-200 py-12 lg:py-20 lg:-m-10">
+      <div class="container px-4 lg:px-0">
+        <h1 class="text-center">Izglītojies IR Darbnīcās</h1>
+        <div class="flex flex-col gap-10 py-12 lg:py-20 md:flex-row lg:gap-8">
           <!-- prettier-ignore -->
-          {{>card 
+          {{>card-workshop
+            tag="26/07" 
+            title="Dzīves un darba balansa prasmes" 
+            author="Darbnīca ar Ilzi Medni"
+            excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi" 
+          }}
+
+          {{>card-workshop
+            tag="26/07" 
+            title="Dzīves un darba balansa prasmes" 
+            author="Darbnīca ar Ilzi Medni"
+            excerpt="Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi" 
+          }}
+        </div>
+        <div class="text-center">{{>sidebar-link label="Uz darbnīcu kalendāru"}}</div>
+      </div>
+    </section>
+    <section id="magazines" class="mb-8 bg-slate-100 px-4 py-12 lg:py-20 lg:px-0">
+      <div class="container">
+
+        <!-- <div class="data-wrapper" x-data="{home_magazines:[]}"
+          x-init="home_magazines = await (await fetch('./home_magazines.json')).json()">
+        </div> -->
+
+        <figure class="magazine items-stretch gap-20 md:flex">
+          <img src="./src/assets/img/temp/ir/home/Rectangle_107.jpg" class="mx-auto mb-10 h-[348px] shadow-md lg:mb-0"
+            alt="" />
+          <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
+            <ul class="mb-6 w-full grid-cols-2 gap-x-8 gap-y-6 lg:mb-0 lg:grid">
+              <!-- prettier-ignore -->
+              {{>magazine-article-list-item title="Ideju metropole" author="Laura Dumbere"}}
+              {{>magazine-article-list-item title="Riskē un laimē" author="Jānis vēvers"}}
+              {{>magazine-article-list-item title="Tilts starp personāla nodaļu un darbiniekiem" author="Jānis
+                Vēvers"}} {{>magazine-article-list-item title="Lielsaimnieki" author="Laura Dumbere"}}
+            </ul>
+            {{>btn-cta-black-secondary label="Lasi portālā" class="lg:ml-4"}}
+          </div>
+        </figure>
+
+        <hr class="my-14" />
+
+        <figure class="magazine items-stretch gap-20 md:flex">
+          <img src="./src/assets/img/temp/ir/home/Rectangle_108.jpg" class="mx-auto mb-10 h-[348px] shadow-md lg:mb-0"
+            alt="" />
+          <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
+            <ul class="mb-6 w-full grid-cols-2 gap-x-8 gap-y-6 lg:mb-0 lg:grid">
+              <!-- prettier-ignore -->
+              {{>magazine-article-list-item title="Dzimtas koka impresijas" author="Laura Dumbere"}}
+              {{>magazine-article-list-item title="Latviešu valodas lielais gadsimts" author="Jānis vēvers"}}
+              {{>magazine-article-list-item title="Visus dialogus izrunāju balsī" author="Jānis vēvers"}}
+              {{>magazine-article-list-item title="Aizmirstā deportācija" author="Laura Dumbere"}}
+            </ul>
+            {{>btn-cta-black-secondary label="Lasi portālā" class="lg:ml-4"}}
+          </div>
+        </figure>
+      </div>
+    </section>
+    <section id="top-posts">
+      <div class="container flex items-end flex-nowrap whitespace-nowrap justify-between">
+        <h1 class="title lg:pl-4">Lasītākie raksti</h1>
+      </div>
+      <div class="container grid grid-flow-row gap-4 md:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+        <!-- prettier-ignore -->
+        {{>card
             tag="Komentārs" 
             image="./src/assets/img/temp/home/DSC_8543.webp" 
             title="Lāci nevar tik vienkārši apgāzt" 
@@ -475,7 +454,7 @@
             slug="laci-nevar-tik-vienkarsi-apgazt"
           }}
 
-          {{>card 
+        {{>card
             tag="Komentārs" 
             image="./src/assets/img/temp/home/Slejas_Salmane_8.png" 
             title="Dalīties ar savām mājām" 
@@ -484,7 +463,7 @@
             slug="dalities-ar-savam-majam"
           }}
 
-          {{>card 
+        {{>card
             tag="Komentārs" 
             image="./src/assets/img/temp/home/FVK_Salmane_15.webp" 
             title="Dīvānu eksperti" 
@@ -493,25 +472,26 @@
             slug="divanu-eksperti"
           }}
 
+      </div>
+      <div>
+        <div class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
+          {{>btn-cta-black label="Vairāk rakstu"}}
         </div>
-        <div>
-          <div class="col-start-2 row-start-2 mb-4 ml-auto mr-auto max-w-[200px] text-center">
-            {{>btn-cta-black label="Vairāk rakstu"}}
-          </div>
-          <div class="social-block-botto container my-20 flex max-w-sm flex-col gap-6 py-8">
-            <h4 class="text-center font-serif">
-              <b>Mums ir pa ceļam</b>
-              — lasi jaunāko savā laika joslā!
-            </h4>
-            <div class="social-buttons flex justify-center gap-x-4">
-              <span><a href="">{{>instagram}}</a></span>
-              <span><a href="">{{>facebook}}</a></span>
-              <span><a href="">{{>twitter}}</a></span>
-            </div>
+        <div class="social-block-botto container my-20 flex max-w-sm flex-col gap-6 py-8">
+          <h4 class="text-center font-serif">
+            <b>Mums ir pa ceļam</b>
+            — lasi jaunāko savā laika joslā!
+          </h4>
+          <div class="social-buttons flex justify-center gap-x-4">
+            <span><a href="">{{>instagram}}</a></span>
+            <span><a href="">{{>facebook}}</a></span>
+            <span><a href="">{{>twitter}}</a></span>
           </div>
         </div>
-      </section>
-    </div>
-    {{>footer}} {{>cookies-modal}}
-  </body>
+      </div>
+    </section>
+  </div>
+  {{>footer}} {{>cookies-modal}}
+</body>
+
 </html>

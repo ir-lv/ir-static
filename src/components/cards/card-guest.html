@@ -1,20 +1,15 @@
 <figure class="guest-card swiper-slide">
   <div
     class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
-    <h1 
-      class="text-[22px] leading-7 cursor-pointer"  
-      contenteditable="true"
-      role="link"
-      x-data
+    <h1 class="text-[22px] leading-7 cursor-pointer" contenteditable="true" role="link" x-data
       @click="window.location='article.html?slug={{slug}}'">{{ title }}</h1>
-    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800  empty:hidden">
       {{ excerpt}}
     </p>
     <div class="flex items-end">
       <a href="category.html"
-        class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
-        ><span class="font-serif-bold uppercase pl-4 lg:pl-0"  contenteditable="true">{{ author }}</span></a
-      >
+        class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"><span
+          class="font-serif-bold uppercase pl-4 lg:pl-0 empty:hidden" contenteditable="true">{{ author }}</span></a>
     </div>
     <div class="flex items-end uppercase">
       {{>bookmark}}

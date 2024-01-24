@@ -73,6 +73,22 @@ Alpine.magic('scrollAmount', () => {
   }
 })
 
+
+let fetchLocal = async () =>
+{
+    return await new Promise((resolve, reject) =>
+    {
+        fetch(url)
+        .then((response) => response.text())
+        .then((data) =>
+        {
+            let json_string = data.substring(47).slice(0, -2);
+            let details = getFAQ(JSON.parse(json_string));
+            resolve(details);
+        });
+    });
+}
+
 // HOME PAGE DATA
 Alpine.data("home", () => ({
 
@@ -109,6 +125,64 @@ Alpine.data("home", () => ({
     .then(res => {
       this.posts = res.data.posts.edges;
       console.log("posts loaded", this.posts);
+  }); 
+});
+
+},
+
+init() {
+  this.getPosts();
+}
+}));
+
+
+Alpine.data("category_page", () => ({
+
+  posts: [],
+  pos: null,
+
+  async getPosts() {
+    return await new Promise((resolve, reject) =>
+    {
+      fetch("https://irdev.devio.lv/graphql", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `query GetCategoryPosts {
+            posts(where: {categoryName: "intervija"}) {
+              edges {
+                node {
+                  id
+                  title
+                  excerpt
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                  slug
+                  author {
+                    node {
+                      name
+                    }
+                  }
+                  categories {
+                    nodes {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }`,
+        })
+    })
+    .then(response => response.json())
+    .then(res => {
+      this.posts = res.data.posts.edges;
+      console.log("category posts loaded", this.posts);
   }); 
 });
 
@@ -227,12 +301,10 @@ Alpine.data("gallery", () =>({
   }
 }))
 
-
-
 Alpine.store("header", {
   isScreenDesktop() {
     let width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-    return width > 640;
+    return width >= 1024;
   },
 
   showMenu: false,
@@ -241,7 +313,13 @@ Alpine.store("header", {
   isLoggedIn: false,
 });
 
+
+Alpine.store("parse", function(data = void 0){
+  console.log("parse!!!!", data);
+});
+
 Alpine.store("content", {
+
   isScreenDesktop() {
     let width = window.innerWidth > 0 ? window.innerWidth : screen.width;
     return width > 640;
@@ -255,62 +333,3 @@ Alpine.store("content", {
 });
 
 Alpine.start();
-
-
-let fetchHomePosts = async () =>
-{
-    return await new Promise((resolve, reject) =>
-    {
-      fetch("https://irdev.devio.lv/graphql", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: `query HomePosts {
-            posts(first: 20) {
-              edges {
-                node {
-                  id
-                  title
-                  excerpt
-                  featuredImage {
-                    node {
-                      sourceUrl
-                    }
-                  }
-                }
-              }
-            }
-          }`
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-    console.log("promise?", data);
-  }); 
-});
-}
-
-function getPosts(json)
-{    
-    let faqList = [];
-    let detail, summary;
-
-    json.table.rows.forEach((row, i) =>
-    {
-        if (i == 0) return; // The first row is the header        
-
-        try { detail = row.c[0].f ? row.c[0].f : row.c[0].v }
-        catch(e){ detail = '' }
-
-        try { summary = row.c[1].f ? row.c[1].f : row.c[1].v }
-        catch(e){ summary = '' }
-
-        faqList.push([detail, summary]);
-    });
-
-    return faqList;
-}
-
-//fetchHomePosts();
