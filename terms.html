@@ -11,13 +11,11 @@
     window.document.addEventListener("alpine:init", () => {
       let state = window.alpine.store("header");
       state.showMenu = state.isScreenDesktop();
-      console.log("A ",window.alpine.store("content").showLightBox);
     });
   </script>
-  <script type="module" crossorigin src="./assets/main-bac8467b.js"></script>
-  <link rel="stylesheet" href="./assets/main-44ffe968.css">
+  <script type="module" crossorigin src="./assets/main-9960dae2.js"></script>
+  <link rel="stylesheet" href="./assets/main-2b885c3d.css">
 </head>
-
 <body>
   <div id="app">
     <header class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm" x-data
@@ -40,43 +38,25 @@
         <!-- prettier-ignore -->
         <nav role="navigation" aria-label="Main Navigation"
           class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
-          :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-transition.opacity.duration.500ms>
+          :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-cloak
+          x-transition.opacity.duration.500ms>
           <ul class="flex h-full flex-col leading-[2.8rem] lg:flex-row lg:items-end lg:gap-1">
             <!-- prettier-ignore -->
-            <li
-              class="has-children px-4 pt-3"
-              :class="$store.header.showSubmenu ? 'active' : ''"
+            <li class="has-children px-4 pt-3" :class="$store.header.showSubmenu ? 'active' : ''"
               @click.away="$store.header.showSubmenu=false">
-              <a
-                aria-current="page"
-                x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
-                class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all"
-                >Tēmas
-                <svg
-                  class="-mt-[0.1rem]"
-                  width="6"
-                  height="10"
-                  viewBox="0 0 6 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <a aria-current="page" x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
+                class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all">Tēmas
+                <svg class="-mt-[0.1rem]" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"
                   :class="$store.header.showSubmenu ? 'rotate-90' : ''">
-                  <path
-                    d="M1 1L5 5L1 9"
-                    stroke="#212225"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
+                  <path d="M1 1L5 5L1 9" stroke="#212225" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <ul
-                x-cloak
-                class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-md"
-                x-show="$store.header.showSubmenu"
-                x-transition.opacity>
+              <ul x-cloak
+                class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-ir-default"
+                x-show="$store.header.showSubmenu" x-transition.opacity>
                 <li>
                   <b
-                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]"
-                    >Tēmas</b
-                  >
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]">Tēmas</b>
                   <ul>
                     <li><a href="section.html?cat=Politika" class="hover:text-ir-red">Politika</a></li>
                     <li><a href="section.html?cat=Personības" class="hover:text-ir-red">Personības</a></li>
@@ -86,9 +66,7 @@
                 </li>
                 <li>
                   <b
-                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                    >Rubrikas</b
-                  >
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red">Rubrikas</b>
                   <ul>
                     <li><a href="category.html?cat=Pētījumi" class="hover:text-ir-red">Pētījumi</a></li>
                     <li><a href="category.html?cat=Intervijas" class="hover:text-ir-red">Intervijas</a></li>
@@ -120,9 +98,8 @@
                 </li>
                 <li>
                   <b
-                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                    >Vairāk no IR</b
-                  >
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red">Vairāk
+                    no IR</b>
                   <ul>
                     <li><a href="podcasts.html" class="hover:text-ir-red">Šķiltava</a></li>
                     <li><a href="podcasts.html" class="hover:text-ir-red">Ārskats</a></li>
@@ -132,8 +109,7 @@
                   </ul>
                 </li>
               </ul>
-            </li>
-            <li class="px-4 pt-3">
+            </li>    <li class="px-4 pt-3">
               <a
                 href="section-topic.html"
                 class="flex w-full text-ir-red relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
@@ -213,8 +189,7 @@
         <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
       </svg>
     </div>
-     <div
-      x-data="{enabled: false, toggle(){
+     <div x-data="{enabled: false, toggle(){
         this.enabled = !this.enabled;
         if(this.enabled){
           document.body.style.fontSize = 'x-large';
@@ -223,139 +198,89 @@
           document.body.style.fontSize = 'initial';
         }
       }}"
-      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-      @click="toggle()"
-      class="hidden cursor-pointer lg:block"
-      title="Teksta lielums"
-      aria-label="Teksta lielums">
+      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 hidden lg:block"
+      @click="toggle()" class="hidden cursor-pointer lg:block" title="Teksta lielums" aria-label="Teksta lielums">
     
-      <svg
-        x-show="!enabled" 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9.40498 22C9.33898 22 9.29498 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.614 9.00898 20.592 8.98698 20.592H7.19398C7.17198 20.592 7.13898 20.614 7.13898 20.636L6.90798 21.901C6.89698 21.967 6.85298 22 6.78698 22H5.95098C5.87398 22 5.84098 21.945 5.85198 21.879L7.49098 14.399C7.50198 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.65698 14.3 8.70098 14.333 8.71198 14.399L10.362 21.879C10.373 21.945 10.34 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.734 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.734 8.85498 19.712L8.10698 15.807C8.09598 15.774 8.07398 15.774 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
-        <path d="M16.1063 22C16.0223 22 15.9663 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.236 15.6023 20.208 15.5743 20.208H13.2923C13.2643 20.208 13.2223 20.236 13.2223 20.264L12.9283 21.874C12.9143 21.958 12.8583 22 12.7743 22H11.7103C11.6123 22 11.5703 21.93 11.5843 21.846L13.6703 12.326C13.6843 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1543 12.2 15.2103 12.242 15.2243 12.326L17.3243 21.846C17.3383 21.93 17.2963 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.116 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.116 15.4063 19.088L14.4543 14.118C14.4403 14.076 14.4123 14.076 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
-        <path d="M24.7082 22C24.6002 22 24.5282 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.732 24.0602 19.696 24.0242 19.696H21.0902C21.0542 19.696 21.0002 19.732 21.0002 19.768L20.6222 21.838C20.6042 21.946 20.5322 22 20.4242 22H19.0562C18.9302 22 18.8762 21.91 18.8942 21.802L21.5762 9.562C21.5942 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4842 9.4 23.5562 9.454 23.5742 9.562L26.2742 21.802C26.2922 21.91 26.2382 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.292 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.292 23.8082 18.256L22.5842 11.866C22.5662 11.812 22.5302 11.812 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
+      <svg x-show="!enabled" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M9.40498 22C9.33898 22 9.29498 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.614 9.00898 20.592 8.98698 20.592H7.19398C7.17198 20.592 7.13898 20.614 7.13898 20.636L6.90798 21.901C6.89698 21.967 6.85298 22 6.78698 22H5.95098C5.87398 22 5.84098 21.945 5.85198 21.879L7.49098 14.399C7.50198 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.65698 14.3 8.70098 14.333 8.71198 14.399L10.362 21.879C10.373 21.945 10.34 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.734 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.734 8.85498 19.712L8.10698 15.807C8.09598 15.774 8.07398 15.774 8.06298 15.807L7.32598 19.712Z"
+          fill="#212225" />
+        <path
+          d="M16.1063 22C16.0223 22 15.9663 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.236 15.6023 20.208 15.5743 20.208H13.2923C13.2643 20.208 13.2223 20.236 13.2223 20.264L12.9283 21.874C12.9143 21.958 12.8583 22 12.7743 22H11.7103C11.6123 22 11.5703 21.93 11.5843 21.846L13.6703 12.326C13.6843 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1543 12.2 15.2103 12.242 15.2243 12.326L17.3243 21.846C17.3383 21.93 17.2963 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.116 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.116 15.4063 19.088L14.4543 14.118C14.4403 14.076 14.4123 14.076 14.3983 14.118L13.4603 19.088Z"
+          fill="#212225" />
+        <path
+          d="M24.7082 22C24.6002 22 24.5282 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.732 24.0602 19.696 24.0242 19.696H21.0902C21.0542 19.696 21.0002 19.732 21.0002 19.768L20.6222 21.838C20.6042 21.946 20.5322 22 20.4242 22H19.0562C18.9302 22 18.8762 21.91 18.8942 21.802L21.5762 9.562C21.5942 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4842 9.4 23.5562 9.454 23.5742 9.562L26.2742 21.802C26.2922 21.91 26.2382 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.292 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.292 23.8082 18.256L22.5842 11.866C22.5662 11.812 22.5302 11.812 22.5122 11.866L21.3062 18.256Z"
+          fill="#212225" />
       </svg>
     
-      <svg
-        x-show="enabled" 
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="30" height="30" rx="3" stroke="#171717" stroke-width="2"/>
-        <path d="M9.40498 22C9.33898 22 9.29865 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.6213 9.03465 20.6103 9.01998 20.603C9.01265 20.5957 9.00165 20.592 8.98698 20.592H7.19398C7.17932 20.592 7.16465 20.5957 7.14998 20.603C7.14265 20.6103 7.13898 20.6213 7.13898 20.636L6.90798 21.901C6.90065 21.967 6.86032 22 6.78698 22H5.95098C5.91432 22 5.88498 21.989 5.86298 21.967C5.84832 21.945 5.84465 21.9157 5.85198 21.879L7.49098 14.399C7.50565 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.66432 14.3 8.70465 14.333 8.71198 14.399L10.362 21.879V21.901C10.362 21.967 10.329 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.7413 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.7413 8.85498 19.712L8.10698 15.807C8.09965 15.7923 8.09232 15.785 8.08498 15.785C8.07765 15.785 8.07032 15.7923 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
-        <path d="M16.1063 22C16.0223 22 15.971 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.2453 15.635 20.2313 15.6163 20.222C15.607 20.2127 15.593 20.208 15.5743 20.208H13.2923C13.2737 20.208 13.255 20.2127 13.2363 20.222C13.227 20.2313 13.2223 20.2453 13.2223 20.264L12.9283 21.874C12.919 21.958 12.8677 22 12.7743 22H11.7103C11.6637 22 11.6263 21.986 11.5983 21.958C11.5797 21.93 11.575 21.8927 11.5843 21.846L13.6703 12.326C13.689 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1637 12.2 15.215 12.242 15.2243 12.326L17.3243 21.846V21.874C17.3243 21.958 17.2823 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.1253 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.1253 15.4063 19.088L14.4543 14.118C14.445 14.0993 14.4357 14.09 14.4263 14.09C14.417 14.09 14.4077 14.0993 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
-        <path d="M24.7082 22C24.6002 22 24.5342 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.744 24.1022 19.726 24.0782 19.714C24.0662 19.702 24.0482 19.696 24.0242 19.696H21.0902C21.0662 19.696 21.0422 19.702 21.0182 19.714C21.0062 19.726 21.0002 19.744 21.0002 19.768L20.6222 21.838C20.6102 21.946 20.5442 22 20.4242 22H19.0562C18.9962 22 18.9482 21.982 18.9122 21.946C18.8882 21.91 18.8822 21.862 18.8942 21.802L21.5762 9.562C21.6002 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4962 9.4 23.5622 9.454 23.5742 9.562L26.2742 21.802V21.838C26.2742 21.946 26.2202 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.304 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.304 23.8082 18.256L22.5842 11.866C22.5722 11.842 22.5602 11.83 22.5482 11.83C22.5362 11.83 22.5242 11.842 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
-      </svg>        
-    </div>
-     <div
-      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+      <svg x-show="enabled" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="30" height="30" rx="3" stroke="#171717" stroke-width="2" />
+        <path
+          d="M9.40498 22C9.33898 22 9.29865 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.6213 9.03465 20.6103 9.01998 20.603C9.01265 20.5957 9.00165 20.592 8.98698 20.592H7.19398C7.17932 20.592 7.16465 20.5957 7.14998 20.603C7.14265 20.6103 7.13898 20.6213 7.13898 20.636L6.90798 21.901C6.90065 21.967 6.86032 22 6.78698 22H5.95098C5.91432 22 5.88498 21.989 5.86298 21.967C5.84832 21.945 5.84465 21.9157 5.85198 21.879L7.49098 14.399C7.50565 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.66432 14.3 8.70465 14.333 8.71198 14.399L10.362 21.879V21.901C10.362 21.967 10.329 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.7413 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.7413 8.85498 19.712L8.10698 15.807C8.09965 15.7923 8.09232 15.785 8.08498 15.785C8.07765 15.785 8.07032 15.7923 8.06298 15.807L7.32598 19.712Z"
+          fill="#212225" />
+        <path
+          d="M16.1063 22C16.0223 22 15.971 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.2453 15.635 20.2313 15.6163 20.222C15.607 20.2127 15.593 20.208 15.5743 20.208H13.2923C13.2737 20.208 13.255 20.2127 13.2363 20.222C13.227 20.2313 13.2223 20.2453 13.2223 20.264L12.9283 21.874C12.919 21.958 12.8677 22 12.7743 22H11.7103C11.6637 22 11.6263 21.986 11.5983 21.958C11.5797 21.93 11.575 21.8927 11.5843 21.846L13.6703 12.326C13.689 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1637 12.2 15.215 12.242 15.2243 12.326L17.3243 21.846V21.874C17.3243 21.958 17.2823 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.1253 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.1253 15.4063 19.088L14.4543 14.118C14.445 14.0993 14.4357 14.09 14.4263 14.09C14.417 14.09 14.4077 14.0993 14.3983 14.118L13.4603 19.088Z"
+          fill="#212225" />
+        <path
+          d="M24.7082 22C24.6002 22 24.5342 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.744 24.1022 19.726 24.0782 19.714C24.0662 19.702 24.0482 19.696 24.0242 19.696H21.0902C21.0662 19.696 21.0422 19.702 21.0182 19.714C21.0062 19.726 21.0002 19.744 21.0002 19.768L20.6222 21.838C20.6102 21.946 20.5442 22 20.4242 22H19.0562C18.9962 22 18.9482 21.982 18.9122 21.946C18.8882 21.91 18.8822 21.862 18.8942 21.802L21.5762 9.562C21.6002 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4962 9.4 23.5622 9.454 23.5742 9.562L26.2742 21.802V21.838C26.2742 21.946 26.2202 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.304 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.304 23.8082 18.256L22.5842 11.866C22.5722 11.842 22.5602 11.83 22.5482 11.83C22.5362 11.83 22.5242 11.842 22.5122 11.866L21.3062 18.256Z"
+          fill="#212225" />
+      </svg>
+    </div> <divc
+      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 hidden lg:block"
       x-data="{arr : [1, 2, 3], currentIndex:0, next(){
         this.currentIndex = this.currentIndex < this.arr.length ? this.currentIndex + 1 : 0;
         return this.currentIndex;
-      }}"
-      @click="next()"
-      class="hidden cursor-pointer lg:block"
-      title="Kontrasts"
-      aria-label="Kontrasts">
+      }}" @click="next()" class="hidden cursor-pointer lg:block" title="Kontrasts" aria-label="Kontrasts">
     
-      <svg 
-        x-show="currentIndex == 0"
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225"/>
-        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225"/>
+      <svg x-show="currentIndex == 0" width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225" />
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225" />
       </svg>
     
-      <svg 
-        x-show="currentIndex == 1"
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="4" fill="#212225"/>
-        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8"/>
-        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8"/>
+      <svg x-show="currentIndex == 1" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225" />
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8" />
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8" />
       </svg>
     
-      <svg 
-        x-show="currentIndex == 2"
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="4" fill="#212225"/>
-        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500"/>
-        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500"/>
+      <svg x-show="currentIndex == 2" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225" />
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500" />
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500" />
       </svg>
     
-      <svg 
-        x-show="currentIndex == 3"
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="4" fill="#212225"/>
-        <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500"/>
-        <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500"/>
+      <svg x-show="currentIndex == 3" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225" />
+        <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500" />
+        <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500" />
       </svg>
-        
-    </div>
     
+    </divc>
         </div>
     
         <!-- prettier-ignore -->
         <div id="hamburger" class="order-3 lg:hidden">
-          <button
-            @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
+          <button @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
             class="flex justify-between px-2 py-4">
-            <svg
-              x-show="!$store.header.showMenu"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
+            <svg x-show="!$store.header.showMenu" width="40" height="40" viewBox="0 0 40 40" fill="none"
               xmlns="http://www.w3.org/2000/svg">
-              <line
-                x1="5.5"
-                y1="11.5"
-                x2="34.5"
-                y2="11.5"
-                stroke="#2E2E30"
-                stroke-linecap="square" />
-              <line
-                x1="5.5"
-                y1="19.5"
-                x2="34.5"
-                y2="19.5"
-                stroke="#2E2E30"
-                stroke-linecap="square" />
-              <line
-                x1="20.5"
-                y1="27.5"
-                x2="34.5"
-                y2="27.5"
-                stroke="#2E2E30"
-                stroke-linecap="square" />
+              <line x1="5.5" y1="11.5" x2="34.5" y2="11.5" stroke="#2E2E30" stroke-linecap="square" />
+              <line x1="5.5" y1="19.5" x2="34.5" y2="19.5" stroke="#2E2E30" stroke-linecap="square" />
+              <line x1="20.5" y1="27.5" x2="34.5" y2="27.5" stroke="#2E2E30" stroke-linecap="square" />
             </svg>
         
-            <svg
-              x-show="$store.header.showMenu"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
+            <svg x-show="$store.header.showMenu" x-cloak width="40" height="40" viewBox="0 0 40 40" fill="none"
               xmlns="http://www.w3.org/2000/svg">
-              <line
-                x1="10.7071"
-                y1="9.99982"
-                x2="30.0002"
-                y2="29.2929"
-                stroke="#212225"
-                stroke-linecap="square" />
-              <line
-                x1="11"
-                y1="29.2929"
-                x2="30.2927"
-                y2="9.9997"
-                stroke="#212225"
-                stroke-linecap="square" />
+              <line x1="10.7071" y1="9.99982" x2="30.0002" y2="29.2929" stroke="#212225" stroke-linecap="square" />
+              <line x1="11" y1="29.2929" x2="30.2927" y2="9.9997" stroke="#212225" stroke-linecap="square" />
             </svg>
           </button>
         </div>
-    
       </div>
     
       <!-- prettier-ignore -->

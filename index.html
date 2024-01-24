@@ -11,15 +11,14 @@
     window.document.addEventListener("alpine:init", () => {
       let state = window.alpine.store("header");
       state.showMenu = state.isScreenDesktop();
-      console.log("A ",window.alpine.store("content").showLightBox);
     });
   </script>
-  <script type="module" crossorigin src="./assets/main-bac8467b.js"></script>
-  <link rel="stylesheet" href="./assets/main-44ffe968.css">
+  <script type="module" crossorigin src="./assets/main-9960dae2.js"></script>
+  <link rel="stylesheet" href="./assets/main-2b885c3d.css">
 </head>
-
 <body>
   <div x-data="home" id="app">
+
     <header class="shadow-light-500 sticky top-0 z-40 bg-white shadow-sm" x-data
       :class="$store.header.showSubmenu ? 'lg:bg-slate-100' : ''">
       <div class="container flex flex-wrap items-center justify-between">
@@ -40,43 +39,25 @@
         <!-- prettier-ignore -->
         <nav role="navigation" aria-label="Main Navigation"
           class="order-last h-screen w-screen gap-6 self-stretch overflow-y-scroll font-serif text-lg uppercase lg:order-2 lg:block lg:h-auto lg:w-auto lg:items-end lg:overflow-y-auto lg:px-4"
-          :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-transition.opacity.duration.500ms>
+          :class="$store.header.showMenu ? 'block' : 'hidden lg:block' " x-show="$store.header.showMenu" x-cloak
+          x-transition.opacity.duration.500ms>
           <ul class="flex h-full flex-col leading-[2.8rem] lg:flex-row lg:items-end lg:gap-1">
             <!-- prettier-ignore -->
-            <li
-              class="has-children px-4 pt-3"
-              :class="$store.header.showSubmenu ? 'active' : ''"
+            <li class="has-children px-4 pt-3" :class="$store.header.showSubmenu ? 'active' : ''"
               @click.away="$store.header.showSubmenu=false">
-              <a
-                aria-current="page"
-                x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
-                class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all"
-                >Tēmas
-                <svg
-                  class="-mt-[0.1rem]"
-                  width="6"
-                  height="10"
-                  viewBox="0 0 6 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <a aria-current="page" x-on:click="$store.header.showSubmenu = ! $store.header.showSubmenu"
+                class="relative flex w-full cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold after:absolute after:bottom-3 after:left-0 after:h-[1px] after:w-0 after:transition-none after:duration-100 hover:after:w-full lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black lg:after:transition-all">Tēmas
+                <svg class="-mt-[0.1rem]" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"
                   :class="$store.header.showSubmenu ? 'rotate-90' : ''">
-                  <path
-                    d="M1 1L5 5L1 9"
-                    stroke="#212225"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
+                  <path d="M1 1L5 5L1 9" stroke="#212225" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <ul
-                x-cloak
-                class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-md"
-                x-show="$store.header.showSubmenu"
-                x-transition.opacity>
+              <ul x-cloak
+                class="container left-0 right-0 flex w-full flex-col gap-6 bg-white p-4 pb-6 capitalize lg:absolute lg:flex-row lg:gap-28 lg:shadow-ir-default"
+                x-show="$store.header.showSubmenu" x-transition.opacity>
                 <li>
                   <b
-                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]"
-                    >Tēmas</b
-                  >
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full before:bg-ir-red lg:before:w-[2px]">Tēmas</b>
                   <ul>
                     <li><a href="section.html?cat=Politika" class="hover:text-ir-red">Politika</a></li>
                     <li><a href="section.html?cat=Personības" class="hover:text-ir-red">Personības</a></li>
@@ -86,9 +67,7 @@
                 </li>
                 <li>
                   <b
-                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                    >Rubrikas</b
-                  >
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red">Rubrikas</b>
                   <ul>
                     <li><a href="category.html?cat=Pētījumi" class="hover:text-ir-red">Pētījumi</a></li>
                     <li><a href="category.html?cat=Intervijas" class="hover:text-ir-red">Intervijas</a></li>
@@ -120,9 +99,8 @@
                 </li>
                 <li>
                   <b
-                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                    >Vairāk no IR</b
-                  >
+                    class="relative before:absolute before:-left-5 before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red">Vairāk
+                    no IR</b>
                   <ul>
                     <li><a href="podcasts.html" class="hover:text-ir-red">Šķiltava</a></li>
                     <li><a href="podcasts.html" class="hover:text-ir-red">Ārskats</a></li>
@@ -132,8 +110,7 @@
                   </ul>
                 </li>
               </ul>
-            </li>
-            <li class="px-4 pt-3">
+            </li>    <li class="px-4 pt-3">
               <a
                 href="section-topic.html"
                 class="flex w-full text-ir-red relative cursor-pointer items-center justify-between gap-2 space-x-2 border-b font-serif-bold lg:mb-3 lg:border-none lg:font-serif lg:after:bg-black after:absolute after:h-[1px] after:w-0 after:bottom-3 after:left-0 hover:after:w-full lg:after:transition-all after:transition-none  after:duration-100 "
@@ -213,8 +190,7 @@
         <path d="M19 19L23 23" stroke="#212225" stroke-linecap="square" />
       </svg>
     </div>
-     <div
-      x-data="{enabled: false, toggle(){
+     <div x-data="{enabled: false, toggle(){
         this.enabled = !this.enabled;
         if(this.enabled){
           document.body.style.fontSize = 'x-large';
@@ -223,139 +199,89 @@
           document.body.style.fontSize = 'initial';
         }
       }}"
-      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
-      @click="toggle()"
-      class="hidden cursor-pointer lg:block"
-      title="Teksta lielums"
-      aria-label="Teksta lielums">
+      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 hidden lg:block"
+      @click="toggle()" class="hidden cursor-pointer lg:block" title="Teksta lielums" aria-label="Teksta lielums">
     
-      <svg
-        x-show="!enabled" 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9.40498 22C9.33898 22 9.29498 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.614 9.00898 20.592 8.98698 20.592H7.19398C7.17198 20.592 7.13898 20.614 7.13898 20.636L6.90798 21.901C6.89698 21.967 6.85298 22 6.78698 22H5.95098C5.87398 22 5.84098 21.945 5.85198 21.879L7.49098 14.399C7.50198 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.65698 14.3 8.70098 14.333 8.71198 14.399L10.362 21.879C10.373 21.945 10.34 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.734 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.734 8.85498 19.712L8.10698 15.807C8.09598 15.774 8.07398 15.774 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
-        <path d="M16.1063 22C16.0223 22 15.9663 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.236 15.6023 20.208 15.5743 20.208H13.2923C13.2643 20.208 13.2223 20.236 13.2223 20.264L12.9283 21.874C12.9143 21.958 12.8583 22 12.7743 22H11.7103C11.6123 22 11.5703 21.93 11.5843 21.846L13.6703 12.326C13.6843 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1543 12.2 15.2103 12.242 15.2243 12.326L17.3243 21.846C17.3383 21.93 17.2963 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.116 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.116 15.4063 19.088L14.4543 14.118C14.4403 14.076 14.4123 14.076 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
-        <path d="M24.7082 22C24.6002 22 24.5282 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.732 24.0602 19.696 24.0242 19.696H21.0902C21.0542 19.696 21.0002 19.732 21.0002 19.768L20.6222 21.838C20.6042 21.946 20.5322 22 20.4242 22H19.0562C18.9302 22 18.8762 21.91 18.8942 21.802L21.5762 9.562C21.5942 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4842 9.4 23.5562 9.454 23.5742 9.562L26.2742 21.802C26.2922 21.91 26.2382 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.292 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.292 23.8082 18.256L22.5842 11.866C22.5662 11.812 22.5302 11.812 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
+      <svg x-show="!enabled" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M9.40498 22C9.33898 22 9.29498 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.614 9.00898 20.592 8.98698 20.592H7.19398C7.17198 20.592 7.13898 20.614 7.13898 20.636L6.90798 21.901C6.89698 21.967 6.85298 22 6.78698 22H5.95098C5.87398 22 5.84098 21.945 5.85198 21.879L7.49098 14.399C7.50198 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.65698 14.3 8.70098 14.333 8.71198 14.399L10.362 21.879C10.373 21.945 10.34 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.734 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.734 8.85498 19.712L8.10698 15.807C8.09598 15.774 8.07398 15.774 8.06298 15.807L7.32598 19.712Z"
+          fill="#212225" />
+        <path
+          d="M16.1063 22C16.0223 22 15.9663 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.236 15.6023 20.208 15.5743 20.208H13.2923C13.2643 20.208 13.2223 20.236 13.2223 20.264L12.9283 21.874C12.9143 21.958 12.8583 22 12.7743 22H11.7103C11.6123 22 11.5703 21.93 11.5843 21.846L13.6703 12.326C13.6843 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1543 12.2 15.2103 12.242 15.2243 12.326L17.3243 21.846C17.3383 21.93 17.2963 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.116 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.116 15.4063 19.088L14.4543 14.118C14.4403 14.076 14.4123 14.076 14.3983 14.118L13.4603 19.088Z"
+          fill="#212225" />
+        <path
+          d="M24.7082 22C24.6002 22 24.5282 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.732 24.0602 19.696 24.0242 19.696H21.0902C21.0542 19.696 21.0002 19.732 21.0002 19.768L20.6222 21.838C20.6042 21.946 20.5322 22 20.4242 22H19.0562C18.9302 22 18.8762 21.91 18.8942 21.802L21.5762 9.562C21.5942 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4842 9.4 23.5562 9.454 23.5742 9.562L26.2742 21.802C26.2922 21.91 26.2382 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.292 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.292 23.8082 18.256L22.5842 11.866C22.5662 11.812 22.5302 11.812 22.5122 11.866L21.3062 18.256Z"
+          fill="#212225" />
       </svg>
     
-      <svg
-        x-show="enabled" 
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="30" height="30" rx="3" stroke="#171717" stroke-width="2"/>
-        <path d="M9.40498 22C9.33898 22 9.29865 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.6213 9.03465 20.6103 9.01998 20.603C9.01265 20.5957 9.00165 20.592 8.98698 20.592H7.19398C7.17932 20.592 7.16465 20.5957 7.14998 20.603C7.14265 20.6103 7.13898 20.6213 7.13898 20.636L6.90798 21.901C6.90065 21.967 6.86032 22 6.78698 22H5.95098C5.91432 22 5.88498 21.989 5.86298 21.967C5.84832 21.945 5.84465 21.9157 5.85198 21.879L7.49098 14.399C7.50565 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.66432 14.3 8.70465 14.333 8.71198 14.399L10.362 21.879V21.901C10.362 21.967 10.329 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.7413 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.7413 8.85498 19.712L8.10698 15.807C8.09965 15.7923 8.09232 15.785 8.08498 15.785C8.07765 15.785 8.07032 15.7923 8.06298 15.807L7.32598 19.712Z" fill="#212225"/>
-        <path d="M16.1063 22C16.0223 22 15.971 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.2453 15.635 20.2313 15.6163 20.222C15.607 20.2127 15.593 20.208 15.5743 20.208H13.2923C13.2737 20.208 13.255 20.2127 13.2363 20.222C13.227 20.2313 13.2223 20.2453 13.2223 20.264L12.9283 21.874C12.919 21.958 12.8677 22 12.7743 22H11.7103C11.6637 22 11.6263 21.986 11.5983 21.958C11.5797 21.93 11.575 21.8927 11.5843 21.846L13.6703 12.326C13.689 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1637 12.2 15.215 12.242 15.2243 12.326L17.3243 21.846V21.874C17.3243 21.958 17.2823 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.1253 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.1253 15.4063 19.088L14.4543 14.118C14.445 14.0993 14.4357 14.09 14.4263 14.09C14.417 14.09 14.4077 14.0993 14.3983 14.118L13.4603 19.088Z" fill="#212225"/>
-        <path d="M24.7082 22C24.6002 22 24.5342 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.744 24.1022 19.726 24.0782 19.714C24.0662 19.702 24.0482 19.696 24.0242 19.696H21.0902C21.0662 19.696 21.0422 19.702 21.0182 19.714C21.0062 19.726 21.0002 19.744 21.0002 19.768L20.6222 21.838C20.6102 21.946 20.5442 22 20.4242 22H19.0562C18.9962 22 18.9482 21.982 18.9122 21.946C18.8882 21.91 18.8822 21.862 18.8942 21.802L21.5762 9.562C21.6002 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4962 9.4 23.5622 9.454 23.5742 9.562L26.2742 21.802V21.838C26.2742 21.946 26.2202 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.304 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.304 23.8082 18.256L22.5842 11.866C22.5722 11.842 22.5602 11.83 22.5482 11.83C22.5362 11.83 22.5242 11.842 22.5122 11.866L21.3062 18.256Z" fill="#212225"/>
-      </svg>        
-    </div>
-     <div
-      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200"
+      <svg x-show="enabled" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="30" height="30" rx="3" stroke="#171717" stroke-width="2" />
+        <path
+          d="M9.40498 22C9.33898 22 9.29865 21.967 9.28398 21.901L9.04198 20.636C9.04198 20.6213 9.03465 20.6103 9.01998 20.603C9.01265 20.5957 9.00165 20.592 8.98698 20.592H7.19398C7.17932 20.592 7.16465 20.5957 7.14998 20.603C7.14265 20.6103 7.13898 20.6213 7.13898 20.636L6.90798 21.901C6.90065 21.967 6.86032 22 6.78698 22H5.95098C5.91432 22 5.88498 21.989 5.86298 21.967C5.84832 21.945 5.84465 21.9157 5.85198 21.879L7.49098 14.399C7.50565 14.333 7.54598 14.3 7.61198 14.3H8.59098C8.66432 14.3 8.70465 14.333 8.71198 14.399L10.362 21.879V21.901C10.362 21.967 10.329 22 10.263 22H9.40498ZM7.32598 19.712C7.32598 19.7413 7.33698 19.756 7.35898 19.756H8.82198C8.84398 19.756 8.85498 19.7413 8.85498 19.712L8.10698 15.807C8.09965 15.7923 8.09232 15.785 8.08498 15.785C8.07765 15.785 8.07032 15.7923 8.06298 15.807L7.32598 19.712Z"
+          fill="#212225" />
+        <path
+          d="M16.1063 22C16.0223 22 15.971 21.958 15.9523 21.874L15.6443 20.264C15.6443 20.2453 15.635 20.2313 15.6163 20.222C15.607 20.2127 15.593 20.208 15.5743 20.208H13.2923C13.2737 20.208 13.255 20.2127 13.2363 20.222C13.227 20.2313 13.2223 20.2453 13.2223 20.264L12.9283 21.874C12.919 21.958 12.8677 22 12.7743 22H11.7103C11.6637 22 11.6263 21.986 11.5983 21.958C11.5797 21.93 11.575 21.8927 11.5843 21.846L13.6703 12.326C13.689 12.242 13.7403 12.2 13.8243 12.2H15.0703C15.1637 12.2 15.215 12.242 15.2243 12.326L17.3243 21.846V21.874C17.3243 21.958 17.2823 22 17.1983 22H16.1063ZM13.4603 19.088C13.4603 19.1253 13.4743 19.144 13.5023 19.144H15.3643C15.3923 19.144 15.4063 19.1253 15.4063 19.088L14.4543 14.118C14.445 14.0993 14.4357 14.09 14.4263 14.09C14.417 14.09 14.4077 14.0993 14.3983 14.118L13.4603 19.088Z"
+          fill="#212225" />
+        <path
+          d="M24.7082 22C24.6002 22 24.5342 21.946 24.5102 21.838L24.1142 19.768C24.1142 19.744 24.1022 19.726 24.0782 19.714C24.0662 19.702 24.0482 19.696 24.0242 19.696H21.0902C21.0662 19.696 21.0422 19.702 21.0182 19.714C21.0062 19.726 21.0002 19.744 21.0002 19.768L20.6222 21.838C20.6102 21.946 20.5442 22 20.4242 22H19.0562C18.9962 22 18.9482 21.982 18.9122 21.946C18.8882 21.91 18.8822 21.862 18.8942 21.802L21.5762 9.562C21.6002 9.454 21.6662 9.4 21.7742 9.4H23.3762C23.4962 9.4 23.5622 9.454 23.5742 9.562L26.2742 21.802V21.838C26.2742 21.946 26.2202 22 26.1122 22H24.7082ZM21.3062 18.256C21.3062 18.304 21.3242 18.328 21.3602 18.328H23.7542C23.7902 18.328 23.8082 18.304 23.8082 18.256L22.5842 11.866C22.5722 11.842 22.5602 11.83 22.5482 11.83C22.5362 11.83 22.5242 11.842 22.5122 11.866L21.3062 18.256Z"
+          fill="#212225" />
+      </svg>
+    </div> <divc
+      class="cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 hidden lg:block"
       x-data="{arr : [1, 2, 3], currentIndex:0, next(){
         this.currentIndex = this.currentIndex < this.arr.length ? this.currentIndex + 1 : 0;
         return this.currentIndex;
-      }}"
-      @click="next()"
-      class="hidden cursor-pointer lg:block"
-      title="Kontrasts"
-      aria-label="Kontrasts">
+      }}" @click="next()" class="hidden cursor-pointer lg:block" title="Kontrasts" aria-label="Kontrasts">
     
-      <svg 
-        x-show="currentIndex == 0"
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225"/>
-        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225"/>
+      <svg x-show="currentIndex == 0" width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#212225" stroke="#212225" />
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#212225" />
       </svg>
     
-      <svg 
-        x-show="currentIndex == 1"
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="4" fill="#212225"/>
-        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8"/>
-        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8"/>
+      <svg x-show="currentIndex == 1" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225" />
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#F0F3F8" stroke="#F0F3F8" />
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#F0F3F8" />
       </svg>
     
-      <svg 
-        x-show="currentIndex == 2"
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="4" fill="#212225"/>
-        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500"/>
-        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500"/>
+      <svg x-show="currentIndex == 2" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225" />
+        <path d="M16 23C19.866 23 23 19.866 23 16C23 12.134 19.866 9 16 9V23Z" fill="#FFF500" stroke="#FFF500" />
+        <path d="M16 23C12.134 23 9 19.866 9 16C9 12.134 12.134 9 16 9" stroke="#FFF500" />
       </svg>
     
-      <svg 
-        x-show="currentIndex == 3"
-        x-cloak 
-        width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="4" fill="#212225"/>
-        <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500"/>
-        <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500"/>
+      <svg x-show="currentIndex == 3" x-cloak width="32" height="32" viewBox="0 0 32 32" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="4" fill="#212225" />
+        <path d="M16 9C12.134 9 9 12.134 9 16C9 19.866 12.134 23 16 23L16 9Z" fill="#FFF500" stroke="#FFF500" />
+        <path d="M16 9C19.866 9 23 12.134 23 16C23 19.866 19.866 23 16 23" stroke="#FFF500" />
       </svg>
-        
-    </div>
     
+    </divc>
         </div>
     
         <!-- prettier-ignore -->
         <div id="hamburger" class="order-3 lg:hidden">
-          <button
-            @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
+          <button @click.prevent="$store.header.showMenu = !$store.header.showMenu, $store.header.showSubmenu = false"
             class="flex justify-between px-2 py-4">
-            <svg
-              x-show="!$store.header.showMenu"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
+            <svg x-show="!$store.header.showMenu" width="40" height="40" viewBox="0 0 40 40" fill="none"
               xmlns="http://www.w3.org/2000/svg">
-              <line
-                x1="5.5"
-                y1="11.5"
-                x2="34.5"
-                y2="11.5"
-                stroke="#2E2E30"
-                stroke-linecap="square" />
-              <line
-                x1="5.5"
-                y1="19.5"
-                x2="34.5"
-                y2="19.5"
-                stroke="#2E2E30"
-                stroke-linecap="square" />
-              <line
-                x1="20.5"
-                y1="27.5"
-                x2="34.5"
-                y2="27.5"
-                stroke="#2E2E30"
-                stroke-linecap="square" />
+              <line x1="5.5" y1="11.5" x2="34.5" y2="11.5" stroke="#2E2E30" stroke-linecap="square" />
+              <line x1="5.5" y1="19.5" x2="34.5" y2="19.5" stroke="#2E2E30" stroke-linecap="square" />
+              <line x1="20.5" y1="27.5" x2="34.5" y2="27.5" stroke="#2E2E30" stroke-linecap="square" />
             </svg>
         
-            <svg
-              x-show="$store.header.showMenu"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
+            <svg x-show="$store.header.showMenu" x-cloak width="40" height="40" viewBox="0 0 40 40" fill="none"
               xmlns="http://www.w3.org/2000/svg">
-              <line
-                x1="10.7071"
-                y1="9.99982"
-                x2="30.0002"
-                y2="29.2929"
-                stroke="#212225"
-                stroke-linecap="square" />
-              <line
-                x1="11"
-                y1="29.2929"
-                x2="30.2927"
-                y2="9.9997"
-                stroke="#212225"
-                stroke-linecap="square" />
+              <line x1="10.7071" y1="9.99982" x2="30.0002" y2="29.2929" stroke="#212225" stroke-linecap="square" />
+              <line x1="11" y1="29.2929" x2="30.2927" y2="9.9997" stroke="#212225" stroke-linecap="square" />
             </svg>
           </button>
         </div>
-    
       </div>
     
       <!-- prettier-ignore -->
@@ -470,7 +396,7 @@
       </div>
       <!---->
     </header>
-    <section class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8">
+    <section class="container flex flex-col md:flex-row px-4  md:mt-4 lg:mt-0 lg:px-0 gap-8">
 
       <!-- prettier-ignore -->
       <figure class="relative grid grid-flow-row gap-4 shadow-ir-default lg:grid-cols-2 lg:gap-8 lg:min-h-[370px] w-full"
@@ -522,6 +448,8 @@
         </div>
       </figure>
       <aside class="flex flex-col lg:max-w-[272px]">
+        <!-- prettier-ignore -->
+
         <div
           class="mt-4 flex items-center gap-x-4 whitespace-nowrap rounded-md bg-slate-100 p-3 text-lg lg:mt-0">
           <div class="logo">
@@ -556,15 +484,14 @@
             Lasīt
           </a>
         </div>
-        <div class="sidebar-item flex flex-col gap-4 rounded-md pt-4">
+
+        <div class="post-list-item-1 flex flex-col gap-4 rounded-md pt-4">
           <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
-            <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight"
-              contenteditable="true">
+            <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight" contenteditable="true">
               Miljonu vērts jautājums?
             </a>
             <a href="article.html?slug=miljonu-verts-jautajums" class="font-serif uppercase text-ir-light-gray"
-              contenteditable="true">Pauls
-              Raudseps</a>
+              contenteditable="true">Pauls Raudseps</a>
             <a
               class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
               x-data="{ saved: false }"
@@ -600,15 +527,13 @@
             </a>
           </div>
         </div>
-        <div class="sidebar-item py-t flex flex-col gap-4 rounded-md">
+        <div class="post-list-item-1 flex flex-col gap-4 rounded-md pt-4">
           <div class="flex flex-wrap justify-between border border-b-0 border-l-0 border-r-0 border-t-slate-200 p-4">
-            <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight"
-              contenteditable="true">
+            <a href="article.html" class="title w-full pb-4 font-serif-bold text-xl leading-tight" contenteditable="true">
               Mazas cilts spēks
             </a>
-            <a href="article.html?slug=mazas-cilts-speks" class="font-serif uppercase text-ir-light-gray"
-              contenteditable="true">Aivars
-              Ozoliņš</a>
+            <a href="article.html?slug=miljonu-verts-jautajums" class="font-serif uppercase text-ir-light-gray"
+              contenteditable="true">Aivars Ozoliņš</a>
             <a
               class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
               x-data="{ saved: false }"
@@ -643,13 +568,12 @@
               </svg>
             </a>
           </div>
-        </div>
-      </aside>
+        </div>      </aside>
     </section>
 
-    <section class="container flex flex-col lg:flex-row px-4 lg:px-0 gap-8 items-stretch">
+    <section class="container flex flex-col md:flex-row px-4 lg:px-0 gap-8 items-stretch">
       <!-- prettier-ignore -->
-      <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md flex-grow [&>h1]:text-blue-500">
+      <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default flex-grow [&>h1]:text-blue-500">
       
       
           <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -660,8 +584,8 @@
       
         <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
           <div class="flex w-full justify-between">
-              <a href="category.html"
-                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Tēma</a>
+            <a href="category.html"
+              class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Tēma</a>
             <a
               class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
               x-data="{ saved: false }"
@@ -696,19 +620,20 @@
               </svg>
             </a>
           </div>
-          <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+          <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
             @click="window.location='article.html?slug=vairs-neticam'" contenteditable="true">
             «Vairs neticam»
           </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-              Pirms 10 gadiem Zolitūdē iegruva lielveikala Maxima jumts, izdzēšot 54 dzīvības. Cietušie par «spļāvienu sejā» sauc faktu, ka tiesā par vainīgu atzīts tikai viens atbildīgais — būvinženieris, kas smagi kļūdījās aprēķinos. 
-            </p>
-          <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+          <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+            Pirms 10 gadiem Zolitūdē iegruva lielveikala Maxima jumts, izdzēšot 54 dzīvības. Cietušie par «spļāvienu sejā» sauc faktu, ka tiesā par vainīgu atzīts tikai viens atbildīgais — būvinženieris, kas smagi kļūdījās aprēķinos. 
+          </p>
+          <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+            contenteditable="true">
             Baiba Litvina</a>
         </div>
       </figure>
       <!-- prettier-ignore -->
-      <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md flex-grow [&>h1]:text-blue-500">
+      <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default flex-grow [&>h1]:text-blue-500">
       
       
           <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -719,8 +644,8 @@
       
         <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
           <div class="flex w-full justify-between">
-              <a href="category.html"
-                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Analīze</a>
+            <a href="category.html"
+              class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Analīze</a>
             <a
               class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
               x-data="{ saved: false }"
@@ -755,70 +680,74 @@
               </svg>
             </a>
           </div>
-          <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+          <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
             @click="window.location='article.html?slug=spele-bez-rezultata'" contenteditable="true">
             Spēle bez rezultāta
           </h1>
-            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-              Būvkompānija Velve, pār kuru krīt korupcijā apsūdzētā Māra Martinsona ēna, nespēj laikā uzbūvēt Stradiņa slimnīcas jauno korpusu.
-            </p>
-          <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+          <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+            Būvkompānija Velve, pār kuru krīt korupcijā apsūdzētā Māra Martinsona ēna, nespēj laikā uzbūvēt Stradiņa slimnīcas jauno korpusu.
+          </p>
+          <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+            contenteditable="true">
             Ilze Šķietniece</a>
         </div>
       </figure>
-      <div class="spotlight-block bg-slate-100 lg:max-w-[272px]">
-        <div class="spotlight-header flex items-center gap-x-16 rounded-tl-md rounded-tr-md bg-ir-red p-4 lg:gap-x-8">
-          <div class="logo">
-            <svg width="45" height="30" viewBox="0 0 45 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M41.8066 27.5189C41.6923 27.5189 41.578 27.4949 41.4637 27.4529C41.0005 27.2612 40.784 26.7398 40.9765 26.2783C42.4502 22.7126 43.2021 18.9192 43.2021 15.0059C43.2021 11.0926 42.4562 7.29313 40.9765 3.7334C40.784 3.27196 41.0065 2.75058 41.4637 2.55881C41.9269 2.37304 42.4502 2.58878 42.6427 3.04423C44.2066 6.82569 45.0067 10.8529 45.0067 15.0059C45.0067 19.1589 44.2127 23.1861 42.6427 26.9675C42.4983 27.3151 42.1615 27.5249 41.8066 27.5249V27.5189Z"
-                fill="white" />
-              <path
-                d="M37.1559 25.1878C37.0416 25.1878 36.9274 25.1638 36.8191 25.1219C36.3559 24.9361 36.1333 24.4147 36.3198 23.9533C37.4627 21.1187 38.0402 18.1043 38.0402 15C38.0402 11.8957 37.4627 8.88136 36.3198 6.04676C36.1333 5.58531 36.3559 5.06394 36.8191 4.87816C37.2823 4.69238 37.8056 4.91412 37.992 5.37556C39.2192 8.4259 39.8447 11.662 39.8447 15C39.8447 18.338 39.2192 21.5741 37.992 24.6245C37.8537 24.978 37.5108 25.1878 37.1559 25.1878Z"
-                fill="white" />
-              <path
-                d="M32.7898 23.0006C32.6815 23.0006 32.5732 22.9826 32.4649 22.9407C32.0018 22.7609 31.7672 22.2395 31.9476 21.7781C32.7838 19.6206 33.2048 17.3374 33.2048 15.0002C33.2048 12.663 32.7838 10.3797 31.9476 8.22232C31.7672 7.76087 32.0018 7.2395 32.4649 7.05971C32.9281 6.87993 33.4514 7.11365 33.6319 7.57509C34.5462 9.94225 35.0094 12.4353 35.0094 15.0002C35.0094 17.5651 34.5462 20.0581 33.6319 22.4253C33.4936 22.7848 33.1507 23.0006 32.7898 23.0006Z"
-                fill="white" />
-              <g clip-path="url(#clip0_2699_5551)">
+      <aside class="spotlight-block bg-slate-100 md:max-w-[272px]">
+        <div class="post-spotlight" x-data="">
+          <div class="spotlight-header flex items-center gap-x-16 rounded-tl-md rounded-tr-md bg-ir-red p-4 lg:gap-x-8">
+            <div class="logo">
+              <svg width="45" height="30" viewBox="0 0 45 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M15 0C6.6875 0 0 6.6875 0 15C0 23.3125 6.6875 30 15 30C23.3125 30 30 23.3125 30 15C30 6.6875 23.3125 0 15 0Z"
+                  d="M41.8066 27.5189C41.6923 27.5189 41.578 27.4949 41.4637 27.4529C41.0005 27.2612 40.784 26.7398 40.9765 26.2783C42.4502 22.7126 43.2021 18.9192 43.2021 15.0059C43.2021 11.0926 42.4562 7.29313 40.9765 3.7334C40.784 3.27196 41.0065 2.75058 41.4637 2.55881C41.9269 2.37304 42.4502 2.58878 42.6427 3.04423C44.2066 6.82569 45.0067 10.8529 45.0067 15.0059C45.0067 19.1589 44.2127 23.1861 42.6427 26.9675C42.4983 27.3151 42.1615 27.5249 41.8066 27.5249V27.5189Z"
                   fill="white" />
                 <path
-                  d="M10.2762 5.18164C11.2788 5.18164 12.156 6.05559 12.156 7.05439C12.156 8.11562 11.3414 8.98957 10.2762 8.98957C9.27371 8.98957 8.39648 8.11562 8.39648 7.05439C8.39648 6.05559 9.21105 5.18164 10.2762 5.18164Z"
-                  fill="#ED2926" />
+                  d="M37.1559 25.1878C37.0416 25.1878 36.9274 25.1638 36.8191 25.1219C36.3559 24.9361 36.1333 24.4147 36.3198 23.9533C37.4627 21.1187 38.0402 18.1043 38.0402 15C38.0402 11.8957 37.4627 8.88136 36.3198 6.04676C36.1333 5.58531 36.3559 5.06394 36.8191 4.87816C37.2823 4.69238 37.8056 4.91412 37.992 5.37556C39.2192 8.4259 39.8447 11.662 39.8447 15C39.8447 18.338 39.2192 21.5741 37.992 24.6245C37.8537 24.978 37.5108 25.1878 37.1559 25.1878Z"
+                  fill="white" />
                 <path
-                  d="M23.372 15.5441C22.1815 15.5441 21.4922 14.5453 21.6175 13.6714C21.6802 13.2344 21.8682 12.735 21.6802 12.2356C21.4296 11.6738 20.803 11.7362 20.1137 12.0483C19.1738 12.4853 18.4219 13.7338 18.4219 15.1696V19.4145V20.0387C18.4846 21.3496 19.1739 22.0363 20.3644 22.0363V22.5357H13.5972H6.83008V22.0363C7.95794 22.0363 8.64718 21.2872 8.7725 20.0387L8.83516 19.2272V14.9199C8.83516 14.2956 8.64718 13.7338 8.27123 13.4217C7.89528 13.1095 7.45667 12.9223 6.89274 12.9847V12.4853C6.89274 12.4853 11.5921 10.8622 11.5921 10.7998C11.6548 10.7998 11.6548 10.7998 11.6548 10.8622V19.4145V20.0387C11.7175 21.3496 12.4067 22.0363 13.5972 22.0363C14.7251 22.0363 15.4143 21.3496 15.5396 20.0387L15.6023 19.2272V14.9199C15.6023 14.2956 15.4143 13.7338 15.0384 13.4217C14.6624 13.1095 14.2238 12.9223 13.6599 12.9847V12.4853L17.6074 11.1119L17.67 11.1744C17.7954 11.3616 18.234 11.9859 18.4219 12.7974C18.8606 12.3604 19.4245 11.861 20.0511 11.4865C20.615 11.1744 21.2416 10.9247 21.9308 10.9247C22.8707 10.9247 23.7479 11.2992 24.3745 11.861C24.8758 12.298 25.1891 13.0471 25.1891 13.6714C25.1891 14.5453 24.5625 15.5441 23.372 15.5441Z"
-                  fill="#ED2926" />
-              </g>
-              <defs>
-                <clipPath id="clip0_2699_5551">
-                  <rect width="30.0762" height="29.964" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+                  d="M32.7898 23.0006C32.6815 23.0006 32.5732 22.9826 32.4649 22.9407C32.0018 22.7609 31.7672 22.2395 31.9476 21.7781C32.7838 19.6206 33.2048 17.3374 33.2048 15.0002C33.2048 12.663 32.7838 10.3797 31.9476 8.22232C31.7672 7.76087 32.0018 7.2395 32.4649 7.05971C32.9281 6.87993 33.4514 7.11365 33.6319 7.57509C34.5462 9.94225 35.0094 12.4353 35.0094 15.0002C35.0094 17.5651 34.5462 20.0581 33.6319 22.4253C33.4936 22.7848 33.1507 23.0006 32.7898 23.0006Z"
+                  fill="white" />
+                <g clip-path="url(#clip0_2699_5551)">
+                  <path
+                    d="M15 0C6.6875 0 0 6.6875 0 15C0 23.3125 6.6875 30 15 30C23.3125 30 30 23.3125 30 15C30 6.6875 23.3125 0 15 0Z"
+                    fill="white" />
+                  <path
+                    d="M10.2762 5.18164C11.2788 5.18164 12.156 6.05559 12.156 7.05439C12.156 8.11562 11.3414 8.98957 10.2762 8.98957C9.27371 8.98957 8.39648 8.11562 8.39648 7.05439C8.39648 6.05559 9.21105 5.18164 10.2762 5.18164Z"
+                    fill="#ED2926" />
+                  <path
+                    d="M23.372 15.5441C22.1815 15.5441 21.4922 14.5453 21.6175 13.6714C21.6802 13.2344 21.8682 12.735 21.6802 12.2356C21.4296 11.6738 20.803 11.7362 20.1137 12.0483C19.1738 12.4853 18.4219 13.7338 18.4219 15.1696V19.4145V20.0387C18.4846 21.3496 19.1739 22.0363 20.3644 22.0363V22.5357H13.5972H6.83008V22.0363C7.95794 22.0363 8.64718 21.2872 8.7725 20.0387L8.83516 19.2272V14.9199C8.83516 14.2956 8.64718 13.7338 8.27123 13.4217C7.89528 13.1095 7.45667 12.9223 6.89274 12.9847V12.4853C6.89274 12.4853 11.5921 10.8622 11.5921 10.7998C11.6548 10.7998 11.6548 10.7998 11.6548 10.8622V19.4145V20.0387C11.7175 21.3496 12.4067 22.0363 13.5972 22.0363C14.7251 22.0363 15.4143 21.3496 15.5396 20.0387L15.6023 19.2272V14.9199C15.6023 14.2956 15.4143 13.7338 15.0384 13.4217C14.6624 13.1095 14.2238 12.9223 13.6599 12.9847V12.4853L17.6074 11.1119L17.67 11.1744C17.7954 11.3616 18.234 11.9859 18.4219 12.7974C18.8606 12.3604 19.4245 11.861 20.0511 11.4865C20.615 11.1744 21.2416 10.9247 21.9308 10.9247C22.8707 10.9247 23.7479 11.2992 24.3745 11.861C24.8758 12.298 25.1891 13.0471 25.1891 13.6714C25.1891 14.5453 24.5625 15.5441 23.372 15.5441Z"
+                    fill="#ED2926" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2699_5551">
+                    <rect width="30.0762" height="29.964" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="title pt-1 font-serif uppercase leading-none text-white">Svarīgākais</h2>
           </div>
-          <h2 class="title pt-1 font-serif uppercase leading-none text-white">Svarīgākais</h2>
+          <div class="spotlight-body px-5 py-8" contenteditable="true">
+            <h3 class="pb-14">
+              Sadarbosies ieroču ražotāji Ukrainai;
+              <br />
+              Slovākijā vēlēšanās uzvarējuši kremlini;
+              <br />
+              Divi pasaules rekordi Rīgā
+            </h3>
+            <p class="border-t border-slate-300 py-4 font-serif text-lg ">
+              <b>Īsi par svarīgāko ik rītu —</b>
+              pieraksties jaunumu vēstulei Ir Svarīgākais!
+            </p>
+            <div class="temp-wrap w-1/2"><a
+          href=""
+          class="button block w-full cursor-pointer whitespace-nowrap rounded-md bg-ir-dark-gray px-7 py-3 text-center font-serif text-white transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs  py-[0.5rem]" >
+          Pierakstīties
+        </a>
         </div>
-        <div class="spotlight-body px-5 py-8" contenteditable="true">
-          <h3 class="pb-14">
-            Sadarbosies ieroču ražotāji Ukrainai;
-            <br />
-            Slovākijā vēlēšanās uzvarējuši kremlini;
-            <br />
-            Divi pasaules rekordi Rīgā
-          </h3>
-          <p class="border-t border-slate-300 py-4 font-serif text-lg ">
-            <b>Īsi par svarīgāko ik rītu —</b>
-            pieraksties jaunumu vēstulei Ir Svarīgākais!
-          </p>
-          <div class="temp-wrap w-1/2"><a
-  href=""
-  class="button block w-full cursor-pointer whitespace-nowrap rounded-md bg-ir-dark-gray px-7 py-3 text-center font-serif text-white transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-ir-red lg:max-w-xs  py-[0.5rem]" >
-  Pierakstīties
-</a>
-</div>
+          </div>
         </div>
-      </div>
+        
+        </div>      </aside>
 
     </section>
 
@@ -827,208 +756,204 @@
       <img src="./assets/banner-3a695064.jpg" class="h-40 w-full object-cover lg:h-auto lg:w-10/12" alt="" />
     </section>
 
-    <section id="cards-1/3">
-      <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
-        <!-- prettier-ignore -->
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-        
-        
-            <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
-              style="background-image: url('./assets/ArtursKruzkops_Salmane_19-969564dd.png')" role="link" x-data
-              @click="window.location='article.html?slug=varbut-esmu-traks-varbut-drosmigs'">
-            </div>
-        
-        
-          <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
-            <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Slavenība</a>
-              <a
-                class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                x-data="{ saved: false }"
-                @click="saved = ! saved">
-                <svg
-                  x-show="!saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                    stroke="#73757A"
-                    stroke-linejoin="round" />
-                </svg>
-              
-                <svg
-                  x-cloak
-                  x-show="saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                    fill="white"
-                    stroke="#212225"
-                    stroke-linejoin="round" />
-                  <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                </svg>
-              </a>
-            </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
-              @click="window.location='article.html?slug=varbut-esmu-traks-varbut-drosmigs'" contenteditable="true">
-              Varbūt esmu traks, varbūt drosmīgs
-            </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Arturs Krūzkops (41) nominēts Spēlmaņu nakts balvai par lomu Nacionālajā teātrī, kur strādājis gandrīz 20 gadus. Nesen viņš kļuvis par Dailes teātra aktieri un 16. novembrī debitē uz lielās skatuves Raiņa lomā
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
-              Laura Dumbere</a>
+    <section class="container grid grid-flow-row gap-4 px-4 md:grid-cols-3 lg:grid-cols-3 lg:gap-8 lg:px-0 pt-4 pb-11">
+      <!-- prettier-ignore -->
+      <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
+      
+      
+          <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+            style="background-image: url('./assets/ArtursKruzkops_Salmane_19-969564dd.png')" role="link" x-data
+            @click="window.location='article.html?slug=varbut-esmu-traks-varbut-drosmigs'">
           </div>
-        </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-        
-        
-            <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
-              style="background-image: url('./assets/IljaStoligvo_Salmane_3-ad34da39.png')" role="link" x-data
-              @click="window.location='article.html?slug=ilja-niks-stoligvo-divu-eiropas-jauno-zinatnieku-konkursu-laureats'">
-            </div>
-        
-        
-          <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
-            <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Intervija</a>
-              <a
-                class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                x-data="{ saved: false }"
-                @click="saved = ! saved">
-                <svg
-                  x-show="!saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                    stroke="#73757A"
-                    stroke-linejoin="round" />
-                </svg>
-              
-                <svg
-                  x-cloak
-                  x-show="saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                    fill="white"
-                    stroke="#212225"
-                    stroke-linejoin="round" />
-                  <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                </svg>
-              </a>
-            </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
-              @click="window.location='article.html?slug=ilja-niks-stoligvo-divu-eiropas-jauno-zinatnieku-konkursu-laureats'" contenteditable="true">
-              Iļja Niks Stoligvo, divu Eiropas jauno zinātnieku konkursu laureāts
-            </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Hannoverē notikušajā Eiropas fizikas olimpiādē Iļja (18) šovasar ieguva bronzas medaļu, bet nupat septembrī Briselē saņēma speciālbalvu no pētniecības centra ESRF
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
-              Anda Burve-Rozīte</a>
+      
+      
+        <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+          <div class="flex w-full justify-between">
+            <a href="category.html"
+              class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Slavenība</a>
+            <a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-cloak
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
           </div>
-        </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
-        
-        
-            <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
-              style="background-image: url('./assets/Family-cca6fa4d.png')" role="link" x-data
-              @click="window.location='article.html?slug=ticot-uzvarai-ka-iemilet-valodu'">
-            </div>
-        
-        
-          <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
-            <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Ārpolitika</a>
-              <a
-                class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
-                x-data="{ saved: false }"
-                @click="saved = ! saved">
-                <svg
-                  x-show="!saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
-                    stroke="#73757A"
-                    stroke-linejoin="round" />
-                </svg>
-              
-                <svg
-                  x-cloak
-                  x-show="saved"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
-                    fill="white"
-                    stroke="#212225"
-                    stroke-linejoin="round" />
-                  <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
-                </svg>
-              </a>
-            </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
-              @click="window.location='article.html?slug=ticot-uzvarai-ka-iemilet-valodu'" contenteditable="true">
-              Ticot uzvarai.* Kā iemīlēt valodu
-            </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Luhanskas apgabalā dzimušais Artūrs Proidakovs iekļauts pasaulē labāko skolotāju sarakstā
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
-              Darina Rogačuka, speciāli Ir </a>
+          <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
+            @click="window.location='article.html?slug=varbut-esmu-traks-varbut-drosmigs'" contenteditable="true">
+            Varbūt esmu traks, varbūt drosmīgs
+          </h1>
+          <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+            Arturs Krūzkops (41) nominēts Spēlmaņu nakts balvai par lomu Nacionālajā teātrī, kur strādājis gandrīz 20 gadus. Nesen viņš kļuvis par Dailes teātra aktieri un 16. novembrī debitē uz lielās skatuves Raiņa lomā
+          </p>
+          <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+            contenteditable="true">
+            Laura Dumbere</a>
+        </div>
+      </figure>
+      <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
+      
+      
+          <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+            style="background-image: url('./assets/IljaStoligvo_Salmane_3-ad34da39.png')" role="link" x-data
+            @click="window.location='article.html?slug=ilja-niks-stoligvo-divu-eiropas-jauno-zinatnieku-konkursu-laureats'">
           </div>
-        </figure>      </div>
-    </section>
+      
+      
+        <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+          <div class="flex w-full justify-between">
+            <a href="category.html"
+              class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Intervija</a>
+            <a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-cloak
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
+          </div>
+          <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
+            @click="window.location='article.html?slug=ilja-niks-stoligvo-divu-eiropas-jauno-zinatnieku-konkursu-laureats'" contenteditable="true">
+            Iļja Niks Stoligvo, divu Eiropas jauno zinātnieku konkursu laureāts
+          </h1>
+          <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+            Hannoverē notikušajā Eiropas fizikas olimpiādē Iļja (18) šovasar ieguva bronzas medaļu, bet nupat septembrī Briselē saņēma speciālbalvu no pētniecības centra ESRF
+          </p>
+          <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+            contenteditable="true">
+            Anda Burve-Rozīte</a>
+        </div>
+      </figure>
+      <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
+      
+      
+          <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
+            style="background-image: url('./assets/Family-cca6fa4d.png')" role="link" x-data
+            @click="window.location='article.html?slug=ticot-uzvarai-ka-iemilet-valodu'">
+          </div>
+      
+      
+        <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
+          <div class="flex w-full justify-between">
+            <a href="category.html"
+              class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Ārpolitika</a>
+            <a
+              class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
+              x-data="{ saved: false }"
+              @click="saved = ! saved">
+              <svg
+                x-show="!saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.8904 19.182L10.5 24.7627V6.5H22V24.7627L16.6096 19.182C16.5154 19.0845 16.3856 19.0294 16.25 19.0294C16.1144 19.0294 15.9846 19.0845 15.8904 19.182Z"
+                  stroke="#73757A"
+                  stroke-linejoin="round" />
+              </svg>
+            
+              <svg
+                x-cloak
+                x-show="saved"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6334 19.1894L10.5 24.7254V6.5H21.5V24.7254L16.3666 19.1894C16.272 19.0874 16.1392 19.0294 16 19.0294C15.8608 19.0294 15.728 19.0874 15.6334 19.1894Z"
+                  fill="white"
+                  stroke="#212225"
+                  stroke-linejoin="round" />
+                <circle cx="21.5" cy="11.5" r="2.5" fill="#ED2926" />
+              </svg>
+            </a>
+          </div>
+          <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
+            @click="window.location='article.html?slug=ticot-uzvarai-ka-iemilet-valodu'" contenteditable="true">
+            Ticot uzvarai.* Kā iemīlēt valodu
+          </h1>
+          <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+            Luhanskas apgabalā dzimušais Artūrs Proidakovs iekļauts pasaulē labāko skolotāju sarakstā
+          </p>
+          <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+            contenteditable="true">
+            Darina Rogačuka, speciāli Ir </a>
+        </div>
+      </figure>    </section>
 
-    <section id="guest-authors" class="bg-slate-100 py-20">
-      <h1 class="title container mb-8 pl-4 lg:pl-0">Viesautori</h1>
+    <section id="guest-authors" class="bg-slate-100 py-12 lg:py-20">
       <div class="container">
-        <div class="swiper swiper-1">
+        <h1 class="title pl-4">Viesautori</h1>
+        <div class="swiper swiper-1 mt-4">
           <div class="swiper-wrapper">
             <!-- prettier-ignore -->
             <figure class="guest-card swiper-slide">
               <div
                 class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
-                <h1 
-                  class="text-[22px] leading-7 cursor-pointer"  
-                  contenteditable="true"
-                  role="link"
-                  x-data
+                <h1 class="text-[22px] leading-7 cursor-pointer" contenteditable="true" role="link" x-data
                   @click="window.location='article.html?slug=izraela-ukraina-palestina-vertibas-un-realpolitika'">Izraēla, Ukraina, Palestīna: vērtības un reālpolitika</h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800  empty:hidden">
                   10. novembrī ASV valsts sekretārs Entonijs Blinkens Izraēlas–Hamās konflikta kontekstā nāca klajā ar paziņojumu, citu lietu starpā atzīmējot, ka “daudz par daudz palestīniešu ir tikuši nogalināti”.
                 </p>
                 <div class="flex items-end">
                   <a href="category.html"
-                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
-                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0"  contenteditable="true">Aldis Austers, Māris Graudiņš*</span></a
-                  >
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"><span
+                      class="font-serif-bold uppercase pl-4 lg:pl-0 empty:hidden" contenteditable="true">Aldis Austers, Māris Graudiņš*</span></a>
                 </div>
                 <div class="flex items-end uppercase">
                   <a
@@ -1066,24 +991,18 @@
                   </a>
                 </div>
               </div>
-            </figure>
-            <figure class="guest-card swiper-slide">
+            </figure>            <figure class="guest-card swiper-slide">
               <div
                 class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
-                <h1 
-                  class="text-[22px] leading-7 cursor-pointer"  
-                  contenteditable="true"
-                  role="link"
-                  x-data
+                <h1 class="text-[22px] leading-7 cursor-pointer" contenteditable="true" role="link" x-data
                   @click="window.location='article.html?slug=garais-cels-finansu-pasaules-kapas'">Garais ceļš finanšu pasaules kāpās</h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800  empty:hidden">
                   Visā mūsu dzīves gaitā labklājību ietekmē notikumi, kurus iepriekš nevarēja paredzēt. Piemēram, mūsu senčiem liels risks bija laika apstākļi.
                 </p>
                 <div class="flex items-end">
                   <a href="category.html"
-                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
-                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0"  contenteditable="true">Pēteris Strautiņš</span></a
-                  >
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"><span
+                      class="font-serif-bold uppercase pl-4 lg:pl-0 empty:hidden" contenteditable="true">Pēteris Strautiņš</span></a>
                 </div>
                 <div class="flex items-end uppercase">
                   <a
@@ -1121,24 +1040,18 @@
                   </a>
                 </div>
               </div>
-            </figure>
-            <figure class="guest-card swiper-slide">
+            </figure>            <figure class="guest-card swiper-slide">
               <div
                 class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
-                <h1 
-                  class="text-[22px] leading-7 cursor-pointer"  
-                  contenteditable="true"
-                  role="link"
-                  x-data
+                <h1 class="text-[22px] leading-7 cursor-pointer" contenteditable="true" role="link" x-data
                   @click="window.location='article.html?slug=latvija-bez-bezpajumtniecibas-2030'">Latvija bez bezpajumtniecības 2030</h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800  empty:hidden">
                   Bezpajumtniecība bieži tiek uzlūkota kā dabiska parādība, kuru veido situācija ekonomikā, kas mijas ar personu neveiksmīgām dzīves izvēlēm, kur daudzi neredz iespējas mainīt ne vienu, ne otru.
                 </p>
                 <div class="flex items-end">
                   <a href="category.html"
-                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
-                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0"  contenteditable="true">Kārlis Lakševics</span></a
-                  >
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"><span
+                      class="font-serif-bold uppercase pl-4 lg:pl-0 empty:hidden" contenteditable="true">Kārlis Lakševics</span></a>
                 </div>
                 <div class="flex items-end uppercase">
                   <a
@@ -1176,24 +1089,18 @@
                   </a>
                 </div>
               </div>
-            </figure>
-            <figure class="guest-card swiper-slide">
+            </figure>            <figure class="guest-card swiper-slide">
               <div
                 class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
-                <h1 
-                  class="text-[22px] leading-7 cursor-pointer"  
-                  contenteditable="true"
-                  role="link"
-                  x-data
+                <h1 class="text-[22px] leading-7 cursor-pointer" contenteditable="true" role="link" x-data
                   @click="window.location='article.html?slug=bibliotekarus-nedrikst-iesaistit-cenzuras-darbibas'">Bibliotekārus nedrīkst iesaistīt cenzūras darbībās</h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800  empty:hidden">
                   Latvijas Nacionālās bibliotēkas (LNB) un Latvijas bibliotekāru biedrības (LBB) viens no pamatuzdevumiem ir bibliotēku interešu aizstāvība, kā arī vērtību un principu,
                 </p>
                 <div class="flex items-end">
                   <a href="category.html"
-                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
-                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0"  contenteditable="true"></span></a
-                  >
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"><span
+                      class="font-serif-bold uppercase pl-4 lg:pl-0 empty:hidden" contenteditable="true"></span></a>
                 </div>
                 <div class="flex items-end uppercase">
                   <a
@@ -1231,24 +1138,18 @@
                   </a>
                 </div>
               </div>
-            </figure>
-            <figure class="guest-card swiper-slide">
+            </figure>            <figure class="guest-card swiper-slide">
               <div
                 class="flex h-64 lg:h-80 flex-row flex-wrap justify-between gap-3 border-l border-slate-300 px-4 mx-4 lg:mx-0 py-4 pb-0">
-                <h1 
-                  class="text-[22px] leading-7 cursor-pointer"  
-                  contenteditable="true"
-                  role="link"
-                  x-data
+                <h1 class="text-[22px] leading-7 cursor-pointer" contenteditable="true" role="link" x-data
                   @click="window.location='article.html?slug=bez-ilgtermina-elektroenergijas-pirkuma-ligumiem-neiztikt'">Bez ilgtermiņa elektroenerģijas pirkuma līgumiem neiztikt</h1>
-                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800">
+                <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800  empty:hidden">
                   Kas motivē uzņēmumus pasaulē parakstīt ilgtermiņa korporatīvos elektroenerģijas pirkuma līgumus atjaunīgās enerģijas jomā?
                 </p>
                 <div class="flex items-end">
                   <a href="category.html"
-                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"
-                    ><span class="font-serif-bold uppercase pl-4 lg:pl-0"  contenteditable="true">Alnis Bāliņš</span></a
-                  >
+                    class="relative before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-full pt-0.5 before:w-[3px] before:bg-ir-red"><span
+                      class="font-serif-bold uppercase pl-4 lg:pl-0 empty:hidden" contenteditable="true">Alnis Bāliņš</span></a>
                 </div>
                 <div class="flex items-end uppercase">
                   <a
@@ -1286,8 +1187,7 @@
                   </a>
                 </div>
               </div>
-            </figure>
-          </div>
+            </figure>          </div>
           <div class="swiper-pagination mt-12 max-w-[70px] mx-auto"></div>
         </div>
         <div class="relative w-full bg-slate-700">
@@ -1297,12 +1197,12 @@
       </div>
     </section>
 
-    <section id="media" class="flex flex-col items-center px-4 lg:px-0">
-      <div class="container my-20 flex-row gap-14 lg:flex">
+    <section id="media" class="flex flex-col items-center px-4 lg:px-0 py-12 lg:py-20">
+      <div class="container flex-row gap-14 lg:flex">
         <div id="podcasts" class="lg:w-3/5">
           <div
             class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">
-            <h1 class="title">Raidieraksti</h1>
+            <h1 class="title lg:pl-4">Raidieraksti</h1>
             <div><a
   href="podcasts.html"
   class="inline-flex items-center lg:justify-end font-serif text-ir-red underline-offset-2 hover:underline">
@@ -1337,16 +1237,11 @@
             class="container flex flex-col pb-4 lg:items-center lg:flex-row flex-nowrap whitespace-nowrap justify-between">
             <h1 class="title">Karikatūra</h1>
           </div>
-          
           <div class="flex flex-col items-center justify-center  bg-white shadow-ir-default" x-data="caricatures">
-            <div
-              class="relative mx-auto w-full h-full"
-              x-data="caricatures">
+            <div class="relative mx-auto w-full h-full" x-data="caricatures">
               <!-- Slides -->
               <template x-for="slide in slides" :key="slide.id">
-                <div
-                  x-show="activeSlide === slide.id"
-                  class="w-full h-[350px] flex flex-col items-center justify-center">
+                <div x-show="activeSlide === slide.id" class="w-full h-[350px] flex flex-col items-center justify-center">
                   <a href="caricatures.html?cat=Karikatūras">
                     <img :src="slide.pic" alt="" class="flex-grow">
                   </a>
@@ -1357,23 +1252,11 @@
               </template>
           
               <!-- Buttons -->
-              <div
-                class="bottom-0 flex w-full items-center justify-center gap-2 pt-6 pb-2 px-2">
+              <div class="bottom-0 flex w-full items-center justify-center gap-2 pt-6 pb-2 px-2">
                 <div class="flex w-1/2 items-center justify-start">
-                  <button
-                    class=""
-                    x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M19 21L14 16L19 11"
-                        stroke="#2E2E30"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
+                  <button class="" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 21L14 16L19 11" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </button>
                 </div>
@@ -1385,39 +1268,26 @@
                     :class="{ 
                           'bg-ir-red': activeSlide === slide.id,
                           'bg-slate-400': activeSlide !== slide.id 
-                      }"
-                    x-on:click="activeSlide = slide.id"></button>
+                      }" x-on:click="activeSlide = slide.id"></button>
                 </template>
           
                 <div class="flex w-1/2 items-center justify-end">
-                  <button
-                    class=""
-                    x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M13 11L18 16L13 21"
-                        stroke="#2E2E30"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
+                  <button class="" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 11L18 16L13 21" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div>        </div>
       </div>
     </section>
 
-    <section id="cards-1/4" class="bg-slate-100 py-20">
+    <section id="cards-1/4" class="bg-slate-100 py-12 lg:py-20">
       <div
         class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
-        <h1 class="title">Bizness un ekonomika</h1>
+        <h1 class="title lg:pl-4">Bizness un ekonomika</h1>
         <div><a
   href=""
   class="inline-flex items-center lg:justify-end font-serif text-ir-red underline-offset-2 hover:underline">
@@ -1437,9 +1307,9 @@
 </a>
 </div>
       </div>
-      <div class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-4 lg:gap-8 lg:px-0">
+      <div class="container grid grid-flow-row gap-4 px-4 mt-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:px-0">
         <!-- prettier-ignore -->
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1450,6 +1320,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden"></a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1484,18 +1356,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-[23px] empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=starp-savejiem'" contenteditable="true">
               Starp savējiem
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Lai salīdzinoši nelielā tirgū attīstītos birža, svarīgi domāt par investīciju kultūras veidošanu un sabiedrības labklājības audzēšanu kopumā
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Lai salīdzinoši nelielā tirgū attīstītos birža, svarīgi domāt par investīciju kultūras veidošanu un sabiedrības labklājības audzēšanu kopumā
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Marija Leskavniece</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1506,6 +1379,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden"></a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1540,18 +1415,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-[23px] empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=gribu-but-investors'" contenteditable="true">
               Gribu būt investors!
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                5 idejas, ko apsvērt, ja vēlaties sākt ieguldīt
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              5 idejas, ko apsvērt, ja vēlaties sākt ieguldīt
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Indra Sprance</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1562,6 +1438,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden"></a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1596,18 +1474,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-[23px] empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=laiks-izpurinat-bankas'" contenteditable="true">
               Laiks izpurināt bankas
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Ovidijs Lukošus, IQ</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-44 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1618,6 +1497,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden"></a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1652,23 +1533,24 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-[23px]" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-[23px] empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=vai-draud-krize'" contenteditable="true">
               Vai draud krīze?
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Ilze Šķietniece</a>
           </div>
         </figure>      </div>
     </section>
 
-    <section id="cards-1/3">
+    <section id="cards-1/3" class="py-12 lg:py-20">
       <div
-        class="container flex flex-col py-4 lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
-        <h1 class="title">Pētījumi</h1>
+        class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
+        <h1 class="title lg:pl-4">Pētījumi</h1>
         <div><a
   href=""
   class="inline-flex items-center lg:justify-end font-serif text-ir-red underline-offset-2 hover:underline">
@@ -1688,9 +1570,9 @@
 </a>
 </div>
       </div>
-      <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+      <div class="container grid grid-flow-row gap-4 px-4 mt-4 md:grid-cols-3 lg:gap-8 lg:px-0">
         <!-- prettier-ignore -->
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1701,8 +1583,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1737,18 +1619,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=liekam-jaunu-bildi-ieksa'" contenteditable="true">
               «Liekam jaunu bildi iekšā»
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Lāčplēša dienā Rīgas dome sola sabiedrībai atvērt rekonstruēto Uzvaras parku.
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Lāčplēša dienā Rīgas dome sola sabiedrībai atvērt rekonstruēto Uzvaras parku.
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               </a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1759,8 +1642,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1795,18 +1678,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=modigais-cars'" contenteditable="true">
               Modīgais cars
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Daugavpils mērs acīmredzami dzīvo pāri saviem līdzekļiem, bet pilsētā bez opozīcijas un ar vājiem medijiem jūs to neuzzināsit
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Daugavpils mērs acīmredzami dzīvo pāri saviem līdzekļiem, bet pilsētā bez opozīcijas un ar vājiem medijiem jūs to neuzzināsit
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               </a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1817,8 +1701,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1853,23 +1737,24 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=gaida-jauno-paaudzi'" contenteditable="true">
               Gaida jauno paaudzi
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Kāpēc jaunākajā pasaules reitingā visas Latvijas zinātnes universitātes izkritušas no labāko tūkstoša? Un kā to labot?
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Kāpēc jaunākajā pasaules reitingā visas Latvijas zinātnes universitātes izkritušas no labāko tūkstoša? Un kā to labot?
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               </a>
           </div>
         </figure>      </div>
     </section>
 
-    <section id="cards-1/4" class="bg-slate-100 py-20">
+    <section id="cards-1/4" class="bg-slate-100 py-12 lg:py-20">
       <div
         class="container flex flex-col lg:flex-row px-4 lg:px-0 lg:items-end flex-nowrap whitespace-nowrap justify-between">
-        <h1 class="title">Recenzijas</h1>
+        <h1 class="title lg:pl-4">Recenzijas</h1>
         <div><a
   href=""
   class="inline-flex items-center lg:justify-end font-serif text-ir-red underline-offset-2 hover:underline">
@@ -1889,9 +1774,10 @@
 </a>
 </div>
       </div>
-      <div class="container grid grid-flow-row gap-4 px-4 py-8 lg:grid-cols-5 lg:gap-8 lg:px-0">
+      <div
+        class="container grid grid-flow-row gap-4 px-4 mt-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 lg:px-0">
         <!-- prettier-ignore -->
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1902,8 +1788,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1938,15 +1824,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-lg" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-lg empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=es-dziedu-tu-dziedi-kapec-nedzied-vini'" contenteditable="true">
               Es dziedu, tu dziedi. Kāpēc nedzied viņi?
             </h1>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Juta Ance Ķirķis</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -1957,8 +1847,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -1993,15 +1883,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-lg" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-lg empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=dazi-vardi-par-lokatora-sabruksanu'" contenteditable="true">
               Daži vārdi par Lokatora sabrukšanu
             </h1>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Zane Radzobe</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2012,8 +1906,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -2048,15 +1942,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-lg" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-lg empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=melnais-jaunums'" contenteditable="true">
               Melnais jaunums
             </h1>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Marija Leskavniece</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2067,8 +1965,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -2103,15 +2001,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-lg" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-lg empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=sveika-melanholija'" contenteditable="true">
               Šveika melanholija
             </h1>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Vilis Kasims</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default [&amp;&gt;.img-container]:h-32 [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2122,8 +2024,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -2158,26 +2060,30 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer text-lg" role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer text-lg empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=un-rits-bus-japienem-lai-kads-tas-naks'" contenteditable="true">
               Un rīts būs jāpieņem, lai kāds tas nāks
             </h1>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Edīte Tišheizere</a>
           </div>
         </figure>      </div>
     </section>
 
-    <section id="cards-1/4" class="py-20 bg-ir-black -mt-8">
+    <section id="cards-1/4" class="py-12 lg:py-20 bg-ir-black -mt-10">
       <div class="container flex items-end flex-nowrap whitespace-nowrap justify-between">
-        <h1 class="title text-gray-50 pl-4 lg:pl-0">Vēlēšanas 2024</h1>
+        <h1 class="title text-gray-50 pl-4">Vēlēšanas 2024</h1>
       </div>
       <div class="container gap-4 px-4 py-8 lg:gap-8 lg:px-0">
         <!-- prettier-ignore -->
         <div class="swiper swiper-2" pagination="true">
           <div class="swiper-wrapper flex items-stretch">
             <div class="swiper-slide">
-              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
               
               
                   <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2188,8 +2094,8 @@
               
                 <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
                   <div class="flex w-full justify-between">
-                      <a href="category.html"
-                        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                    <a href="category.html"
+                      class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
                     <a
                       class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                       x-data="{ saved: false }"
@@ -2224,19 +2130,20 @@
                       </svg>
                     </a>
                   </div>
-                  <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                  <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
                     @click="window.location='article.html?slug='" contenteditable="true">
                     Dace Rēķe, instagramā māca latviešu valodu
                   </h1>
-                    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                      Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
-                    </p>
-                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+                    Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
+                  </p>
+                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+                    contenteditable="true">
                     Laura Dumbere</a>
                 </div>
               </figure>            </div>
             <div class="swiper-slide">
-              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
               
               
                   <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2247,8 +2154,8 @@
               
                 <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
                   <div class="flex w-full justify-between">
-                      <a href="category.html"
-                        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                    <a href="category.html"
+                      class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
                     <a
                       class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                       x-data="{ saved: false }"
@@ -2283,19 +2190,20 @@
                       </svg>
                     </a>
                   </div>
-                  <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                  <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
                     @click="window.location='article.html?slug='" contenteditable="true">
                     Satriecošais spriedums Maximas lietā
                   </h1>
-                    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                      Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
-                    </p>
-                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+                    Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
+                  </p>
+                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+                    contenteditable="true">
                     Indra Sprance</a>
                 </div>
               </figure>            </div>
             <div class="swiper-slide">
-              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
               
               
                   <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2306,8 +2214,8 @@
               
                 <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
                   <div class="flex w-full justify-between">
-                      <a href="category.html"
-                        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                    <a href="category.html"
+                      class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
                     <a
                       class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                       x-data="{ saved: false }"
@@ -2342,19 +2250,20 @@
                       </svg>
                     </a>
                   </div>
-                  <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                  <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
                     @click="window.location='article.html?slug='" contenteditable="true">
                     Galvenā naudas atmazgāsānas
                   </h1>
-                    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                      Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
-                    </p>
-                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+                    Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi ...
+                  </p>
+                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+                    contenteditable="true">
                     Indra Sprance</a>
                 </div>
               </figure>            </div>
             <div class="swiper-slide">
-              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
               
               
                   <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2365,8 +2274,8 @@
               
                 <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
                   <div class="flex w-full justify-between">
-                      <a href="category.html"
-                        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                    <a href="category.html"
+                      class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
                     <a
                       class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                       x-data="{ saved: false }"
@@ -2401,19 +2310,20 @@
                       </svg>
                     </a>
                   </div>
-                  <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                  <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
                     @click="window.location='article.html?slug='" contenteditable="true">
                     Galvenā naudas atmazgāsānas
                   </h1>
-                    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                      Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
-                    </p>
-                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
+                  </p>
+                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+                    contenteditable="true">
                     Indra Sprance</a>
                 </div>
               </figure>            </div>
             <div class="swiper-slide h-auto">
-              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+              <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
               
               
                   <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2424,8 +2334,8 @@
               
                 <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
                   <div class="flex w-full justify-between">
-                      <a href="category.html"
-                        class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+                    <a href="category.html"
+                      class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
                     <a
                       class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                       x-data="{ saved: false }"
@@ -2460,14 +2370,15 @@
                       </svg>
                     </a>
                   </div>
-                  <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+                  <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
                     @click="window.location='article.html?slug='" contenteditable="true">
                     Galvenā naudas atmazgāsānas
                   </h1>
-                    <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                      Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
-                    </p>
-                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+                  <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+                    Šonedēļ starptautiskā Finanšu darījumu darba grupa (FATF) vērtē, cik sekmīgi Latvija apkaro naudas atmazgāšanu..
+                  </p>
+                  <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+                    contenteditable="true">
                     Indra Sprance</a>
                 </div>
               </figure>            </div>
@@ -2477,30 +2388,26 @@
       </div>
     </section>
 
-    <section id="ir-workshops" class="-mb-[2rem] bg-slate-200 py-20 lg:-m-10">
+    <section id="ir-workshops" class="-mb-[2rem] bg-slate-200 py-12 lg:py-20 lg:-m-10">
       <div class="container px-4 lg:px-0">
         <h1 class="text-center">Izglītojies IR Darbnīcās</h1>
-        <div class="flex flex-col gap-10 py-20 lg:flex-row lg:gap-8">
+        <div class="flex flex-col gap-10 py-12 lg:py-20 md:flex-row lg:gap-8">
           <!-- prettier-ignore -->
           <figure class="flex flex-col lg:flex-row">
-            <img
-            src="./assets/Rectangle _144-41676df4.jpg"
-            alt=""
-            class="-order-1 aspect-square object-cover mb-6 lg:mb-0"
-            width="220" />
-            <div
-              class="flex flex-1 flex-col flex-wrap items-start justify-between pl-0 lg:pl-6 lg:w-2/3">
+            <img src="./assets/Rectangle _144-41676df4.jpg" alt=""
+              class="-order-1 aspect-square object-cover mb-6 lg:mb-0" width="220" />
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between pl-0 lg:pl-6 lg:w-2/3">
               <div class="flex w-full justify-between items-center">
                 <div
-                  class="flex items-center relative text-xl uppercase mb-2 before:absolute before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                  ><span class="pl-4 pt-1 leading-none"  contenteditable="true">26/07</span></div
-                >
+                  class="flex items-center relative text-xl uppercase mb-2 before:absolute before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red">
+                  <span class="pl-4 pt-1 leading-none" contenteditable="true">26/07</span>
+                </div>
               </div>
-              <h1 class="text-2xl leading-tight w-full"  contenteditable="true">
+              <h1 class="text-2xl leading-tight w-full" contenteditable="true">
                 Dzīves un darba balansa prasmes
               </h1>
-              <a href="author.html" class="font-serif text-xl pb-2"  contenteditable="true"> Darbnīca ar Ilzi Medni</a>
-              <p class="flex-grow font-serif text-lg leading-tight text-gray-800 mb-6"  contenteditable="true">
+              <a href="author.html" class="font-serif text-xl pb-2" contenteditable="true"> Darbnīca ar Ilzi Medni</a>
+              <p class="flex-grow font-serif text-lg leading-tight text-gray-800 mb-6 empty:hidden" contenteditable="true">
                 Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi
               </p>
               <a
@@ -2511,26 +2418,21 @@
           
             </div>
           </figure>
-
           <figure class="flex flex-col lg:flex-row">
-            <img
-            src="./assets/Rectangle _144-41676df4.jpg"
-            alt=""
-            class="-order-1 aspect-square object-cover mb-6 lg:mb-0"
-            width="220" />
-            <div
-              class="flex flex-1 flex-col flex-wrap items-start justify-between pl-0 lg:pl-6 lg:w-2/3">
+            <img src="./assets/Rectangle _144-41676df4.jpg" alt=""
+              class="-order-1 aspect-square object-cover mb-6 lg:mb-0" width="220" />
+            <div class="flex flex-1 flex-col flex-wrap items-start justify-between pl-0 lg:pl-6 lg:w-2/3">
               <div class="flex w-full justify-between items-center">
                 <div
-                  class="flex items-center relative text-xl uppercase mb-2 before:absolute before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red"
-                  ><span class="pl-4 pt-1 leading-none"  contenteditable="true">26/07</span></div
-                >
+                  class="flex items-center relative text-xl uppercase mb-2 before:absolute before:bottom-0 before:top-0 before:h-full before:w-[2px] before:bg-ir-red">
+                  <span class="pl-4 pt-1 leading-none" contenteditable="true">26/07</span>
+                </div>
               </div>
-              <h1 class="text-2xl leading-tight w-full"  contenteditable="true">
+              <h1 class="text-2xl leading-tight w-full" contenteditable="true">
                 Dzīves un darba balansa prasmes
               </h1>
-              <a href="author.html" class="font-serif text-xl pb-2"  contenteditable="true"> Darbnīca ar Ilzi Medni</a>
-              <p class="flex-grow font-serif text-lg leading-tight text-gray-800 mb-6"  contenteditable="true">
+              <a href="author.html" class="font-serif text-xl pb-2" contenteditable="true"> Darbnīca ar Ilzi Medni</a>
+              <p class="flex-grow font-serif text-lg leading-tight text-gray-800 mb-6 empty:hidden" contenteditable="true">
                 Klimata izmaiņas un milzīgie mežu ugunsgrēki spiež mūždien relaksētos austrāliešus sākt aktīvi
               </p>
               <a
@@ -2540,8 +2442,7 @@
               </a>
           
             </div>
-          </figure>
-        </div>
+          </figure>        </div>
         <div class="text-center"><a
   href=""
   class="inline-flex items-center lg:justify-end font-serif text-ir-red underline-offset-2 hover:underline">
@@ -2562,9 +2463,14 @@
 </div>
       </div>
     </section>
-    <section id="magazines" class="mb-8 bg-slate-100 px-4 py-20 lg:px-0">
+    <section id="magazines" class="mb-8 bg-slate-100 px-4 py-12 lg:py-20 lg:px-0">
       <div class="container">
-        <figure class="magazine items-stretch gap-20 lg:flex">
+
+        <!-- <div class="data-wrapper" x-data="{home_magazines:[]}"
+          x-init="home_magazines = await (await fetch('./home_magazines.json')).json()">
+        </div> -->
+
+        <figure class="magazine items-stretch gap-20 md:flex">
           <img src="./assets/Rectangle_107-7abbad19.jpg" class="mx-auto mb-10 h-[348px] shadow-md lg:mb-0"
             alt="" />
           <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
@@ -2743,7 +2649,7 @@
 
         <hr class="my-14" />
 
-        <figure class="magazine items-stretch gap-20 lg:flex">
+        <figure class="magazine items-stretch gap-20 md:flex">
           <img src="./assets/Rectangle_108-d6397f08.jpg" class="mx-auto mb-10 h-[348px] shadow-md lg:mb-0"
             alt="" />
           <div class="flex flex-grow flex-col items-center justify-between lg:items-start">
@@ -2919,13 +2825,13 @@
         </figure>
       </div>
     </section>
-    <section id="cards-1/3">
+    <section id="top-posts">
       <div class="container flex items-end flex-nowrap whitespace-nowrap justify-between">
-        <h1 class="title pl-4 lg:pl-0">Lasītākie raksti</h1>
+        <h1 class="title lg:pl-4">Lasītākie raksti</h1>
       </div>
-      <div class="container grid grid-flow-row gap-4 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
+      <div class="container grid grid-flow-row gap-4 md:grid-cols-3 lg:gap-8 lg:px-0 lg:py-8">
         <!-- prettier-ignore -->
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2936,8 +2842,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -2972,18 +2878,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=laci-nevar-tik-vienkarsi-apgazt'" contenteditable="true">
               Lāci nevar tik vienkārši apgāzt
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Zemessardzes virsnieks Jānis Slaidiņš analizē situāciju frontē un negrib pieļaut domu par «Somijas variantu» Ukrainā
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Zemessardzes virsnieks Jānis Slaidiņš analizē situāciju frontē un negrib pieļaut domu par «Somijas variantu» Ukrainā
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Māra Miķelsone</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -2994,8 +2901,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -3030,18 +2937,19 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=dalities-ar-savam-majam'" contenteditable="true">
               Dalīties ar savām mājām
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Māra un Mārtiņš Slejas izveidojuši divus īslaicīgas īres dzīvokļus Liepājā kā investīciju nākotnē un uzskata — viesiem labi redzams, vai saimnieks ir mēģinājis mājoklī iedvest dvēselīti, vai arī tas ir tikai peļņas projekts
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Māra un Mārtiņš Slejas izveidojuši divus īslaicīgas īres dzīvokļus Liepājā kā investīciju nākotnē un uzskata — viesiem labi redzams, vai saimnieks ir mēģinājis mājoklī iedvest dvēselīti, vai arī tas ir tikai peļņas projekts
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Alise Zita Zeidaka</a>
           </div>
         </figure>
-        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-md  [&>h1]:text-blue-500">
+        <figure class="flex flex-1 flex-grow flex-col bg-white shadow-ir-default  [&>h1]:text-blue-500">
         
         
             <div class="img-container cursor-pointer w-full bg-slate-500 h-52 bg-cover bg-top bg-no-repeat"
@@ -3052,8 +2960,8 @@
         
           <div class="flex flex-1 flex-col flex-wrap items-start gap-y-3 px-4 py-4">
             <div class="flex w-full justify-between">
-                <a href="category.html"
-                  class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red">Komentārs</a>
+              <a href="category.html"
+                class="relative font-serif uppercase before:absolute before:-left-4 before:bottom-0 before:top-0 before:h-5 before:w-[2px] before:bg-ir-red empty:hidden">Komentārs</a>
               <a
                 class="bookmark cursor-pointer rounded-md outline outline-1 outline-transparent transition-all hover:outline-slate-200 ml-auto"
                 x-data="{ saved: false }"
@@ -3088,14 +2996,15 @@
                 </svg>
               </a>
             </div>
-            <h1 class="text-[26px] leading-tight w-full h-min cursor-pointer " role="link" x-data
+            <h1 class="text-[22px] leading-tight w-full h-min cursor-pointer  empty:hidden" role="link" x-data
               @click="window.location='article.html?slug=divanu-eksperti'" contenteditable="true">
               Dīvānu eksperti
             </h1>
-              <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800" contenteditable="true">
-                Sākuši divatā nelielā darbnīcā Talsos, brāļi Frīdenbergi izveidojuši uzņēmumu, pēc kura ražotajām mēbelēm gaida rindā cilvēki no visas Latvijas
-              </p>
-            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto" contenteditable="true">
+            <p class="flex-grow font-sans text-card-lead leading-relaxed text-gray-800 empty:hidden" contenteditable="true">
+              Sākuši divatā nelielā darbnīcā Talsos, brāļi Frīdenbergi izveidojuši uzņēmumu, pēc kura ražotajām mēbelēm gaida rindā cilvēki no visas Latvijas
+            </p>
+            <a href="author.html" class="font-serif card__author uppercase text-gray-500 mt-auto empty:hidden"
+              contenteditable="true">
               Mārtiņš Galenieks</a>
           </div>
         </figure>
@@ -3212,14 +3121,9 @@
       <li><a href="">Privātuma politika</a></li>
     </ul>
   </div>
-</footer> <div
-  role="dialog"
-  aria-modal="true"
-  x-data="{ saved: false }"
-  @click="saved = ! saved"
-  x-show="!saved"
+</footer> <div role="dialog" aria-modal="true" x-data="{ saved: false }" @click="saved = ! saved" x-show="!saved"
   class="cookies-modal lg:p4 fixed bottom-0 z-50 m-1 flex flex-col items-center justify-center gap-4 bg-slate-200 p-8 font-serif lg:w-full lg:flex-row lg:gap-2">
-  <p class="lg:pr-20"  contenteditable="true">
+  <p class="lg:pr-20" contenteditable="true">
     Informējam, ka šajā tīmekļa vietnē tiek izmantotas sīkdatnes (angļu val.
     "cookies").
   </p>
@@ -3230,13 +3134,12 @@
       Piekrītu
     </a>
     <a
-      href="#"
+      href=""
       class="button inline-block cursor-pointer whitespace-nowrap rounded-md px-7 py-3 text-center font-serif text-ir-dark-gray outline outline-1 -outline-offset-1 outline-ir-dark-gray transition-colors hover:bg-ir-dark-gray hover:text-white focus:outline-none focus:ring-2 focus:ring-ir-red lg:w-40"  >
       Uzzināt vairāk
     </a>
   </div>
 </div>
-
 </body>
 
 </html>

@@ -1,0 +1,13 @@
+{
+  "magazine": {
+    "cover": "./src/assets/img/temp/ir/home/Rectangle_107.jpg",
+    "posts": {
+      "post1": {
+        "title": "Ideju metropole"
+      },
+      "post2": {
+        "title": "Riskē un laimē"
+      }
+    }
+  }
+}
