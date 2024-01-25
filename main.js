@@ -15,15 +15,6 @@ import 'swiper/css/bundle';
 import slide1 from './src/assets/img/temp/home/elksnins.png';
 import slide2 from './src/assets/img/temp/article-featured.jpg';
 
-
-import gal1 from './src/assets/img/temp/gallery/269-768x432.jpg';
-import gal2 from './src/assets/img/temp/gallery/402-768x432.jpg';
-import gal3 from './src/assets/img/temp/gallery/756-768x432.jpg';
-import gal4 from './src/assets/img/temp/gallery/767-768x432.jpg';
-
-
-
-
 // init Swiper:
 const swiper = new Swiper('.swiper-1', {
   loop: true,
@@ -72,22 +63,6 @@ Alpine.magic('scrollAmount', () => {
     atEnd: scrollPercent == 100,
   }
 })
-
-
-let fetchLocal = async () =>
-{
-    return await new Promise((resolve, reject) =>
-    {
-        fetch(url)
-        .then((response) => response.text())
-        .then((data) =>
-        {
-            let json_string = data.substring(47).slice(0, -2);
-            let details = getFAQ(JSON.parse(json_string));
-            resolve(details);
-        });
-    });
-}
 
 // HOME PAGE DATA
 Alpine.data("home", () => ({
@@ -281,26 +256,6 @@ Alpine.data("caricatures_page", () =>({
 
 }))
 
-Alpine.data("gallery", () =>({
-  slides: [
-    { 'id': 1, 'title': 'Corona Kandinsky vienā vai divās rindās', 'author': 'Ernests Kļaviņš', pic: gal1 },
-    { 'id': 2, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: gal2 },
-    { 'id': 3, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: gal3 },
-    { 'id': 4, 'title': 'Manai valstij vajag cilvēkus ar Eiropas zināšanām', 'author': 'Ernests Kļaviņš', pic: gal4 },
-    ],
-  activeSlide: 1  ,
-  lightbox: false, 
-  imgModalSrc : '', 
-  imgModalAlt : '', 
-  imgModalDesc : '',
-  gotoPrev(){
-    this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1;
-  },
-  gotoNext() {
-    this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1
-  }
-}))
-
 Alpine.store("header", {
   isScreenDesktop() {
     let width = window.innerWidth > 0 ? window.innerWidth : screen.width;
@@ -313,16 +268,11 @@ Alpine.store("header", {
   isLoggedIn: false,
 });
 
-
-Alpine.store("parse", function(data = void 0){
-  console.log("parse!!!!", data);
-});
-
 Alpine.store("content", {
 
   isScreenDesktop() {
     let width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-    return width > 640;
+    return width > 1024;
   },
 
   showLightBox: false,
