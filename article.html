@@ -13,8 +13,8 @@
         state.showMenu = state.isScreenDesktop();
       });
     </script>
-    <script type="module" crossorigin src="./assets/main-9960dae2.js"></script>
-    <link rel="stylesheet" href="./assets/main-2b885c3d.css">
+    <script type="module" crossorigin src="./assets/main-f02da643.js"></script>
+    <link rel="stylesheet" href="./assets/main-aca137d7.css">
   </head>
   <body x-data @keyup.escape="$store.content.showLightBox = false" :class="$store.content.showLightBox ? 'overflow-hidden' : '' ">
     
@@ -924,29 +924,38 @@
             </li>
           </ul>
 
-          <div class="flex flex-col items-center justify-centerbg-slate-200 shadow-ir-default bg-gray-300 rounded-sm"
-            :class="$store.content.showLightBox ? 'fixed z-50 w-full lg:max-w-screen-md left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' : '' "
-            x-data="gallery" @click.away="$store.content.showLightBox = ''" @keyup.left="gotoPrev()" @keyup.right="gotoNext()">
+          <div
+               class="flex items-center shadow-ir-default bg-gray-300 rounded-sm"
+               :class="$store.content.showLightBox ? 'fixed z-50 w-full lg:max-w-screen-md left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' : '' "
+               x-data="
+                {
+                  slides:{},
+                  activeSlide: 1  ,
+                  lightbox: false, 
+                  imgModalSrc : '', 
+                  imgModalAlt : '', 
+                  imgModalDesc : '',
+                  gotoPrev() {
+                    this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1;
+                  },
+                  gotoNext() {
+                    this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1
+                  }
+                }"
+               x-init="slides = await (await fetch('./article_gallery.json')).json()"
+               @click.away="$store.content.showLightBox = ''"
+               @keyup.left="gotoPrev()"
+               @keyup.right="gotoNext()">
+          
             <div class="relative mx-auto">
               <!-- Slides -->
               <div class="grid p-2">
                 <template x-for="slide in slides" :key="slide.id">
-                  <!-- <img
-                    x-cloak
-                    x-show="activeSlide === slide.id" 
-                    x-transition.opacity.duration.700ms
-                    :src="slide.pic" alt="" 
-                    class="w-full object-cover cursor-pointer" style="grid-column: 1; grid-row: 1;"
-                    role="dialog"
-                    @click="$dispatch('lightbox',  {  imgModalSrc: slide.pic, imgModalAlt: 'Author', imgModalDesc: 'Random Image One Description' })"> -->
-          
                   <img x-cloak x-show="activeSlide === slide.id" x-transition.opacity.duration.700ms :src="slide.pic" alt=""
-                    class="w-full object-cover cursor-pointer" style="grid-column: 1; grid-row: 1;" role="dialog"
-                    @click="$store.content.showLightBox = !$store.content.showLightBox">
-          
+                       class="w-full object-cover cursor-pointer" style="grid-column: 1; grid-row: 1;" role="dialog"
+                       @click="$store.content.showLightBox = !$store.content.showLightBox">
                 </template>
               </div>
-          
           
               <div class="bottom-0 flex w-full items-center pb-2 px-2">
           
@@ -954,14 +963,14 @@
                 <button class="absolute -bottom-14 left-0 lg:-left-14 lg:top-0 lg:bottom-0" x-on:click="gotoPrev">
                   <svg width="48" height="48" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path x-show="!$store.content.showLightBox" d="M19 21L14 16L19 11" stroke="#2E2E30" stroke-linecap="round"
-                      stroke-linejoin="round" />
+                          stroke-linejoin="round" />
                     <path x-show="$store.content.showLightBox" d="M19 21L14 16L19 11" stroke="#ffffff" stroke-linecap="round"
-                      stroke-linejoin="round" />
+                          stroke-linejoin="round" />
                   </svg>
                 </button>
           
                 <!-- Thumbnails -->
-                <div x-show="!$store.content.showLightBox" class="grid grid-cols-4 w-auto gap-0">
+                <div x-show="!$store.content.showLightBox" class="grid grid-cols-4 w-auto gap-0.5">
                   <template x-for="slide in slides" :key="slide.id">
                     <img :src="slide.pic" alt="" class="overflow-hidden cursor-pointer p-0 m-0 transition-shadow" :class="{ 
                       'shadow-[0px_2px_0px_0px_#c53030]': activeSlide === slide.id,
@@ -970,14 +979,13 @@
                   </template>
                 </div>
           
-          
                 <!-- Button Next -->
                 <button class="absolute -bottom-14 right-0 lg:-right-14 lg:top-0 lg:bottom-0" x-on:click="gotoNext">
                   <svg width="48" height="48" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path x-show="!$store.content.showLightBox" d="M13 11L18 16L13 21" stroke="#2E2E30" stroke-linecap="round"
-                      stroke-linejoin="round" />
+                          stroke-linejoin="round" />
                     <path x-show="$store.content.showLightBox" d="M13 11L18 16L13 21" stroke="#ffffff" stroke-linecap="round"
-                      stroke-linejoin="round" />
+                          stroke-linejoin="round" />
                   </svg>
                 </button>
           
@@ -986,15 +994,14 @@
                 <p class="w-full px-4 uppercase text-lg font-serif text-left" x-text="activeSlide + ' / ' + slides.length"></p>
                 <div role="button" class="pr-2" @click="$store.content.showLightBox = !$store.content.showLightBox">
                   <svg x-show="!$store.content.showLightBox" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                       xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 8H24V13" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M13 24H8V19" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M24 8L18 14" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M8 24L14 18" stroke="#2E2E30" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-          
                   <svg x-show="$store.content.showLightBox" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                       xmlns="http://www.w3.org/2000/svg">
                     <path d="M23 14L18 14L18 9" stroke="#212225" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M9 18L14 18L14 23" stroke="#212225" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M24 8L18 14" stroke="#212225" stroke-linecap="round" stroke-linejoin="round" />
@@ -1003,14 +1010,6 @@
                 </div>
               </div>
             </div>
-          
-            <!-- <div x-show="lightbox" @lightbox.window="lightbox = true; imgModalSrc = $event.detail.imgModalSrc; imgModalDesc = $event.detail.imgModalDesc;">
-              <div class="fixed inset-0 z-50 flex items-center justify-center w-full p-2 overflow-hidden bg-black bg-opacity-75 h-100">
-                <div @click.away="lightbox = ''" class="">
-                  <img class="" :src="imgModalSrc" :alt="imgModalAlt">
-                </div>
-              </div>
-            </div> -->
           </div>
           <div x-show="$store.content.showLightBox">
             <div class="fixed inset-0 z-40 flex items-center justify-center w-full p-2 overflow-hidden bg-black bg-opacity-75 h-100">
